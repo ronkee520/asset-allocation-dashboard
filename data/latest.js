@@ -1,4 +1,4 @@
-{
+window.__ASSET_DASHBOARD_DATA__ = {
   "fmp_quotes": [
     {
       "symbol": "SPY",
@@ -5193,4 +5193,5 @@
       "latency_ms": 1471
     }
   ]
-}
+};
+

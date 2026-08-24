@@ -313,6 +313,58 @@ def fetch_twelve_fx() -> list[dict[str, Any]]:
     return output
 
 
+def fetch_market_history() -> list[dict[str, Any]]:
+    """Fetch daily adjusted closes from Yahoo's public chart endpoint.
+
+    The ETF proxies keep the cross-asset matrix comparable across regions and
+    avoid consuming any of the metered API quotas.
+    """
+    symbols = [
+        ("SPY", "美股", "S&P 500 ETF"),
+        ("ASHR", "A股", "沪深300 ETF"),
+        ("EWH", "港股", "香港市场 ETF"),
+        ("GLD", "黄金", "黄金 ETF"),
+        ("UUP", "美元", "美元指数 ETF"),
+        ("TLT", "美债", "20年期美债 ETF"),
+        ("CPER", "铜", "铜期货 ETF"),
+        ("USO", "原油", "原油 ETF"),
+        ("BOTZ", "AI", "机器人与AI ETF"),
+    ]
+    output = []
+    for symbol, label, name in symbols:
+        url = f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?range=6mo&interval=1d&events=history"
+        payload = get_json(url, timeout=35)
+        result = (payload.get("chart", {}).get("result") or [None])[0]
+        if not result:
+            continue
+        timestamps = result.get("timestamp") or []
+        closes = ((result.get("indicators", {}).get("adjclose") or [{}])[0].get("adjclose")
+                  or (result.get("indicators", {}).get("quote") or [{}])[0].get("close")
+                  or [])
+        points = []
+        for timestamp, close in zip(timestamps, closes):
+            value = as_float(close)
+            if value is None:
+                continue
+            points.append({
+                "date": datetime.fromtimestamp(timestamp, timezone.utc).date().isoformat(),
+                "close": value,
+            })
+        if len(points) >= 20:
+            output.append({
+                "symbol": symbol,
+                "label": label,
+                "name": name,
+                "points": points[-126:],
+                "source": "Yahoo Finance",
+                "url": f"https://finance.yahoo.com/quote/{symbol}/history/",
+            })
+        time.sleep(0.35)
+    if len(output) < 6:
+        raise ValueError("insufficient market history")
+    return output
+
+
 AI_MODEL_PRICING = [
     {"provider": "OpenAI", "model": "GPT-5", "context": "官方价格页", "input_per_m": "$1.25", "cached_input_per_m": "$0.125", "output_per_m": "$10.00", "focus": "复杂推理、Agent、投研自动化", "url": "https://platform.openai.com/docs/pricing"},
     {"provider": "OpenAI", "model": "GPT-5 mini", "context": "官方价格页", "input_per_m": "$0.25", "cached_input_per_m": "$0.025", "output_per_m": "$2.00", "focus": "高频摘要、分类、数据整理", "url": "https://platform.openai.com/docs/pricing"},
@@ -335,6 +387,7 @@ def fallback_payload(previous: dict[str, Any]) -> dict[str, Any]:
         "fred_macro": previous.get("fred_macro", []),
         "eia_energy": previous.get("eia_energy", []),
         "twelve_fx": previous.get("twelve_fx", []),
+        "market_history": previous.get("market_history", []),
         "gdelt_news": previous.get("gdelt_news", []),
         "alpha_news": previous.get("alpha_news", []),
         "ai_model_pricing": AI_MODEL_PRICING,
@@ -352,6 +405,7 @@ def main() -> int:
         ("fred_macro", fetch_fred_series, payload["fred_macro"]),
         ("eia_energy", fetch_eia_energy, payload["eia_energy"]),
         ("twelve_fx", fetch_twelve_fx, payload["twelve_fx"]),
+        ("market_history", fetch_market_history, payload["market_history"]),
         ("gdelt_news", fetch_gdelt_news, payload["gdelt_news"]),
         ("alpha_news", fetch_alpha_news, payload["alpha_news"]),
     ]:
@@ -379,3 +433,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
