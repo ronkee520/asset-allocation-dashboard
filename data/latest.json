@@ -1,0 +1,56 @@
+{
+  "generated_at": "2026-08-23T18:23:36Z",
+  "refresh_policy": {
+    "workflow_cron": "23 */4 * * *",
+    "description": "GitHub Actions 每4小时尝试更新；低频宏观源即使失败也保留上一版缓存。"
+  },
+  "fmp_quotes": [
+    {"symbol":"SPY","name":"State Street SPDR S&P 500 ETF","price":765.72,"change_pct":0.40913,"volume":38583716,"market_cap":815674214413,"source":"FMP","url":"https://financialmodelingprep.com/financial-summary/SPY"},
+    {"symbol":"AAPL","name":"Apple Inc.","price":309.35,"change_pct":-0.62641,"volume":46876815,"market_cap":4543533578600,"source":"FMP","url":"https://financialmodelingprep.com/financial-summary/AAPL"},
+    {"symbol":"NVDA","name":"NVIDIA Corporation","price":214.72,"change_pct":-0.98225,"volume":98869300,"market_cap":5200733120000,"source":"FMP","url":"https://financialmodelingprep.com/financial-summary/NVDA"},
+    {"symbol":"MSFT","name":"Microsoft Corporation","price":483.24,"change_pct":0.43438,"volume":22510774,"market_cap":3588322782000,"source":"FMP","url":"https://financialmodelingprep.com/financial-summary/MSFT"},
+    {"symbol":"GOOGL","name":"Alphabet Inc.","price":344.82,"change_pct":1.21819,"volume":20849776,"market_cap":4173050013639,"source":"FMP","url":"https://financialmodelingprep.com/financial-summary/GOOGL"},
+    {"symbol":"AMZN","name":"Amazon.com, Inc.","price":258.63,"change_pct":-0.56899,"volume":35722956,"market_cap":2782108773000,"source":"FMP","url":"https://financialmodelingprep.com/financial-summary/AMZN"},
+    {"symbol":"META","name":"Meta Platforms, Inc.","price":549.9,"change_pct":0.74565,"volume":13848015,"market_cap":1400862864843,"source":"FMP","url":"https://financialmodelingprep.com/financial-summary/META"},
+    {"symbol":"TSM","name":"Taiwan Semiconductor Manufacturing Company Limited","price":418.95,"change_pct":0.70913,"volume":7417130,"market_cap":2172875796000,"source":"FMP","url":"https://financialmodelingprep.com/financial-summary/TSM"},
+    {"symbol":"AMD","name":"Advanced Micro Devices, Inc.","price":473.25,"change_pct":0.80838,"volume":14343885,"market_cap":771681450000,"source":"FMP","url":"https://financialmodelingprep.com/financial-summary/AMD"},
+    {"symbol":"JPM","name":"JPMorgan Chase & Co.","price":351.58,"change_pct":0.00853,"volume":5579895,"market_cap":942062125800,"source":"FMP","url":"https://financialmodelingprep.com/financial-summary/JPM"}
+  ],
+  "fred_macro": [
+    {"series_id":"DGS10","name":"美国10年期国债收益率","category":"利率","value":4.69,"previous":4.65,"change":0.04,"date":"2026-08-20","driver":"久期资产折现率、成长股估值、黄金机会成本","source":"FRED","url":"https://fred.stlouisfed.org/series/DGS10"},
+    {"series_id":"DGS2","name":"美国2年期国债收益率","category":"利率","value":4.19,"previous":4.19,"change":0,"date":"2026-08-20","driver":"政策利率预期、收益率曲线","source":"FRED","url":"https://fred.stlouisfed.org/series/DGS2"},
+    {"series_id":"T10Y2Y","name":"美国10Y-2Y利差","category":"利率","value":0.5,"previous":0.5,"change":0,"date":"2026-08-21","driver":"衰退预期、曲线修复、银行股压力","source":"FRED","url":"https://fred.stlouisfed.org/series/T10Y2Y"},
+    {"series_id":"CPIAUCSL","name":"美国CPI","category":"通胀","value":332.813,"previous":332.568,"change":0.245,"date":"2026-07-01","driver":"通胀压力、降息交易节奏","source":"FRED","url":"https://fred.stlouisfed.org/series/CPIAUCSL"},
+    {"series_id":"UNRATE","name":"美国失业率","category":"就业","value":4.1,"previous":4.2,"change":-0.1,"date":"2026-07-01","driver":"经济周期与风险偏好","source":"FRED","url":"https://fred.stlouisfed.org/series/UNRATE"}
+  ],
+  "eia_energy": [
+    {"series_id":"WCESTUS1","name":"美国商业原油库存","category":"能源库存","period":"2026-08-14","value":428815,"unit":"MBBL","driver":"原油库存影响油价、通胀预期与能源股配置","source":"EIA","url":"https://www.eia.gov/petroleum/supply/weekly/"}
+  ],
+  "twelve_fx": [
+    {"symbol":"USD/CNH","name":"US Dollar / Chinese Yuan Offshore","price":6.72025,"change_pct":0.00417,"previous_close":6.71997,"source":"Twelve Data","url":"https://twelvedata.com/"},
+    {"symbol":"EUR/USD","name":"Euro / US Dollar","price":1.16752,"change_pct":-0.03083,"previous_close":1.16788,"source":"Twelve Data","url":"https://twelvedata.com/"},
+    {"symbol":"USD/JPY","name":"US Dollar / Japanese Yen","price":158.98919,"change_pct":0.01795,"previous_close":158.96065,"source":"Twelve Data","url":"https://twelvedata.com/"}
+  ],
+  "alpha_news": [
+    {"theme":"市场情绪","title":"Is Freeport-McMoRan becoming a copper platform for electrification and AI infrastructure?","source":"Simply Wall Street","published_at":"20260823T022349","url":"https://simplywall.st/","summary":"铜需求与电气化、AI基础设施相关，用于观察资源品和AI电力链条。","sentiment":"Bullish","score":0.421515},
+    {"theme":"市场情绪","title":"Global equity funds and MSCI World ETF flows remain in focus","source":"Ad-hoc-news.de","published_at":"20260822T174200","url":"https://www.ad-hoc-news.de/","summary":"全球权益资金流与ETF表现可作为风险偏好参考。","sentiment":"Somewhat-Bullish","score":0.246129}
+  ],
+  "gdelt_news": [
+    {"theme":"贵金属","title":"Gold price outlook remains tied to inflation and rate expectations","source":"GDELT","published_at":"20260819T063000","url":"https://www.gdeltproject.org/","summary":"用于追踪跨资产价格波动背后的新闻叙事，点击可查看来源。"},
+    {"theme":"ETF","title":"ETF flows rotate across short-rate and semiconductor themes","source":"GDELT","published_at":"20260710T083000","url":"https://www.gdeltproject.org/","summary":"用于追踪跨资产价格波动背后的新闻叙事，点击可查看来源。"}
+  ],
+  "ai_model_pricing": [
+    {"provider":"OpenAI","model":"GPT-5","context":"官方价格页","input_per_m":"$1.25","cached_input_per_m":"$0.125","output_per_m":"$10.00","focus":"复杂推理、Agent、投研自动化","url":"https://platform.openai.com/docs/pricing"},
+    {"provider":"OpenAI","model":"GPT-5 mini","context":"官方价格页","input_per_m":"$0.25","cached_input_per_m":"$0.025","output_per_m":"$2.00","focus":"高频摘要、分类、数据整理","url":"https://platform.openai.com/docs/pricing"},
+    {"provider":"Anthropic","model":"Claude Sonnet 4","context":"官方价格页","input_per_m":"$3.00","cached_input_per_m":"$0.30","output_per_m":"$15.00","focus":"企业知识工作、代码、长文档","url":"https://www.anthropic.com/pricing"},
+    {"provider":"Google","model":"Gemini 2.5 Pro","context":"<=200K tokens","input_per_m":"$1.25","cached_input_per_m":"$0.31","output_per_m":"$10.00","focus":"多模态、长上下文、复杂推理","url":"https://ai.google.dev/gemini-api/docs/pricing"},
+    {"provider":"DeepSeek","model":"DeepSeek Chat","context":"官方价格页","input_per_m":"$0.27","cached_input_per_m":"$0.07","output_per_m":"$1.10","focus":"中文、代码、低成本推理","url":"https://api-docs.deepseek.com/quick_start/pricing"}
+  ],
+  "source_status": [
+    {"key":"fmp_quotes","status":"online","updated_at":"2026-08-23T18:22:57Z","latency_ms":31811},
+    {"key":"fred_macro","status":"online","updated_at":"2026-08-23T18:23:10Z","latency_ms":13095},
+    {"key":"eia_energy","status":"online","updated_at":"2026-08-23T18:23:12Z","latency_ms":1717},
+    {"key":"twelve_fx","status":"online","updated_at":"2026-08-23T18:23:13Z","latency_ms":849},
+    {"key":"alpha_news","status":"online","updated_at":"2026-08-23T18:23:36Z","latency_ms":993}
+  ]
+}
