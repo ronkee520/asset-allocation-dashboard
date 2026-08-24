@@ -45,6 +45,17 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "url": "https://financialmodelingprep.com/financial-summary/MSFT"
     },
     {
+      "symbol": "GOOGL",
+      "name": "Alphabet Inc.",
+      "price": 344.82,
+      "change_pct": 1.21819,
+      "volume": 20849776.0,
+      "market_cap": 4173050013639.0005,
+      "exchange": "NASDAQ",
+      "source": "FMP",
+      "url": "https://financialmodelingprep.com/financial-summary/GOOGL"
+    },
+    {
       "symbol": "AMZN",
       "name": "Amazon.com, Inc.",
       "price": 258.63,
@@ -214,8 +225,8 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "USD/CNH",
       "name": "US Dollar / Chinese Yuan Offshore",
-      "price": 6.72292,
-      "change_pct": -0.055302499,
+      "price": 6.72318,
+      "change_pct": -0.05143727,
       "previous_close": 6.72664,
       "source": "Twelve Data",
       "url": "https://twelvedata.com/"
@@ -223,8 +234,8 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "EUR/USD",
       "name": "Euro / US Dollar",
-      "price": 1.16827,
-      "change_pct": 0.056525723,
+      "price": 1.16815,
+      "change_pct": 0.046248319,
       "previous_close": 1.16761,
       "source": "Twelve Data",
       "url": "https://twelvedata.com/"
@@ -232,8 +243,8 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "USD/JPY",
       "name": "US Dollar / Japanese Yen",
-      "price": 158.86261,
-      "change_pct": -0.094181352,
+      "price": 158.9048,
+      "change_pct": -0.067648825,
       "previous_close": 159.01237,
       "source": "Twelve Data",
       "url": "https://twelvedata.com/"
@@ -2820,7 +2831,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-02-25",
-          "close": 87.89857482910156
+          "close": 87.8985824584961
         },
         {
           "date": "2026-02-26",
@@ -2836,15 +2847,15 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-03-03",
-          "close": 87.72004699707031
+          "close": 87.72003936767578
         },
         {
           "date": "2026-03-04",
-          "close": 87.44539642333984
+          "close": 87.44540405273438
         },
         {
           "date": "2026-03-05",
-          "close": 87.09227752685547
+          "close": 87.09228515625
         },
         {
           "date": "2026-03-06",
@@ -2872,7 +2883,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-03-16",
-          "close": 85.54248046875
+          "close": 85.54249572753906
         },
         {
           "date": "2026-03-17",
@@ -2880,19 +2891,19 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-03-18",
-          "close": 85.29727172851562
+          "close": 85.2972640991211
         },
         {
           "date": "2026-03-19",
-          "close": 85.817138671875
+          "close": 85.81713104248047
         },
         {
           "date": "2026-03-20",
-          "close": 84.18888854980469
+          "close": 84.18887329101562
         },
         {
           "date": "2026-03-23",
-          "close": 84.73817443847656
+          "close": 84.73816680908203
         },
         {
           "date": "2026-03-24",
@@ -2904,7 +2915,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-03-26",
-          "close": 84.4635238647461
+          "close": 84.46351623535156
         },
         {
           "date": "2026-03-27",
@@ -2912,7 +2923,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-03-30",
-          "close": 85.12071990966797
+          "close": 85.12071228027344
         },
         {
           "date": "2026-03-31",
@@ -2920,7 +2931,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-04-01",
-          "close": 84.94872283935547
+          "close": 84.94873046875
         },
         {
           "date": "2026-04-02",
@@ -2936,7 +2947,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-04-08",
-          "close": 85.59868621826172
+          "close": 85.59869384765625
         },
         {
           "date": "2026-04-09",
@@ -2956,7 +2967,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-04-15",
-          "close": 85.51005554199219
+          "close": 85.51006317138672
         },
         {
           "date": "2026-04-16",
@@ -2964,11 +2975,11 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-04-17",
-          "close": 85.74641418457031
+          "close": 85.74640655517578
         },
         {
           "date": "2026-04-20",
-          "close": 85.7267074584961
+          "close": 85.72671508789062
         },
         {
           "date": "2026-04-21",
@@ -2980,11 +2991,11 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-04-23",
-          "close": 85.23432159423828
+          "close": 85.23431396484375
         },
         {
           "date": "2026-04-24",
-          "close": 85.39187622070312
+          "close": 85.39189147949219
         },
         {
           "date": "2026-04-27",
@@ -2992,7 +3003,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-04-28",
-          "close": 85.05705261230469
+          "close": 85.05706024169922
         },
         {
           "date": "2026-04-29",
@@ -3008,7 +3019,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-05-04",
-          "close": 83.97743225097656
+          "close": 83.9774398803711
         },
         {
           "date": "2026-05-05",
@@ -3032,11 +3043,11 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-05-12",
-          "close": 84.00709533691406
+          "close": 84.00708770751953
         },
         {
           "date": "2026-05-13",
-          "close": 83.81929779052734
+          "close": 83.81929016113281
         },
         {
           "date": "2026-05-14",
@@ -3048,7 +3059,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-05-18",
-          "close": 82.59363555908203
+          "close": 82.5936279296875
         },
         {
           "date": "2026-05-19",
@@ -3056,15 +3067,15 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-05-20",
-          "close": 82.93959045410156
+          "close": 82.93958282470703
         },
         {
           "date": "2026-05-21",
-          "close": 83.2459945678711
+          "close": 83.24600219726562
         },
         {
           "date": "2026-05-22",
-          "close": 83.70067596435547
+          "close": 83.70068359375
         },
         {
           "date": "2026-05-26",
@@ -3072,23 +3083,23 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-05-27",
-          "close": 84.31350708007812
+          "close": 84.31351470947266
         },
         {
           "date": "2026-05-28",
-          "close": 84.74842071533203
+          "close": 84.7484130859375
         },
         {
           "date": "2026-05-29",
-          "close": 84.76819610595703
+          "close": 84.7681884765625
         },
         {
           "date": "2026-06-01",
-          "close": 84.81383514404297
+          "close": 84.8138427734375
         },
         {
           "date": "2026-06-02",
-          "close": 84.99246215820312
+          "close": 84.9924545288086
         },
         {
           "date": "2026-06-03",
@@ -3116,7 +3127,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-06-11",
-          "close": 85.3199234008789
+          "close": 85.31993103027344
         },
         {
           "date": "2026-06-12",
@@ -3140,7 +3151,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-06-22",
-          "close": 85.42906951904297
+          "close": 85.4290771484375
         },
         {
           "date": "2026-06-23",
@@ -3160,7 +3171,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-06-29",
-          "close": 86.77863311767578
+          "close": 86.77864074707031
         },
         {
           "date": "2026-06-30",
@@ -4949,7 +4960,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "url": "https://www.foreignpolicyjournal.com/2026/08/23/jim-cramer-defends-apple-inc-nasdaq-aapl-amid-memory-shortage-pressure-and-mixed-earnings-results/",
       "summary": "Jim Cramer has defended Apple Inc. (NASDAQ: AAPL) despite facing pressure from a global memory chip shortage and mixed earnings results. Cramer highlighted Apple's efforts in Ameri",
       "sentiment": "Somewhat-Bullish",
-      "score": 0.269473
+      "score": 0.258705
     },
     {
       "theme": "市场情绪",
@@ -4959,7 +4970,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "url": "https://sg.finance.yahoo.com/news/danaher-vs-intuitive-surgical-recovery-222135336.html",
       "summary": "This article compares Danaher (DHR) and Intuitive Surgical (ISRG) as investment opportunities, highlighting their differing growth paths. Danaher is positioned for a recovery in li",
       "sentiment": "Somewhat-Bullish",
-      "score": 0.191697
+      "score": 0.176161
     },
     {
       "theme": "市场情绪",
@@ -4969,7 +4980,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "url": "https://www.benzinga.com/markets/market-summary/26/08/61373202/top-sp-500-index-stocks-to-watch-this-week-crowdstrike-salesforce-workday",
       "summary": "The S&P 500 recently pulled back from its record high, but investors are closely watching several key stocks this week. Workday (NASDAQ: WDAY) is expected to publish earnings amid ",
       "sentiment": "Somewhat-Bullish",
-      "score": 0.296796
+      "score": 0.303688
     },
     {
       "theme": "市场情绪",
@@ -4979,7 +4990,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "url": "https://www.benzinga.com/markets/equities/26/08/61372957/sandisk-micron-western-digital-stocks-remain-cheap-as-cyclical-and-ai-bubble-concerns-remain",
       "summary": "Despite significant triple-digit stock jumps this year, memory companies like SanDisk, Micron, and Western Digital are considered undervalued based on metrics like forward P/E rati",
       "sentiment": "Neutral",
-      "score": -0.028399
+      "score": -0.056798
     },
     {
       "theme": "市场情绪",
@@ -4989,7 +5000,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "url": "https://www.benzinga.com/markets/equities/26/08/61372917/elon-musks-net-worth-hits-851-billion-as-analysts-see-more-tesla-spacex-upside",
       "summary": "Elon Musk's net worth has rebounded to over $851 billion, driven by recent increases in Tesla and SpaceX stock prices, and analysts are optimistic about their future growth. Despit",
       "sentiment": "Bullish",
-      "score": 0.415255
+      "score": 0.439583
     },
     {
       "theme": "市场情绪",
@@ -4999,7 +5010,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "url": "https://www.marketbeat.com/articles/3-low-p-e-stocks-that-look-cheap-as-the-s-and-p-500-trades-near-record-highs/",
       "summary": "As the S&P 500 approaches record highs, value investors can still find bargains in companies like Sohu.com (SOHU), Onity Group (ONIT), and TriMas (TRS), which exhibit low P/E ratio",
       "sentiment": "Bullish",
-      "score": 0.484038
+      "score": 0.494418
     },
     {
       "theme": "市场情绪",
@@ -5009,7 +5020,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "url": "https://simplywall.st/stocks/us/diversified-financials/nyse-syf/synchrony-financial/news/does-synchronys-ai-pivot-and-openai-partnership-reframe-the",
       "summary": "Synchrony Financial recently reported strong Q2 results, raised its 2026 EPS outlook, and announced an enterprise-wide collaboration with OpenAI, including the appointment of a Chi",
       "sentiment": "Somewhat-Bullish",
-      "score": 0.292641
+      "score": 0.287901
     },
     {
       "theme": "市场情绪",
@@ -5019,7 +5030,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "url": "https://www.marketbeat.com/instant-alerts/filing-korea-investment-corp-buys-new-stake-in-aerovironment-inc-avav-2026-08-23/",
       "summary": "Korea Investment CORP has acquired a new stake in AeroVironment, Inc. (NASDAQ:AVAV), purchasing 332,595 shares valued at approximately $54.9 million, representing a 0.66% ownership",
       "sentiment": "Somewhat-Bullish",
-      "score": 0.302463
+      "score": 0.341564
     }
   ],
   "ai_model_pricing": [
@@ -5144,7 +5155,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "url": "https://mistral.ai/pricing/api/"
     }
   ],
-  "generated_at": "2026-08-24T02:32:59Z",
+  "generated_at": "2026-08-24T05:08:19Z",
   "refresh_policy": {
     "workflow_cron": "23 */4 * * *",
     "description": "GitHub Actions 每4小时尝试更新；低频宏观源即使失败也保留上一版缓存。"
@@ -5153,45 +5164,44 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "key": "fmp_quotes",
       "status": "online",
-      "updated_at": "2026-08-24T02:32:05Z",
-      "latency_ms": 28857
+      "updated_at": "2026-08-24T05:07:44Z",
+      "latency_ms": 12032
     },
     {
       "key": "fred_macro",
       "status": "online",
-      "updated_at": "2026-08-24T02:32:13Z",
-      "latency_ms": 8203
+      "updated_at": "2026-08-24T05:07:49Z",
+      "latency_ms": 5254
     },
     {
       "key": "eia_energy",
       "status": "online",
-      "updated_at": "2026-08-24T02:32:15Z",
-      "latency_ms": 1569
+      "updated_at": "2026-08-24T05:07:50Z",
+      "latency_ms": 476
     },
     {
       "key": "twelve_fx",
       "status": "online",
-      "updated_at": "2026-08-24T02:32:16Z",
-      "latency_ms": 1022
+      "updated_at": "2026-08-24T05:07:51Z",
+      "latency_ms": 393
     },
     {
       "key": "market_history",
       "status": "online",
-      "updated_at": "2026-08-24T02:32:30Z",
-      "latency_ms": 13577
+      "updated_at": "2026-08-24T05:07:56Z",
+      "latency_ms": 4890
     },
     {
       "key": "gdelt_news",
       "status": "online",
-      "updated_at": "2026-08-24T02:32:57Z",
-      "latency_ms": 27154
+      "updated_at": "2026-08-24T05:08:18Z",
+      "latency_ms": 22156
     },
     {
       "key": "alpha_news",
       "status": "online",
-      "updated_at": "2026-08-24T02:32:59Z",
-      "latency_ms": 1471
+      "updated_at": "2026-08-24T05:08:19Z",
+      "latency_ms": 318
     }
   ]
 };
-
