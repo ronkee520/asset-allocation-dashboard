@@ -1,0 +1,50 @@
+/* Readability overrides keep the dense terminal layout while lifting small UI text. */
+.brand strong { font-size: 14px; }
+.brand small { font-size: 11px; }
+.sidebar nav a { font-size: 14px; }
+.sidebar-foot { font-size: 12px; }
+.search-box input { font-size: 13px; }
+.top-actions > span { font-size: 12px; }
+.page-header > div:first-child > span,
+.panel-head > div > span { font-size: 11px; }
+.page-header h1 { font-size: 29px; }
+.page-header p { font-size: 13px; }
+.panel-head h2 { font-size: 15px; }
+.status-pill { font-size: 11px; }
+.text-action { font-size: 12px; }
+.decision-strip span { font-size: 11px; }
+.decision-strip strong { font-size: 15px; }
+.score-top strong { font-size: 14px; }
+.score-card p { font-size: 11px; }
+.regime-cell div,
+.regime-summary span { font-size: 9px; }
+.regime-cell strong { font-size: 15px; }
+.regime-cell p,
+.regime-summary strong { font-size: 11px; }
+.table-row { font-size: 11px; }
+.table-row.table-head,
+.table-row small { font-size: 10px; }
+.event-stack strong,
+.calendar-list div > strong { font-size: 11px; }
+.event-stack small,
+.calendar-list div > small,
+.calendar-list div > span { font-size: 10px; }
+.factor-list,
+.model-list,
+.source-list { font-size: 11px; }
+.factor-list span > small,
+.model-list span > small { font-size: 10px; }
+.news-list strong { font-size: 12px; }
+.news-list p,
+.news-list p.news-summary-zh { font-size: 11px; line-height: 1.6; }
+.news-list small { font-size: 9px; }
+.large-note,
+.report-sheet p { font-size: 12px; }
+.workspace-toolbar,
+.favorites-bar { font-size: 11px; }
+
+@media (max-width: 760px) {
+  .page-header h1 { font-size: 26px; }
+  .table-row { font-size: 10px; }
+}
+
