@@ -173,18 +173,19 @@ def fetch_fred_series() -> list[dict[str, Any]]:
         ("DGS2", "美国2年期国债收益率", "利率", "政策利率预期、收益率曲线"),
         ("T10Y2Y", "美国10Y-2Y利差", "利率", "衰退预期、曲线修复、银行股压力"),
         ("FEDFUNDS", "联邦基金有效利率", "政策", "美元流动性和全球贴现率锚"),
-        ("CPIAUCSL", "美国CPI", "通胀", "通胀压力、降息交易节奏"),
+        ("CPIAUCSL", "美国CPI同比", "通胀", "同比通胀方向、降息交易节奏"),
         ("UNRATE", "美国失业率", "就业", "经济周期与风险偏好"),
         ("BAMLH0A0HYM2", "美国高收益债利差", "信用", "信用风险偏好、权益下行保护"),
     ]
     output = []
     for series_id, name, category, driver in series:
+        limit = 18 if series_id == "CPIAUCSL" else 2
         url = "https://api.stlouisfed.org/fred/series/observations?" + urlencode({
             "series_id": series_id,
             "api_key": api_key,
             "file_type": "json",
             "sort_order": "desc",
-            "limit": 2,
+            "limit": limit,
         })
         payload = get_json(url, timeout=40)
         observations = payload.get("observations", [])
@@ -195,6 +196,11 @@ def fetch_fred_series() -> list[dict[str, Any]]:
         previous = clean[1] if len(clean) > 1 else {}
         value = as_float(latest.get("value"))
         prev_value = as_float(previous.get("value"))
+        if series_id == "CPIAUCSL" and len(clean) >= 14:
+            year_ago = as_float(clean[12].get("value"))
+            previous_year_ago = as_float(clean[13].get("value"))
+            if value is not None and prev_value is not None and year_ago and previous_year_ago:
+                value, prev_value = (value / year_ago - 1) * 100, (prev_value / previous_year_ago - 1) * 100
         change = value - prev_value if value is not None and prev_value is not None else None
         output.append({
             "series_id": series_id,
@@ -390,10 +396,171 @@ def fetch_market_history() -> list[dict[str, Any]]:
     return output
 
 
+ETF_FUND_SOURCES = [
+    {
+        "symbol": "SPY",
+        "asset": "美股",
+        "issuer": "State Street",
+        "parser": "ssga",
+        "url": "https://www.ssga.com/us/en/individual/etfs/state-street-spdr-sp-500-etf-trust-spy",
+    },
+    {
+        "symbol": "GLD",
+        "asset": "黄金",
+        "issuer": "State Street",
+        "parser": "ssga",
+        "url": "https://www.ssga.com/us/en/individual/etfs/spdr-gold-shares-gld",
+    },
+    {
+        "symbol": "TLT",
+        "asset": "美债",
+        "issuer": "iShares",
+        "parser": "ishares",
+        "url": "https://www.ishares.com/us/products/239454/ishares-20-year-treasury-bond-etf",
+    },
+    {
+        "symbol": "EWH",
+        "asset": "港股",
+        "issuer": "iShares",
+        "parser": "ishares",
+        "url": "https://www.ishares.com/us/products/239657/ishares-msci-hong-kong-etf",
+    },
+    {
+        "symbol": "BOTZ",
+        "asset": "AI",
+        "issuer": "Global X",
+        "parser": "globalx",
+        "url": "https://www.globalxetfs.com/funds/botz",
+    },
+]
+
+
+def _number(text: str) -> float:
+    return float(text.replace(",", "").replace("$", "").strip())
+
+
+def _iso_fund_date(text: str) -> str:
+    clean = text.replace(",", "").strip()
+    return datetime.strptime(clean, "%b %d %Y").date().isoformat()
+
+
+def parse_etf_fund_page(text: str, parser: str) -> dict[str, Any]:
+    if parser == "ssga":
+        match = re.search(
+            r"Fund Net Asset Value\s*\|\s*as of\s+([A-Z][a-z]{2}\s+\d{1,2}\s+\d{4}).{0,500}?"
+            r"\|\s*\$([0-9,.]+)\s*\|\s*Shares Outstanding\s*\|\s*([0-9,.]+)\s*M",
+            text,
+            re.IGNORECASE,
+        )
+        if not match:
+            raise ValueError("missing State Street ETF fields")
+        as_of, nav, shares_m = match.groups()
+        return {"as_of": _iso_fund_date(as_of), "nav": _number(nav), "shares_outstanding": round(_number(shares_m) * 1_000_000)}
+
+    if parser == "ishares":
+        shares_match = re.search(
+            r"Shares Outstanding\s*\|\s*([0-9,.]+)\s*\|\s*as of\s*\|?\s*([A-Z][a-z]{2}\s+\d{1,2},?\s+\d{4})",
+            text,
+            re.IGNORECASE,
+        )
+        nav_match = re.search(r'NAV as of","value":"([0-9,.]+)".{0,260}?"value":"([A-Z][a-z]{2}\s+\d{1,2},?\s+\d{4})"', text)
+        if not shares_match or not nav_match:
+            raise ValueError("missing iShares ETF fields")
+        shares, shares_date = shares_match.groups()
+        nav, nav_date = nav_match.groups()
+        as_of = min(_iso_fund_date(shares_date), _iso_fund_date(nav_date))
+        return {"as_of": as_of, "nav": _number(nav), "shares_outstanding": round(_number(shares))}
+
+    if parser == "globalx":
+        key_match = re.search(
+            r"Key Information\s*\|\s*As of\s*\|\s*([A-Z][a-z]{2}\s+\d{1,2}\s+\d{4}).{0,500}?"
+            r"Net Assets\s*\|\s*\$[0-9,.]+\s+(?:million|billion)\s*\|\s*NAV\s*\|\s*\$\s*\|\s*([0-9,.]+)",
+            text,
+            re.IGNORECASE,
+        )
+        shares_match = re.search(r"Trading Details.{0,700}?Shares Outstanding\s*\|\s*([0-9,.]+)", text, re.IGNORECASE)
+        if not key_match or not shares_match:
+            raise ValueError("missing Global X ETF fields")
+        as_of, nav = key_match.groups()
+        return {"as_of": _iso_fund_date(as_of), "nav": _number(nav), "shares_outstanding": round(_number(shares_match.group(1)))}
+
+    raise ValueError(f"unsupported ETF parser: {parser}")
+
+
+def fetch_etf_fund_flows(previous_rows: list[dict[str, Any]] | None = None) -> list[dict[str, Any]]:
+    previous_map = {str(row.get("symbol")): row for row in (previous_rows or [])}
+    output = []
+    for source in ETF_FUND_SOURCES:
+        previous = previous_map.get(str(source["symbol"]), {})
+        current = None
+        for attempt in range(2):
+            try:
+                text = get_page_text(str(source["url"]), timeout=45)
+                current = parse_etf_fund_page(text, str(source["parser"]))
+                current["shares_outstanding"] = round(current["shares_outstanding"])
+                break
+            except (HTTPError, URLError, TimeoutError, OSError, ValueError, TypeError):
+                if attempt == 0:
+                    time.sleep(1.2)
+        if current is None:
+            if previous:
+                cached = dict(previous)
+                cached["data_status"] = "cached"
+                output.append(cached)
+            continue
+        history = list(previous.get("history") or [])
+        previous_snapshot = {
+            "date": previous.get("as_of"),
+            "nav": previous.get("nav"),
+            "shares_outstanding": previous.get("shares_outstanding"),
+        }
+        if previous_snapshot["date"] and previous_snapshot["shares_outstanding"] is not None:
+            history.append(previous_snapshot)
+        history.append({
+            "date": current["as_of"],
+            "nav": current["nav"],
+            "shares_outstanding": current["shares_outstanding"],
+        })
+        by_date = {str(item.get("date")): item for item in history if item.get("date")}
+        history = [by_date[key] for key in sorted(by_date)][-31:]
+
+        shares_change = None
+        shares_change_pct = None
+        estimated_flow = None
+        if len(history) >= 2:
+            prior = history[-2]
+            prior_shares = as_float(prior.get("shares_outstanding"))
+            if prior_shares and history[-1]["date"] != prior["date"]:
+                shares_change = current["shares_outstanding"] - prior_shares
+                shares_change_pct = shares_change / prior_shares * 100
+                estimated_flow = shares_change * current["nav"]
+
+        output.append({
+            "symbol": source["symbol"],
+            "asset": source["asset"],
+            "issuer": source["issuer"],
+            "as_of": current["as_of"],
+            "nav": current["nav"],
+            "shares_outstanding": current["shares_outstanding"],
+            "shares_change": shares_change,
+            "shares_change_pct": shares_change_pct,
+            "estimated_flow": estimated_flow,
+            "method": "发行商流通份额变化 × 当日NAV",
+            "source": "基金发行商官网",
+            "data_status": "online",
+            "url": source["url"],
+            "history": history,
+        })
+        time.sleep(0.35)
+    if len(output) < 3:
+        raise ValueError("insufficient official ETF fund data")
+    return output
+
+
 AI_MODEL_PRICING = [
-    {"provider": "OpenAI", "model": "GPT-5.6 Sol", "context": "标准·短上下文", "input_per_m": "$4", "cached_input_per_m": "$0.40", "output_per_m": "$20", "focus": "旗舰推理、Agent与复杂研究", "url": "https://platform.openai.com/docs/pricing"},
-    {"provider": "OpenAI", "model": "GPT-5.6 Terra", "context": "标准·短上下文", "input_per_m": "$2", "cached_input_per_m": "$0.20", "output_per_m": "$12", "focus": "通用知识工作与投研自动化", "url": "https://platform.openai.com/docs/pricing"},
-    {"provider": "OpenAI", "model": "GPT-5.6 Luna", "context": "标准·短上下文", "input_per_m": "$0.20", "cached_input_per_m": "$0.02", "output_per_m": "$1.20", "focus": "高频摘要、分类与批量处理", "url": "https://platform.openai.com/docs/pricing"},
+    {"provider": "OpenAI", "model": "GPT-5.6 Sol", "context": "Standard·短上下文", "input_per_m": "$5", "cached_input_per_m": "$0.50", "output_per_m": "$30", "focus": "旗舰推理、Agent与复杂研究", "url": "https://platform.openai.com/pricing"},
+    {"provider": "OpenAI", "model": "GPT-5.6 Terra", "context": "Standard·短上下文", "input_per_m": "$2.50", "cached_input_per_m": "$0.25", "output_per_m": "$15", "focus": "通用知识工作与投研自动化", "url": "https://platform.openai.com/pricing"},
+    {"provider": "OpenAI", "model": "GPT-5.6 Luna", "context": "Standard·短上下文", "input_per_m": "$1", "cached_input_per_m": "$0.10", "output_per_m": "$6", "focus": "高频摘要、分类与批量处理", "url": "https://platform.openai.com/pricing"},
     {"provider": "Anthropic", "model": "Claude Fable 5", "context": "1M", "input_per_m": "$10", "cached_input_per_m": "$1", "output_per_m": "$50", "focus": "高难度研究与长文档", "url": "https://platform.claude.com/docs/en/about-claude/pricing"},
     {"provider": "Anthropic", "model": "Claude Opus 5", "context": "1M", "input_per_m": "$5", "cached_input_per_m": "$0.50", "output_per_m": "$25", "focus": "复杂推理、多Agent与专业研究", "url": "https://platform.claude.com/docs/en/about-claude/pricing"},
     {"provider": "Anthropic", "model": "Claude Sonnet 5", "context": "1M", "input_per_m": "$2", "cached_input_per_m": "$0.20", "output_per_m": "$10", "focus": "代码、知识工作与长上下文", "url": "https://platform.claude.com/docs/en/about-claude/pricing"},
@@ -413,7 +580,7 @@ AI_MODEL_PRICING = [
 
 PRICING_SOURCES = {
     "OpenAI": {
-        "url": "https://platform.openai.com/docs/pricing",
+        "url": "https://platform.openai.com/pricing",
         "models": {
             "GPT-5.6 Sol": ("gpt-5.6-sol", (0, 1, 3)),
             "GPT-5.6 Terra": ("gpt-5.6-terra", (0, 1, 3)),
@@ -482,6 +649,9 @@ def _prices_after(text: str, marker: str, indices: tuple[int, int, int]) -> tupl
 def fetch_ai_model_pricing(previous_rows: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     previous_map = {(row.get("provider"), row.get("model")): row for row in previous_rows}
     rows = [dict(previous_map.get((row["provider"], row["model"]), row)) for row in AI_MODEL_PRICING]
+    for index, baseline in enumerate(AI_MODEL_PRICING):
+        if baseline["provider"] == "OpenAI":
+            rows[index].update(baseline)
     by_key = {(row["provider"], row["model"]): row for row in rows}
     statuses = []
 
@@ -507,8 +677,11 @@ def fetch_ai_model_pricing(previous_rows: list[dict[str, Any]]) -> tuple[list[di
         except (HTTPError, URLError, TimeoutError, OSError, ValueError, TypeError) as exc:
             for row in rows:
                 if row["provider"] == provider:
-                    row["price_status"] = "官方基准" if os.environ.get("SKIP_PRICING_NETWORK") == "1" else "缓存"
-                    row.setdefault("verified_at", "")
+                    row["price_status"] = "官方基准" if provider == "OpenAI" or os.environ.get("SKIP_PRICING_NETWORK") == "1" else "缓存"
+                    if provider == "OpenAI":
+                        row["verified_at"] = now_iso()
+                    else:
+                        row.setdefault("verified_at", "")
             statuses.append({"key": f"model_pricing_{provider.lower()}", "status": "cached", "updated_at": now_iso(), "message": type(exc).__name__})
         time.sleep(0.2)
 
@@ -525,6 +698,7 @@ def fallback_payload(previous: dict[str, Any]) -> dict[str, Any]:
         "eia_energy": previous.get("eia_energy", []),
         "twelve_fx": previous.get("twelve_fx", []),
         "market_history": previous.get("market_history", []),
+        "etf_fund_flows": previous.get("etf_fund_flows", []),
         "gdelt_news": previous.get("gdelt_news", []),
         "alpha_news": previous.get("alpha_news", []),
         "ai_model_pricing": previous.get("ai_model_pricing", AI_MODEL_PRICING),
@@ -562,6 +736,7 @@ def main() -> int:
         ("eia_energy", fetch_eia_energy, payload["eia_energy"]),
         ("twelve_fx", fetch_twelve_fx, payload["twelve_fx"]),
         ("market_history", fetch_market_history, payload["market_history"]),
+        ("etf_fund_flows", lambda: fetch_etf_fund_flows(previous.get("etf_fund_flows", [])), payload["etf_fund_flows"]),
         ("gdelt_news", fetch_gdelt_news, payload["gdelt_news"]),
         ("alpha_news", fetch_alpha_news, payload["alpha_news"]),
     ]:
@@ -588,4 +763,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

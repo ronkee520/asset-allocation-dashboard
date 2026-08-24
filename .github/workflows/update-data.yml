@@ -21,6 +21,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Test data parsers
+        run: python -m unittest discover -s tests -v
+
       - name: Fetch public and free API data
         env:
           FMP_API_KEY: ${{ secrets.FMP_API_KEY }}

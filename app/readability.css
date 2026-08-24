@@ -48,6 +48,7 @@
 .model-price-table a.table-row { color: inherit; }
 .model-price-table .price-cell { color: var(--red); font-weight: 800; }
 .model-price-table .price-source { display: flex; align-items: center; gap: 6px; color: var(--red); }
+.official-flow-table .table-row { grid-template-columns: 1.1fr .55fr .75fr .75fr .6fr .85fr .75fr .75fr; min-width: 980px; }
 .score-method,
 .chain-method { border-bottom: 1px solid var(--line); background: #fffafa; }
 .score-method summary,

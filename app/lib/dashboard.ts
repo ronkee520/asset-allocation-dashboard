@@ -2,6 +2,7 @@ export type HistoryPoint = { date: string; close: number };
 export type HistorySeries = { symbol: string; label: string; name: string; points: HistoryPoint[]; source: string; url: string };
 export type QuoteRow = { symbol: string; name: string; price: number | null; change_pct: number | null; volume?: number | null; market_cap?: number | null; source: string; url: string };
 export type MacroRow = { series_id: string; name: string; category: string; value: number | null; previous: number | null; change: number | null; date: string; driver: string; source: string; url: string };
+export type EtfFlowRow = { symbol: string; asset: string; issuer: string; as_of: string; nav: number | null; shares_outstanding: number | null; shares_change: number | null; shares_change_pct: number | null; estimated_flow: number | null; method: string; source: string; url: string };
 export type DashboardData = {
   generated_at?: string;
   pricing_generated_at?: string;
@@ -10,6 +11,7 @@ export type DashboardData = {
   eia_energy?: Array<Record<string, string | number | null>>;
   twelve_fx?: Array<Record<string, string | number | null>>;
   market_history?: HistorySeries[];
+  etf_fund_flows?: EtfFlowRow[];
   gdelt_news?: Array<Record<string, string | number | null>>;
   alpha_news?: Array<Record<string, string | number | null>>;
   ai_model_pricing?: Array<Record<string, string | number | null>>;
@@ -130,4 +132,3 @@ export function assetScores(data: DashboardData, history: HistorySeries[]) {
 }
 
 export function macroRegime(data: DashboardData){const rows=new Map((data.fred_macro??[]).map(i=>[i.series_id,i]));const growthUp=(rows.get("UNRATE")?.change??0)<=0&&(rows.get("T10Y2Y")?.change??0)>=-0.03;const inflationUp=(rows.get("CPIAUCSL")?.change??0)>0;const quadrant=growthUp?(inflationUp?"再通胀":"金发姑娘"):(inflationUp?"滞胀":"衰退/通缩");const map:Record<string,{focus:string;avoid:string}>={"再通胀":{focus:"股票、商品、铜、价值风格",avoid:"长久期债券"},"金发姑娘":{focus:"股票、AI、信用债、黄金",avoid:"美元现金"},"滞胀":{focus:"黄金、商品、能源、防御股",avoid:"成长股与长债"},"衰退/通缩":{focus:"美债、黄金、美元、高质量资产",avoid:"周期商品与高收益债"}};return{quadrant,growthUp,inflationUp,...map[quadrant]}}
-
