@@ -225,8 +225,8 @@
     {
       "symbol": "USD/CNH",
       "name": "US Dollar / Chinese Yuan Offshore",
-      "price": 6.72454,
-      "change_pct": -0.031219153,
+      "price": 6.72439,
+      "change_pct": -0.033449092,
       "previous_close": 6.72664,
       "source": "Twelve Data",
       "url": "https://twelvedata.com/"
@@ -234,8 +234,8 @@
     {
       "symbol": "EUR/USD",
       "name": "Euro / US Dollar",
-      "price": 1.16643,
-      "change_pct": -0.10106114,
+      "price": 1.16717,
+      "change_pct": -0.037683816,
       "previous_close": 1.16761,
       "source": "Twelve Data",
       "url": "https://twelvedata.com/"
@@ -243,8 +243,8 @@
     {
       "symbol": "USD/JPY",
       "name": "US Dollar / Japanese Yen",
-      "price": 159.18083,
-      "change_pct": 0.10594144,
+      "price": 159.14289,
+      "change_pct": 0.082081664,
       "previous_close": 159.01237,
       "source": "Twelve Data",
       "url": "https://twelvedata.com/"
@@ -278,7 +278,7 @@
         },
         {
           "date": "2026-03-02",
-          "close": 682.7516479492188
+          "close": 682.751708984375
         },
         {
           "date": "2026-03-03",
@@ -286,19 +286,19 @@
         },
         {
           "date": "2026-03-04",
-          "close": 681.50830078125
+          "close": 681.5082397460938
         },
         {
           "date": "2026-03-05",
-          "close": 677.7084350585938
+          "close": 677.70849609375
         },
         {
           "date": "2026-03-06",
-          "close": 668.8256225585938
+          "close": 668.82568359375
         },
         {
           "date": "2026-03-09",
-          "close": 674.6845092773438
+          "close": 674.6845703125
         },
         {
           "date": "2026-03-10",
@@ -330,7 +330,7 @@
         },
         {
           "date": "2026-03-19",
-          "close": 656.3121337890625
+          "close": 656.3121948242188
         },
         {
           "date": "2026-03-20",
@@ -2823,11 +2823,11 @@
       "points": [
         {
           "date": "2026-02-23",
-          "close": 87.73237609863281
+          "close": 87.73238372802734
         },
         {
           "date": "2026-02-24",
-          "close": 87.88880157470703
+          "close": 87.88880920410156
         },
         {
           "date": "2026-02-25",
@@ -2835,7 +2835,7 @@
         },
         {
           "date": "2026-02-26",
-          "close": 88.25052642822266
+          "close": 88.25051879882812
         },
         {
           "date": "2026-02-27",
@@ -2843,11 +2843,11 @@
         },
         {
           "date": "2026-03-02",
-          "close": 87.8966064453125
+          "close": 87.89659881591797
         },
         {
           "date": "2026-03-03",
-          "close": 87.72004699707031
+          "close": 87.72003173828125
         },
         {
           "date": "2026-03-04",
@@ -2855,11 +2855,11 @@
         },
         {
           "date": "2026-03-05",
-          "close": 87.09227752685547
+          "close": 87.09228515625
         },
         {
           "date": "2026-03-06",
-          "close": 86.76858520507812
+          "close": 86.76859283447266
         },
         {
           "date": "2026-03-09",
@@ -2867,23 +2867,23 @@
         },
         {
           "date": "2026-03-10",
-          "close": 86.59202575683594
+          "close": 86.59203338623047
         },
         {
           "date": "2026-03-11",
-          "close": 85.47383117675781
+          "close": 85.47382354736328
         },
         {
           "date": "2026-03-12",
-          "close": 85.30708312988281
+          "close": 85.30707550048828
         },
         {
           "date": "2026-03-13",
-          "close": 84.88529968261719
+          "close": 84.88530731201172
         },
         {
           "date": "2026-03-16",
-          "close": 85.54248809814453
+          "close": 85.54249572753906
         },
         {
           "date": "2026-03-17",
@@ -2891,15 +2891,15 @@
         },
         {
           "date": "2026-03-18",
-          "close": 85.29727172851562
+          "close": 85.2972640991211
         },
         {
           "date": "2026-03-19",
-          "close": 85.81713104248047
+          "close": 85.817138671875
         },
         {
           "date": "2026-03-20",
-          "close": 84.18888092041016
+          "close": 84.18888854980469
         },
         {
           "date": "2026-03-23",
@@ -2915,19 +2915,19 @@
         },
         {
           "date": "2026-03-26",
-          "close": 84.46353149414062
+          "close": 84.4635238647461
         },
         {
           "date": "2026-03-27",
-          "close": 84.00250244140625
+          "close": 84.00251007080078
         },
         {
           "date": "2026-03-30",
-          "close": 85.1207046508789
+          "close": 85.12071228027344
         },
         {
           "date": "2026-03-31",
-          "close": 85.03242492675781
+          "close": 85.03244018554688
         },
         {
           "date": "2026-04-01",
@@ -2935,11 +2935,11 @@
         },
         {
           "date": "2026-04-02",
-          "close": 85.47066497802734
+          "close": 85.47067260742188
         },
         {
           "date": "2026-04-06",
-          "close": 85.33279418945312
+          "close": 85.33280181884766
         },
         {
           "date": "2026-04-07",
@@ -2947,39 +2947,39 @@
         },
         {
           "date": "2026-04-08",
-          "close": 85.59868621826172
+          "close": 85.59869384765625
         },
         {
           "date": "2026-04-09",
-          "close": 85.38202667236328
+          "close": 85.38204193115234
         },
         {
           "date": "2026-04-10",
-          "close": 85.17521667480469
+          "close": 85.17523193359375
         },
         {
           "date": "2026-04-13",
-          "close": 85.4312744140625
+          "close": 85.43128204345703
         },
         {
           "date": "2026-04-14",
-          "close": 85.88427734375
+          "close": 85.88428497314453
         },
         {
           "date": "2026-04-15",
-          "close": 85.51005554199219
+          "close": 85.51006317138672
         },
         {
           "date": "2026-04-16",
-          "close": 84.96841430664062
+          "close": 84.96842193603516
         },
         {
           "date": "2026-04-17",
-          "close": 85.74641418457031
+          "close": 85.74640655517578
         },
         {
           "date": "2026-04-20",
-          "close": 85.7267074584961
+          "close": 85.72671508789062
         },
         {
           "date": "2026-04-21",
@@ -2991,7 +2991,7 @@
         },
         {
           "date": "2026-04-23",
-          "close": 85.23432159423828
+          "close": 85.23431396484375
         },
         {
           "date": "2026-04-24",
@@ -2999,11 +2999,11 @@
         },
         {
           "date": "2026-04-27",
-          "close": 84.96841430664062
+          "close": 84.96842193603516
         },
         {
           "date": "2026-04-28",
-          "close": 85.05705261230469
+          "close": 85.05706024169922
         },
         {
           "date": "2026-04-29",
@@ -3019,7 +3019,7 @@
         },
         {
           "date": "2026-05-04",
-          "close": 83.97743225097656
+          "close": 83.9774398803711
         },
         {
           "date": "2026-05-05",
@@ -3043,11 +3043,11 @@
         },
         {
           "date": "2026-05-12",
-          "close": 84.00709533691406
+          "close": 84.00708770751953
         },
         {
           "date": "2026-05-13",
-          "close": 83.81929779052734
+          "close": 83.81929016113281
         },
         {
           "date": "2026-05-14",
@@ -3059,7 +3059,7 @@
         },
         {
           "date": "2026-05-18",
-          "close": 82.59363555908203
+          "close": 82.5936279296875
         },
         {
           "date": "2026-05-19",
@@ -3067,15 +3067,15 @@
         },
         {
           "date": "2026-05-20",
-          "close": 82.93959045410156
+          "close": 82.93958282470703
         },
         {
           "date": "2026-05-21",
-          "close": 83.2459945678711
+          "close": 83.24600219726562
         },
         {
           "date": "2026-05-22",
-          "close": 83.70067596435547
+          "close": 83.70068359375
         },
         {
           "date": "2026-05-26",
@@ -3083,23 +3083,23 @@
         },
         {
           "date": "2026-05-27",
-          "close": 84.31350708007812
+          "close": 84.31351470947266
         },
         {
           "date": "2026-05-28",
-          "close": 84.74842071533203
+          "close": 84.7484130859375
         },
         {
           "date": "2026-05-29",
-          "close": 84.76819610595703
+          "close": 84.7681884765625
         },
         {
           "date": "2026-06-01",
-          "close": 84.81383514404297
+          "close": 84.8138427734375
         },
         {
           "date": "2026-06-02",
-          "close": 84.99246215820312
+          "close": 84.9924545288086
         },
         {
           "date": "2026-06-03",
@@ -3127,7 +3127,7 @@
         },
         {
           "date": "2026-06-11",
-          "close": 85.3199234008789
+          "close": 85.31993103027344
         },
         {
           "date": "2026-06-12",
@@ -3151,7 +3151,7 @@
         },
         {
           "date": "2026-06-22",
-          "close": 85.42906951904297
+          "close": 85.4290771484375
         },
         {
           "date": "2026-06-23",
@@ -3171,7 +3171,7 @@
         },
         {
           "date": "2026-06-29",
-          "close": 86.77863311767578
+          "close": 86.77864074707031
         },
         {
           "date": "2026-06-30",
@@ -4954,83 +4954,83 @@
   "alpha_news": [
     {
       "theme": "市场情绪",
+      "title": "Morgan Stanley sees quality stocks and AI adopters leading market",
+      "source": "Investing.com",
+      "published_at": "20260824T124654",
+      "url": "https://www.investing.com/news/stock-market-news/morgan-stanley-sees-quality-stocks-and-ai-adopters-leading-market-93CH-4873513",
+      "summary": "Morgan Stanley believes that large-cap quality stocks and companies embracing artificial intelligence will drive market leadership, as post-COVID inflation has created shorter mark",
+      "sentiment": "Somewhat-Bullish",
+      "score": 0.27667
+    },
+    {
+      "theme": "市场情绪",
+      "title": "Trump Media CEO says Truth API customers in mid-teens",
+      "source": "Quartz",
+      "published_at": "20260824T123342",
+      "url": "https://qz.com/trump-media-truth-api-customers-mid-teens-082426",
+      "summary": "Trump Media's CEO, Kevin McGurn, announced that the number of paying customers for its Truth API service has grown into the \"mid-teens\" from over 10 two weeks prior. The service, c",
+      "sentiment": "Neutral",
+      "score": 0.148483
+    },
+    {
+      "theme": "市场情绪",
+      "title": "Expedia Group stock holds steady as Q2 travel demand strengthens",
+      "source": "Ad-hoc-news.de",
+      "published_at": "20260824T110318",
+      "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/expedia-group-stock-holds-steady-as-q2-travel-demand-strengthens/69992975",
+      "summary": "Expedia Group's stock is holding steady due to strengthening travel demand in Q2 2026, driven by a rebound in global search activity, particularly in Asia-Pacific. The company's di",
+      "sentiment": "Bullish",
+      "score": 0.499613
+    },
+    {
+      "theme": "市场情绪",
+      "title": "ON Semiconductor stock holds steady as sector volatility rises",
+      "source": "Ad-hoc-news.de",
+      "published_at": "20260824T103700",
+      "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/on-semiconductor-stock-holds-steady-as-sector-volatility-rises/69992847",
+      "summary": "ON Semiconductor's stock is experiencing modest pressure on August 24, 2026, due to broader weakness and profit-taking across the semiconductor sector, rather than company-specific",
+      "sentiment": "Neutral",
+      "score": 0.112865
+    },
+    {
+      "theme": "市场情绪",
+      "title": "Trimble stock holds at $60.25 after Q2 beats",
+      "source": "Ad-hoc-news.de",
+      "published_at": "20260824T102857",
+      "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/trimble-stock-holds-at-60-25-after-q2-beats/69992799",
+      "summary": "Trimble Inc. (TRMB) stock held steady at $60.25 after its Q2 2026 earnings beat estimates, with revenue of $972 million and adjusted EPS of $0.86. This performance marks an 11% inc",
+      "sentiment": "Bullish",
+      "score": 0.406386
+    },
+    {
+      "theme": "市场情绪",
+      "title": "Bessent's Toolbox Gets a Rest as Gold Prints $4,600 and Ross Stores Cleans Up",
+      "source": "ChartMill",
+      "published_at": "20260824T092958",
+      "url": "https://www.chartmill.com/news/NEM/Chartmill-53912-Bessents-Toolbox-Gets-a-Rest-as-Gold-Prints-4600-and-Ross-Stores-Cleans-Up",
+      "summary": "Friday saw a calmer market close after a volatile week, with gold rallying above $4,600 and off-price retailers Ross Stores and BJ's Wholesale Club reporting strong earnings, sugge",
+      "sentiment": "Somewhat-Bullish",
+      "score": 0.218233
+    },
+    {
+      "theme": "市场情绪",
+      "title": "Munich Reinsurance Co Stock Corp in Munich Lowers Stock Position in International Business Machines Corporation $IBM",
+      "source": "MarketBeat",
+      "published_at": "20260824T091435",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-munich-reinsurance-co-stock-corp-in-munich-lowers-stock-position-in-international-business-machines-corporation-ibm-2026-08-24/",
+      "summary": "Munich Reinsurance Co. significantly reduced its stake in International Business Machines (IBM) by 93.4% in the second quarter, selling 11,515 shares and retaining only 812. Despit",
+      "sentiment": "Neutral",
+      "score": 0.005418
+    },
+    {
+      "theme": "市场情绪",
       "title": "10 Stocks Top Fund Managers Have Been Buying Amid Market Uncertainty",
       "source": "Morningstar",
       "published_at": "20260824T090222",
       "url": "https://www.morningstar.com/stocks/10-stocks-top-fund-managers-have-been-buying-amid-market-uncertainty",
       "summary": "Despite market uncertainty in 2026, top fund managers have been actively investing, particularly in technology stocks. Morningstar identified 10 stocks that these managers are buyi",
       "sentiment": "Bullish",
-      "score": 0.405961
-    },
-    {
-      "theme": "市场情绪",
-      "title": "Elefante Mark B Invests $10.28 Million in Analog Devices, Inc. $ADI",
-      "source": "MarketBeat",
-      "published_at": "20260824T082006",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-elefante-mark-b-invests-1028-million-in-analog-devices-inc-adi-2026-08-24/",
-      "summary": "Elefante Mark B has invested $10.28 million in Analog Devices, Inc. (NASDAQ:ADI), acquiring 25,892 shares, making it their fifth-largest holding. Analog Devices reported strong qua",
-      "sentiment": "Bullish",
-      "score": 0.610552
-    },
-    {
-      "theme": "市场情绪",
-      "title": "Gartner Forecasts Worldwide Semiconductor Revenue to Reach $1.6 Trillion in 2026",
-      "source": "Gartner",
-      "published_at": "20260824T072950",
-      "url": "https://www.gartner.com/en/newsroom/press-releases/2026-08-24-gartner-forecasts-worldwide-semiconductor-revenue-to-reach-1-trillion-dollars-in-2026",
-      "summary": "Gartner forecasts worldwide semiconductor revenue to reach $1.6 trillion in 2026, a 92% increase from 2025, driven largely by sustained investment in AI infrastructure and a strong",
-      "sentiment": "Somewhat-Bullish",
-      "score": 0.295644
-    },
-    {
-      "theme": "市场情绪",
-      "title": "Alphabet stock climbs after earnings beat on ads and costs",
-      "source": "Ad-hoc-news.de",
-      "published_at": "20260824T060839",
-      "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/alphabet-stock-climbs-after-earnings-beat-on-ads-and-costs/69991452",
-      "summary": "Alphabet's stock climbed after its second-quarter profit of $8.42 per share surpassed estimates, driven by strong advertising revenue and effective cost control. The company's reve",
-      "sentiment": "Bullish",
-      "score": 0.418465
-    },
-    {
-      "theme": "市场情绪",
-      "title": "Jim Cramer Defends Apple Inc. (NASDAQ: AAPL) Amid Memory Shortage Pressure And Mixed Earnings Results",
-      "source": "Foreign Policy Journal",
-      "published_at": "20260824T013519",
-      "url": "https://www.foreignpolicyjournal.com/2026/08/23/jim-cramer-defends-apple-inc-nasdaq-aapl-amid-memory-shortage-pressure-and-mixed-earnings-results/",
-      "summary": "Jim Cramer has defended Apple Inc. (NASDAQ: AAPL) despite facing pressure from a global memory chip shortage and mixed earnings results. Cramer highlighted Apple's efforts in Ameri",
-      "sentiment": "Somewhat-Bullish",
-      "score": 0.279373
-    },
-    {
-      "theme": "市场情绪",
-      "title": "Danaher vs. Intuitive Surgical: Is Recovery or Innovation the Better Long-Term Bet?",
-      "source": "Yahoo Finance Singapore",
-      "published_at": "20260823T222203",
-      "url": "https://sg.finance.yahoo.com/news/danaher-vs-intuitive-surgical-recovery-222135336.html",
-      "summary": "This article compares Danaher (DHR) and Intuitive Surgical (ISRG) as investment opportunities, highlighting their differing growth paths. Danaher is positioned for a recovery in li",
-      "sentiment": "Somewhat-Bullish",
-      "score": 0.160808
-    },
-    {
-      "theme": "市场情绪",
-      "title": "Top S&P 500 Stocks to Watch This Week: CrowdStrike, Salesforce, Workday",
-      "source": "Benzinga",
-      "published_at": "20260823T205607",
-      "url": "https://www.benzinga.com/markets/market-summary/26/08/61373202/top-sp-500-index-stocks-to-watch-this-week-crowdstrike-salesforce-workday",
-      "summary": "The S&P 500 recently pulled back from its record high, but investors are closely watching several key stocks this week. Workday (NASDAQ: WDAY) is expected to publish earnings amid ",
-      "sentiment": "Somewhat-Bullish",
-      "score": 0.29368
-    },
-    {
-      "theme": "市场情绪",
-      "title": "Micron, Sandisk, and SK Hynix: History Says This About the Memory Trio's Rally",
-      "source": "Yahoo Finance",
-      "published_at": "20260823T193500",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/micron-sandisk-sk-hynix-history-233500299.html",
-      "summary": "Memory stocks like Micron, Sandisk, and SK Hynix have seen significant rallies in the past year, driven by the AI infrastructure build-out and resulting supply-demand imbalances in",
-      "sentiment": "Somewhat-Bullish",
-      "score": 0.2933
+      "score": 0.36256
     }
   ],
   "ai_model_pricing": [
@@ -5155,7 +5155,7 @@
       "url": "https://mistral.ai/pricing/api/"
     }
   ],
-  "generated_at": "2026-08-24T09:10:42Z",
+  "generated_at": "2026-08-24T13:28:24Z",
   "refresh_policy": {
     "workflow_cron": "23 */4 * * *",
     "description": "GitHub Actions 每4小时尝试更新；低频宏观源即使失败也保留上一版缓存。"
@@ -5164,44 +5164,44 @@
     {
       "key": "fmp_quotes",
       "status": "online",
-      "updated_at": "2026-08-24T09:10:12Z",
-      "latency_ms": 8058
+      "updated_at": "2026-08-24T13:27:46Z",
+      "latency_ms": 12130
     },
     {
       "key": "fred_macro",
       "status": "online",
-      "updated_at": "2026-08-24T09:10:17Z",
-      "latency_ms": 5116
+      "updated_at": "2026-08-24T13:27:52Z",
+      "latency_ms": 5279
     },
     {
       "key": "eia_energy",
       "status": "online",
-      "updated_at": "2026-08-24T09:10:18Z",
-      "latency_ms": 794
+      "updated_at": "2026-08-24T13:27:59Z",
+      "latency_ms": 7480
     },
     {
       "key": "twelve_fx",
       "status": "online",
-      "updated_at": "2026-08-24T09:10:19Z",
-      "latency_ms": 406
+      "updated_at": "2026-08-24T13:28:00Z",
+      "latency_ms": 442
     },
     {
       "key": "market_history",
       "status": "online",
-      "updated_at": "2026-08-24T09:10:23Z",
-      "latency_ms": 3797
+      "updated_at": "2026-08-24T13:28:04Z",
+      "latency_ms": 3809
     },
     {
       "key": "gdelt_news",
       "status": "cached",
-      "updated_at": "2026-08-24T05:08:19Z",
+      "updated_at": "2026-08-24T09:10:42Z",
       "message": "HTTPError"
     },
     {
       "key": "alpha_news",
       "status": "online",
-      "updated_at": "2026-08-24T09:10:42Z",
-      "latency_ms": 247
+      "updated_at": "2026-08-24T13:28:24Z",
+      "latency_ms": 543
     }
   ]
 }
