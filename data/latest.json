@@ -225,8 +225,8 @@
     {
       "symbol": "USD/CNH",
       "name": "US Dollar / Chinese Yuan Offshore",
-      "price": 6.72318,
-      "change_pct": -0.05143727,
+      "price": 6.72454,
+      "change_pct": -0.031219153,
       "previous_close": 6.72664,
       "source": "Twelve Data",
       "url": "https://twelvedata.com/"
@@ -234,8 +234,8 @@
     {
       "symbol": "EUR/USD",
       "name": "Euro / US Dollar",
-      "price": 1.16815,
-      "change_pct": 0.046248319,
+      "price": 1.16643,
+      "change_pct": -0.10106114,
       "previous_close": 1.16761,
       "source": "Twelve Data",
       "url": "https://twelvedata.com/"
@@ -243,8 +243,8 @@
     {
       "symbol": "USD/JPY",
       "name": "US Dollar / Japanese Yen",
-      "price": 158.9048,
-      "change_pct": -0.067648825,
+      "price": 159.18083,
+      "change_pct": 0.10594144,
       "previous_close": 159.01237,
       "source": "Twelve Data",
       "url": "https://twelvedata.com/"
@@ -2835,27 +2835,27 @@
         },
         {
           "date": "2026-02-26",
-          "close": 88.2505111694336
+          "close": 88.25052642822266
         },
         {
           "date": "2026-02-27",
-          "close": 88.78821563720703
+          "close": 88.78822326660156
         },
         {
           "date": "2026-03-02",
-          "close": 87.89659881591797
+          "close": 87.8966064453125
         },
         {
           "date": "2026-03-03",
-          "close": 87.72003936767578
+          "close": 87.72004699707031
         },
         {
           "date": "2026-03-04",
-          "close": 87.44540405273438
+          "close": 87.44539642333984
         },
         {
           "date": "2026-03-05",
-          "close": 87.09228515625
+          "close": 87.09227752685547
         },
         {
           "date": "2026-03-06",
@@ -2863,11 +2863,11 @@
         },
         {
           "date": "2026-03-09",
-          "close": 87.52386474609375
+          "close": 87.52387237548828
         },
         {
           "date": "2026-03-10",
-          "close": 86.59203338623047
+          "close": 86.59202575683594
         },
         {
           "date": "2026-03-11",
@@ -2875,23 +2875,23 @@
         },
         {
           "date": "2026-03-12",
-          "close": 85.30707550048828
+          "close": 85.30708312988281
         },
         {
           "date": "2026-03-13",
-          "close": 84.88530731201172
+          "close": 84.88529968261719
         },
         {
           "date": "2026-03-16",
-          "close": 85.54249572753906
+          "close": 85.54248809814453
         },
         {
           "date": "2026-03-17",
-          "close": 85.77790069580078
+          "close": 85.77789306640625
         },
         {
           "date": "2026-03-18",
-          "close": 85.2972640991211
+          "close": 85.29727172851562
         },
         {
           "date": "2026-03-19",
@@ -2899,15 +2899,15 @@
         },
         {
           "date": "2026-03-20",
-          "close": 84.18887329101562
+          "close": 84.18888092041016
         },
         {
           "date": "2026-03-23",
-          "close": 84.73816680908203
+          "close": 84.73817443847656
         },
         {
           "date": "2026-03-24",
-          "close": 84.36544036865234
+          "close": 84.36543273925781
         },
         {
           "date": "2026-03-25",
@@ -2915,7 +2915,7 @@
         },
         {
           "date": "2026-03-26",
-          "close": 84.46351623535156
+          "close": 84.46353149414062
         },
         {
           "date": "2026-03-27",
@@ -2923,11 +2923,11 @@
         },
         {
           "date": "2026-03-30",
-          "close": 85.12071228027344
+          "close": 85.1207046508789
         },
         {
           "date": "2026-03-31",
-          "close": 85.03244018554688
+          "close": 85.03242492675781
         },
         {
           "date": "2026-04-01",
@@ -2935,7 +2935,7 @@
         },
         {
           "date": "2026-04-02",
-          "close": 85.47067260742188
+          "close": 85.47066497802734
         },
         {
           "date": "2026-04-06",
@@ -2947,15 +2947,15 @@
         },
         {
           "date": "2026-04-08",
-          "close": 85.59869384765625
+          "close": 85.59868621826172
         },
         {
           "date": "2026-04-09",
-          "close": 85.38203430175781
+          "close": 85.38202667236328
         },
         {
           "date": "2026-04-10",
-          "close": 85.17522430419922
+          "close": 85.17521667480469
         },
         {
           "date": "2026-04-13",
@@ -2963,23 +2963,23 @@
         },
         {
           "date": "2026-04-14",
-          "close": 85.88428497314453
+          "close": 85.88427734375
         },
         {
           "date": "2026-04-15",
-          "close": 85.51006317138672
+          "close": 85.51005554199219
         },
         {
           "date": "2026-04-16",
-          "close": 84.96842193603516
+          "close": 84.96841430664062
         },
         {
           "date": "2026-04-17",
-          "close": 85.74640655517578
+          "close": 85.74641418457031
         },
         {
           "date": "2026-04-20",
-          "close": 85.72671508789062
+          "close": 85.7267074584961
         },
         {
           "date": "2026-04-21",
@@ -2991,19 +2991,19 @@
         },
         {
           "date": "2026-04-23",
-          "close": 85.23431396484375
+          "close": 85.23432159423828
         },
         {
           "date": "2026-04-24",
-          "close": 85.39189147949219
+          "close": 85.39188385009766
         },
         {
           "date": "2026-04-27",
-          "close": 84.96842193603516
+          "close": 84.96841430664062
         },
         {
           "date": "2026-04-28",
-          "close": 85.05706024169922
+          "close": 85.05705261230469
         },
         {
           "date": "2026-04-29",
@@ -3019,7 +3019,7 @@
         },
         {
           "date": "2026-05-04",
-          "close": 83.9774398803711
+          "close": 83.97743225097656
         },
         {
           "date": "2026-05-05",
@@ -3043,11 +3043,11 @@
         },
         {
           "date": "2026-05-12",
-          "close": 84.00708770751953
+          "close": 84.00709533691406
         },
         {
           "date": "2026-05-13",
-          "close": 83.81929016113281
+          "close": 83.81929779052734
         },
         {
           "date": "2026-05-14",
@@ -3059,7 +3059,7 @@
         },
         {
           "date": "2026-05-18",
-          "close": 82.5936279296875
+          "close": 82.59363555908203
         },
         {
           "date": "2026-05-19",
@@ -3067,15 +3067,15 @@
         },
         {
           "date": "2026-05-20",
-          "close": 82.93958282470703
+          "close": 82.93959045410156
         },
         {
           "date": "2026-05-21",
-          "close": 83.24600219726562
+          "close": 83.2459945678711
         },
         {
           "date": "2026-05-22",
-          "close": 83.70068359375
+          "close": 83.70067596435547
         },
         {
           "date": "2026-05-26",
@@ -3083,23 +3083,23 @@
         },
         {
           "date": "2026-05-27",
-          "close": 84.31351470947266
+          "close": 84.31350708007812
         },
         {
           "date": "2026-05-28",
-          "close": 84.7484130859375
+          "close": 84.74842071533203
         },
         {
           "date": "2026-05-29",
-          "close": 84.7681884765625
+          "close": 84.76819610595703
         },
         {
           "date": "2026-06-01",
-          "close": 84.8138427734375
+          "close": 84.81383514404297
         },
         {
           "date": "2026-06-02",
-          "close": 84.9924545288086
+          "close": 84.99246215820312
         },
         {
           "date": "2026-06-03",
@@ -3127,7 +3127,7 @@
         },
         {
           "date": "2026-06-11",
-          "close": 85.31993103027344
+          "close": 85.3199234008789
         },
         {
           "date": "2026-06-12",
@@ -3151,7 +3151,7 @@
         },
         {
           "date": "2026-06-22",
-          "close": 85.4290771484375
+          "close": 85.42906951904297
         },
         {
           "date": "2026-06-23",
@@ -3171,7 +3171,7 @@
         },
         {
           "date": "2026-06-29",
-          "close": 86.77864074707031
+          "close": 86.77863311767578
         },
         {
           "date": "2026-06-30",
@@ -4954,13 +4954,53 @@
   "alpha_news": [
     {
       "theme": "市场情绪",
+      "title": "10 Stocks Top Fund Managers Have Been Buying Amid Market Uncertainty",
+      "source": "Morningstar",
+      "published_at": "20260824T090222",
+      "url": "https://www.morningstar.com/stocks/10-stocks-top-fund-managers-have-been-buying-amid-market-uncertainty",
+      "summary": "Despite market uncertainty in 2026, top fund managers have been actively investing, particularly in technology stocks. Morningstar identified 10 stocks that these managers are buyi",
+      "sentiment": "Bullish",
+      "score": 0.405961
+    },
+    {
+      "theme": "市场情绪",
+      "title": "Elefante Mark B Invests $10.28 Million in Analog Devices, Inc. $ADI",
+      "source": "MarketBeat",
+      "published_at": "20260824T082006",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-elefante-mark-b-invests-1028-million-in-analog-devices-inc-adi-2026-08-24/",
+      "summary": "Elefante Mark B has invested $10.28 million in Analog Devices, Inc. (NASDAQ:ADI), acquiring 25,892 shares, making it their fifth-largest holding. Analog Devices reported strong qua",
+      "sentiment": "Bullish",
+      "score": 0.610552
+    },
+    {
+      "theme": "市场情绪",
+      "title": "Gartner Forecasts Worldwide Semiconductor Revenue to Reach $1.6 Trillion in 2026",
+      "source": "Gartner",
+      "published_at": "20260824T072950",
+      "url": "https://www.gartner.com/en/newsroom/press-releases/2026-08-24-gartner-forecasts-worldwide-semiconductor-revenue-to-reach-1-trillion-dollars-in-2026",
+      "summary": "Gartner forecasts worldwide semiconductor revenue to reach $1.6 trillion in 2026, a 92% increase from 2025, driven largely by sustained investment in AI infrastructure and a strong",
+      "sentiment": "Somewhat-Bullish",
+      "score": 0.295644
+    },
+    {
+      "theme": "市场情绪",
+      "title": "Alphabet stock climbs after earnings beat on ads and costs",
+      "source": "Ad-hoc-news.de",
+      "published_at": "20260824T060839",
+      "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/alphabet-stock-climbs-after-earnings-beat-on-ads-and-costs/69991452",
+      "summary": "Alphabet's stock climbed after its second-quarter profit of $8.42 per share surpassed estimates, driven by strong advertising revenue and effective cost control. The company's reve",
+      "sentiment": "Bullish",
+      "score": 0.418465
+    },
+    {
+      "theme": "市场情绪",
       "title": "Jim Cramer Defends Apple Inc. (NASDAQ: AAPL) Amid Memory Shortage Pressure And Mixed Earnings Results",
       "source": "Foreign Policy Journal",
       "published_at": "20260824T013519",
       "url": "https://www.foreignpolicyjournal.com/2026/08/23/jim-cramer-defends-apple-inc-nasdaq-aapl-amid-memory-shortage-pressure-and-mixed-earnings-results/",
       "summary": "Jim Cramer has defended Apple Inc. (NASDAQ: AAPL) despite facing pressure from a global memory chip shortage and mixed earnings results. Cramer highlighted Apple's efforts in Ameri",
       "sentiment": "Somewhat-Bullish",
-      "score": 0.258705
+      "score": 0.279373
     },
     {
       "theme": "市场情绪",
@@ -4970,7 +5010,7 @@
       "url": "https://sg.finance.yahoo.com/news/danaher-vs-intuitive-surgical-recovery-222135336.html",
       "summary": "This article compares Danaher (DHR) and Intuitive Surgical (ISRG) as investment opportunities, highlighting their differing growth paths. Danaher is positioned for a recovery in li",
       "sentiment": "Somewhat-Bullish",
-      "score": 0.176161
+      "score": 0.160808
     },
     {
       "theme": "市场情绪",
@@ -4980,57 +5020,17 @@
       "url": "https://www.benzinga.com/markets/market-summary/26/08/61373202/top-sp-500-index-stocks-to-watch-this-week-crowdstrike-salesforce-workday",
       "summary": "The S&P 500 recently pulled back from its record high, but investors are closely watching several key stocks this week. Workday (NASDAQ: WDAY) is expected to publish earnings amid ",
       "sentiment": "Somewhat-Bullish",
-      "score": 0.303688
+      "score": 0.29368
     },
     {
       "theme": "市场情绪",
-      "title": "SanDisk, Micron, Western Digital Remain Cheap as Cyclical and AI Bubble Concerns Remain",
-      "source": "Benzinga",
-      "published_at": "20260823T173152",
-      "url": "https://www.benzinga.com/markets/equities/26/08/61372957/sandisk-micron-western-digital-stocks-remain-cheap-as-cyclical-and-ai-bubble-concerns-remain",
-      "summary": "Despite significant triple-digit stock jumps this year, memory companies like SanDisk, Micron, and Western Digital are considered undervalued based on metrics like forward P/E rati",
-      "sentiment": "Neutral",
-      "score": -0.056798
-    },
-    {
-      "theme": "市场情绪",
-      "title": "Musk’s Net Worth Claws Back Up to $851 Billion as Analysts See More Tesla, SpaceX Upside",
-      "source": "Benzinga",
-      "published_at": "20260823T162952",
-      "url": "https://www.benzinga.com/markets/equities/26/08/61372917/elon-musks-net-worth-hits-851-billion-as-analysts-see-more-tesla-spacex-upside",
-      "summary": "Elon Musk's net worth has rebounded to over $851 billion, driven by recent increases in Tesla and SpaceX stock prices, and analysts are optimistic about their future growth. Despit",
-      "sentiment": "Bullish",
-      "score": 0.439583
-    },
-    {
-      "theme": "市场情绪",
-      "title": "3 Low-P/E Stocks That Look Cheap as the S&P 500 Trades Near Record Highs",
-      "source": "MarketBeat",
-      "published_at": "20260823T130123",
-      "url": "https://www.marketbeat.com/articles/3-low-p-e-stocks-that-look-cheap-as-the-s-and-p-500-trades-near-record-highs/",
-      "summary": "As the S&P 500 approaches record highs, value investors can still find bargains in companies like Sohu.com (SOHU), Onity Group (ONIT), and TriMas (TRS), which exhibit low P/E ratio",
-      "sentiment": "Bullish",
-      "score": 0.494418
-    },
-    {
-      "theme": "市场情绪",
-      "title": "Does Synchrony’s AI Pivot and OpenAI Partnership Reframe The Bull Case For Synchrony Financial (SYF)?",
-      "source": "Simply Wall Street",
-      "published_at": "20260823T112439",
-      "url": "https://simplywall.st/stocks/us/diversified-financials/nyse-syf/synchrony-financial/news/does-synchronys-ai-pivot-and-openai-partnership-reframe-the",
-      "summary": "Synchrony Financial recently reported strong Q2 results, raised its 2026 EPS outlook, and announced an enterprise-wide collaboration with OpenAI, including the appointment of a Chi",
+      "title": "Micron, Sandisk, and SK Hynix: History Says This About the Memory Trio's Rally",
+      "source": "Yahoo Finance",
+      "published_at": "20260823T193500",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/micron-sandisk-sk-hynix-history-233500299.html",
+      "summary": "Memory stocks like Micron, Sandisk, and SK Hynix have seen significant rallies in the past year, driven by the AI infrastructure build-out and resulting supply-demand imbalances in",
       "sentiment": "Somewhat-Bullish",
-      "score": 0.287901
-    },
-    {
-      "theme": "市场情绪",
-      "title": "Korea Investment CORP Buys New Stake in AeroVironment, Inc. $AVAV",
-      "source": "MarketBeat",
-      "published_at": "20260823T094538",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-korea-investment-corp-buys-new-stake-in-aerovironment-inc-avav-2026-08-23/",
-      "summary": "Korea Investment CORP has acquired a new stake in AeroVironment, Inc. (NASDAQ:AVAV), purchasing 332,595 shares valued at approximately $54.9 million, representing a 0.66% ownership",
-      "sentiment": "Somewhat-Bullish",
-      "score": 0.341564
+      "score": 0.2933
     }
   ],
   "ai_model_pricing": [
@@ -5155,7 +5155,7 @@
       "url": "https://mistral.ai/pricing/api/"
     }
   ],
-  "generated_at": "2026-08-24T05:08:19Z",
+  "generated_at": "2026-08-24T09:10:42Z",
   "refresh_policy": {
     "workflow_cron": "23 */4 * * *",
     "description": "GitHub Actions 每4小时尝试更新；低频宏观源即使失败也保留上一版缓存。"
@@ -5164,44 +5164,44 @@
     {
       "key": "fmp_quotes",
       "status": "online",
-      "updated_at": "2026-08-24T05:07:44Z",
-      "latency_ms": 12032
+      "updated_at": "2026-08-24T09:10:12Z",
+      "latency_ms": 8058
     },
     {
       "key": "fred_macro",
       "status": "online",
-      "updated_at": "2026-08-24T05:07:49Z",
-      "latency_ms": 5254
+      "updated_at": "2026-08-24T09:10:17Z",
+      "latency_ms": 5116
     },
     {
       "key": "eia_energy",
       "status": "online",
-      "updated_at": "2026-08-24T05:07:50Z",
-      "latency_ms": 476
+      "updated_at": "2026-08-24T09:10:18Z",
+      "latency_ms": 794
     },
     {
       "key": "twelve_fx",
       "status": "online",
-      "updated_at": "2026-08-24T05:07:51Z",
-      "latency_ms": 393
+      "updated_at": "2026-08-24T09:10:19Z",
+      "latency_ms": 406
     },
     {
       "key": "market_history",
       "status": "online",
-      "updated_at": "2026-08-24T05:07:56Z",
-      "latency_ms": 4890
+      "updated_at": "2026-08-24T09:10:23Z",
+      "latency_ms": 3797
     },
     {
       "key": "gdelt_news",
-      "status": "online",
-      "updated_at": "2026-08-24T05:08:18Z",
-      "latency_ms": 22156
+      "status": "cached",
+      "updated_at": "2026-08-24T05:08:19Z",
+      "message": "HTTPError"
     },
     {
       "key": "alpha_news",
       "status": "online",
-      "updated_at": "2026-08-24T05:08:19Z",
-      "latency_ms": 318
+      "updated_at": "2026-08-24T09:10:42Z",
+      "latency_ms": 247
     }
   ]
 }
