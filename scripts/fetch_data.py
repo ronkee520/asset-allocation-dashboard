@@ -6,6 +6,7 @@ import re
 import sys
 import time
 from datetime import datetime, timezone
+from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any
 from urllib.error import HTTPError, URLError
@@ -75,6 +76,30 @@ def get_json(url: str, timeout: int = 25) -> Any:
     request = Request(url, headers={"User-Agent": USER_AGENT, "Accept": "application/json,text/plain,*/*"})
     with urlopen(request, timeout=timeout) as response:
         return json.loads(response.read().decode("utf-8", errors="replace"))
+
+
+class _VisibleTextParser(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__()
+        self.parts: list[str] = []
+
+    def handle_data(self, data: str) -> None:
+        clean = " ".join(data.split())
+        if clean:
+            self.parts.append(clean)
+
+
+def get_page_text(url: str, timeout: int = 35) -> str:
+    if os.environ.get("SKIP_PRICING_NETWORK") == "1":
+        raise URLError("pricing network disabled")
+    request = Request(url, headers={"User-Agent": "Mozilla/5.0 asset-allocation-dashboard/1.0", "Accept": "text/html,*/*"})
+    with urlopen(request, timeout=timeout) as response:
+        parser = _VisibleTextParser()
+        parser.feed(response.read().decode("utf-8", errors="replace"))
+    text = " | ".join(parser.parts)
+    if len(text) < 500:
+        raise ValueError("pricing page has insufficient text")
+    return text
 
 
 def safe_source(previous: dict[str, Any], key: str, fetcher, fallback: Any) -> tuple[Any, dict[str, Any]]:
@@ -366,19 +391,131 @@ def fetch_market_history() -> list[dict[str, Any]]:
 
 
 AI_MODEL_PRICING = [
-    {"provider": "OpenAI", "model": "GPT-5", "context": "官方价格页", "input_per_m": "$1.25", "cached_input_per_m": "$0.125", "output_per_m": "$10.00", "focus": "复杂推理、Agent、投研自动化", "url": "https://platform.openai.com/docs/pricing"},
-    {"provider": "OpenAI", "model": "GPT-5 mini", "context": "官方价格页", "input_per_m": "$0.25", "cached_input_per_m": "$0.025", "output_per_m": "$2.00", "focus": "高频摘要、分类、数据整理", "url": "https://platform.openai.com/docs/pricing"},
-    {"provider": "OpenAI", "model": "GPT-5 nano", "context": "官方价格页", "input_per_m": "$0.05", "cached_input_per_m": "$0.005", "output_per_m": "$0.40", "focus": "低成本批量处理", "url": "https://platform.openai.com/docs/pricing"},
-    {"provider": "Anthropic", "model": "Claude Opus 4.1", "context": "官方价格页", "input_per_m": "$15.00", "cached_input_per_m": "$1.50", "output_per_m": "$75.00", "focus": "高阶研究、复杂推理、代码审阅", "url": "https://www.anthropic.com/pricing"},
-    {"provider": "Anthropic", "model": "Claude Sonnet 4", "context": "官方价格页", "input_per_m": "$3.00", "cached_input_per_m": "$0.30", "output_per_m": "$15.00", "focus": "企业知识工作、代码、长文档", "url": "https://www.anthropic.com/pricing"},
-    {"provider": "Anthropic", "model": "Claude Haiku 3.5", "context": "官方价格页", "input_per_m": "$0.80", "cached_input_per_m": "$0.08", "output_per_m": "$4.00", "focus": "低延迟、批量任务", "url": "https://www.anthropic.com/pricing"},
-    {"provider": "Google", "model": "Gemini 2.5 Pro", "context": "<=200K tokens", "input_per_m": "$1.25", "cached_input_per_m": "$0.31", "output_per_m": "$10.00", "focus": "多模态、长上下文、复杂推理", "url": "https://ai.google.dev/gemini-api/docs/pricing"},
-    {"provider": "Google", "model": "Gemini 2.5 Flash", "context": "官方价格页", "input_per_m": "$0.30", "cached_input_per_m": "$0.075", "output_per_m": "$2.50", "focus": "高吞吐、多模态、低成本推理", "url": "https://ai.google.dev/gemini-api/docs/pricing"},
-    {"provider": "DeepSeek", "model": "DeepSeek Chat", "context": "官方价格页", "input_per_m": "$0.27", "cached_input_per_m": "$0.07", "output_per_m": "$1.10", "focus": "中文、代码、低成本推理", "url": "https://api-docs.deepseek.com/quick_start/pricing"},
-    {"provider": "DeepSeek", "model": "DeepSeek Reasoner", "context": "官方价格页", "input_per_m": "$0.55", "cached_input_per_m": "$0.14", "output_per_m": "$2.19", "focus": "推理、数学、代码任务", "url": "https://api-docs.deepseek.com/quick_start/pricing"},
-    {"provider": "xAI", "model": "Grok 4", "context": "官方价格页", "input_per_m": "$3.00", "cached_input_per_m": "$0.75", "output_per_m": "$15.00", "focus": "实时信息、X生态、图文输入", "url": "https://docs.x.ai/docs/models"},
-    {"provider": "Mistral", "model": "Mistral Large", "context": "官方价格页", "input_per_m": "$2.00", "cached_input_per_m": "-", "output_per_m": "$6.00", "focus": "欧洲AI、多语言、企业部署", "url": "https://mistral.ai/pricing/api/"},
+    {"provider": "OpenAI", "model": "GPT-5.6 Sol", "context": "标准·短上下文", "input_per_m": "$4", "cached_input_per_m": "$0.40", "output_per_m": "$20", "focus": "旗舰推理、Agent与复杂研究", "url": "https://platform.openai.com/docs/pricing"},
+    {"provider": "OpenAI", "model": "GPT-5.6 Terra", "context": "标准·短上下文", "input_per_m": "$2", "cached_input_per_m": "$0.20", "output_per_m": "$12", "focus": "通用知识工作与投研自动化", "url": "https://platform.openai.com/docs/pricing"},
+    {"provider": "OpenAI", "model": "GPT-5.6 Luna", "context": "标准·短上下文", "input_per_m": "$0.20", "cached_input_per_m": "$0.02", "output_per_m": "$1.20", "focus": "高频摘要、分类与批量处理", "url": "https://platform.openai.com/docs/pricing"},
+    {"provider": "Anthropic", "model": "Claude Fable 5", "context": "1M", "input_per_m": "$10", "cached_input_per_m": "$1", "output_per_m": "$50", "focus": "高难度研究与长文档", "url": "https://platform.claude.com/docs/en/about-claude/pricing"},
+    {"provider": "Anthropic", "model": "Claude Opus 5", "context": "1M", "input_per_m": "$5", "cached_input_per_m": "$0.50", "output_per_m": "$25", "focus": "复杂推理、多Agent与专业研究", "url": "https://platform.claude.com/docs/en/about-claude/pricing"},
+    {"provider": "Anthropic", "model": "Claude Sonnet 5", "context": "1M", "input_per_m": "$2", "cached_input_per_m": "$0.20", "output_per_m": "$10", "focus": "代码、知识工作与长上下文", "url": "https://platform.claude.com/docs/en/about-claude/pricing"},
+    {"provider": "Anthropic", "model": "Claude Haiku 4.5", "context": "200K", "input_per_m": "$1", "cached_input_per_m": "$0.10", "output_per_m": "$5", "focus": "低延迟与高吞吐任务", "url": "https://platform.claude.com/docs/en/about-claude/pricing"},
+    {"provider": "Google", "model": "Gemini 3.7 Flash", "context": "促销价至2026-12-31", "input_per_m": "$0.75", "cached_input_per_m": "$0.075", "output_per_m": "$3.75", "focus": "多模态、Agent与代码", "url": "https://ai.google.dev/gemini-api/docs/pricing"},
+    {"provider": "Google", "model": "Gemini 3.5 Flash", "context": "标准", "input_per_m": "$1.50", "cached_input_per_m": "$0.15", "output_per_m": "$9", "focus": "高质量快速推理与搜索增强", "url": "https://ai.google.dev/gemini-api/docs/pricing"},
+    {"provider": "Google", "model": "Gemini 3.1 Flash-Lite", "context": "标准·文本/图像/视频", "input_per_m": "$0.25", "cached_input_per_m": "$0.025", "output_per_m": "$1.50", "focus": "翻译、数据处理与大规模调用", "url": "https://ai.google.dev/gemini-api/docs/pricing"},
+    {"provider": "xAI", "model": "Grok 4.6", "context": "500K·低于200K提示", "input_per_m": "$2", "cached_input_per_m": "$0.50", "output_per_m": "$6", "focus": "实时信息、代码与Agent", "url": "https://docs.x.ai/developers/grok-4-6"},
+    {"provider": "xAI", "model": "Grok 4.3", "context": "1M", "input_per_m": "$1.25", "cached_input_per_m": "$0.20", "output_per_m": "$2.50", "focus": "工具调用与通用推理", "url": "https://docs.x.ai/developers/models/grok-4.3"},
+    {"provider": "Mistral", "model": "Mistral Large 3", "context": "标准", "input_per_m": "$0.50", "cached_input_per_m": "$0.05", "output_per_m": "$1.50", "focus": "旗舰多语言与企业任务", "url": "https://docs.mistral.ai/inference/pricing"},
+    {"provider": "Mistral", "model": "Mistral Medium 3.5", "context": "标准", "input_per_m": "$1.50", "cached_input_per_m": "$0.15", "output_per_m": "$7.50", "focus": "多模态、代码与Agent", "url": "https://docs.mistral.ai/inference/pricing"},
+    {"provider": "Mistral", "model": "Mistral Small 4", "context": "标准", "input_per_m": "$0.15", "cached_input_per_m": "$0.015", "output_per_m": "$0.60", "focus": "低成本生产任务", "url": "https://docs.mistral.ai/inference/pricing"},
+    {"provider": "DeepSeek", "model": "DeepSeek Chat", "context": "官方标准价", "input_per_m": "$0.27", "cached_input_per_m": "$0.07", "output_per_m": "$1.10", "focus": "中文、代码与低成本推理", "url": "https://api-docs.deepseek.com/quick_start/pricing"},
+    {"provider": "DeepSeek", "model": "DeepSeek Reasoner", "context": "官方标准价", "input_per_m": "$0.55", "cached_input_per_m": "$0.14", "output_per_m": "$2.19", "focus": "数学、代码与深度推理", "url": "https://api-docs.deepseek.com/quick_start/pricing"},
 ]
+
+
+PRICING_SOURCES = {
+    "OpenAI": {
+        "url": "https://platform.openai.com/docs/pricing",
+        "models": {
+            "GPT-5.6 Sol": ("gpt-5.6-sol", (0, 1, 3)),
+            "GPT-5.6 Terra": ("gpt-5.6-terra", (0, 1, 3)),
+            "GPT-5.6 Luna": ("gpt-5.6-luna", (0, 1, 3)),
+        },
+    },
+    "Anthropic": {
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+        "models": {
+            "Claude Fable 5": ("Claude Fable 5", (0, 3, 4)),
+            "Claude Opus 5": ("Claude Opus 5", (0, 3, 4)),
+            "Claude Sonnet 5": ("Claude Sonnet 5", (0, 3, 4)),
+            "Claude Haiku 4.5": ("Claude Haiku 4.5", (0, 3, 4)),
+        },
+    },
+    "Google": {
+        "url": "https://ai.google.dev/gemini-api/docs/pricing",
+        "models": {
+            "Gemini 3.7 Flash": ("Gemini 3.7 Flash", (0, 4, 2)),
+            "Gemini 3.5 Flash": ("Gemini 3.5 Flash", (0, 2, 1)),
+            "Gemini 3.1 Flash-Lite": ("Gemini 3.1 Flash-Lite", (0, 3, 2)),
+        },
+    },
+    "xAI": {
+        "url": "https://docs.x.ai/developers/grok-4-6",
+        "models": {"Grok 4.6": ("Input price", (0, -1, 1))},
+    },
+    "Mistral": {
+        "url": "https://docs.mistral.ai/inference/pricing",
+        "models": {
+            "Mistral Large 3": ("Mistral Large 3", (0, 1, 2)),
+            "Mistral Medium 3.5": ("Mistral Medium 3.5", (0, 1, 2)),
+            "Mistral Small 4": ("Mistral Small 4", (0, 1, 2)),
+        },
+    },
+    "DeepSeek": {
+        "url": "https://api-docs.deepseek.com/quick_start/pricing",
+        "models": {
+            "DeepSeek Chat": ("deepseek-chat", (0, 1, 2)),
+            "DeepSeek Reasoner": ("deepseek-reasoner", (0, 1, 2)),
+        },
+    },
+}
+
+
+def _format_usd(value: str) -> str:
+    number = float(value)
+    precision = 4 if number < 0.1 else 2
+    return "$" + f"{number:.{precision}f}".rstrip("0").rstrip(".")
+
+
+def _prices_after(text: str, marker: str, indices: tuple[int, int, int]) -> tuple[str, str | None, str] | None:
+    positions = [match.start() for match in re.finditer(re.escape(marker), text, re.IGNORECASE)]
+    required = max(index for index in indices if index >= 0)
+    for position in positions:
+        values = re.findall(r"\$\s*([0-9]+(?:\.[0-9]+)?)", text[position:position + 900])
+        if len(values) <= required:
+            continue
+        input_price = _format_usd(values[indices[0]])
+        cached_price = _format_usd(values[indices[1]]) if indices[1] >= 0 else None
+        output_price = _format_usd(values[indices[2]])
+        return input_price, cached_price, output_price
+    return None
+
+
+def fetch_ai_model_pricing(previous_rows: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    previous_map = {(row.get("provider"), row.get("model")): row for row in previous_rows}
+    rows = [dict(previous_map.get((row["provider"], row["model"]), row)) for row in AI_MODEL_PRICING]
+    by_key = {(row["provider"], row["model"]): row for row in rows}
+    statuses = []
+
+    for provider, config in PRICING_SOURCES.items():
+        started = time.time()
+        parsed = 0
+        try:
+            text = get_page_text(str(config["url"]))
+            for model, (marker, indices) in config["models"].items():
+                prices = _prices_after(text, marker, indices)
+                if not prices:
+                    continue
+                row = by_key[(provider, model)]
+                row["input_per_m"], cached, row["output_per_m"] = prices
+                if cached is not None:
+                    row["cached_input_per_m"] = cached
+                row["price_status"] = "官方实时"
+                row["verified_at"] = now_iso()
+                parsed += 1
+            if parsed == 0:
+                raise ValueError("no model price parsed")
+            statuses.append({"key": f"model_pricing_{provider.lower()}", "status": "online", "updated_at": now_iso(), "latency_ms": round((time.time() - started) * 1000), "message": f"parsed {parsed}"})
+        except (HTTPError, URLError, TimeoutError, OSError, ValueError, TypeError) as exc:
+            for row in rows:
+                if row["provider"] == provider:
+                    row["price_status"] = "官方基准" if os.environ.get("SKIP_PRICING_NETWORK") == "1" else "缓存"
+                    row.setdefault("verified_at", "")
+            statuses.append({"key": f"model_pricing_{provider.lower()}", "status": "cached", "updated_at": now_iso(), "message": type(exc).__name__})
+        time.sleep(0.2)
+
+    for row in rows:
+        row.setdefault("price_status", "官方基准")
+        row.setdefault("verified_at", now_iso())
+    return rows, statuses
 
 
 def fallback_payload(previous: dict[str, Any]) -> dict[str, Any]:
@@ -390,8 +527,16 @@ def fallback_payload(previous: dict[str, Any]) -> dict[str, Any]:
         "market_history": previous.get("market_history", []),
         "gdelt_news": previous.get("gdelt_news", []),
         "alpha_news": previous.get("alpha_news", []),
-        "ai_model_pricing": AI_MODEL_PRICING,
+        "ai_model_pricing": previous.get("ai_model_pricing", AI_MODEL_PRICING),
     }
+
+
+def write_payload(payload: dict[str, Any]) -> None:
+    JSON_PATH.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    JS_PATH.write_text(
+        "window.__ASSET_DASHBOARD_DATA__ = " + json.dumps(payload, ensure_ascii=False, indent=2) + ";\n",
+        encoding="utf-8",
+    )
 
 
 def main() -> int:
@@ -399,6 +544,17 @@ def main() -> int:
     previous = read_previous()
     payload = fallback_payload(previous)
     statuses = []
+
+    if "--pricing-only" in sys.argv:
+        pricing, pricing_statuses = fetch_ai_model_pricing(previous.get("ai_model_pricing", []))
+        payload.update(previous)
+        payload["ai_model_pricing"] = pricing
+        payload["pricing_generated_at"] = now_iso()
+        old_statuses = [item for item in previous.get("source_status", []) if not str(item.get("key", "")).startswith("model_pricing_")]
+        payload["source_status"] = old_statuses + pricing_statuses
+        write_payload(payload)
+        print(f"updated model pricing: {len(pricing)} rows")
+        return 0
 
     for key, fetcher, fallback in [
         ("fmp_quotes", fetch_fmp_quotes, payload["fmp_quotes"]),
@@ -414,7 +570,10 @@ def main() -> int:
         statuses.append(status)
         time.sleep(0.25)
 
-    payload["ai_model_pricing"] = AI_MODEL_PRICING
+    pricing, pricing_statuses = fetch_ai_model_pricing(previous.get("ai_model_pricing", []))
+    payload["ai_model_pricing"] = pricing
+    payload["pricing_generated_at"] = now_iso()
+    statuses.extend(pricing_statuses)
     payload["generated_at"] = now_iso()
     payload["refresh_policy"] = {
         "workflow_cron": "23 */4 * * *",
@@ -422,11 +581,7 @@ def main() -> int:
     }
     payload["source_status"] = statuses
 
-    JSON_PATH.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
-    JS_PATH.write_text(
-        "window.__ASSET_DASHBOARD_DATA__ = " + json.dumps(payload, ensure_ascii=False, indent=2) + ";\n",
-        encoding="utf-8",
-    )
+    write_payload(payload)
     print("wrote data/latest.json and data/latest.js")
     return 0
 

@@ -4,6 +4,7 @@ export type QuoteRow = { symbol: string; name: string; price: number | null; cha
 export type MacroRow = { series_id: string; name: string; category: string; value: number | null; previous: number | null; change: number | null; date: string; driver: string; source: string; url: string };
 export type DashboardData = {
   generated_at?: string;
+  pricing_generated_at?: string;
   fmp_quotes?: QuoteRow[];
   fred_macro?: MacroRow[];
   eia_energy?: Array<Record<string, string | number | null>>;
@@ -108,18 +109,24 @@ export function newsSummaryZh(item: Record<string, string | number | null>) {
 
 export function assetScores(data: DashboardData, history: HistorySeries[]) {
   const byLabel=new Map(history.map((i)=>[i.label,i])); const quote=new Map((data.fmp_quotes??[]).map((i)=>[i.symbol,i.change_pct??0])); const macro=new Map((data.fred_macro??[]).map((i)=>[i.series_id,i.change??0]));
-  const momentum=(label:string)=>lastChange(byLabel.get(label)??fallbackHistory[0],20); const daily=(label:string)=>lastChange(byLabel.get(label)??fallbackHistory[0]);
+  const momentum=(label:string)=>lastChange(byLabel.get(label)??fallbackHistory[0],20);
   const risk=clamp(55+momentum("美股")*1.8-(macro.get("BAMLH0A0HYM2")??0)*70-(macro.get("DGS10")??0)*18);
-  return [
-    {asset:"股票",score:risk,view:risk>=60?"偏强":risk<45?"偏弱":"中性",driver:"全球权益动量 / 信用利差 / 长端利率"},
-    {asset:"债券",score:clamp(52-(macro.get("DGS10")??0)*120+momentum("美债")*2),view:daily("美债")>0?"偏强":"中性",driver:"10Y收益率变化 / 久期价格趋势"},
-    {asset:"商品",score:clamp(50+momentum("铜")*2.1+momentum("原油")*1.2),view:momentum("铜")+momentum("原油")>1?"偏强":"分化",driver:"铜与原油20日动量"},
-    {asset:"黄金",score:clamp(50+momentum("黄金")*2.4-(macro.get("DGS10")??0)*35),view:momentum("黄金")>0?"偏强":"偏弱",driver:"黄金动量 / 实际利率代理"},
-    {asset:"美元",score:clamp(50+momentum("美元")*3+(macro.get("DGS10")??0)*30),view:momentum("美元")>0?"偏强":"偏弱",driver:"美元动量 / 美债利率"},
-    {asset:"AI",score:clamp(50+momentum("AI")*2+((quote.get("NVDA")??0)+(quote.get("MSFT")??0))*3),view:momentum("AI")>0?"偏强":"降温",driver:"BOTZ动量 / NVDA与MSFT强弱"},
-    {asset:"港股",score:clamp(50+momentum("港股")*2.5),view:momentum("港股")>0?"偏强":"偏弱",driver:"香港市场ETF 20日动量"},
-    {asset:"A股",score:clamp(50+momentum("A股")*2.5),view:momentum("A股")>0?"偏强":"偏弱",driver:"沪深300ETF 20日动量"},
-  ].map((i)=>({...i,score:Math.round(i.score)}));
+  const raw = [
+    {asset:"股票",raw:risk,driver:"全球权益动量 / 信用利差 / 长端利率"},
+    {asset:"债券",raw:clamp(52-(macro.get("DGS10")??0)*120+momentum("美债")*2),driver:"10Y收益率变化 / 久期价格趋势"},
+    {asset:"商品",raw:clamp(50+momentum("铜")*2.1+momentum("原油")*1.2),driver:"铜与原油20日动量"},
+    {asset:"黄金",raw:clamp(50+momentum("黄金")*2.4-(macro.get("DGS10")??0)*35),driver:"黄金动量 / 实际利率代理"},
+    {asset:"美元",raw:clamp(50+momentum("美元")*3+(macro.get("DGS10")??0)*30),driver:"美元动量 / 美债利率"},
+    {asset:"AI",raw:clamp(50+momentum("AI")*2+((quote.get("NVDA")??0)+(quote.get("MSFT")??0))*3),driver:"BOTZ动量 / NVDA与MSFT强弱"},
+    {asset:"港股",raw:clamp(50+momentum("港股")*2.5),driver:"香港市场ETF 20日动量"},
+    {asset:"A股",raw:clamp(50+momentum("A股")*2.5),driver:"沪深300ETF 20日动量"},
+  ];
+  const low=Math.min(...raw.map(i=>i.raw)),high=Math.max(...raw.map(i=>i.raw)),spread=Math.max(1,high-low);
+  return raw.map((item)=>{
+    const score=Math.round(62+(item.raw-low)/spread*26);
+    const view=score>=85?"强超配":score>=79?"超配":score>=73?"中性":score>=67?"谨慎":"低配";
+    return {asset:item.asset,score,view,driver:item.driver};
+  });
 }
 
 export function macroRegime(data: DashboardData){const rows=new Map((data.fred_macro??[]).map(i=>[i.series_id,i]));const growthUp=(rows.get("UNRATE")?.change??0)<=0&&(rows.get("T10Y2Y")?.change??0)>=-0.03;const inflationUp=(rows.get("CPIAUCSL")?.change??0)>0;const quadrant=growthUp?(inflationUp?"再通胀":"金发姑娘"):(inflationUp?"滞胀":"衰退/通缩");const map:Record<string,{focus:string;avoid:string}>={"再通胀":{focus:"股票、商品、铜、价值风格",avoid:"长久期债券"},"金发姑娘":{focus:"股票、AI、信用债、黄金",avoid:"美元现金"},"滞胀":{focus:"黄金、商品、能源、防御股",avoid:"成长股与长债"},"衰退/通缩":{focus:"美债、黄金、美元、高质量资产",avoid:"周期商品与高收益债"}};return{quadrant,growthUp,inflationUp,...map[quadrant]}}
