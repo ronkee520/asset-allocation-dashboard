@@ -74,6 +74,38 @@ export function correlation(a: number[], b: number[]) { const n = Math.min(a.len
 export function lastChange(series: HistorySeries, days = 1) { const p=series.points; return p.length>days?(p.at(-1)!.close/p.at(-(days+1))!.close-1)*100:0 }
 export function clamp(value: number, min=0,max=100){return Math.min(max,Math.max(min,value))}
 
+export function newsSummaryZh(item: Record<string, string | number | null>) {
+  const supplied = String(item.summary_zh ?? "").trim();
+  if (supplied) return supplied;
+
+  const title = String(item.title ?? "").trim();
+  const summary = String(item.summary ?? "").trim();
+  const text = `${title} ${summary}`.toLowerCase();
+  const has = (...terms: string[]) => terms.some((term) => text.includes(term));
+
+  if (has("apple", "aapl") && has("memory shortage", "memory chip")) return "报道关注苹果在存储芯片短缺和业绩分化背景下的经营韧性，后续需观察供应链成本、产品需求及盈利指引。";
+  if (has("danaher") && has("intuitive surgical")) return "文章比较丹纳赫的周期复苏逻辑与直觉外科的创新成长逻辑，核心取舍在于估值、增长确定性和长期回报空间。";
+  if (has("crowdstrike") && has("salesforce") && has("workday")) return "标普500从高位回落后，市场聚焦CrowdStrike、Salesforce和Workday等软件公司的业绩与指引，结果可能影响科技成长板块风险偏好。";
+  if (has("sandisk", "micron", "western digital") && has("cheap", "undervalued")) return "存储板块年内上涨后估值仍被认为不高，但周期波动和AI估值担忧并存；重点关注存储价格、供需和盈利兑现。";
+  if (has("musk") && has("tesla", "spacex")) return "特斯拉与SpaceX估值回升推动马斯克财富反弹，反映市场对两家公司增长预期改善，但高估值资产仍对业绩兑现较敏感。";
+  if (has("low-p/e", "low p/e") && has("s&p 500")) return "在标普500接近高位时，文章筛选低市盈率股票作为价值型机会，提示市场内部可能存在从高估值成长向低估值标的轮动。";
+  if (has("synchrony") && has("openai")) return "Synchrony上调盈利展望并推进与OpenAI的企业级合作，AI应用可能改善效率和增长预期，但仍需跟踪实际收入与成本贡献。";
+  if (has("aerovironment", "avav") && has("stake", "buys", "acquired")) return "机构新建AeroVironment持仓，显示资金对无人机与国防科技主题的关注升温；持仓行为可作为情绪线索，但不等同于持续买入信号。";
+
+  if (has("inflation", "cpi")) {
+    if (has("etf", "safe-haven", "safe haven")) return "文章讨论通胀偏高环境下的资产与ETF选择，黄金、商品及部分防御资产可能受益，而长久期债券和高估值成长资产更易承压。";
+    return "新闻聚焦通胀数据或通胀预期变化，可能通过利率路径影响美债、美元、黄金及全球成长股估值。";
+  }
+  if (has("gold", "golden", "الذهب")) return "新闻关注黄金价格及其驱动因素，短期方向主要取决于美元、实际利率、央行政策预期和避险需求。";
+  if (has("oil", "crude", "opec", "eia")) return "新闻涉及原油供需或库存变化，可能影响油价、能源股表现以及市场对通胀的判断。";
+  if (has("fed", "fomc", "interest rate", "rate cut", "rate hike")) return "报道关注美联储与利率路径，政策预期变化将直接影响美债收益率、美元、黄金和成长股估值。";
+  if (has("ai", "artificial intelligence", "semiconductor", "chip", "memory")) return "新闻涉及AI或半导体产业景气，需结合订单、资本开支、供需和估值判断，对芯片、云计算及相关主题ETF具有情绪影响。";
+  if (has("etf")) return "文章讨论ETF配置或交易机会，建议结合标的资产趋势、成交活跃度、费率和真实资金流进一步判断。";
+  if (has("earnings", "results", "revenue", "profit")) return "新闻聚焦公司业绩与经营指引，实际结果和管理层预期可能影响个股定价，并向所属行业传导。";
+  if (has("s&p 500", "stocks", "market", "markets", "invest")) return "报道反映权益市场或个股投资线索，需结合估值、盈利趋势和宏观环境判断其对整体风险偏好的影响。";
+  return `该报道聚焦“${title || "全球市场动态"}”，建议结合原文、行情变化及相关资产基本面判断其配置影响。`;
+}
+
 export function assetScores(data: DashboardData, history: HistorySeries[]) {
   const byLabel=new Map(history.map((i)=>[i.label,i])); const quote=new Map((data.fmp_quotes??[]).map((i)=>[i.symbol,i.change_pct??0])); const macro=new Map((data.fred_macro??[]).map((i)=>[i.series_id,i.change??0]));
   const momentum=(label:string)=>lastChange(byLabel.get(label)??fallbackHistory[0],20); const daily=(label:string)=>lastChange(byLabel.get(label)??fallbackHistory[0]);
