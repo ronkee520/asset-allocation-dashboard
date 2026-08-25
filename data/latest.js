@@ -3,10 +3,10 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "SPY",
       "name": "State Street SPDR S&P 500 ETF",
-      "price": 763.47,
-      "change_pct": -0.29384,
-      "volume": 31916629.0,
-      "market_cap": 813277428404.0,
+      "price": 765.63501,
+      "change_pct": 0.28357,
+      "volume": 12962430.0,
+      "market_cap": 815583679566.0,
       "exchange": "AMEX",
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/SPY"
@@ -14,10 +14,10 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "AAPL",
       "name": "Apple Inc.",
-      "price": 310.34,
-      "change_pct": 0.32003,
-      "volume": 34379936.0,
-      "market_cap": 4558074061040.0,
+      "price": 309.85,
+      "change_pct": -0.15789,
+      "volume": 10927805.0,
+      "market_cap": 4550877256600.0,
       "exchange": "NASDAQ",
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/AAPL"
@@ -25,10 +25,10 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "NVDA",
       "name": "NVIDIA Corporation",
-      "price": 208.48,
-      "change_pct": -2.90611,
-      "volume": 134405887.0,
-      "market_cap": 5049594080000.0,
+      "price": 212.225,
+      "change_pct": 1.79634,
+      "volume": 63144465.0,
+      "market_cap": 5140301725000.0,
       "exchange": "NASDAQ",
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/NVDA"
@@ -36,10 +36,10 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "MSFT",
       "name": "Microsoft Corporation",
-      "price": 487.31,
-      "change_pct": 0.84223,
-      "volume": 16754809.0,
-      "market_cap": 3618544770500.0,
+      "price": 489.26001,
+      "change_pct": 0.40016,
+      "volume": 7672591.0,
+      "market_cap": 3633024665515.0005,
       "exchange": "NASDAQ",
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/MSFT"
@@ -47,10 +47,10 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "GOOGL",
       "name": "Alphabet Inc.",
-      "price": 348.06,
-      "change_pct": 0.93962,
-      "volume": 26279090.0,
-      "market_cap": 4212260854204.9995,
+      "price": 347.37,
+      "change_pct": -0.19824,
+      "volume": 6992924.0,
+      "market_cap": 4203910397418.0,
       "exchange": "NASDAQ",
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/GOOGL"
@@ -58,10 +58,10 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "AMZN",
       "name": "Amazon.com, Inc.",
-      "price": 262.07,
-      "change_pct": 1.33009,
-      "volume": 27975466.0,
-      "market_cap": 2819113197000.0,
+      "price": 260.94,
+      "change_pct": -0.43118,
+      "volume": 10221969.0,
+      "market_cap": 2806957700262.0,
       "exchange": "NASDAQ",
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/AMZN"
@@ -69,10 +69,10 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "META",
       "name": "Meta Platforms, Inc.",
-      "price": 559.02,
-      "change_pct": 1.65848,
-      "volume": 12868199.0,
-      "market_cap": 1424095942361.0,
+      "price": 566.86,
+      "change_pct": 1.40245,
+      "volume": 4361304.34464,
+      "market_cap": 1444068237070.0,
       "exchange": "NASDAQ",
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/META"
@@ -80,10 +80,10 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "TSM",
       "name": "Taiwan Semiconductor Manufacturing Company Limited",
-      "price": 410.12,
-      "change_pct": -2.10765,
-      "volume": 10623060.0,
-      "market_cap": 2127079177600.0,
+      "price": 415.6,
+      "change_pct": 1.33619,
+      "volume": 3842031.0,
+      "market_cap": 2155501088000.0,
       "exchange": "NYSE",
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/TSM"
@@ -91,10 +91,10 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "AMD",
       "name": "Advanced Micro Devices, Inc.",
-      "price": 456.745,
-      "change_pct": -3.48759,
-      "volume": 16521739.0,
-      "market_cap": 744768397000.0,
+      "price": 476.8,
+      "change_pct": 4.39085,
+      "volume": 11710342.79403,
+      "market_cap": 777470080000.0,
       "exchange": "NASDAQ",
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/AMD"
@@ -102,10 +102,10 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "JPM",
       "name": "JPMorgan Chase & Co.",
-      "price": 356.39,
-      "change_pct": 1.36811,
-      "volume": 4236267.0,
-      "market_cap": 954950568900.0,
+      "price": 355.88989,
+      "change_pct": -0.14033,
+      "volume": 1833236.0,
+      "market_cap": 953610526062.0,
       "exchange": "NYSE",
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/JPM"
@@ -188,10 +188,10 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "series_id": "BAMLH0A0HYM2",
       "name": "美国高收益债利差",
       "category": "信用",
-      "value": 2.7,
-      "previous": 2.75,
-      "change": -0.04999999999999982,
-      "date": "2026-08-21",
+      "value": 2.69,
+      "previous": 2.7,
+      "change": -0.010000000000000231,
+      "date": "2026-08-24",
       "driver": "信用风险偏好、权益下行保护",
       "source": "FRED",
       "url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2"
@@ -225,8 +225,8 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "USD/CNH",
       "name": "US Dollar / Chinese Yuan Offshore",
-      "price": 6.72275,
-      "change_pct": 0.02425191,
+      "price": 6.71826,
+      "change_pct": -0.042552432,
       "previous_close": 6.72112,
       "source": "Twelve Data",
       "url": "https://twelvedata.com/"
@@ -234,8 +234,8 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "EUR/USD",
       "name": "Euro / US Dollar",
-      "price": 1.16699,
-      "change_pct": 0.048009739,
+      "price": 1.16713,
+      "change_pct": 0.060012174,
       "previous_close": 1.16643,
       "source": "Twelve Data",
       "url": "https://twelvedata.com/"
@@ -243,8 +243,8 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "USD/JPY",
       "name": "US Dollar / Japanese Yen",
-      "price": 159.23899,
-      "change_pct": 0.088819648,
+      "price": 159.28431,
+      "change_pct": 0.11730529,
       "previous_close": 159.09768,
       "source": "Twelve Data",
       "url": "https://twelvedata.com/"
@@ -755,6 +755,10 @@ window.__ASSET_DASHBOARD_DATA__ = {
         {
           "date": "2026-08-24",
           "close": 763.469970703125
+        },
+        {
+          "date": "2026-08-25",
+          "close": 765.7150268554688
         }
       ],
       "source": "Yahoo Finance",
@@ -1264,6 +1268,10 @@ window.__ASSET_DASHBOARD_DATA__ = {
         {
           "date": "2026-08-24",
           "close": 33.93000030517578
+        },
+        {
+          "date": "2026-08-25",
+          "close": 34.08000183105469
         }
       ],
       "source": "Yahoo Finance",
@@ -1773,6 +1781,10 @@ window.__ASSET_DASHBOARD_DATA__ = {
         {
           "date": "2026-08-24",
           "close": 23.239999771118164
+        },
+        {
+          "date": "2026-08-25",
+          "close": 23.18000030517578
         }
       ],
       "source": "Yahoo Finance",
@@ -2282,6 +2294,10 @@ window.__ASSET_DASHBOARD_DATA__ = {
         {
           "date": "2026-08-24",
           "close": 426.69000244140625
+        },
+        {
+          "date": "2026-08-25",
+          "close": 425.57000732421875
         }
       ],
       "source": "Yahoo Finance",
@@ -2791,6 +2807,10 @@ window.__ASSET_DASHBOARD_DATA__ = {
         {
           "date": "2026-08-24",
           "close": 27.959999084472656
+        },
+        {
+          "date": "2026-08-25",
+          "close": 27.94499969482422
         }
       ],
       "source": "Yahoo Finance",
@@ -2803,11 +2823,11 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "points": [
         {
           "date": "2026-02-25",
-          "close": 87.89857482910156
+          "close": 87.8985824584961
         },
         {
           "date": "2026-02-26",
-          "close": 88.25051879882812
+          "close": 88.25052642822266
         },
         {
           "date": "2026-02-27",
@@ -2819,19 +2839,19 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-03-03",
-          "close": 87.72003936767578
+          "close": 87.72004699707031
         },
         {
           "date": "2026-03-04",
-          "close": 87.44539642333984
+          "close": 87.44540405273438
         },
         {
           "date": "2026-03-05",
-          "close": 87.09226989746094
+          "close": 87.09228515625
         },
         {
           "date": "2026-03-06",
-          "close": 86.7685775756836
+          "close": 86.76858520507812
         },
         {
           "date": "2026-03-09",
@@ -2839,7 +2859,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-03-10",
-          "close": 86.59202575683594
+          "close": 86.59203338623047
         },
         {
           "date": "2026-03-11",
@@ -2847,7 +2867,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-03-12",
-          "close": 85.30707550048828
+          "close": 85.30708312988281
         },
         {
           "date": "2026-03-13",
@@ -2859,23 +2879,23 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-03-17",
-          "close": 85.77790832519531
+          "close": 85.77789306640625
         },
         {
           "date": "2026-03-18",
-          "close": 85.29725646972656
+          "close": 85.29727172851562
         },
         {
           "date": "2026-03-19",
-          "close": 85.817138671875
+          "close": 85.81713104248047
         },
         {
           "date": "2026-03-20",
-          "close": 84.18887329101562
+          "close": 84.18888092041016
         },
         {
           "date": "2026-03-23",
-          "close": 84.73816680908203
+          "close": 84.73817443847656
         },
         {
           "date": "2026-03-24",
@@ -2883,11 +2903,11 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-03-25",
-          "close": 85.1795654296875
+          "close": 85.17955780029297
         },
         {
           "date": "2026-03-26",
-          "close": 84.46351623535156
+          "close": 84.4635238647461
         },
         {
           "date": "2026-03-27",
@@ -2895,7 +2915,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-03-30",
-          "close": 85.12071990966797
+          "close": 85.1207046508789
         },
         {
           "date": "2026-03-31",
@@ -2903,7 +2923,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-04-01",
-          "close": 84.94873046875
+          "close": 84.94872283935547
         },
         {
           "date": "2026-04-02",
@@ -2911,15 +2931,15 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-04-06",
-          "close": 85.33279418945312
+          "close": 85.3327865600586
         },
         {
           "date": "2026-04-07",
-          "close": 85.32295227050781
+          "close": 85.32293701171875
         },
         {
           "date": "2026-04-08",
-          "close": 85.59868621826172
+          "close": 85.59869384765625
         },
         {
           "date": "2026-04-09",
@@ -2927,15 +2947,15 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-04-10",
-          "close": 85.17522430419922
+          "close": 85.17521667480469
         },
         {
           "date": "2026-04-13",
-          "close": 85.4312744140625
+          "close": 85.43126678466797
         },
         {
           "date": "2026-04-14",
-          "close": 85.88428497314453
+          "close": 85.88427734375
         },
         {
           "date": "2026-04-15",
@@ -2943,23 +2963,23 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-04-16",
-          "close": 84.96841430664062
+          "close": 84.96842193603516
         },
         {
           "date": "2026-04-17",
-          "close": 85.74640655517578
+          "close": 85.74641418457031
         },
         {
           "date": "2026-04-20",
-          "close": 85.72671508789062
+          "close": 85.7267074584961
         },
         {
           "date": "2026-04-21",
-          "close": 85.2540054321289
+          "close": 85.25401306152344
         },
         {
           "date": "2026-04-22",
-          "close": 85.42142486572266
+          "close": 85.42141723632812
         },
         {
           "date": "2026-04-23",
@@ -2967,11 +2987,11 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-04-24",
-          "close": 85.39187622070312
+          "close": 85.39188385009766
         },
         {
           "date": "2026-04-27",
-          "close": 84.96841430664062
+          "close": 84.96842193603516
         },
         {
           "date": "2026-04-28",
@@ -2979,11 +2999,11 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-04-29",
-          "close": 84.3972396850586
+          "close": 84.39723205566406
         },
         {
           "date": "2026-04-30",
-          "close": 84.3184585571289
+          "close": 84.31845092773438
         },
         {
           "date": "2026-05-01",
@@ -2999,7 +3019,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-05-06",
-          "close": 85.0844955444336
+          "close": 85.08448791503906
         },
         {
           "date": "2026-05-07",
@@ -3007,7 +3027,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-05-08",
-          "close": 85.0844955444336
+          "close": 85.08448791503906
         },
         {
           "date": "2026-05-11",
@@ -3015,11 +3035,11 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-05-12",
-          "close": 84.00708770751953
+          "close": 84.00709533691406
         },
         {
           "date": "2026-05-13",
-          "close": 83.81929016113281
+          "close": 83.81929779052734
         },
         {
           "date": "2026-05-14",
@@ -3027,7 +3047,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-05-15",
-          "close": 82.6924819946289
+          "close": 82.69247436523438
         },
         {
           "date": "2026-05-18",
@@ -3039,7 +3059,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-05-20",
-          "close": 82.93958282470703
+          "close": 82.93959045410156
         },
         {
           "date": "2026-05-21",
@@ -3047,7 +3067,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-05-22",
-          "close": 83.70068359375
+          "close": 83.70067596435547
         },
         {
           "date": "2026-05-26",
@@ -3055,23 +3075,23 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-05-27",
-          "close": 84.31351470947266
+          "close": 84.31350708007812
         },
         {
           "date": "2026-05-28",
-          "close": 84.7484130859375
+          "close": 84.74842071533203
         },
         {
           "date": "2026-05-29",
-          "close": 84.7681884765625
+          "close": 84.76819610595703
         },
         {
           "date": "2026-06-01",
-          "close": 84.8138427734375
+          "close": 84.81383514404297
         },
         {
           "date": "2026-06-02",
-          "close": 84.9924545288086
+          "close": 84.99246215820312
         },
         {
           "date": "2026-06-03",
@@ -3099,7 +3119,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-06-11",
-          "close": 85.31993103027344
+          "close": 85.3199234008789
         },
         {
           "date": "2026-06-12",
@@ -3123,7 +3143,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-06-22",
-          "close": 85.4290771484375
+          "close": 85.42906951904297
         },
         {
           "date": "2026-06-23",
@@ -3143,7 +3163,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-06-29",
-          "close": 86.77864074707031
+          "close": 86.77863311767578
         },
         {
           "date": "2026-06-30",
@@ -3300,6 +3320,10 @@ window.__ASSET_DASHBOARD_DATA__ = {
         {
           "date": "2026-08-24",
           "close": 82.55999755859375
+        },
+        {
+          "date": "2026-08-25",
+          "close": 83.33999633789062
         }
       ],
       "source": "Yahoo Finance",
@@ -3809,6 +3833,10 @@ window.__ASSET_DASHBOARD_DATA__ = {
         {
           "date": "2026-08-24",
           "close": 40.06999969482422
+        },
+        {
+          "date": "2026-08-25",
+          "close": 40.72999954223633
         }
       ],
       "source": "Yahoo Finance",
@@ -4318,6 +4346,10 @@ window.__ASSET_DASHBOARD_DATA__ = {
         {
           "date": "2026-08-24",
           "close": 132.2100067138672
+        },
+        {
+          "date": "2026-08-25",
+          "close": 127.75540161132812
         }
       ],
       "source": "Yahoo Finance",
@@ -4827,6 +4859,10 @@ window.__ASSET_DASHBOARD_DATA__ = {
         {
           "date": "2026-08-24",
           "close": 35.25
+        },
+        {
+          "date": "2026-08-25",
+          "close": 35.83649826049805
         }
       ],
       "source": "Yahoo Finance",
@@ -4973,6 +5009,14 @@ window.__ASSET_DASHBOARD_DATA__ = {
   "gdelt_news": [
     {
       "theme": "AI",
+      "title": "Week ahead : Nvidia , inflation and Jackson Hole set the tone for Wall Street",
+      "source": "proactiveinvestors.com",
+      "published_at": "20260824T16300",
+      "url": "https://www.proactiveinvestors.com/companies/news/1097497/week-ahead-nvidia-inflation-and-jackson-hole-set-the-tone-for-wall-street-1097497.html",
+      "summary": "用于追踪跨资产价格波动背后的新闻叙事，点击可查看原文来源。"
+    },
+    {
+      "theme": "半导体",
       "title": "If Inflation Stays Sticky , Here Why These 2 ETFs Win",
       "source": "finance.yahoo.com",
       "published_at": "20260609T16150",
@@ -4980,7 +5024,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "summary": "用于追踪跨资产价格波动背后的新闻叙事，点击可查看原文来源。"
     },
     {
-      "theme": "半导体",
+      "theme": "能源",
       "title": "Investment markets are in a flux , but basics have not changed",
       "source": "livemint.com",
       "published_at": "20260622T09150",
@@ -4988,7 +5032,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "summary": "用于追踪跨资产价格波动背后的新闻叙事，点击可查看原文来源。"
     },
     {
-      "theme": "能源",
+      "theme": "贵金属",
       "title": "جريدة الرياض | الذهب يتراجع مع انخفاض الدولار وترقب خفض  الفائدة  ",
       "source": "alriyadh.com",
       "published_at": "20260729T01300",
@@ -4996,7 +5040,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "summary": "用于追踪跨资产价格波动背后的新闻叙事，点击可查看原文来源。"
     },
     {
-      "theme": "贵金属",
+      "theme": "央行",
       "title": "Where to Invest : 7 Safe - Havens As Hotter Inflation Hits US , SocGen Says",
       "source": "businessinsider.com",
       "published_at": "20260731T16150",
@@ -5004,7 +5048,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "summary": "用于追踪跨资产价格波动背后的新闻叙事，点击可查看原文来源。"
     },
     {
-      "theme": "央行",
+      "theme": "ETF",
       "title": "These Were the Best - Performing Asset Classes in May . Can They Continue to Lead ? ",
       "source": "finance.yahoo.com",
       "published_at": "20260605T23300",
@@ -5012,7 +5056,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "summary": "用于追踪跨资产价格波动背后的新闻叙事，点击可查看原文来源。"
     },
     {
-      "theme": "ETF",
+      "theme": "通胀",
       "title": " [ 오늘의 증시 ] 美 CPI 3 . 5 %  예상 하회 … 코스피 , 반도체 훈풍에 상승 기대감↑",
       "source": "fnnews.com",
       "published_at": "20260714T23300",
@@ -5020,7 +5064,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "summary": "用于追踪跨资产价格波动背后的新闻叙事，点击可查看原文来源。"
     },
     {
-      "theme": "通胀",
+      "theme": "商品",
       "title": "Gold price prediction today : Will gold rise in the near - term ? Check August 19 , 2026 outlook",
       "source": "timesofindia.indiatimes.com",
       "published_at": "20260819T06300",
@@ -5028,7 +5072,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "summary": "用于追踪跨资产价格波动背后的新闻叙事，点击可查看原文来源。"
     },
     {
-      "theme": "商品",
+      "theme": "汇率",
       "title": "الأسهم العالمية ترتفع والذهب يتعافى مع انحسار مخاوف التضخم",
       "source": "aljazeera.net",
       "published_at": "20260709T23450",
@@ -5036,23 +5080,75 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "summary": "用于追踪跨资产价格波动背后的新闻叙事，点击可查看原文来源。"
     },
     {
-      "theme": "汇率",
+      "theme": "宏观",
       "title": "엔비디아가 아니다 … 다시 시총 1위로 올라온  이곳  ",
       "source": "wikitree.co.kr",
       "published_at": "20260728T01450",
       "url": "https://www.wikitree.co.kr/articles/1148810",
       "summary": "用于追踪跨资产价格波动背后的新闻叙事，点击可查看原文来源。"
-    },
-    {
-      "theme": "宏观",
-      "title": " [ ETF 시황 ]  단기금리형 · 반도체  로 ETF 자금 유입",
-      "source": "newspim.com",
-      "published_at": "20260710T08300",
-      "url": "https://www.newspim.com/news/view/20260710001383",
-      "summary": "用于追踪跨资产价格波动背后的新闻叙事，点击可查看原文来源。"
     }
   ],
   "alpha_news": [
+    {
+      "theme": "市场情绪",
+      "title": "Before The Surge, Caterpillar Stock’s Order Book Told A Different Story",
+      "source": "Trefis",
+      "published_at": "20260825T151623",
+      "url": "https://www.trefis.com/stock/cat/articles/612765/before-the-surge-caterpillar-stocks-order-book-told-a-different-story/2026-08-25",
+      "summary": "Caterpillar (CAT) stock experienced a 96% surge between August 2025 and August 2026, despite initial appearances of stagnation in revenue and options market activity. A closer look",
+      "sentiment": "Bullish",
+      "score": 0.43786
+    },
+    {
+      "theme": "市场情绪",
+      "title": "Intuit Stock Falls Ahead of Q4 Earnings: What Investors Need to Know",
+      "source": "Benzinga",
+      "published_at": "20260825T150420",
+      "url": "https://www.benzinga.com/trading-ideas/movers/26/08/61412238/intuit-stock-falls-ahead-of-q4-earnings-what-investors-need-to-know",
+      "summary": "Intuit (NASDAQ:INTU) shares are trading lower ahead of its Q4 fiscal 2026 earnings report, scheduled for release after the market close. Analysts anticipate a 30.5% year-over-year ",
+      "sentiment": "Somewhat-Bearish",
+      "score": -0.244384
+    },
+    {
+      "theme": "市场情绪",
+      "title": "Asymmetry Is The Reason I Will Not Stop Buying Oracle",
+      "source": "24/7 Wall St.",
+      "published_at": "20260825T145515",
+      "url": "https://247wallst.com/investing/2026/08/25/asymmetry-is-the-reason-i-will-not-stop-buying-oracle/",
+      "summary": "The author continues to invest in Oracle (NYSE: ORCL) due to what they perceive as significant asymmetry, despite a 39.05% stock drop over the past year. Oracle's contracted backlo",
+      "sentiment": "Somewhat-Bullish",
+      "score": 0.239638
+    },
+    {
+      "theme": "市场情绪",
+      "title": "Paychex stock trades above $126 as fresh earnings and guidance test valuation",
+      "source": "Ad-hoc-news.de",
+      "published_at": "20260825T145220",
+      "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/paychex-stock-trades-above-126-as-fresh-earnings-and-guidance-test/69999915",
+      "summary": "Paychex stock is trading above $126, driven by strong double-digit revenue growth, new FY 2027 EPS guidance, and a nearly 3.8% dividend yield. This valuation is being tested agains",
+      "sentiment": "Somewhat-Bullish",
+      "score": 0.329256
+    },
+    {
+      "theme": "市场情绪",
+      "title": "Aptiv stock hits 52-week low at 46.13 USD By Investing.com",
+      "source": "Investing.com UK",
+      "published_at": "20260825T145216",
+      "url": "https://uk.investing.com/news/stock-market-news/aptiv-stock-hits-52week-low-at-4613-usd-93CH-4846523",
+      "summary": "Aptiv PLC's stock has plummeted to a new 52-week low of $46.15, marking a 42.14% decline over the past year. Despite beating second-quarter earnings estimates, the automotive techn",
+      "sentiment": "Bearish",
+      "score": -0.637504
+    },
+    {
+      "theme": "市场情绪",
+      "title": "Advanced Micro Devices Inc Stock (AMD) Opened Up by 3.82% on Aug 25: A Full Analysis",
+      "source": "TradingKey",
+      "published_at": "20260825T134712",
+      "url": "https://www.tradingkey.com/news/market-movers/262130603-market-movers-amd-20260825",
+      "summary": "Advanced Micro Devices (AMD) stock opened 3.82% higher, driven by a Raymond James upgrade to \"Strong Buy\" and an increased price target, based on the company's strong position in t",
+      "sentiment": "Somewhat-Bullish",
+      "score": 0.184559
+    },
     {
       "theme": "市场情绪",
       "title": "Is Delta (DAL) Quietly Rewriting Its Long-Term Earnings Story With AI-Driven Ticket Pricing Experiments?",
@@ -5061,7 +5157,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "url": "https://simplywall.st/stocks/us/transportation/nyse-dal/delta-air-lines/news/is-delta-dal-quietly-rewriting-its-long-term-earnings-story",
       "summary": "Delta Air Lines (DAL) is experimenting with AI to optimize ticket pricing on a small percentage of its fares, aiming to significantly boost profitability by improving decision-maki",
       "sentiment": "Somewhat-Bullish",
-      "score": 0.256206
+      "score": 0.256487
     },
     {
       "theme": "市场情绪",
@@ -5071,67 +5167,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "url": "https://www.marketbeat.com/instant-alerts/filing-220508-shares-in-enphase-energy-inc-enph-purchased-by-sir-capital-management-lp-2026-08-25/",
       "summary": "SIR Capital Management L.P. recently acquired 220,508 shares of Enphase Energy (NASDAQ:ENPH), valued at approximately $10.86 million, making it their 26th-largest holding. Institut",
       "sentiment": "Somewhat-Bearish",
-      "score": -0.222667
-    },
-    {
-      "theme": "市场情绪",
-      "title": "NuRAN Wireless Stock Slides 16.76% as Funding and Execution Risks Raise Downside Risk",
-      "source": "kalkine.ca",
-      "published_at": "20260825T104401",
-      "url": "https://kalkine.ca/news/technology/nuran-wireless-stock-slides-1676-as-funding-and-execution-risks-raise-downside-risk",
-      "summary": "NuRAN Wireless Inc. (CSE: NUR) saw its shares decline by 16.76% due to renewed selling pressure, reflecting investor concerns over funding, execution, and deployment risks in its A",
-      "sentiment": "Bearish",
-      "score": -0.714308
-    },
-    {
-      "theme": "市场情绪",
-      "title": "Ticketmaster Ticket Recovery Tests Live Nation’s High-Margin Growth Engine",
-      "source": "TechStock²",
-      "published_at": "20260825T100917",
-      "url": "https://ts2.tech/en/ticketmaster-ticket-recovery-tests-live-nations-high-margin-growth-engine/",
-      "summary": "Ticketmaster's recent cancellation and re-release of Olivia Rodrigo concert tickets, due to breached sale terms, highlights Live Nation's efforts to combat scalping and maintain it",
-      "sentiment": "Neutral",
-      "score": 0.125804
-    },
-    {
-      "theme": "市场情绪",
-      "title": "Ieq Capital LLC Invests $2.52 Million in Microchip Technology Incorporated $MCHP",
-      "source": "MarketBeat",
-      "published_at": "20260825T091802",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-ieq-capital-llc-invests-252-million-in-microchip-technology-incorporated-mchp-2026-08-25/",
-      "summary": "Ieq Capital LLC recently invested approximately $2.52 million in Microchip Technology Incorporated (NASDAQ:MCHP) by acquiring 27,613 shares. The semiconductor company reported stro",
-      "sentiment": "Somewhat-Bullish",
-      "score": 0.288401
-    },
-    {
-      "theme": "市场情绪",
-      "title": "Donaldson Capital Management LLC Acquires New Stake in Intel Corporation $INTC",
-      "source": "MarketBeat",
-      "published_at": "20260825T075509",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-donaldson-capital-management-llc-acquires-new-stake-in-intel-corporation-intc-2026-08-25/",
-      "summary": "Donaldson Capital Management LLC has acquired a new stake in Intel Corporation, purchasing 8,272 shares valued at approximately $1,155,000. This comes amidst varied analyst ratings",
-      "sentiment": "Neutral",
-      "score": -0.066765
-    },
-    {
-      "theme": "市场情绪",
-      "title": "FactSet Research stock holds near $300 as guidance and dividend support 2026 valuation",
-      "source": "Ad-hoc-news.de",
-      "published_at": "20260825T070920",
-      "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/factset-research-stock-holds-near-300-as-guidance-and-dividend-support/69997524",
-      "summary": "FactSet Research stock is trading near $300 per share, supported by its fiscal 2026 earnings guidance and a growing dividend. The company reported strong Q3 EPS and revenue growth,",
-      "sentiment": "Somewhat-Bullish",
-      "score": 0.302959
-    },
-    {
-      "theme": "市场情绪",
-      "title": "SK Hynix Drops 5% in Seoul, KOSPI Drops 3% Amid Reported US Pressure for Korean Chipmakers to Invest in America; Brent Slips as Iran Tensions Rise",
-      "source": "Benzinga",
-      "published_at": "20260825T020341",
-      "url": "https://www.benzinga.com/markets/equities/26/08/61399647/sk-hynix-kospi-korean-chipmakers-us-investment-iran-tensions",
-      "summary": "South Korea's KOSPI index and semiconductor stocks like SK Hynix and Samsung Electronics experienced significant drops following reports that the U.S. is pressuring Korean chipmake",
-      "sentiment": "Neutral",
-      "score": -0.119185
+      "score": -0.243647
     }
   ],
   "ai_model_pricing": [
@@ -5145,7 +5181,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "旗舰推理、Agent与复杂研究",
       "url": "https://platform.openai.com/pricing",
       "price_status": "官方基准",
-      "verified_at": "2026-08-25T13:25:37Z"
+      "verified_at": "2026-08-25T17:02:51Z"
     },
     {
       "provider": "OpenAI",
@@ -5157,7 +5193,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "通用知识工作与投研自动化",
       "url": "https://platform.openai.com/pricing",
       "price_status": "官方基准",
-      "verified_at": "2026-08-25T13:25:37Z"
+      "verified_at": "2026-08-25T17:02:51Z"
     },
     {
       "provider": "OpenAI",
@@ -5169,7 +5205,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "高频摘要、分类与批量处理",
       "url": "https://platform.openai.com/pricing",
       "price_status": "官方基准",
-      "verified_at": "2026-08-25T13:25:37Z"
+      "verified_at": "2026-08-25T17:02:51Z"
     },
     {
       "provider": "Anthropic",
@@ -5181,7 +5217,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "高难度研究与长文档",
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-08-25T13:25:38Z"
+      "verified_at": "2026-08-25T17:02:52Z"
     },
     {
       "provider": "Anthropic",
@@ -5193,7 +5229,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "复杂推理、多Agent与专业研究",
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-08-25T13:25:38Z"
+      "verified_at": "2026-08-25T17:02:52Z"
     },
     {
       "provider": "Anthropic",
@@ -5205,7 +5241,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "代码、知识工作与长上下文",
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-08-25T13:25:38Z"
+      "verified_at": "2026-08-25T17:02:52Z"
     },
     {
       "provider": "Anthropic",
@@ -5217,7 +5253,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "低延迟与高吞吐任务",
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-08-25T13:25:38Z"
+      "verified_at": "2026-08-25T17:02:52Z"
     },
     {
       "provider": "Google",
@@ -5229,7 +5265,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "多模态、Agent与代码",
       "url": "https://ai.google.dev/gemini-api/docs/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-08-25T13:25:39Z"
+      "verified_at": "2026-08-25T17:02:52Z"
     },
     {
       "provider": "Google",
@@ -5241,7 +5277,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "高质量快速推理与搜索增强",
       "url": "https://ai.google.dev/gemini-api/docs/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-08-25T13:25:39Z"
+      "verified_at": "2026-08-25T17:02:52Z"
     },
     {
       "provider": "Google",
@@ -5253,7 +5289,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "翻译、数据处理与大规模调用",
       "url": "https://ai.google.dev/gemini-api/docs/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-08-25T13:25:39Z"
+      "verified_at": "2026-08-25T17:02:52Z"
     },
     {
       "provider": "xAI",
@@ -5265,7 +5301,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "实时信息、代码与Agent",
       "url": "https://docs.x.ai/developers/grok-4-6",
       "price_status": "官方实时",
-      "verified_at": "2026-08-25T13:25:39Z"
+      "verified_at": "2026-08-25T17:02:57Z"
     },
     {
       "provider": "xAI",
@@ -5289,7 +5325,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "旗舰多语言与企业任务",
       "url": "https://docs.mistral.ai/inference/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-08-25T13:25:40Z"
+      "verified_at": "2026-08-25T17:02:57Z"
     },
     {
       "provider": "Mistral",
@@ -5301,7 +5337,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "多模态、代码与Agent",
       "url": "https://docs.mistral.ai/inference/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-08-25T13:25:40Z"
+      "verified_at": "2026-08-25T17:02:57Z"
     },
     {
       "provider": "Mistral",
@@ -5313,7 +5349,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "低成本生产任务",
       "url": "https://docs.mistral.ai/inference/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-08-25T13:25:40Z"
+      "verified_at": "2026-08-25T17:02:57Z"
     },
     {
       "provider": "DeepSeek",
@@ -5340,8 +5376,8 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "verified_at": ""
     }
   ],
-  "pricing_generated_at": "2026-08-25T13:25:42Z",
-  "generated_at": "2026-08-25T13:25:42Z",
+  "pricing_generated_at": "2026-08-25T17:03:00Z",
+  "generated_at": "2026-08-25T17:03:00Z",
   "refresh_policy": {
     "workflow_cron": "23 */4 * * *",
     "description": "GitHub Actions 每4小时尝试更新；低频宏观源即使失败也保留上一版缓存。"
@@ -5350,89 +5386,89 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "key": "fmp_quotes",
       "status": "online",
-      "updated_at": "2026-08-25T13:24:58Z",
-      "latency_ms": 7491
+      "updated_at": "2026-08-25T17:02:00Z",
+      "latency_ms": 8431
     },
     {
       "key": "fred_macro",
       "status": "online",
-      "updated_at": "2026-08-25T13:25:05Z",
-      "latency_ms": 7023
+      "updated_at": "2026-08-25T17:02:14Z",
+      "latency_ms": 13455
     },
     {
       "key": "eia_energy",
       "status": "online",
-      "updated_at": "2026-08-25T13:25:06Z",
-      "latency_ms": 459
+      "updated_at": "2026-08-25T17:02:14Z",
+      "latency_ms": 531
     },
     {
       "key": "twelve_fx",
       "status": "online",
-      "updated_at": "2026-08-25T13:25:06Z",
-      "latency_ms": 449
+      "updated_at": "2026-08-25T17:02:15Z",
+      "latency_ms": 832
     },
     {
       "key": "market_history",
       "status": "online",
-      "updated_at": "2026-08-25T13:25:11Z",
-      "latency_ms": 4127
+      "updated_at": "2026-08-25T17:02:20Z",
+      "latency_ms": 4607
     },
     {
       "key": "etf_fund_flows",
       "status": "online",
-      "updated_at": "2026-08-25T13:25:14Z",
-      "latency_ms": 3332
+      "updated_at": "2026-08-25T17:02:24Z",
+      "latency_ms": 3638
     },
     {
       "key": "gdelt_news",
-      "status": "cached",
-      "updated_at": "2026-08-25T09:05:31Z",
-      "message": "HTTPError"
+      "status": "online",
+      "updated_at": "2026-08-25T17:02:50Z",
+      "latency_ms": 25965
     },
     {
       "key": "alpha_news",
       "status": "online",
-      "updated_at": "2026-08-25T13:25:37Z",
-      "latency_ms": 251
+      "updated_at": "2026-08-25T17:02:51Z",
+      "latency_ms": 314
     },
     {
       "key": "model_pricing_openai",
       "status": "cached",
-      "updated_at": "2026-08-25T13:25:37Z",
+      "updated_at": "2026-08-25T17:02:51Z",
       "message": "HTTPError"
     },
     {
       "key": "model_pricing_anthropic",
       "status": "online",
-      "updated_at": "2026-08-25T13:25:38Z",
-      "latency_ms": 371,
+      "updated_at": "2026-08-25T17:02:52Z",
+      "latency_ms": 412,
       "message": "parsed 4"
     },
     {
       "key": "model_pricing_google",
       "status": "online",
-      "updated_at": "2026-08-25T13:25:39Z",
-      "latency_ms": 495,
+      "updated_at": "2026-08-25T17:02:52Z",
+      "latency_ms": 286,
       "message": "parsed 3"
     },
     {
       "key": "model_pricing_xai",
       "status": "online",
-      "updated_at": "2026-08-25T13:25:39Z",
-      "latency_ms": 263,
+      "updated_at": "2026-08-25T17:02:57Z",
+      "latency_ms": 4342,
       "message": "parsed 1"
     },
     {
       "key": "model_pricing_mistral",
       "status": "online",
-      "updated_at": "2026-08-25T13:25:40Z",
-      "latency_ms": 167,
+      "updated_at": "2026-08-25T17:02:57Z",
+      "latency_ms": 350,
       "message": "parsed 3"
     },
     {
       "key": "model_pricing_deepseek",
       "status": "cached",
-      "updated_at": "2026-08-25T13:25:42Z",
+      "updated_at": "2026-08-25T17:03:00Z",
       "message": "ValueError"
     }
   ]
