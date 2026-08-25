@@ -225,8 +225,8 @@
     {
       "symbol": "USD/CNH",
       "name": "US Dollar / Chinese Yuan Offshore",
-      "price": 6.72615,
-      "change_pct": 0.074838717,
+      "price": 6.72261,
+      "change_pct": 0.022168924,
       "previous_close": 6.72112,
       "source": "Twelve Data",
       "url": "https://twelvedata.com/"
@@ -234,8 +234,8 @@
     {
       "symbol": "EUR/USD",
       "name": "Euro / US Dollar",
-      "price": 1.16638,
-      "change_pct": -0.0042865838,
+      "price": 1.1656,
+      "change_pct": -0.071157292,
       "previous_close": 1.16643,
       "source": "Twelve Data",
       "url": "https://twelvedata.com/"
@@ -243,8 +243,8 @@
     {
       "symbol": "USD/JPY",
       "name": "US Dollar / Japanese Yen",
-      "price": 159.28665,
-      "change_pct": 0.11877609,
+      "price": 159.30788,
+      "change_pct": 0.13212009,
       "previous_close": 159.09768,
       "source": "Twelve Data",
       "url": "https://twelvedata.com/"
@@ -2803,11 +2803,11 @@
       "points": [
         {
           "date": "2026-02-25",
-          "close": 87.8985824584961
+          "close": 87.89857482910156
         },
         {
           "date": "2026-02-26",
-          "close": 88.25053405761719
+          "close": 88.25051879882812
         },
         {
           "date": "2026-02-27",
@@ -2815,7 +2815,7 @@
         },
         {
           "date": "2026-03-02",
-          "close": 87.89659881591797
+          "close": 87.8966064453125
         },
         {
           "date": "2026-03-03",
@@ -2827,7 +2827,7 @@
         },
         {
           "date": "2026-03-05",
-          "close": 87.09227752685547
+          "close": 87.09226989746094
         },
         {
           "date": "2026-03-06",
@@ -2835,7 +2835,7 @@
         },
         {
           "date": "2026-03-09",
-          "close": 87.52387237548828
+          "close": 87.52386474609375
         },
         {
           "date": "2026-03-10",
@@ -2847,7 +2847,7 @@
         },
         {
           "date": "2026-03-12",
-          "close": 85.30706787109375
+          "close": 85.30707550048828
         },
         {
           "date": "2026-03-13",
@@ -2859,11 +2859,11 @@
         },
         {
           "date": "2026-03-17",
-          "close": 85.77790832519531
+          "close": 85.77790069580078
         },
         {
           "date": "2026-03-18",
-          "close": 85.2972640991211
+          "close": 85.29727172851562
         },
         {
           "date": "2026-03-19",
@@ -2887,7 +2887,7 @@
         },
         {
           "date": "2026-03-26",
-          "close": 84.46351623535156
+          "close": 84.4635238647461
         },
         {
           "date": "2026-03-27",
@@ -2911,11 +2911,11 @@
         },
         {
           "date": "2026-04-06",
-          "close": 85.33280181884766
+          "close": 85.33279418945312
         },
         {
           "date": "2026-04-07",
-          "close": 85.32295227050781
+          "close": 85.32294464111328
         },
         {
           "date": "2026-04-08",
@@ -2927,7 +2927,7 @@
         },
         {
           "date": "2026-04-10",
-          "close": 85.17522430419922
+          "close": 85.17521667480469
         },
         {
           "date": "2026-04-13",
@@ -2939,7 +2939,7 @@
         },
         {
           "date": "2026-04-15",
-          "close": 85.51006317138672
+          "close": 85.51005554199219
         },
         {
           "date": "2026-04-16",
@@ -2987,7 +2987,7 @@
         },
         {
           "date": "2026-05-01",
-          "close": 84.61993408203125
+          "close": 84.61992645263672
         },
         {
           "date": "2026-05-04",
@@ -3003,7 +3003,7 @@
         },
         {
           "date": "2026-05-07",
-          "close": 84.65946197509766
+          "close": 84.65946960449219
         },
         {
           "date": "2026-05-08",
@@ -3043,7 +3043,7 @@
         },
         {
           "date": "2026-05-21",
-          "close": 83.2459945678711
+          "close": 83.24600219726562
         },
         {
           "date": "2026-05-22",
@@ -3055,7 +3055,7 @@
         },
         {
           "date": "2026-05-27",
-          "close": 84.31351470947266
+          "close": 84.31350708007812
         },
         {
           "date": "2026-05-28",
@@ -4936,12 +4936,12 @@
       "symbol": "BOTZ",
       "asset": "AI",
       "issuer": "Global X",
-      "as_of": "2026-08-21",
-      "nav": 36.02,
+      "as_of": "2026-08-24",
+      "nav": 35.32,
       "shares_outstanding": 95320000,
-      "shares_change": null,
-      "shares_change_pct": null,
-      "estimated_flow": null,
+      "shares_change": 0.0,
+      "shares_change_pct": 0.0,
+      "estimated_flow": 0.0,
       "method": "发行商流通份额变化 × 当日NAV",
       "source": "基金发行商官网",
       "data_status": "online",
@@ -4950,6 +4950,11 @@
         {
           "date": "2026-08-21",
           "nav": 36.02,
+          "shares_outstanding": 95320000
+        },
+        {
+          "date": "2026-08-24",
+          "nav": 35.32,
           "shares_outstanding": 95320000
         }
       ]
@@ -5040,13 +5045,23 @@
   "alpha_news": [
     {
       "theme": "市场情绪",
+      "title": "INTU INVESTOR DEADLINE: Intuit Inc. Investors with Substantial Losses Have Opportunity to Lead Class Action Lawsuit Before September 8, 2026 Deadline",
+      "source": "TMX Newsfile",
+      "published_at": "20260825T013901",
+      "url": "https://www.newsfilecorp.com/release/310799/INTU-INVESTOR-DEADLINE-Intuit-Inc.-Investors-with-Substantial-Losses-Have-Opportunity-to-Lead-Class-Action-Lawsuit-Before-September-8-2026-Deadline",
+      "summary": "Robbins Geller Rudman & Dowd LLP announces a class action lawsuit against Intuit Inc. (NASDAQ: INTU) for alleged violations of the Securities Exchange Act of 1934. The lawsuit clai",
+      "sentiment": "Bearish",
+      "score": -0.49615
+    },
+    {
+      "theme": "市场情绪",
       "title": "How Investors May Respond To Analog Devices (ADI) Strong Q3 Results, Margin Guidance and Steady Dividend",
       "source": "Simply Wall Street",
       "published_at": "20260824T222605",
       "url": "https://simplywall.st/stocks/us/semiconductors/nasdaq-adi/analog-devices/news/how-investors-may-respond-to-analog-devices-adi-strong-q3-re",
       "summary": "Analog Devices (ADI) reported strong Q3 2026 results with sales of US$4,021.9 million and net income of US$1,340.09 million, alongside optimistic Q4 guidance of US$4.3 billion reve",
       "sentiment": "Neutral",
-      "score": 0.009344
+      "score": 0.035489
     },
     {
       "theme": "市场情绪",
@@ -5056,7 +5071,17 @@
       "url": "https://finance.yahoo.com/technology/ai/articles/micron-ceo-sounds-alarm-ai-223107015.html",
       "summary": "Micron Technology Inc. CEO Sanjay Mehrotra has warned that memory supply may not catch up with AI-driven demand until at least 2028, citing long-term customer agreements as evidenc",
       "sentiment": "Neutral",
-      "score": 0.111594
+      "score": 0.115846
+    },
+    {
+      "theme": "市场情绪",
+      "title": "Q2 Earnings Season Winds Down: 3 Companies That Broke Records",
+      "source": "TradingView",
+      "published_at": "20260824T204602",
+      "url": "https://www.tradingview.com/news/zacks:94adc62a0094b:0-q2-earnings-season-winds-down-3-companies-that-broke-records/",
+      "summary": "The 2026 Q2 earnings season is concluding with positive results from several companies. Apple, EMCOR Group, and Johnson & Johnson all reported record-breaking financial performance",
+      "sentiment": "Bullish",
+      "score": 0.351843
     },
     {
       "theme": "市场情绪",
@@ -5066,7 +5091,7 @@
       "url": "https://www.tradingkey.com/news/market-movers/262128591-market-movers-v-20260824",
       "summary": "Visa Inc. (V) stock rose by 3.06% on August 24, driven by strong quarterly financial results showing double-digit revenue growth and an upgraded full-year outlook. The surge was fu",
       "sentiment": "Somewhat-Bullish",
-      "score": 0.292305
+      "score": 0.277907
     },
     {
       "theme": "市场情绪",
@@ -5076,7 +5101,7 @@
       "url": "https://www.tradingview.com/symbols/NASDAQ-SDA/ideas/",
       "summary": "SunCar Technology Group (NASDAQ: SDA) operates a cloud service and mobile app that digitalizes the automotive aftermarket and e-insurance sectors in China, partnering with major EV",
       "sentiment": "Bullish",
-      "score": 0.435373
+      "score": 0.408546
     },
     {
       "theme": "市场情绪",
@@ -5086,7 +5111,7 @@
       "url": "https://finance.yahoo.com/markets/stocks/articles/micron-seagate-western-digital-semtech-200936690.html",
       "summary": "Shares of several semiconductor companies, including Micron, Seagate, Western Digital, Semtech, and Penguin Solutions, declined as investors reduced chip exposure ahead of Nvidia's",
       "sentiment": "Somewhat-Bearish",
-      "score": -0.214745
+      "score": -0.189682
     },
     {
       "theme": "市场情绪",
@@ -5095,28 +5120,8 @@
       "published_at": "20260824T183701",
       "url": "https://kalkinemedia.com/us/stocks/bluechip/can-apple-inc-nasdaqaapl-keep-its-steady-hand-as-big-tech-leads-markets-higher",
       "summary": "Apple Inc. (NASDAQ:AAPL) is maintaining its strong position in the market as big tech continues to drive overall market growth. The company's integrated ecosystem of hardware, soft",
-      "sentiment": "Somewhat-Bullish",
-      "score": 0.343118
-    },
-    {
-      "theme": "市场情绪",
-      "title": "Honeywell Aerospace (HONA) Spin-Off Unlocks Standalone Value Amid Strong Market Outlook",
-      "source": "Yahoo Finance",
-      "published_at": "20260824T181400",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/honeywell-aerospace-hona-spin-off-111401744.html",
-      "summary": "Honeywell Aerospace Inc. (HONA) recently spun off from Honeywell International, manufactures and supplies aircraft components and systems, with approximately 90% of in-service airc",
-      "sentiment": "Somewhat-Bullish",
-      "score": 0.173401
-    },
-    {
-      "theme": "市场情绪",
-      "title": "Super Micro Computer (SMCI)’s Guidance Just Crushed Estimates. Can it Outrun its Legal Troubles?",
-      "source": "Yahoo! Finance Canada",
-      "published_at": "20260824T180900",
-      "url": "https://ca.finance.yahoo.com/news/super-micro-computer-smci-guidance-180916677.html",
-      "summary": "Super Micro Computer (SMCI) has significantly exceeded revenue expectations, forecasting $14.5 billion to $15.5 billion for Q1 FY27 and $65 billion to $72 billion for the full fisc",
-      "sentiment": "Neutral",
-      "score": 0.06117
+      "sentiment": "Bullish",
+      "score": 0.353565
     }
   ],
   "ai_model_pricing": [
@@ -5130,7 +5135,7 @@
       "focus": "旗舰推理、Agent与复杂研究",
       "url": "https://platform.openai.com/pricing",
       "price_status": "官方基准",
-      "verified_at": "2026-08-25T01:58:15Z"
+      "verified_at": "2026-08-25T05:02:09Z"
     },
     {
       "provider": "OpenAI",
@@ -5142,7 +5147,7 @@
       "focus": "通用知识工作与投研自动化",
       "url": "https://platform.openai.com/pricing",
       "price_status": "官方基准",
-      "verified_at": "2026-08-25T01:58:15Z"
+      "verified_at": "2026-08-25T05:02:09Z"
     },
     {
       "provider": "OpenAI",
@@ -5154,7 +5159,7 @@
       "focus": "高频摘要、分类与批量处理",
       "url": "https://platform.openai.com/pricing",
       "price_status": "官方基准",
-      "verified_at": "2026-08-25T01:58:15Z"
+      "verified_at": "2026-08-25T05:02:09Z"
     },
     {
       "provider": "Anthropic",
@@ -5166,7 +5171,7 @@
       "focus": "高难度研究与长文档",
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-08-25T01:58:16Z"
+      "verified_at": "2026-08-25T05:02:09Z"
     },
     {
       "provider": "Anthropic",
@@ -5178,7 +5183,7 @@
       "focus": "复杂推理、多Agent与专业研究",
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-08-25T01:58:16Z"
+      "verified_at": "2026-08-25T05:02:09Z"
     },
     {
       "provider": "Anthropic",
@@ -5190,7 +5195,7 @@
       "focus": "代码、知识工作与长上下文",
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-08-25T01:58:16Z"
+      "verified_at": "2026-08-25T05:02:09Z"
     },
     {
       "provider": "Anthropic",
@@ -5202,7 +5207,7 @@
       "focus": "低延迟与高吞吐任务",
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-08-25T01:58:16Z"
+      "verified_at": "2026-08-25T05:02:09Z"
     },
     {
       "provider": "Google",
@@ -5214,7 +5219,7 @@
       "focus": "多模态、Agent与代码",
       "url": "https://ai.google.dev/gemini-api/docs/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-08-25T01:58:16Z"
+      "verified_at": "2026-08-25T05:02:10Z"
     },
     {
       "provider": "Google",
@@ -5226,7 +5231,7 @@
       "focus": "高质量快速推理与搜索增强",
       "url": "https://ai.google.dev/gemini-api/docs/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-08-25T01:58:16Z"
+      "verified_at": "2026-08-25T05:02:10Z"
     },
     {
       "provider": "Google",
@@ -5238,7 +5243,7 @@
       "focus": "翻译、数据处理与大规模调用",
       "url": "https://ai.google.dev/gemini-api/docs/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-08-25T01:58:16Z"
+      "verified_at": "2026-08-25T05:02:10Z"
     },
     {
       "provider": "xAI",
@@ -5250,7 +5255,7 @@
       "focus": "实时信息、代码与Agent",
       "url": "https://docs.x.ai/developers/grok-4-6",
       "price_status": "官方实时",
-      "verified_at": "2026-08-25T01:58:17Z"
+      "verified_at": "2026-08-25T05:02:11Z"
     },
     {
       "provider": "xAI",
@@ -5274,7 +5279,7 @@
       "focus": "旗舰多语言与企业任务",
       "url": "https://docs.mistral.ai/inference/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-08-25T01:58:17Z"
+      "verified_at": "2026-08-25T05:02:11Z"
     },
     {
       "provider": "Mistral",
@@ -5286,7 +5291,7 @@
       "focus": "多模态、代码与Agent",
       "url": "https://docs.mistral.ai/inference/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-08-25T01:58:17Z"
+      "verified_at": "2026-08-25T05:02:11Z"
     },
     {
       "provider": "Mistral",
@@ -5298,7 +5303,7 @@
       "focus": "低成本生产任务",
       "url": "https://docs.mistral.ai/inference/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-08-25T01:58:17Z"
+      "verified_at": "2026-08-25T05:02:11Z"
     },
     {
       "provider": "DeepSeek",
@@ -5325,8 +5330,8 @@
       "verified_at": ""
     }
   ],
-  "pricing_generated_at": "2026-08-25T01:58:20Z",
-  "generated_at": "2026-08-25T01:58:20Z",
+  "pricing_generated_at": "2026-08-25T05:02:13Z",
+  "generated_at": "2026-08-25T05:02:13Z",
   "refresh_policy": {
     "workflow_cron": "23 */4 * * *",
     "description": "GitHub Actions 每4小时尝试更新；低频宏观源即使失败也保留上一版缓存。"
@@ -5335,89 +5340,89 @@
     {
       "key": "fmp_quotes",
       "status": "online",
-      "updated_at": "2026-08-25T01:57:33Z",
-      "latency_ms": 11413
+      "updated_at": "2026-08-25T05:00:47Z",
+      "latency_ms": 12785
     },
     {
       "key": "fred_macro",
       "status": "online",
-      "updated_at": "2026-08-25T01:57:39Z",
-      "latency_ms": 5990
+      "updated_at": "2026-08-25T05:01:29Z",
+      "latency_ms": 41928
     },
     {
       "key": "eia_energy",
       "status": "online",
-      "updated_at": "2026-08-25T01:57:40Z",
-      "latency_ms": 433
+      "updated_at": "2026-08-25T05:01:30Z",
+      "latency_ms": 138
     },
     {
       "key": "twelve_fx",
       "status": "online",
-      "updated_at": "2026-08-25T01:57:40Z",
-      "latency_ms": 501
+      "updated_at": "2026-08-25T05:01:30Z",
+      "latency_ms": 475
     },
     {
       "key": "market_history",
       "status": "online",
-      "updated_at": "2026-08-25T01:57:51Z",
-      "latency_ms": 9942
+      "updated_at": "2026-08-25T05:01:35Z",
+      "latency_ms": 4536
     },
     {
       "key": "etf_fund_flows",
       "status": "online",
-      "updated_at": "2026-08-25T01:57:56Z",
-      "latency_ms": 4903
+      "updated_at": "2026-08-25T05:01:40Z",
+      "latency_ms": 4042
     },
     {
       "key": "gdelt_news",
       "status": "cached",
-      "updated_at": "2026-08-24T20:55:09Z",
+      "updated_at": "2026-08-25T01:58:20Z",
       "message": "HTTPError"
     },
     {
       "key": "alpha_news",
       "status": "online",
-      "updated_at": "2026-08-25T01:58:14Z",
-      "latency_ms": 494
+      "updated_at": "2026-08-25T05:02:08Z",
+      "latency_ms": 484
     },
     {
       "key": "model_pricing_openai",
       "status": "cached",
-      "updated_at": "2026-08-25T01:58:15Z",
+      "updated_at": "2026-08-25T05:02:09Z",
       "message": "HTTPError"
     },
     {
       "key": "model_pricing_anthropic",
       "status": "online",
-      "updated_at": "2026-08-25T01:58:16Z",
-      "latency_ms": 569,
+      "updated_at": "2026-08-25T05:02:09Z",
+      "latency_ms": 381,
       "message": "parsed 4"
     },
     {
       "key": "model_pricing_google",
       "status": "online",
-      "updated_at": "2026-08-25T01:58:16Z",
-      "latency_ms": 424,
+      "updated_at": "2026-08-25T05:02:10Z",
+      "latency_ms": 862,
       "message": "parsed 3"
     },
     {
       "key": "model_pricing_xai",
       "status": "online",
-      "updated_at": "2026-08-25T01:58:17Z",
-      "latency_ms": 310,
+      "updated_at": "2026-08-25T05:02:11Z",
+      "latency_ms": 222,
       "message": "parsed 1"
     },
     {
       "key": "model_pricing_mistral",
       "status": "online",
-      "updated_at": "2026-08-25T01:58:17Z",
-      "latency_ms": 347,
+      "updated_at": "2026-08-25T05:02:11Z",
+      "latency_ms": 126,
       "message": "parsed 3"
     },
     {
       "key": "model_pricing_deepseek",
       "status": "cached",
-      "updated_at": "2026-08-25T01:58:19Z",
+      "updated_at": "2026-08-25T05:02:13Z",
       "message": "ValueError"
     }
   ]
