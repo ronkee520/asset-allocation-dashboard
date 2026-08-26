@@ -5,6 +5,7 @@ import os
 import re
 import sys
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timedelta, timezone
 from html.parser import HTMLParser
 from pathlib import Path
@@ -465,8 +466,7 @@ def fetch_ai_chain_quotes(base_quotes: list[dict[str, Any]]) -> list[dict[str, A
     """Fill free-plan quote gaps with Yahoo daily chart data."""
     base_map = {str(item.get("symbol")): dict(item) for item in base_quotes}
     symbols = sorted({symbol for _, _, group_symbols, _ in AI_CHAIN_GROUPS for symbol in group_symbols})
-    output = []
-    for symbol in symbols:
+    def fetch_symbol(symbol: str) -> dict[str, Any] | None:
         payload = None
         url = f"https://finance.yahoo.com/quote/{symbol}/"
         for host in ("query1.finance.yahoo.com", "query2.finance.yahoo.com"):
@@ -476,17 +476,17 @@ def fetch_ai_chain_quotes(base_quotes: list[dict[str, Any]]) -> list[dict[str, A
             except (HTTPError, URLError, TimeoutError, OSError, ValueError):
                 continue
         if not isinstance(payload, dict):
-            continue
+            return None
         result = (payload.get("chart", {}).get("result") or [None])[0]
         if not result:
-            continue
+            return None
         quote = (result.get("indicators", {}).get("quote") or [{}])[0]
         closes = [as_float(value) for value in quote.get("close") or []]
         volumes = [as_float(value) for value in quote.get("volume") or []]
         valid_closes = [value for value in closes if value is not None]
         valid_volumes = [value for value in volumes[-21:-1] if value is not None]
         if len(valid_closes) < 2:
-            continue
+            return None
         row = {
             "symbol": symbol, "name": symbol, "price": valid_closes[-1],
             "change_pct": (valid_closes[-1] / valid_closes[-2] - 1) * 100,
@@ -498,8 +498,16 @@ def fetch_ai_chain_quotes(base_quotes: list[dict[str, Any]]) -> list[dict[str, A
         for key, value in preferred.items():
             if value is not None:
                 row[key] = value
-        output.append(row)
-        time.sleep(0.18)
+        return row
+
+    output = []
+    with ThreadPoolExecutor(max_workers=6) as executor:
+        futures = {executor.submit(fetch_symbol, symbol): symbol for symbol in symbols}
+        for future in as_completed(futures):
+            row = future.result()
+            if row:
+                output.append(row)
+    output.sort(key=lambda item: str(item.get("symbol")))
     if len(output) < 12:
         raise ValueError("insufficient AI chain quote coverage")
     return output
@@ -514,18 +522,26 @@ def fetch_ai_valuations(previous_rows: list[dict[str, Any]], previous_generated_
     if not api_key:
         raise ValueError("missing FMP key")
     symbols = sorted({symbol for _, _, group_symbols, _ in AI_CHAIN_GROUPS for symbol in group_symbols})
-    output = []
-    for symbol in symbols:
+    def fetch_symbol(symbol: str) -> dict[str, Any] | None:
         url = "https://financialmodelingprep.com/stable/ratios-ttm?" + urlencode({"symbol": symbol, "apikey": api_key})
         try:
             payload = get_json(url, timeout=30)
         except (HTTPError, URLError, TimeoutError, OSError, ValueError):
-            continue
+            return None
         row = payload[0] if isinstance(payload, list) and payload else payload if isinstance(payload, dict) else {}
         pe = as_float(row.get("priceToEarningsRatioTTM"))
         if pe is not None and 0 < pe < 300:
-            output.append({"symbol": symbol, "pe": round(pe, 3), "as_of": today, "source": "FMP ratios-ttm"})
-        time.sleep(0.2)
+            return {"symbol": symbol, "pe": round(pe, 3), "as_of": today, "source": "FMP ratios-ttm"}
+        return None
+
+    output = []
+    with ThreadPoolExecutor(max_workers=4) as executor:
+        futures = {executor.submit(fetch_symbol, symbol): symbol for symbol in symbols}
+        for future in as_completed(futures):
+            row = future.result()
+            if row:
+                output.append(row)
+    output.sort(key=lambda item: str(item.get("symbol")))
     if len(output) < 5:
         raise ValueError("insufficient AI valuation coverage")
     return output
