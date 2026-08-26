@@ -3,6 +3,12 @@ name: Update Dashboard Data
 on:
   schedule:
     - cron: "23 */4 * * *"
+  push:
+    branches: ["main"]
+    paths:
+      - "scripts/**"
+      - "tests/**"
+      - ".github/workflows/update-data.yml"
   workflow_dispatch:
 
 permissions:
