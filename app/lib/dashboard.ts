@@ -2,7 +2,10 @@ export type HistoryPoint = { date: string; close: number };
 export type HistorySeries = { symbol: string; label: string; name: string; points: HistoryPoint[]; source: string; url: string };
 export type QuoteRow = { symbol: string; name: string; price: number | null; change_pct: number | null; volume?: number | null; market_cap?: number | null; source: string; url: string };
 export type MacroRow = { series_id: string; name: string; category: string; value: number | null; previous: number | null; change: number | null; date: string; driver: string; source: string; url: string };
-export type EtfFlowRow = { symbol: string; asset: string; issuer: string; as_of: string; nav: number | null; shares_outstanding: number | null; shares_change: number | null; shares_change_pct: number | null; estimated_flow: number | null; method: string; source: string; url: string };
+export type EtfFlowRow = { symbol: string; asset: string; issuer: string; as_of: string; nav: number | null; shares_outstanding: number | null; shares_change: number | null; shares_change_pct: number | null; estimated_flow: number | null; method: string; source: string; url: string; data_status?: string };
+export type AiChainRow = { segment:string; group:string; constituents?:string; leaders:string; change:number; breadth?:number; relative_volume?:number; valuation_pe?:number|null; turnover_usd?:number; strength:number; signal:string; sample_size?:number; method?:string; as_of?:string };
+export type CalendarEvent = { date:string; region:string; event:string; importance:string; assets:string; source:string; source_name?:string };
+export type ScoreBacktestRow = { asset:string; symbol:string; sample_size:number; hit_rate_20d:number|null; avg_forward_return_20d:number|null; max_drawdown:number; current_percentile:number; history_days:number; method:string };
 export type DashboardData = {
   generated_at?: string;
   pricing_generated_at?: string;
@@ -15,6 +18,9 @@ export type DashboardData = {
   gdelt_news?: Array<Record<string, string | number | null>>;
   alpha_news?: Array<Record<string, string | number | null>>;
   ai_model_pricing?: Array<Record<string, string | number | null>>;
+  ai_chain_metrics?: AiChainRow[];
+  event_calendar?: CalendarEvent[];
+  score_backtest?: ScoreBacktestRow[];
   source_status?: Array<Record<string, string | number | null>>;
 };
 
@@ -71,6 +77,9 @@ export const calendarEvents = [
   { date: "2026-10-14", region: "美国", event: "9月CPI", importance: "高", assets: "全球股债、美元、黄金", source: "https://www.bls.gov/schedule/news_release/cpi.htm" },
   { date: "2026-10-27", region: "美国", event: "FOMC会议开始", importance: "高", assets: "美债、美元、成长股", source: "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" },
 ];
+
+export function aiChainRows(data: DashboardData): AiChainRow[] { return data.ai_chain_metrics?.length ? data.ai_chain_metrics : aiChain.map(item=>({...item,valuation_pe:Number.parseFloat(item.valuation),turnover_usd:null as unknown as number})) }
+export function eventRows(data: DashboardData): CalendarEvent[] { const today=new Date().toISOString().slice(0,10);const live=(data.event_calendar??[]).filter(item=>item.date>=today);return live.length?live:calendarEvents.filter(item=>item.date>=today) }
 
 export function returns(series: HistorySeries, days: number) { const closes = series.points.map((p) => p.close).filter(Number.isFinite).slice(-(days + 1)); return closes.slice(1).map((v, i) => (v / closes[i] - 1) * 100) }
 export function correlation(a: number[], b: number[]) { const n = Math.min(a.length, b.length); if (n < 3) return 0; const x = a.slice(-n), y = b.slice(-n), mx = x.reduce((s,v)=>s+v,0)/n, my=y.reduce((s,v)=>s+v,0)/n; let num=0,dx=0,dy=0; for(let i=0;i<n;i++){const vx=x[i]-mx,vy=y[i]-my;num+=vx*vy;dx+=vx*vx;dy+=vy*vy} return dx&&dy?num/Math.sqrt(dx*dy):0 }

@@ -49,6 +49,8 @@
 .model-price-table .price-cell { color: var(--red); font-weight: 800; }
 .model-price-table .price-source { display: flex; align-items: center; gap: 6px; color: var(--red); }
 .official-flow-table .table-row { grid-template-columns: 1.1fr .55fr .75fr .75fr .6fr .85fr .75fr .75fr; min-width: 980px; }
+.backtest-table .table-row { grid-template-columns: .8fr .65fr .9fr .9fr 1fr 1fr .7fr; min-width: 820px; }
+.chain-table .table-row { grid-template-columns: .55fr .9fr 1.35fr .7fr .7fr .6fr .7fr .55fr; min-width: 1050px; }
 .score-method,
 .chain-method { border-bottom: 1px solid var(--line); background: #fffafa; }
 .score-method summary,

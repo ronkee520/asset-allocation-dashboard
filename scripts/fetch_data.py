@@ -5,9 +5,10 @@ import os
 import re
 import sys
 import time
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from html.parser import HTMLParser
 from pathlib import Path
+from statistics import median
 from typing import Any
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
@@ -74,6 +75,17 @@ def local_key(name: str) -> str:
 
 def get_json(url: str, timeout: int = 25) -> Any:
     request = Request(url, headers={"User-Agent": USER_AGENT, "Accept": "application/json,text/plain,*/*"})
+    with urlopen(request, timeout=timeout) as response:
+        return json.loads(response.read().decode("utf-8", errors="replace"))
+
+
+def post_json(url: str, payload: dict[str, Any], timeout: int = 40) -> Any:
+    request = Request(
+        url,
+        data=json.dumps(payload, ensure_ascii=False).encode("utf-8"),
+        headers={"User-Agent": USER_AGENT, "Accept": "application/json", "Content-Type": "application/json"},
+        method="POST",
+    )
     with urlopen(request, timeout=timeout) as response:
         return json.loads(response.read().decode("utf-8", errors="replace"))
 
@@ -155,6 +167,10 @@ def fetch_fmp_quotes() -> list[dict[str, Any]]:
             "price": as_float(row.get("price")),
             "change_pct": as_float(row.get("changePercentage") if row.get("changePercentage") is not None else row.get("changesPercentage")),
             "volume": as_float(row.get("volume")),
+            "avg_volume": as_float(row.get("avgVolume")),
+            "pe": as_float(row.get("pe")),
+            "price_avg_50": as_float(row.get("priceAvg50")),
+            "price_avg_200": as_float(row.get("priceAvg200")),
             "market_cap": as_float(row.get("marketCap")),
             "exchange": row.get("exchange"),
             "source": "FMP",
@@ -221,16 +237,27 @@ def fetch_fred_series() -> list[dict[str, Any]]:
 
 
 def fetch_gdelt_news() -> list[dict[str, Any]]:
-    time.sleep(6)
     query = "(AI OR semiconductor OR Nvidia OR oil OR gold OR central bank OR ETF OR inflation OR copper) market"
     url = "https://api.gdeltproject.org/api/v2/doc/doc?" + urlencode({
         "query": query,
         "mode": "artlist",
         "format": "json",
-        "maxrecords": 12,
+        "maxrecords": 10,
         "sort": "hybridrel",
+        "timespan": "48h",
     })
-    payload = get_json(url)
+    payload = None
+    last_error = None
+    for delay in (0, 4, 10):
+        if delay:
+            time.sleep(delay)
+        try:
+            payload = get_json(url, timeout=40)
+            break
+        except (HTTPError, URLError, TimeoutError, OSError, ValueError) as exc:
+            last_error = exc
+    if not isinstance(payload, dict):
+        raise ValueError(f"GDELT unavailable: {type(last_error).__name__}")
     articles = payload.get("articles", [])
     output = []
     themes = ["AI", "半导体", "能源", "贵金属", "央行", "ETF", "通胀", "商品", "汇率", "宏观"]
@@ -250,6 +277,32 @@ def fetch_gdelt_news() -> list[dict[str, Any]]:
     if not output:
         raise ValueError("empty GDELT response")
     return output
+
+
+def enrich_news_summaries(news_groups: list[list[dict[str, Any]]]) -> tuple[list[list[dict[str, Any]]], dict[str, Any]]:
+    """Optionally summarize publisher titles and snippets with Gemini."""
+    key = os.environ.get("GEMINI_API_KEY", "").strip()
+    flat = [item for group in news_groups for item in group if item.get("title")]
+    if not key or not flat:
+        return news_groups, {"key": "news_summary_zh", "status": "fallback", "updated_at": now_iso(), "message": "规则摘要；配置 GEMINI_API_KEY 可启用模型摘要"}
+
+    model = os.environ.get("GEMINI_NEWS_MODEL", "gemini-2.5-flash-lite").strip()
+    records = [{"id": index, "title": item.get("title"), "snippet": str(item.get("summary") or "")[:600]} for index, item in enumerate(flat)]
+    prompt = (
+        "你是中文资产配置研究助理。根据新闻标题和发布方摘要，为每条新闻写一条60到110字的中文摘要，"
+        "保留公司、资产、数字和不确定性，说明可能影响的资产；不要补造原文没有的事实。"
+        "只返回JSON数组，每项格式为{\"id\":数字,\"summary_zh\":\"...\"}。\n" + json.dumps(records, ensure_ascii=False)
+    )
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?" + urlencode({"key": key})
+    payload = post_json(url, {"contents": [{"parts": [{"text": prompt}]}], "generationConfig": {"responseMimeType": "application/json", "temperature": 0.1}})
+    text = payload["candidates"][0]["content"]["parts"][0]["text"]
+    parsed = json.loads(text)
+    summaries = {int(item["id"]): str(item["summary_zh"]).strip() for item in parsed if item.get("summary_zh")}
+    for index, item in enumerate(flat):
+        if index in summaries:
+            item["summary_zh"] = summaries[index]
+            item["summary_method"] = f"Gemini {model}"
+    return news_groups, {"key": "news_summary_zh", "status": "online", "updated_at": now_iso(), "message": f"Gemini摘要 {len(summaries)}条"}
 
 
 def fetch_alpha_news() -> list[dict[str, Any]]:
@@ -394,6 +447,239 @@ def fetch_market_history() -> list[dict[str, Any]]:
     if len(output) < 6:
         raise ValueError("insufficient market history")
     return output
+
+
+AI_CHAIN_GROUPS = [
+    ("上游", "GPU / HBM", ["NVDA", "AMD", "MU", "AVGO"], "GPU、HBM与高速互连决定训练和推理基础设施供给"),
+    ("上游", "晶圆 / 设备", ["TSM", "ASML", "AMAT", "LRCX"], "先进制程扩产与设备订单反映算力资本开支兑现"),
+    ("中游", "云与算力平台", ["MSFT", "GOOGL", "AMZN", "ORCL"], "云增速、AI订单和资本开支回报率共同决定景气"),
+    ("中游", "电力 / 电网", ["CEG", "ETN", "PWR"], "数据中心负荷推动电源、电网与工程投资"),
+    ("中游", "液冷 / 热管理", ["VRT", "MOD"], "高功率机柜提升液冷渗透率和单柜价值量"),
+    ("下游", "应用 / SaaS", ["PLTR", "CRM", "NOW"], "关注AI产品付费转化、席位扩张和利润兑现"),
+    ("下游", "机器人", ["BOTZ", "ISRG"], "订单、自动化渗透率与量产节奏决定主题持续性"),
+    ("材料", "铜 / 稀土材料", ["FCX", "SCCO", "MP"], "电气化需求与资源供给约束共同影响材料价值"),
+]
+
+
+def fetch_ai_chain_quotes(base_quotes: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Fill free-plan quote gaps with Yahoo daily chart data."""
+    base_map = {str(item.get("symbol")): dict(item) for item in base_quotes}
+    symbols = sorted({symbol for _, _, group_symbols, _ in AI_CHAIN_GROUPS for symbol in group_symbols})
+    output = []
+    for symbol in symbols:
+        payload = None
+        url = f"https://finance.yahoo.com/quote/{symbol}/"
+        for host in ("query1.finance.yahoo.com", "query2.finance.yahoo.com"):
+            try:
+                payload = get_json(f"https://{host}/v8/finance/chart/{symbol}?range=1mo&interval=1d&events=history", timeout=35)
+                break
+            except (HTTPError, URLError, TimeoutError, OSError, ValueError):
+                continue
+        if not isinstance(payload, dict):
+            continue
+        result = (payload.get("chart", {}).get("result") or [None])[0]
+        if not result:
+            continue
+        quote = (result.get("indicators", {}).get("quote") or [{}])[0]
+        closes = [as_float(value) for value in quote.get("close") or []]
+        volumes = [as_float(value) for value in quote.get("volume") or []]
+        valid_closes = [value for value in closes if value is not None]
+        valid_volumes = [value for value in volumes[-21:-1] if value is not None]
+        if len(valid_closes) < 2:
+            continue
+        row = {
+            "symbol": symbol, "name": symbol, "price": valid_closes[-1],
+            "change_pct": (valid_closes[-1] / valid_closes[-2] - 1) * 100,
+            "volume": next((value for value in reversed(volumes) if value is not None), None),
+            "avg_volume": sum(valid_volumes) / len(valid_volumes) if valid_volumes else None,
+            "pe": None, "source": "Yahoo Finance", "url": url,
+        }
+        preferred = base_map.get(symbol, {})
+        for key, value in preferred.items():
+            if value is not None:
+                row[key] = value
+        output.append(row)
+        time.sleep(0.18)
+    if len(output) < 12:
+        raise ValueError("insufficient AI chain quote coverage")
+    return output
+
+
+def fetch_ai_valuations(previous_rows: list[dict[str, Any]], previous_generated_at: str = "") -> list[dict[str, Any]]:
+    """Refresh TTM P/E once daily to preserve FMP's 250-call free allowance."""
+    today = datetime.now(timezone.utc).date().isoformat()
+    if previous_rows and previous_generated_at[:10] == today:
+        return previous_rows
+    api_key = local_key("FMP_API_KEY")
+    if not api_key:
+        raise ValueError("missing FMP key")
+    symbols = sorted({symbol for _, _, group_symbols, _ in AI_CHAIN_GROUPS for symbol in group_symbols})
+    output = []
+    for symbol in symbols:
+        url = "https://financialmodelingprep.com/stable/ratios-ttm?" + urlencode({"symbol": symbol, "apikey": api_key})
+        try:
+            payload = get_json(url, timeout=30)
+        except (HTTPError, URLError, TimeoutError, OSError, ValueError):
+            continue
+        row = payload[0] if isinstance(payload, list) and payload else payload if isinstance(payload, dict) else {}
+        pe = as_float(row.get("priceToEarningsRatioTTM"))
+        if pe is not None and 0 < pe < 300:
+            output.append({"symbol": symbol, "pe": round(pe, 3), "as_of": today, "source": "FMP ratios-ttm"})
+        time.sleep(0.2)
+    if len(output) < 5:
+        raise ValueError("insufficient AI valuation coverage")
+    return output
+
+
+def build_ai_chain_metrics(quotes: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    quote_map = {str(item.get("symbol")): item for item in quotes}
+    output = []
+    for segment, group, symbols, signal in AI_CHAIN_GROUPS:
+        rows = [quote_map[symbol] for symbol in symbols if symbol in quote_map and as_float(quote_map[symbol].get("change_pct")) is not None]
+        if not rows:
+            continue
+        changes = [as_float(row.get("change_pct")) or 0 for row in rows]
+        relative_volumes, valuations, turnovers = [], [], []
+        for row in rows:
+            volume, avg_volume, price, pe = (as_float(row.get(key)) for key in ("volume", "avg_volume", "price", "pe"))
+            if volume and avg_volume:
+                relative_volumes.append(volume / avg_volume)
+            if pe and 0 < pe < 300:
+                valuations.append(pe)
+            if volume and price:
+                turnovers.append(volume * price)
+        change = sum(changes) / len(changes)
+        breadth = sum(value > 0 for value in changes) / len(changes) * 100
+        relative_volume = sum(relative_volumes) / len(relative_volumes) if relative_volumes else 1
+        valuation = median(valuations) if valuations else None
+        raw_strength = max(35, min(95, 55 + change * 5 + (relative_volume - 1) * 12 + (breadth - 50) * 0.24))
+        leaders = sorted(rows, key=lambda item: as_float(item.get("change_pct")) or -999, reverse=True)
+        output.append({
+            "segment": segment, "group": group, "constituents": " · ".join(symbols),
+            "leaders": " · ".join(str(item.get("symbol")) for item in leaders[:3]),
+            "change": round(change, 3), "breadth": round(breadth, 1), "relative_volume": round(relative_volume, 2),
+            "valuation_pe": round(valuation, 1) if valuation is not None else None,
+            "turnover_usd": round(sum(turnovers)), "strength": round(raw_strength), "raw_strength": raw_strength, "signal": signal,
+            "sample_size": len(rows), "method": "成分股行情自动计算", "as_of": now_iso(),
+        })
+    if output:
+        low = min(item["raw_strength"] for item in output)
+        high = max(item["raw_strength"] for item in output)
+        spread = high - low
+        for item in output:
+            raw = item.pop("raw_strength")
+            item["strength"] = round(max(62, min(88, raw))) if spread < 1 else round(62 + (raw - low) / spread * 26)
+    return output
+
+
+def _series_raw_scores(points: list[dict[str, Any]]) -> list[tuple[int, float]]:
+    closes = [as_float(item.get("close")) for item in points]
+    output = []
+    for index in range(60, len(closes)):
+        if any(value is None or value <= 0 for value in (closes[index], closes[index - 20], closes[index - 60])):
+            continue
+        daily = [closes[i] / closes[i - 1] - 1 for i in range(index - 19, index + 1) if closes[i] and closes[i - 1]]
+        if len(daily) < 18:
+            continue
+        mean = sum(daily) / len(daily)
+        volatility = (sum((value - mean) ** 2 for value in daily) / len(daily)) ** 0.5 * (252 ** 0.5) * 100
+        momentum20 = (closes[index] / closes[index - 20] - 1) * 100
+        momentum60 = (closes[index] / closes[index - 60] - 1) * 100
+        output.append((index, momentum20 * 1.5 + momentum60 * 0.6 - volatility * 0.12))
+    return output
+
+
+def build_score_backtest(history: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    asset_map = {"股票": "SPY", "债券": "TLT", "商品": "CPER", "黄金": "GLD", "美元": "UUP", "AI": "BOTZ", "港股": "EWH", "A股": "ASHR"}
+    series_map = {str(item.get("symbol")): item for item in history}
+    output = []
+    for asset, symbol in asset_map.items():
+        series = series_map.get(symbol)
+        if not series:
+            continue
+        points = series.get("points") or []
+        closes = [as_float(item.get("close")) for item in points]
+        scores = _series_raw_scores(points)
+        if len(scores) < 10:
+            continue
+        raw_values = [value for _, value in scores]
+        current_raw = raw_values[-1]
+        current_percentile = sum(value <= current_raw for value in raw_values) / len(raw_values) * 100
+        ranked = sorted(raw_values)
+        threshold = ranked[max(0, int(len(ranked) * 0.6) - 1)]
+        observations = []
+        for index, raw in scores:
+            if raw < threshold or index + 20 >= len(closes) or not closes[index] or not closes[index + 20]:
+                continue
+            observations.append((closes[index + 20] / closes[index] - 1) * 100)
+        peak, max_drawdown = 0.0, 0.0
+        for close in (value for value in closes if value is not None):
+            peak = max(peak, close)
+            if peak:
+                max_drawdown = min(max_drawdown, (close / peak - 1) * 100)
+        output.append({
+            "asset": asset, "symbol": symbol, "sample_size": len(observations),
+            "hit_rate_20d": round(sum(value > 0 for value in observations) / len(observations) * 100, 1) if observations else None,
+            "avg_forward_return_20d": round(sum(observations) / len(observations), 2) if observations else None,
+            "max_drawdown": round(max_drawdown, 2), "current_percentile": round(current_percentile, 1),
+            "history_days": len(points), "method": "60日内技术信号达到历史前40%后，检验未来20日收益；无前视数据",
+        })
+    return output
+
+
+FRED_EVENT_MAP = {
+    "Consumer Price Index": ("美国CPI", "高", "全球股债、美元、黄金"),
+    "Employment Situation": ("美国非农就业报告", "高", "美债、美元、黄金、美股"),
+    "Producer Price Index": ("美国PPI", "高", "美债、美元、商品、成长股"),
+    "Gross Domestic Product": ("美国GDP", "高", "美股、美债、美元、商品"),
+    "Personal Income and Outlays": ("美国PCE通胀与个人支出", "高", "全球股债、美元、黄金"),
+    "Advance Monthly Sales for Retail and Food Services": ("美国零售销售", "中", "美股、美债、美元"),
+    "Industrial Production and Capacity Utilization": ("美国工业生产", "中", "美股、铜、美元"),
+}
+
+
+def fetch_event_calendar() -> list[dict[str, Any]]:
+    api_key = local_key("FRED_API_KEY")
+    if not api_key:
+        raise ValueError("missing FRED key")
+    today = datetime.now(timezone.utc).date()
+    end = today + timedelta(days=180)
+    url = "https://api.stlouisfed.org/fred/releases/dates?" + urlencode({
+        "api_key": api_key, "file_type": "json", "realtime_start": today.isoformat(),
+        "realtime_end": end.isoformat(), "include_release_dates_with_no_data": "true",
+        "sort_order": "asc", "limit": 1000,
+    })
+    payload = get_json(url, timeout=35)
+    output, seen = [], set()
+    for item in payload.get("release_dates", []):
+        mapped = FRED_EVENT_MAP.get(str(item.get("release_name")))
+        date = str(item.get("date") or "")
+        if not mapped or not date or (date, mapped[0]) in seen:
+            continue
+        seen.add((date, mapped[0]))
+        output.append({"date": date, "region": "美国", "event": mapped[0], "importance": mapped[1], "assets": mapped[2], "source": "https://fred.stlouisfed.org/releases/calendar", "source_name": "FRED官方发布日历"})
+
+    try:
+        fed_url = "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        fed_text = get_page_text(fed_url, timeout=40)
+        month_numbers = {name: index for index, name in enumerate(("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"), 1)}
+        for year in (today.year, today.year + 1):
+            section_match = re.search(rf"{year}\s+FOMC Meetings\s*\|(.+?)(?=\|\s*\d{{4}}\s+FOMC Meetings|\|\s*Note:)", fed_text, re.IGNORECASE)
+            if not section_match:
+                continue
+            for month_name, _start_day, decision_day in re.findall(r"(January|February|March|April|May|June|July|August|September|October|November|December)\s*\|\s*(\d{1,2})-(\d{1,2})\*?", section_match.group(1)):
+                date = f"{year}-{month_numbers[month_name]:02d}-{int(decision_day):02d}"
+                if date < today.isoformat() or (date, "FOMC利率决议") in seen:
+                    continue
+                seen.add((date, "FOMC利率决议"))
+                output.append({"date": date, "region": "美国", "event": "FOMC利率决议", "importance": "高", "assets": "全球股债、美元、黄金、汇率", "source": fed_url, "source_name": "美联储官方会议日历"})
+    except (HTTPError, URLError, TimeoutError, OSError, ValueError):
+        pass
+
+    output.sort(key=lambda item: (item["date"], item["event"]))
+    if not output:
+        raise ValueError("empty FRED event calendar")
+    return output[:60]
 
 
 ETF_FUND_SOURCES = [
@@ -573,8 +859,9 @@ AI_MODEL_PRICING = [
     {"provider": "Mistral", "model": "Mistral Large 3", "context": "标准", "input_per_m": "$0.50", "cached_input_per_m": "$0.05", "output_per_m": "$1.50", "focus": "旗舰多语言与企业任务", "url": "https://docs.mistral.ai/inference/pricing"},
     {"provider": "Mistral", "model": "Mistral Medium 3.5", "context": "标准", "input_per_m": "$1.50", "cached_input_per_m": "$0.15", "output_per_m": "$7.50", "focus": "多模态、代码与Agent", "url": "https://docs.mistral.ai/inference/pricing"},
     {"provider": "Mistral", "model": "Mistral Small 4", "context": "标准", "input_per_m": "$0.15", "cached_input_per_m": "$0.015", "output_per_m": "$0.60", "focus": "低成本生产任务", "url": "https://docs.mistral.ai/inference/pricing"},
-    {"provider": "DeepSeek", "model": "DeepSeek Chat", "context": "官方标准价", "input_per_m": "$0.27", "cached_input_per_m": "$0.07", "output_per_m": "$1.10", "focus": "中文、代码与低成本推理", "url": "https://api-docs.deepseek.com/quick_start/pricing"},
-    {"provider": "DeepSeek", "model": "DeepSeek Reasoner", "context": "官方标准价", "input_per_m": "$0.55", "cached_input_per_m": "$0.14", "output_per_m": "$2.19", "focus": "数学、代码与深度推理", "url": "https://api-docs.deepseek.com/quick_start/pricing"},
+    {"provider": "DeepSeek", "model": "DeepSeek V4 Flash", "context": "1M·工作日峰值", "input_per_m": "$0.44", "cached_input_per_m": "$0.014", "output_per_m": "$1.32", "focus": "高吞吐推理、代码与Agent", "url": "https://api-docs.deepseek.com/quick_start/pricing"},
+    {"provider": "DeepSeek", "model": "DeepSeek V4 Pro", "context": "1M·工作日峰值", "input_per_m": "$1.32", "cached_input_per_m": "$0.044", "output_per_m": "$3.96", "focus": "复杂推理、代码与专业研究", "url": "https://api-docs.deepseek.com/quick_start/pricing"},
+    {"provider": "DeepSeek", "model": "DeepSeek V4 Flash Vision Exp", "context": "1M·实验版·工作日峰值", "input_per_m": "$0.44", "cached_input_per_m": "$0.014", "output_per_m": "$1.32", "focus": "图文理解与多模态任务", "url": "https://api-docs.deepseek.com/quick_start/pricing"},
 ]
 
 
@@ -619,8 +906,9 @@ PRICING_SOURCES = {
     "DeepSeek": {
         "url": "https://api-docs.deepseek.com/quick_start/pricing",
         "models": {
-            "DeepSeek Chat": ("deepseek-chat", (0, 1, 2)),
-            "DeepSeek Reasoner": ("deepseek-reasoner", (0, 1, 2)),
+            "DeepSeek V4 Flash": ("PRICING", (9, 3, 15)),
+            "DeepSeek V4 Pro": ("PRICING", (10, 4, 16)),
+            "DeepSeek V4 Flash Vision Exp": ("PRICING", (11, 5, 17)),
         },
     },
 }
@@ -682,7 +970,7 @@ def fetch_ai_model_pricing(previous_rows: list[dict[str, Any]]) -> tuple[list[di
                         row["verified_at"] = now_iso()
                     else:
                         row.setdefault("verified_at", "")
-            statuses.append({"key": f"model_pricing_{provider.lower()}", "status": "cached", "updated_at": now_iso(), "message": type(exc).__name__})
+            statuses.append({"key": f"model_pricing_{provider.lower()}", "status": "baseline" if provider == "OpenAI" else "cached", "updated_at": now_iso(), "message": "官方基准价；官方页拒绝自动抓取" if provider == "OpenAI" else type(exc).__name__})
         time.sleep(0.2)
 
     for row in rows:
@@ -694,6 +982,9 @@ def fetch_ai_model_pricing(previous_rows: list[dict[str, Any]]) -> tuple[list[di
 def fallback_payload(previous: dict[str, Any]) -> dict[str, Any]:
     return {
         "fmp_quotes": previous.get("fmp_quotes", []),
+        "ai_chain_quotes": previous.get("ai_chain_quotes", []),
+        "ai_valuations": previous.get("ai_valuations", []),
+        "valuation_generated_at": previous.get("valuation_generated_at", ""),
         "fred_macro": previous.get("fred_macro", []),
         "eia_energy": previous.get("eia_energy", []),
         "twelve_fx": previous.get("twelve_fx", []),
@@ -702,6 +993,9 @@ def fallback_payload(previous: dict[str, Any]) -> dict[str, Any]:
         "gdelt_news": previous.get("gdelt_news", []),
         "alpha_news": previous.get("alpha_news", []),
         "ai_model_pricing": previous.get("ai_model_pricing", AI_MODEL_PRICING),
+        "ai_chain_metrics": previous.get("ai_chain_metrics", []),
+        "event_calendar": previous.get("event_calendar", []),
+        "score_backtest": previous.get("score_backtest", []),
     }
 
 
@@ -732,11 +1026,14 @@ def main() -> int:
 
     for key, fetcher, fallback in [
         ("fmp_quotes", fetch_fmp_quotes, payload["fmp_quotes"]),
+        ("ai_chain_quotes", lambda: fetch_ai_chain_quotes(payload["fmp_quotes"]), payload["ai_chain_quotes"]),
+        ("ai_valuations", lambda: fetch_ai_valuations(previous.get("ai_valuations", []), previous.get("valuation_generated_at", "")), payload["ai_valuations"]),
         ("fred_macro", fetch_fred_series, payload["fred_macro"]),
         ("eia_energy", fetch_eia_energy, payload["eia_energy"]),
         ("twelve_fx", fetch_twelve_fx, payload["twelve_fx"]),
         ("market_history", fetch_market_history, payload["market_history"]),
         ("etf_fund_flows", lambda: fetch_etf_fund_flows(previous.get("etf_fund_flows", [])), payload["etf_fund_flows"]),
+        ("event_calendar", fetch_event_calendar, payload["event_calendar"]),
         ("gdelt_news", fetch_gdelt_news, payload["gdelt_news"]),
         ("alpha_news", fetch_alpha_news, payload["alpha_news"]),
     ]:
@@ -744,6 +1041,21 @@ def main() -> int:
         payload[key] = data
         statuses.append(status)
         time.sleep(0.25)
+
+    valuation_map = {str(item.get("symbol")): item.get("pe") for item in payload["ai_valuations"]}
+    for quote in payload["ai_chain_quotes"]:
+        if valuation_map.get(str(quote.get("symbol"))) is not None:
+            quote["pe"] = valuation_map[str(quote.get("symbol"))]
+    if payload["ai_valuations"]:
+        payload["valuation_generated_at"] = now_iso()
+    payload["ai_chain_metrics"] = build_ai_chain_metrics(payload["ai_chain_quotes"] or payload["fmp_quotes"])
+    payload["score_backtest"] = build_score_backtest(payload["market_history"])
+    try:
+        groups, summary_status = enrich_news_summaries([payload["alpha_news"], payload["gdelt_news"]])
+        payload["alpha_news"], payload["gdelt_news"] = groups
+    except (HTTPError, URLError, TimeoutError, OSError, ValueError, KeyError, TypeError, json.JSONDecodeError) as exc:
+        summary_status = {"key": "news_summary_zh", "status": "cached", "updated_at": now_iso(), "message": type(exc).__name__}
+    statuses.append(summary_status)
 
     pricing, pricing_statuses = fetch_ai_model_pricing(previous.get("ai_model_pricing", []))
     payload["ai_model_pricing"] = pricing

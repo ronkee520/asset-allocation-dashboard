@@ -61,5 +61,35 @@ class EtfFundFlowTests(unittest.TestCase):
         self.assertTrue(all(row["estimated_flow"] == 10_000_000 for row in rows))
 
 
+class DerivedAnalyticsTests(unittest.TestCase):
+    def test_ai_chain_uses_quote_inputs(self):
+        quotes = []
+        for symbol in ("NVDA", "AMD", "MU", "AVGO"):
+            quotes.append({"symbol": symbol, "change_pct": 2, "volume": 120, "avg_volume": 100, "price": 10, "pe": 30})
+        rows = fetch_data.build_ai_chain_metrics(quotes)
+        self.assertEqual(rows[0]["group"], "GPU / HBM")
+        self.assertEqual(rows[0]["breadth"], 100)
+        self.assertGreater(rows[0]["strength"], 70)
+
+    def test_backtest_is_generated_without_future_signal_inputs(self):
+        points = [{"date": f"2026-01-{(i % 28) + 1:02d}", "close": 100 + i * 0.4 + (i % 5) * 0.1} for i in range(126)]
+        history = [{"symbol": symbol, "points": points} for symbol in ("SPY", "TLT", "CPER", "GLD", "UUP", "BOTZ", "EWH", "ASHR")]
+        rows = fetch_data.build_score_backtest(history)
+        self.assertEqual(len(rows), 8)
+        self.assertTrue(all(row["history_days"] == 126 for row in rows))
+        self.assertTrue(all(0 <= row["current_percentile"] <= 100 for row in rows))
+
+    def test_event_calendar_filters_official_releases(self):
+        payload = {"release_dates": [
+            {"release_name": "Consumer Price Index", "date": "2026-09-11"},
+            {"release_name": "Unrelated Weekly Series", "date": "2026-09-12"},
+        ]}
+        with patch.object(fetch_data, "local_key", return_value="x" * 32), patch.object(fetch_data, "get_json", return_value=payload), patch.object(fetch_data, "get_page_text", side_effect=ValueError("offline")):
+            rows = fetch_data.fetch_event_calendar()
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(rows[0]["event"], "美国CPI")
+        self.assertEqual(rows[0]["source_name"], "FRED官方发布日历")
+
+
 if __name__ == "__main__":
     unittest.main()
