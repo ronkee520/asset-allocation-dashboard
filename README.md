@@ -1,6 +1,6 @@
 # 全球资产配置监控台
 
-面向资产配置分析师的跨资产 dashboard，覆盖 A股/港股/美股、ETF、利率、汇率、商品、AI 产业链、AI 模型价格和新闻线索。页面主体是静态 HTML，适合放到 GitHub Pages 做公开成果展示。
+面向资产配置分析师的跨资产 dashboard，覆盖 A股/港股/美股、ETF、利率、汇率、商品、AI 产业链、AI 模型价格和新闻线索。
 
 ## 如何打开
 
@@ -11,8 +11,6 @@
 双击 `打开单文件版.bat`：直接用 Microsoft Edge 打开 `index.html`，使用上一次保存的数据快照。
 
 ### GitHub Pages
-
-推荐仓库名：`asset-allocation-dashboard`
 
 发布后固定访问地址通常是：
 
@@ -80,3 +78,4 @@ GDELT 不需要 API Key。
 - `scripts/fetch_data.py`：本地和 GitHub Actions 共用的数据抓取脚本。
 - `.github/workflows/update-data.yml`：定时更新数据。
 - `.github/workflows/deploy-pages.yml`：部署 GitHub Pages。
+
