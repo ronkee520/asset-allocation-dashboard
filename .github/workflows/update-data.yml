@@ -14,16 +14,20 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: dashboard-data-refresh
+  cancel-in-progress: false
+
 jobs:
   update-data:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
@@ -37,11 +41,32 @@ jobs:
           EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
           ALPHA_VANTAGE_API_KEY: ${{ secrets.ALPHA_VANTAGE_API_KEY }}
           TWELVE_DATA_API_KEY: ${{ secrets.TWELVE_DATA_API_KEY }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python scripts/fetch_data.py
 
       - name: Commit updated data
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "Update dashboard data"
-          file_pattern: data/latest.json data/latest.js
+        shell: bash
+        run: |
+          if git diff --quiet -- data/latest.json data/latest.js; then
+            echo "No dashboard data changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/latest.json data/latest.js
+          git commit -m "Update dashboard data"
+
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+
+            echo "Push attempt ${attempt} was rejected; rebasing on the latest main branch."
+            git fetch origin main
+            git rebase -X theirs origin/main
+            sleep $((attempt * 2))
+          done
+
+          echo "Unable to publish dashboard data after 3 attempts." >&2
+          exit 1
+

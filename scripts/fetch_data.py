@@ -280,30 +280,54 @@ def fetch_gdelt_news() -> list[dict[str, Any]]:
     return output
 
 
-def enrich_news_summaries(news_groups: list[list[dict[str, Any]]]) -> tuple[list[list[dict[str, Any]]], dict[str, Any]]:
-    """Optionally summarize publisher titles and snippets with Gemini."""
-    key = os.environ.get("GEMINI_API_KEY", "").strip()
-    flat = [item for group in news_groups for item in group if item.get("title")]
-    if not key or not flat:
-        return news_groups, {"key": "news_summary_zh", "status": "fallback", "updated_at": now_iso(), "message": "规则摘要；配置 GEMINI_API_KEY 可启用模型摘要"}
+def rule_news_summary_zh(item: dict[str, Any]) -> str:
+    """Create a cautious Chinese allocation summary without an external model API."""
+    title = str(item.get("title") or "").strip()
+    summary = str(item.get("summary") or "").strip()
+    text = f"{title} {summary}".lower()
 
-    model = os.environ.get("GEMINI_NEWS_MODEL", "gemini-2.5-flash-lite").strip()
-    records = [{"id": index, "title": item.get("title"), "snippet": str(item.get("summary") or "")[:600]} for index, item in enumerate(flat)]
-    prompt = (
-        "你是中文资产配置研究助理。根据新闻标题和发布方摘要，为每条新闻写一条60到110字的中文摘要，"
-        "保留公司、资产、数字和不确定性，说明可能影响的资产；不要补造原文没有的事实。"
-        "只返回JSON数组，每项格式为{\"id\":数字,\"summary_zh\":\"...\"}。\n" + json.dumps(records, ensure_ascii=False)
-    )
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?" + urlencode({"key": key})
-    payload = post_json(url, {"contents": [{"parts": [{"text": prompt}]}], "generationConfig": {"responseMimeType": "application/json", "temperature": 0.1}})
-    text = payload["candidates"][0]["content"]["parts"][0]["text"]
-    parsed = json.loads(text)
-    summaries = {int(item["id"]): str(item["summary_zh"]).strip() for item in parsed if item.get("summary_zh")}
-    for index, item in enumerate(flat):
-        if index in summaries:
-            item["summary_zh"] = summaries[index]
-            item["summary_method"] = f"Gemini {model}"
-    return news_groups, {"key": "news_summary_zh", "status": "online", "updated_at": now_iso(), "message": f"Gemini摘要 {len(summaries)}条"}
+    def has(*terms: str) -> bool:
+        return any(term in text for term in terms)
+
+    if has("inflation", " cpi", "通胀"):
+        return "新闻聚焦通胀数据或预期变化，可能经由利率路径影响美债、美元、黄金及全球成长股估值。"
+    if has("gold", "bullion", "黄金"):
+        return "新闻关注黄金及其驱动因素，后续重点观察美元、实际利率、央行政策预期和避险需求。"
+    if has("oil", "crude", "opec", "eia", "原油"):
+        return "新闻涉及原油供需、库存或产量变化，可能影响油价、能源股表现以及市场对通胀的判断。"
+    if has("fed", "fomc", "interest rate", "rate cut", "rate hike", "美联储"):
+        return "报道关注美联储和利率路径，政策预期变化将影响美债收益率、美元、黄金及成长股估值。"
+    if has("ai", "artificial intelligence", "semiconductor", "chip", "memory", "gpu", "半导体"):
+        return "新闻涉及AI或半导体产业景气，需结合订单、资本开支、供需与估值，评估芯片、云计算及主题ETF影响。"
+    if has("etf", "fund flow", "inflow", "outflow"):
+        return "报道讨论ETF配置或资金动向，建议结合标的趋势、成交活跃度、份额变化和估算净申赎进一步判断。"
+    if has("earnings", "results", "revenue", "profit", "guidance"):
+        return "新闻聚焦公司业绩或经营指引，实际结果与管理层预期可能影响个股定价，并向所属行业传导。"
+    if has("treasury", "bond", "yield", "美债"):
+        return "报道关注债券收益率或利率预期变化，可能影响美元、黄金、权益估值及跨资产风险偏好。"
+    if has("copper", "commodity", "commodities", "铜", "商品"):
+        return "新闻涉及工业品或大宗商品，需结合供需、库存、美元和全球增长预期判断周期资产配置影响。"
+    if has("china", "chinese", "hong kong", "中国", "港股", "a股"):
+        return "新闻关注中国相关市场或政策变化，可能影响A股、港股、人民币以及全球周期和消费板块情绪。"
+    if has("s&p 500", "stock", "stocks", "market", "markets", "equity"):
+        return "报道反映权益市场或个股线索，需结合估值、盈利趋势和宏观环境判断其对整体风险偏好的影响。"
+
+    short_title = re.sub(r"\s+", " ", title)[:72]
+    return f"该报道聚焦“{short_title or '全球市场动态'}”，建议结合原文、行情变化及相关资产基本面判断其配置影响。"
+
+
+def enrich_news_summaries(news_groups: list[list[dict[str, Any]]]) -> tuple[list[list[dict[str, Any]]], dict[str, Any]]:
+    """Attach deterministic Chinese summaries without requiring an API key."""
+    flat = [item for group in news_groups for item in group if item.get("title")]
+    for item in flat:
+        item["summary_zh"] = rule_news_summary_zh(item)
+        item["summary_method"] = "本地资产配置规则"
+    return news_groups, {
+        "key": "news_summary_zh",
+        "status": "local",
+        "updated_at": now_iso(),
+        "message": f"本地规则摘要 {len(flat)} 条；无需外部模型API",
+    }
 
 
 def fetch_alpha_news() -> list[dict[str, Any]]:
@@ -1091,3 +1115,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+

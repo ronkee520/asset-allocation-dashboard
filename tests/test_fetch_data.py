@@ -62,6 +62,17 @@ class EtfFundFlowTests(unittest.TestCase):
 
 
 class DerivedAnalyticsTests(unittest.TestCase):
+    def test_news_summaries_do_not_require_model_api(self):
+        groups = [[{
+            "title": "Inflation cools as CPI misses forecasts",
+            "summary": "Bond yields fell after the release.",
+        }]]
+        enriched, status = fetch_data.enrich_news_summaries(groups)
+        self.assertEqual(status["status"], "local")
+        self.assertIn("无需外部模型API", status["message"])
+        self.assertIn("通胀", enriched[0][0]["summary_zh"])
+        self.assertEqual(enriched[0][0]["summary_method"], "本地资产配置规则")
+
     def test_ai_chain_uses_quote_inputs(self):
         quotes = []
         for symbol in ("NVDA", "AMD", "MU", "AVGO"):
@@ -93,3 +104,4 @@ class DerivedAnalyticsTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
