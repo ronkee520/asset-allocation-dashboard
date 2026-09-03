@@ -8,7 +8,7 @@ const retiredRoutes = ["workspace", "report"];
 
 await rm(resolve(root, "assets"), { recursive: true, force: true });
 await cp(resolve(source, "assets"), resolve(root, "assets"), { recursive: true });
-const html = await readFile(resolve(source, "index.html"), "utf8");
+const html = `${(await readFile(resolve(source, "index.html"), "utf8")).trimEnd()}\n`;
 await writeFile(resolve(root, "index.html"), html, "utf8");
 for (const route of routes) {
   const target = resolve(root, route);

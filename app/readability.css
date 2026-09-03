@@ -209,29 +209,60 @@
 .method-grid strong { color: var(--red); font-size: 12px; }
 .method-grid p { margin: 8px 0 0; color: var(--muted); font-size: 10px; line-height: 1.65; }
 
-.commodity-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(145px, 1fr)); }
-.commodity-cards button { min-height: 88px; padding: 12px; border: 0; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: #fff; text-align: left; cursor: pointer; }
+.commodity-page { gap: 14px; }
+.commodity-page .terminal-panel { border-color: #d7ced0; }
+.commodity-page .panel-head { min-height: 58px; padding: 11px 15px; }
+.commodity-page .panel-head h2 { font-size: 17px; }
+.commodity-page .panel-head > div > span { font-size: 12px; }
+.commodity-cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.commodity-cards button { min-height: 96px; padding: 14px; border: 0; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: #fff; text-align: left; cursor: pointer; }
 .commodity-cards button:hover, .commodity-cards button.active { background: var(--red-soft); box-shadow: inset 3px 0 0 var(--red); }
 .commodity-cards span, .commodity-cards strong, .commodity-cards small, .commodity-cards em { display: block; }
-.commodity-cards span { font-size: 12px; font-weight: 800; }
-.commodity-cards small { margin-top: 2px; color: var(--muted); font-size: 9px; font-weight: 400; }
-.commodity-cards strong { margin: 9px 0 4px; font: 900 15px monospace; }
-.commodity-cards em { color: var(--muted); font-size: 9px; font-style: normal; }
-.commodity-filter { display: flex; flex-wrap: wrap; justify-content: flex-end; max-width: 760px; border: 1px solid var(--line); }
-.commodity-filter button { padding: 5px 8px; border: 0; border-right: 1px solid var(--line); background: #fff; font-size: 9px; cursor: pointer; }
+.commodity-cards span { font-size: 14px; font-weight: 800; }
+.commodity-cards small { margin-top: 3px; color: var(--muted); font-size: 11px; font-weight: 400; }
+.commodity-cards strong { margin: 10px 0 5px; font: 900 17px monospace; }
+.commodity-cards em { color: var(--muted); font-size: 11px; font-style: normal; }
+.commodity-filter { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-start; padding: 10px 14px; border-bottom: 1px solid var(--line); background: #faf8f9; }
+.commodity-filter button { min-height: 32px; padding: 6px 11px; border: 1px solid #d4cbcd; background: #fff; font-size: 11px; font-weight: 700; cursor: pointer; }
+.commodity-filter button:hover { color: var(--red); border-color: #cf9daa; background: #fff7f9; }
 .commodity-filter button.active { color: #fff; background: var(--red); }
-.commodity-table .table-row { grid-template-columns: 1.15fr .55fr .85fr .55fr .55fr .55fr .7fr .9fr 1.1fr; min-width: 1160px; }
+.commodity-overview { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-bottom: 1px solid var(--line); }
+.commodity-overview > div { min-height: 76px; padding: 12px 14px; border-right: 1px solid var(--line); }
+.commodity-overview span, .commodity-overview strong { display: block; }
+.commodity-overview span { color: var(--muted); font-size: 11px; }
+.commodity-overview strong { margin-top: 9px; font-size: 15px; }
+.commodity-table .table-row { grid-template-columns: minmax(118px, 1.15fr) minmax(65px, .58fr) minmax(88px, .82fr) repeat(3, minmax(60px, .55fr)) minmax(78px, .72fr) minmax(98px, .9fr) minmax(128px, 1.12fr); min-width: 0; }
+.commodity-page .table-row { min-height: 52px; padding: 7px 12px; gap: 9px; font-size: 12px; }
+.commodity-page .table-row.table-head { min-height: 36px; font-size: 11px; }
+.commodity-page .table-row small { margin-top: 3px; font-size: 10px; }
 .commodity-table a.table-row { color: inherit; }
 .range-track { display: block; width: 100%; height: 5px; margin-bottom: 4px; background: #ece7e8; }
 .range-track i { display: block; height: 100%; background: var(--red); }
-.black-chain { padding: 6px 12px; }
-.black-chain a { display: grid; grid-template-columns: 1fr 90px 70px; gap: 10px; align-items: center; min-height: 58px; border-bottom: 1px solid #eee; }
-.black-chain strong, .black-chain small { display: block; }
-.black-chain strong { font-size: 13px; }
-.black-chain small { margin-top: 3px; color: var(--muted); font-size: 9px; }
-.black-chain b, .black-chain em { text-align: right; font: 800 12px monospace; font-style: normal; }
-.cftc-table .table-row { grid-template-columns: 1fr .8fr .8fr .8fr .8fr; min-width: 620px; }
+.commodity-context { margin: 0; padding: 13px 15px; border-top: 1px solid #ead6db; background: #fff8fa; color: #5b4d51; font-size: 12px; line-height: 1.65; }
+.commodity-context strong { color: var(--red); }
+.position-summary { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-bottom: 1px solid var(--line); background: #fffafa; }
+.position-summary > div { min-height: 88px; padding: 13px 15px; border-right: 1px solid var(--line); }
+.position-summary span, .position-summary strong, .position-summary small { display: block; }
+.position-summary span { color: var(--muted); font-size: 11px; }
+.position-summary strong { margin: 9px 0 5px; font-size: 16px; }
+.position-summary small { color: var(--muted); font-size: 10px; }
+.cftc-table .table-row { grid-template-columns: minmax(170px, 1.35fr) minmax(90px, .75fr) minmax(90px, .75fr) minmax(110px, .85fr) minmax(100px, .8fr) minmax(95px, .72fr); min-width: 0; }
 .cftc-table a.table-row { color: inherit; }
+.commodity-signals { display: grid; grid-template-columns: 1fr 1fr; }
+.commodity-signals > div { min-height: 82px; padding: 14px 16px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.commodity-signals span, .commodity-signals strong, .commodity-signals em { display: block; }
+.commodity-signals span { color: var(--muted); font-size: 11px; }
+.commodity-signals strong { margin: 8px 0 5px; font-size: 15px; }
+.commodity-signals em { font: 800 12px monospace; font-style: normal; }
+.energy-delta { display: grid; grid-template-columns: 1fr auto auto; align-items: end; gap: 8px; min-height: 72px; padding: 13px 14px; border-bottom: 1px solid var(--line); background: #fffafa; }
+.energy-delta span { color: var(--muted); font-size: 11px; }
+.energy-delta strong { font: 900 19px monospace; }
+.energy-delta small { color: var(--muted); font-size: 10px; }
+.commodity-page .factor-list > div { min-height: 53px; font-size: 12px; }
+.commodity-page .factor-list > div span small { font-size: 10px; }
+.commodity-page .large-note { font-size: 12px; line-height: 1.7; }
+.commodity-page .method-grid strong { font-size: 13px; }
+.commodity-page .method-grid p { font-size: 11px; line-height: 1.7; }
 .factor-list > div { display: grid; grid-template-columns: 1fr .55fr .5fr; gap: 8px; align-items: center; min-height: 47px; border-bottom: 1px solid #eee; font-size: 10px; }
 .factor-list > div span small { display: block; margin-top: 3px; color: var(--muted); font-size: 9px; }
 .factor-list > div em { text-align: right; font-style: normal; }
@@ -240,6 +271,8 @@
   .flow-dashboard { grid-template-columns: repeat(3, 1fr); }
   .method-grid { grid-template-columns: repeat(2, 1fr); }
   .pring-playbook { grid-template-columns: repeat(2, 1fr); }
+  .commodity-cards { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .commodity-overview, .position-summary { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
 @media (max-width: 760px) {
@@ -250,5 +283,12 @@
   .method-grid { grid-template-columns: 1fr; }
   .pring-playbook { grid-template-columns: 1fr; }
   .panel-head { align-items: flex-start; }
-  .commodity-filter { max-width: 54vw; max-height: 62px; overflow: auto; }
+  .commodity-page .panel-head h2 { font-size: 16px; }
+  .commodity-cards { grid-template-columns: 1fr 1fr; }
+  .commodity-cards button { min-height: 88px; }
+  .commodity-overview, .position-summary { grid-template-columns: 1fr 1fr; }
+  .commodity-overview > div, .position-summary > div { min-height: 72px; }
+  .commodity-table .table-row { min-width: 980px; }
+  .cftc-table .table-row { min-width: 760px; }
+  .commodity-signals { grid-template-columns: 1fr; }
 }

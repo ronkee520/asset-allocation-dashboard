@@ -105,9 +105,83 @@ function CalendarPage({ data }: { data: DashboardData }) {
 }
 
 function CommodityPage({ data }: { data: DashboardData }) {
-  const rows = data.commodity_market ?? [], categories = ["全部", ...Array.from(new Set(rows.map((item) => item.category)))], [category, setCategory] = useState("全部"), visible = category === "全部" ? rows : rows.filter((item) => item.category === category), cftc = data.cftc_positions ?? [], black = rows.filter((item) => item.category === "黑色系");
-  const stats = Array.from(new Set(rows.map((item) => item.category))).map((label) => { const selected = rows.filter((item) => item.category === label), values = selected.map((item) => item.change_20d).filter((value): value is number => Number.isFinite(value)); return { label, count: selected.length, change: values.length ? values.reduce((sum, value) => sum + value, 0) / values.length : 0, breadth: values.length ? values.filter((value) => value > 0).length / values.length * 100 : 0 }; }).sort((a, b) => b.change - a.change);
-  return <div className="page-grid"><Panel title="商品板块温度" kicker="COMMODITY ROTATION" className="span-3"><div className="commodity-cards">{stats.map((item) => <button className={category === item.label ? "active" : ""} onClick={() => setCategory(item.label)} key={item.label}><span>{item.label}<small>{item.count}个品种</small></span><strong className={tone(item.change)}>{pct(item.change)}</strong><em>20日上涨广度 {formatNumber(item.breadth, 0)}%</em></button>)}</div></Panel><Panel title="大宗商品全景" kicker="FUTURES MARKET" className="span-3" action={<div className="commodity-filter">{categories.map((item) => <button className={category === item ? "active" : ""} onClick={() => setCategory(item)} key={item}>{item}</button>)}</div>}><div className="data-table commodity-table"><div className="table-row table-head"><span>品种</span><span>市场</span><span>最新价</span><span>1日</span><span>20日</span><span>60日</span><span>20日波动</span><span>一年区间</span><span>数据日 / 来源</span></div>{visible.map((item) => <a className="table-row" href={item.url} target="_blank" rel="noreferrer" key={item.symbol}><span><strong>{item.name}</strong><small>{item.symbol} · {item.category}</small></span><span>{item.market}</span><span className="mono">{formatNumber(item.price)}<small>{item.unit}</small></span><span className={tone(item.change_1d ?? 0)}>{pct(item.change_1d)}</span><span className={tone(item.change_20d ?? 0)}>{pct(item.change_20d)}</span><span className={tone(item.change_60d ?? 0)}>{pct(item.change_60d)}</span><span>{pct(item.volatility_20d)}</span><span><b className="range-track"><i style={{ width: `${Math.min(100, Math.max(0, item.range_percentile ?? 0))}%` }} /></b><small>{formatNumber(item.range_percentile, 0)}分位</small></span><span>{item.as_of}<small>{item.source}</small></span></a>)}</div></Panel><Panel title="中国黑色产业链" kicker="FERROUS COMPLEX" className="span-2"><div className="black-chain">{black.map((item) => <a href={item.url} target="_blank" rel="noreferrer" key={item.symbol}><span><strong>{item.name}</strong><small>{item.market} · {item.unit}</small></span><b>{formatNumber(item.price)}</b><em className={tone(item.change_20d ?? 0)}>{pct(item.change_20d)}</em></a>)}</div><p className="large-note">螺纹钢连接地产、基建、钢厂利润与铁矿石需求，是观察中国内需和黑色产业链的重要高频价格。这里同时对照热卷与铁矿石，避免孤立解读单一品种。</p></Panel><Panel title="CFTC管理基金仓位" kicker="POSITIONING"><div className="data-table cftc-table"><div className="table-row table-head"><span>品种</span><span>净持仓</span><span>周变化</span><span>占未平仓</span><span>数据日</span></div>{cftc.map((item) => <a className="table-row" href={item.url} target="_blank" rel="noreferrer" key={item.name}><strong>{item.name}</strong><span className={tone(item.managed_money_net)}>{formatNumber(item.managed_money_net, 0)}</span><span className={tone(item.weekly_change)}>{formatNumber(item.weekly_change, 0)}</span><span>{pct(item.net_pct_open_interest)}</span><span>{item.as_of}</span></a>)}</div></Panel><Panel title="能源库存" kicker="EIA OFFICIAL"><div className="factor-list">{(data.eia_energy ?? []).map((item, index) => <div key={`${String(item.series_id ?? item.name)}-${index}`}><span>{String(item.name ?? item.series_id ?? "EIA指标")}<small>{String(item.date ?? item.period ?? "")}</small></span><strong>{formatNumber(item.value, 2)}</strong><em>{String(item.unit ?? "")}</em></div>)}</div></Panel><Panel title="来源与限制" kicker="DATA DISCIPLINE" className="span-3"><div className="method-grid"><div><strong>国际期货</strong><p>Yahoo Finance公开日线，用于价格、趋势、波动率与一年分位；属于公开但非交易所授权接口。</p></div><div><strong>中国黑色</strong><p>新浪财经连续期货公开日线，覆盖螺纹钢、热卷与铁矿石；连续价格不等于可直接交易合约。</p></div><div><strong>仓位</strong><p>CFTC官方Disaggregated COT周报，展示管理基金多空净仓及周变化，存在发布滞后。</p></div><div><strong>基本面</strong><p>EIA官方库存与供需数据已接入。当前不申请USDA FAS Key，因此不展示需要该权限的数据。</p></div></div></Panel></div>;
+  const rows = data.commodity_market ?? [];
+  const cftc = data.cftc_positions ?? [];
+  const energy = data.eia_energy ?? [];
+  const categories = ["全部", ...Array.from(new Set(rows.map((item) => item.category)))];
+  const [category, setCategory] = useState("全部");
+  const visible = category === "全部" ? rows : rows.filter((item) => item.category === category);
+  const average = (values: Array<number | null | undefined>) => {
+    const finite = values.filter((value): value is number => Number.isFinite(value));
+    return finite.length ? finite.reduce((sum, value) => sum + value, 0) / finite.length : 0;
+  };
+  const categoryStats = Array.from(new Set(rows.map((item) => item.category))).map((label) => {
+    const selected = rows.filter((item) => item.category === label);
+    const values = selected.map((item) => item.change_20d).filter((value): value is number => Number.isFinite(value));
+    return {
+      label,
+      count: selected.length,
+      change: average(values),
+      breadth: values.length ? values.filter((value) => value > 0).length / values.length * 100 : 0,
+    };
+  }).sort((a, b) => b.change - a.change);
+  const allChanges = rows.map((item) => item.change_20d).filter((value): value is number => Number.isFinite(value));
+  const stats = [{ label: "全部", count: rows.length, change: average(allChanges), breadth: allChanges.length ? allChanges.filter((value) => value > 0).length / allChanges.length * 100 : 0 }, ...categoryStats];
+  const ranked = visible.filter((item) => Number.isFinite(item.change_20d)).slice().sort((a, b) => Number(b.change_20d) - Number(a.change_20d));
+  const strongest = ranked[0];
+  const weakest = ranked.at(-1);
+  const highestVolatility = visible.filter((item) => Number.isFinite(item.volatility_20d)).slice().sort((a, b) => Number(b.volatility_20d) - Number(a.volatility_20d))[0];
+  const highestRange = visible.filter((item) => Number.isFinite(item.range_percentile)).slice().sort((a, b) => Number(b.range_percentile) - Number(a.range_percentile))[0];
+  const selectedMomentum = average(visible.map((item) => item.change_20d));
+  const selectedBreadth = visible.length ? visible.filter((item) => Number(item.change_20d) > 0).length / visible.length * 100 : 0;
+  const selectedVolatility = average(visible.map((item) => item.volatility_20d));
+  const largestNetLong = cftc.slice().sort((a, b) => b.managed_money_net - a.managed_money_net)[0];
+  const largestAddition = cftc.slice().sort((a, b) => b.weekly_change - a.weekly_change)[0];
+  const largestReduction = cftc.slice().sort((a, b) => a.weekly_change - b.weekly_change)[0];
+  const cftcLongBreadth = cftc.length ? cftc.filter((item) => item.managed_money_net > 0).length / cftc.length * 100 : 0;
+  const inventoryChange = energy.length > 1 ? Number(energy[0].value) - Number(energy[1].value) : null;
+
+  return <div className="page-grid commodity-page">
+    <Panel title="商品板块温度" kicker="COMMODITY ROTATION" className="span-3">
+      <div className="commodity-cards">{stats.map((item) => <button className={category === item.label ? "active" : ""} onClick={() => setCategory(item.label)} key={item.label}><span>{item.label === "全部" ? "全部商品" : item.label}<small>{item.count}个品种</small></span><strong className={tone(item.change)}>{pct(item.change)}</strong><em>20日上涨广度 {formatNumber(item.breadth, 0)}%</em></button>)}</div>
+    </Panel>
+    <Panel title="大宗商品全景" kicker="FUTURES MARKET" className="span-3" action={<StatusPill>{visible.length}个品种</StatusPill>}>
+      <div className="commodity-filter" aria-label="大宗商品类别筛选">{categories.map((item) => <button className={category === item ? "active" : ""} onClick={() => setCategory(item)} key={item}>{item}</button>)}</div>
+      <div className="commodity-overview">
+        <div><span>当前筛选</span><strong>{category === "全部" ? "全部商品" : category}</strong></div>
+        <div><span>20日平均涨跌</span><strong className={tone(selectedMomentum)}>{pct(selectedMomentum)}</strong></div>
+        <div><span>上涨广度</span><strong>{formatNumber(selectedBreadth, 0)}%</strong></div>
+        <div><span>平均20日波动</span><strong>{pct(selectedVolatility)}</strong></div>
+        <div><span>阶段领涨</span><strong>{strongest?.name ?? "-"}</strong></div>
+      </div>
+      <div className="data-table commodity-table"><div className="table-row table-head"><span>品种</span><span>市场</span><span>最新价</span><span>1日</span><span>20日</span><span>60日</span><span>20日波动</span><span>一年区间</span><span>数据日 / 来源</span></div>{visible.map((item) => <a className="table-row" href={item.url} target="_blank" rel="noreferrer" key={item.symbol}><span><strong>{item.name}</strong><small>{item.symbol} · {item.category}</small></span><span>{item.market}</span><span className="mono">{formatNumber(item.price)}<small>{item.unit}</small></span><span className={tone(item.change_1d ?? 0)}>{pct(item.change_1d)}</span><span className={tone(item.change_20d ?? 0)}>{pct(item.change_20d)}</span><span className={tone(item.change_60d ?? 0)}>{pct(item.change_60d)}</span><span>{pct(item.volatility_20d)}</span><span><b className="range-track"><i style={{ width: `${Math.min(100, Math.max(0, item.range_percentile ?? 0))}%` }} /></b><small>{formatNumber(item.range_percentile, 0)}分位</small></span><span>{item.as_of}<small>{item.source}</small></span></a>)}</div>
+      {category === "黑色系" && <p className="commodity-context"><strong>黑色系观察：</strong>螺纹钢连接地产与基建需求，热卷更偏制造业，铁矿石反映炉料成本和钢厂补库。三者应结合价差和方向共同判断，避免孤立解读单一品种。</p>}
+    </Panel>
+    <Panel title="CFTC管理基金仓位" kicker="POSITIONING" className="span-3">
+      <div className="position-summary">
+        <div><span>覆盖市场</span><strong>{cftc.length}</strong><small>CFTC周频品种</small></div>
+        <div><span>净多市场占比</span><strong>{formatNumber(cftcLongBreadth, 0)}%</strong><small>管理基金净仓为正</small></div>
+        <div><span>最大净多</span><strong>{largestNetLong?.name ?? "-"}</strong><small>{formatNumber(largestNetLong?.managed_money_net, 0)}手</small></div>
+        <div><span>本周增仓最多</span><strong>{largestAddition?.name ?? "-"}</strong><small className="up">{formatNumber(largestAddition?.weekly_change, 0)}手</small></div>
+        <div><span>本周减仓最多</span><strong>{largestReduction?.name ?? "-"}</strong><small className="down">{formatNumber(largestReduction?.weekly_change, 0)}手</small></div>
+      </div>
+      <div className="data-table cftc-table"><div className="table-row table-head"><span>品种 / 合约</span><span>净持仓</span><span>周变化</span><span>净仓 / 未平仓</span><span>未平仓量</span><span>数据日</span></div>{cftc.map((item) => <a className="table-row" href={item.url} target="_blank" rel="noreferrer" key={item.name}><span><strong>{item.name}</strong><small>{item.contract}</small></span><span className={tone(item.managed_money_net)}>{formatNumber(item.managed_money_net, 0)}</span><span className={tone(item.weekly_change)}>{formatNumber(item.weekly_change, 0)}</span><span className={tone(item.net_pct_open_interest ?? 0)}>{pct(item.net_pct_open_interest)}</span><span>{formatNumber(item.open_interest, 0)}</span><span>{item.as_of}<small>{item.frequency}</small></span></a>)}</div>
+    </Panel>
+    <Panel title="商品研究信号" kicker="CROSS-COMMODITY SIGNALS" className="span-2">
+      <div className="commodity-signals">
+        <div><span>20日最强</span><strong>{strongest?.name ?? "-"}</strong><em className="up">{pct(strongest?.change_20d)}</em></div>
+        <div><span>20日最弱</span><strong>{weakest?.name ?? "-"}</strong><em className="down">{pct(weakest?.change_20d)}</em></div>
+        <div><span>波动最高</span><strong>{highestVolatility?.name ?? "-"}</strong><em>{pct(highestVolatility?.volatility_20d)}</em></div>
+        <div><span>一年位置最高</span><strong>{highestRange?.name ?? "-"}</strong><em>{formatNumber(highestRange?.range_percentile, 0)}分位</em></div>
+      </div>
+      <p className="large-note">强弱信号随上方筛选联动，用于快速识别板块内的趋势集中度、波动风险和拥挤位置。</p>
+    </Panel>
+    <Panel title="能源库存" kicker="EIA OFFICIAL">
+      {inventoryChange !== null && <div className="energy-delta"><span>最新周度库存变化</span><strong className={tone(inventoryChange)}>{inventoryChange >= 0 ? "+" : ""}{formatNumber(inventoryChange, 0)}</strong><small>{String(energy[0]?.unit ?? "")}</small></div>}
+      <div className="factor-list">{energy.map((item, index) => <div key={`${String(item.series_id ?? item.name)}-${index}`}><span>{String(item.name ?? item.series_id ?? "EIA指标")}<small>{String(item.date ?? item.period ?? "")}</small></span><strong>{formatNumber(item.value, 2)}</strong><em>{String(item.unit ?? "")}</em></div>)}</div>
+    </Panel>
+    <Panel title="来源与限制" kicker="DATA DISCIPLINE" className="span-3"><div className="method-grid"><div><strong>国际期货</strong><p>Yahoo Finance公开日线，用于价格、趋势、波动率与一年分位；属于公开但非交易所授权接口。</p></div><div><strong>中国黑色</strong><p>新浪财经连续期货公开日线，覆盖螺纹钢、热卷与铁矿石；连续价格不等于可直接交易合约。</p></div><div><strong>仓位</strong><p>CFTC官方Disaggregated COT周报，展示管理基金多空净仓及周变化，存在发布滞后。</p></div><div><strong>基本面</strong><p>EIA官方库存与供需数据已接入。当前不申请USDA FAS Key，因此不展示需要该权限的数据。</p></div></div></Panel>
+  </div>;
 }
 
 export function TerminalDashboard({ section = "overview" }: { section?: string }) {
