@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "全球资产配置研究终端",
-  description: "面向资产配置分析师的跨资产打分、宏观象限、相关性、AI产业链与事件研究终端。",
+  description: "面向资产配置分析师的跨资产打分、普林格周期、全球资金流、大宗商品、AI产业链与事件研究终端。",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
@@ -37,4 +37,3 @@ export default function RootLayout({
     </html>
   );
 }
-

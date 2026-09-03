@@ -1,6 +1,9 @@
 from __future__ import annotations
 
+import csv
+import io
 import json
+import math
 import os
 import re
 import sys
@@ -78,6 +81,20 @@ def get_json(url: str, timeout: int = 25) -> Any:
     request = Request(url, headers={"User-Agent": USER_AGENT, "Accept": "application/json,text/plain,*/*"})
     with urlopen(request, timeout=timeout) as response:
         return json.loads(response.read().decode("utf-8", errors="replace"))
+
+
+def get_text(url: str, timeout: int = 35, referer: str = "") -> str:
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/128.0 Safari/537.36",
+        "Accept": "application/json,text/plain,text/csv,*/*",
+        "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.7",
+        "Connection": "close",
+    }
+    if referer:
+        headers["Referer"] = referer
+    request = Request(url, headers=headers)
+    with urlopen(request, timeout=timeout) as response:
+        return response.read().decode("utf-8", errors="replace")
 
 
 def post_json(url: str, payload: dict[str, Any], timeout: int = 40) -> Any:
@@ -193,6 +210,8 @@ def fetch_fred_series() -> list[dict[str, Any]]:
         ("CPIAUCSL", "美国CPI同比", "通胀", "同比通胀方向、降息交易节奏"),
         ("UNRATE", "美国失业率", "就业", "经济周期与风险偏好"),
         ("BAMLH0A0HYM2", "美国高收益债利差", "信用", "信用风险偏好、权益下行保护"),
+        ("INDPRO", "美国工业产出指数", "增长", "实体生产动能与经济周期方向"),
+        ("PPIACO", "美国生产者价格指数", "通胀", "上游价格压力与商品周期验证"),
     ]
     output = []
     for series_id, name, category, driver in series:
@@ -474,6 +493,207 @@ def fetch_market_history() -> list[dict[str, Any]]:
     return output
 
 
+COMMODITY_SPECS = [
+    ("GC=F", "黄金", "贵金属", "COMEX", "美元/盎司", "https://finance.yahoo.com/quote/GC=F/"),
+    ("SI=F", "白银", "贵金属", "COMEX", "美元/盎司", "https://finance.yahoo.com/quote/SI=F/"),
+    ("PL=F", "铂金", "贵金属", "NYMEX", "美元/盎司", "https://finance.yahoo.com/quote/PL=F/"),
+    ("PA=F", "钯金", "贵金属", "NYMEX", "美元/盎司", "https://finance.yahoo.com/quote/PA=F/"),
+    ("HG=F", "铜", "工业金属", "COMEX", "美元/磅", "https://finance.yahoo.com/quote/HG=F/"),
+    ("ALI=F", "铝", "工业金属", "COMEX", "美元/吨", "https://finance.yahoo.com/quote/ALI=F/"),
+    ("CL=F", "WTI原油", "能源", "NYMEX", "美元/桶", "https://finance.yahoo.com/quote/CL=F/"),
+    ("BZ=F", "布伦特原油", "能源", "ICE", "美元/桶", "https://finance.yahoo.com/quote/BZ=F/"),
+    ("NG=F", "天然气", "能源", "NYMEX", "美元/MMBtu", "https://finance.yahoo.com/quote/NG=F/"),
+    ("HO=F", "取暖油", "能源", "NYMEX", "美元/加仑", "https://finance.yahoo.com/quote/HO=F/"),
+    ("ZC=F", "玉米", "谷物", "CBOT", "美分/蒲式耳", "https://finance.yahoo.com/quote/ZC=F/"),
+    ("ZW=F", "小麦", "谷物", "CBOT", "美分/蒲式耳", "https://finance.yahoo.com/quote/ZW=F/"),
+    ("ZS=F", "大豆", "谷物", "CBOT", "美分/蒲式耳", "https://finance.yahoo.com/quote/ZS=F/"),
+    ("KC=F", "咖啡", "软商品", "ICE", "美分/磅", "https://finance.yahoo.com/quote/KC=F/"),
+    ("SB=F", "原糖", "软商品", "ICE", "美分/磅", "https://finance.yahoo.com/quote/SB=F/"),
+    ("CT=F", "棉花", "软商品", "ICE", "美分/磅", "https://finance.yahoo.com/quote/CT=F/"),
+    ("CC=F", "可可", "软商品", "ICE", "美元/吨", "https://finance.yahoo.com/quote/CC=F/"),
+    ("LE=F", "活牛", "畜牧", "CME", "美分/磅", "https://finance.yahoo.com/quote/LE=F/"),
+    ("LBS=F", "木材", "建材", "CME", "美元/千板英尺", "https://finance.yahoo.com/quote/LBS=F/"),
+]
+
+CHINA_COMMODITY_SPECS = [
+    ("RB0", "RB", "螺纹钢", "黑色系", "上期所", "元/吨", "https://finance.sina.com.cn/futures/quotes/RB0.shtml"),
+    ("HC0", "HC", "热轧卷板", "黑色系", "上期所", "元/吨", "https://finance.sina.com.cn/futures/quotes/HC0.shtml"),
+    ("I0", "I", "铁矿石", "黑色系", "大商所", "元/吨", "https://finance.sina.com.cn/futures/quotes/I0.shtml"),
+]
+
+
+def parse_sina_futures_jsonp(text: str) -> list[dict[str, Any]]:
+    payload_match = re.search(r"=\s*\(?(\[.*\])\)?\s*;?\s*$", text, re.DOTALL)
+    if not payload_match:
+        raise ValueError("missing Sina futures JSONP payload")
+    return json.loads(payload_match.group(1))
+
+
+def _changes_and_risk(points: list[dict[str, Any]]) -> dict[str, float | None]:
+    closes = [as_float(item.get("close")) for item in points]
+    closes = [value for value in closes if value is not None]
+
+    def change(days: int) -> float | None:
+        if len(closes) <= days or not closes[-days - 1]:
+            return None
+        return (closes[-1] / closes[-days - 1] - 1) * 100
+
+    returns = [closes[index] / closes[index - 1] - 1 for index in range(1, len(closes)) if closes[index - 1]]
+    recent = returns[-20:]
+    volatility = None
+    if len(recent) >= 5:
+        mean = sum(recent) / len(recent)
+        variance = sum((value - mean) ** 2 for value in recent) / len(recent)
+        volatility = math.sqrt(variance) * math.sqrt(252) * 100
+    low, high = (min(closes), max(closes)) if closes else (None, None)
+    percentile = None
+    if closes and high is not None and low is not None:
+        percentile = 50.0 if high == low else (closes[-1] - low) / (high - low) * 100
+    return {
+        "change_1d": change(1),
+        "change_20d": change(20),
+        "change_60d": change(60),
+        "volatility_20d": volatility,
+        "range_percentile": percentile,
+        "range_low": low,
+        "range_high": high,
+    }
+
+
+def fetch_commodity_market(previous_rows: list[dict[str, Any]] | None = None) -> list[dict[str, Any]]:
+    previous_map = {str(row.get("symbol")): row for row in (previous_rows or [])}
+    output: list[dict[str, Any]] = []
+    for symbol, name, category, market, unit, source_url in COMMODITY_SPECS:
+        try:
+            url = f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?range=1y&interval=1d&events=history"
+            payload = get_json(url, timeout=35)
+            result = (payload.get("chart", {}).get("result") or [None])[0]
+            if not result:
+                continue
+            timestamps = result.get("timestamp") or []
+            quote = (result.get("indicators", {}).get("quote") or [{}])[0]
+            closes = quote.get("close") or []
+            volumes = quote.get("volume") or []
+            points = []
+            for index, (timestamp, close) in enumerate(zip(timestamps, closes)):
+                value = as_float(close)
+                if value is None:
+                    continue
+                points.append({
+                    "date": datetime.fromtimestamp(timestamp, timezone.utc).date().isoformat(),
+                    "close": value,
+                    "volume": as_float(volumes[index]) if index < len(volumes) else None,
+                })
+            if len(points) < 20:
+                continue
+            output.append({
+                "symbol": symbol,
+                "name": name,
+                "category": category,
+                "market": market,
+                "unit": unit,
+                "price": points[-1]["close"],
+                "volume": points[-1].get("volume"),
+                "as_of": points[-1]["date"],
+                "source": "Yahoo Finance公开日线",
+                "source_type": "公开行情",
+                "url": source_url,
+                "history": points[-252:],
+                **_changes_and_risk(points[-252:]),
+            })
+        except (HTTPError, URLError, TimeoutError, OSError, ValueError, KeyError, TypeError):
+            cached = previous_map.get(symbol)
+            if cached:
+                output.append({**cached, "data_status": "cached"})
+        time.sleep(0.2)
+
+    for api_symbol, symbol, name, category, market, unit, source_url in CHINA_COMMODITY_SPECS:
+        try:
+            text = get_text(
+                "https://stock2.finance.sina.com.cn/futures/api/jsonp.php/"
+                f"var%20_{api_symbol}=/InnerFuturesNewService.getDailyKLine?symbol={api_symbol}",
+                timeout=40,
+                referer="https://finance.sina.com.cn/",
+            )
+            lines = parse_sina_futures_jsonp(text)
+            points = []
+            for item in lines:
+                close = as_float(item.get("c"))
+                if close is None:
+                    continue
+                points.append({"date": str(item.get("d", "")), "close": close, "volume": as_float(item.get("v"))})
+            if len(points) < 20:
+                continue
+            output.append({
+                "symbol": symbol,
+                "name": name,
+                "category": category,
+                "market": market,
+                "unit": unit,
+                "price": points[-1]["close"],
+                "volume": points[-1].get("volume"),
+                "as_of": points[-1]["date"],
+                "source": "新浪财经连续期货日线",
+                "source_type": "公开行情",
+                "url": source_url,
+                "history": points[-252:],
+                **_changes_and_risk(points[-252:]),
+            })
+        except (HTTPError, URLError, TimeoutError, OSError, ValueError, KeyError, TypeError, json.JSONDecodeError):
+            cached = previous_map.get(symbol)
+            if cached:
+                output.append({**cached, "data_status": "cached"})
+        time.sleep(0.45)
+    if len(output) < 12:
+        raise ValueError("insufficient commodity market data")
+    return output
+
+
+CFTC_MARKETS = [
+    ("GOLD", "黄金"), ("SILVER", "白银"), ("COPPER", "铜"),
+    ("CRUDE OIL, LIGHT SWEET", "WTI原油"), ("NATURAL GAS", "天然气"),
+    ("CORN", "玉米"), ("SOYBEANS", "大豆"), ("WHEAT-SRW", "小麦"),
+    ("COFFEE C", "咖啡"), ("SUGAR NO. 11", "原糖"), ("COTTON NO. 2", "棉花"),
+    ("COCOA", "可可"), ("LIVE CATTLE", "活牛"),
+]
+
+
+def fetch_cftc_positions() -> list[dict[str, Any]]:
+    text = get_text("https://www.cftc.gov/dea/newcot/f_disagg.txt", timeout=45)
+    rows = list(csv.reader(io.StringIO(text)))
+    output = []
+    for contract_prefix, display_name in CFTC_MARKETS:
+        row = next((item for item in rows if item and item[0].strip().upper().startswith(contract_prefix)), None)
+        if not row or len(row) < 79:
+            continue
+        long_position = as_float(row[13])
+        short_position = as_float(row[14])
+        open_interest = as_float(row[7])
+        change_long = as_float(row[61])
+        change_short = as_float(row[62])
+        if long_position is None or short_position is None:
+            continue
+        net = long_position - short_position
+        weekly_change = (change_long or 0) - (change_short or 0)
+        output.append({
+            "name": display_name,
+            "contract": row[0].strip(),
+            "as_of": row[2].strip(),
+            "open_interest": open_interest,
+            "managed_money_long": long_position,
+            "managed_money_short": short_position,
+            "managed_money_net": net,
+            "weekly_change": weekly_change,
+            "net_pct_open_interest": net / open_interest * 100 if open_interest else None,
+            "source": "CFTC Disaggregated COT",
+            "frequency": "周频",
+            "url": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm",
+        })
+    if len(output) < 8:
+        raise ValueError("insufficient CFTC positions")
+    return output
+
+
 AI_CHAIN_GROUPS = [
     ("上游", "GPU / HBM", ["NVDA", "AMD", "MU", "AVGO"], "GPU、HBM与高速互连决定训练和推理基础设施供给"),
     ("上游", "晶圆 / 设备", ["TSM", "ASML", "AMAT", "LRCX"], "先进制程扩产与设备订单反映算力资本开支兑现"),
@@ -726,6 +946,9 @@ ETF_FUND_SOURCES = [
     {
         "symbol": "SPY",
         "asset": "美股",
+        "asset_class": "股票",
+        "region": "美国",
+        "segment": "大盘",
         "issuer": "State Street",
         "parser": "ssga",
         "url": "https://www.ssga.com/us/en/individual/etfs/state-street-spdr-sp-500-etf-trust-spy",
@@ -733,6 +956,9 @@ ETF_FUND_SOURCES = [
     {
         "symbol": "GLD",
         "asset": "黄金",
+        "asset_class": "商品",
+        "region": "全球",
+        "segment": "贵金属",
         "issuer": "State Street",
         "parser": "ssga",
         "url": "https://www.ssga.com/us/en/individual/etfs/spdr-gold-shares-gld",
@@ -740,6 +966,9 @@ ETF_FUND_SOURCES = [
     {
         "symbol": "TLT",
         "asset": "美债",
+        "asset_class": "债券",
+        "region": "美国",
+        "segment": "长期国债",
         "issuer": "iShares",
         "parser": "ishares",
         "url": "https://www.ishares.com/us/products/239454/ishares-20-year-treasury-bond-etf",
@@ -747,6 +976,9 @@ ETF_FUND_SOURCES = [
     {
         "symbol": "EWH",
         "asset": "港股",
+        "asset_class": "股票",
+        "region": "中国香港",
+        "segment": "综合",
         "issuer": "iShares",
         "parser": "ishares",
         "url": "https://www.ishares.com/us/products/239657/ishares-msci-hong-kong-etf",
@@ -754,9 +986,56 @@ ETF_FUND_SOURCES = [
     {
         "symbol": "BOTZ",
         "asset": "AI",
+        "asset_class": "股票",
+        "region": "全球",
+        "segment": "AI主题",
         "issuer": "Global X",
         "parser": "globalx",
         "url": "https://www.globalxetfs.com/funds/botz",
+    },
+    {
+        "symbol": "IVV", "asset": "美股大盘", "asset_class": "股票", "region": "美国", "segment": "大盘",
+        "issuer": "iShares", "parser": "ishares", "url": "https://www.ishares.com/us/products/239726/ishares-core-sp-500-etf",
+    },
+    {
+        "symbol": "IWM", "asset": "美股小盘", "asset_class": "股票", "region": "美国", "segment": "小盘",
+        "issuer": "iShares", "parser": "ishares", "url": "https://www.ishares.com/us/products/239710/ishares-russell-2000-etf",
+    },
+    {
+        "symbol": "IEFA", "asset": "发达市场", "asset_class": "股票", "region": "发达市场(除美国)", "segment": "综合",
+        "issuer": "iShares", "parser": "ishares", "url": "https://www.ishares.com/us/products/244049/ishares-core-msci-eafe-etf",
+    },
+    {
+        "symbol": "EEM", "asset": "新兴市场", "asset_class": "股票", "region": "新兴市场", "segment": "综合",
+        "issuer": "iShares", "parser": "ishares", "url": "https://www.ishares.com/us/products/239637/ishares-msci-emerging-markets-etf",
+    },
+    {
+        "symbol": "EWJ", "asset": "日本股市", "asset_class": "股票", "region": "日本", "segment": "综合",
+        "issuer": "iShares", "parser": "ishares", "url": "https://www.ishares.com/us/products/239665/ishares-msci-japan-etf",
+    },
+    {
+        "symbol": "MCHI", "asset": "中国股票", "asset_class": "股票", "region": "中国", "segment": "综合",
+        "issuer": "iShares", "parser": "ishares", "url": "https://www.ishares.com/us/products/239619/ishares-msci-china-etf",
+    },
+    {
+        "symbol": "INDA", "asset": "印度股市", "asset_class": "股票", "region": "印度", "segment": "综合",
+        "issuer": "iShares", "parser": "ishares", "url": "https://www.ishares.com/us/products/239659/ishares-msci-india-etf",
+    },
+    {
+        "symbol": "AGG", "asset": "美国综合债", "asset_class": "债券", "region": "美国", "segment": "综合债",
+        "issuer": "iShares", "parser": "ishares", "url": "https://www.ishares.com/us/products/239458/ishares-core-total-us-bond-market-etf",
+    },
+    {
+        "symbol": "HYG", "asset": "美国高收益债", "asset_class": "债券", "region": "美国", "segment": "高收益债",
+        "issuer": "iShares", "parser": "ishares", "url": "https://www.ishares.com/us/products/239565/ishares-iboxx-high-yield-corporate-bond-etf",
+    },
+    {
+        "symbol": "EMB", "asset": "新兴市场债", "asset_class": "债券", "region": "新兴市场", "segment": "主权债",
+        "issuer": "iShares", "parser": "ishares", "url": "https://www.ishares.com/us/products/239572/ishares-jp-morgan-usd-emerging-markets-bond-etf",
+    },
+    {
+        "symbol": "SLV", "asset": "白银", "asset_class": "商品", "region": "全球", "segment": "贵金属",
+        "issuer": "iShares", "parser": "ishares", "url": "https://www.ishares.com/us/products/239855/ishares-silver-trust-fund",
     },
 ]
 
@@ -831,6 +1110,7 @@ def fetch_etf_fund_flows(previous_rows: list[dict[str, Any]] | None = None) -> l
         if current is None:
             if previous:
                 cached = dict(previous)
+                cached.update({key: source[key] for key in ("asset", "asset_class", "region", "segment", "issuer")})
                 cached["data_status"] = "cached"
                 output.append(cached)
             continue
@@ -861,9 +1141,30 @@ def fetch_etf_fund_flows(previous_rows: list[dict[str, Any]] | None = None) -> l
                 shares_change_pct = shares_change / prior_shares * 100
                 estimated_flow = shares_change * current["nav"]
 
+        def cumulative_flow(days: int) -> float | None:
+            selected = history[-(days + 1):]
+            if len(selected) < 2:
+                return None
+            total = 0.0
+            observations = 0
+            for prior, latest in zip(selected, selected[1:]):
+                prior_shares = as_float(prior.get("shares_outstanding"))
+                latest_shares = as_float(latest.get("shares_outstanding"))
+                latest_nav = as_float(latest.get("nav"))
+                if prior_shares is None or latest_shares is None or latest_nav is None:
+                    continue
+                total += (latest_shares - prior_shares) * latest_nav
+                observations += 1
+            return total if observations else None
+
+        aum = current["shares_outstanding"] * current["nav"]
+
         output.append({
             "symbol": source["symbol"],
             "asset": source["asset"],
+            "asset_class": source["asset_class"],
+            "region": source["region"],
+            "segment": source["segment"],
             "issuer": source["issuer"],
             "as_of": current["as_of"],
             "nav": current["nav"],
@@ -871,6 +1172,10 @@ def fetch_etf_fund_flows(previous_rows: list[dict[str, Any]] | None = None) -> l
             "shares_change": shares_change,
             "shares_change_pct": shares_change_pct,
             "estimated_flow": estimated_flow,
+            "flow_5d": cumulative_flow(5),
+            "flow_20d": cumulative_flow(20),
+            "aum": aum,
+            "flow_intensity": estimated_flow / aum * 100 if estimated_flow is not None and aum else None,
             "method": "发行商流通份额变化 × 当日NAV",
             "source": "基金发行商官网",
             "data_status": "online",
@@ -878,8 +1183,66 @@ def fetch_etf_fund_flows(previous_rows: list[dict[str, Any]] | None = None) -> l
             "history": history,
         })
         time.sleep(0.35)
-    if len(output) < 3:
+    if len(output) < 5:
         raise ValueError("insufficient official ETF fund data")
+    return output
+
+
+def fetch_ici_weekly_flows() -> list[dict[str, Any]]:
+    url = "https://www.ici.org/research/stats/flows"
+    text = get_page_text(url, timeout=45)
+    date_match = re.search(r"week ended Wednesday,\s+([A-Z][a-z]+\s+\d{1,2},\s+\d{4})", text)
+    as_of = datetime.strptime(date_match.group(1), "%B %d, %Y").date().isoformat() if date_match else ""
+    labels = [
+        ("Total equity", "股票基金"), ("Domestic", "美国股票基金"), ("World", "全球股票基金"),
+        ("Hybrid", "混合基金"), ("Total bond", "债券基金"), ("Taxable", "应税债券基金"),
+        ("Municipal", "市政债基金"), ("Total", "长期共同基金合计"),
+    ]
+    output = []
+    for source_label, display_label in labels:
+        match = re.search(rf"(?:^|\|)\s*{re.escape(source_label)}\s*\|\s*([-0-9,]+)", text, re.IGNORECASE)
+        if not match:
+            continue
+        output.append({
+            "category": display_label,
+            "value_usd": float(match.group(1).replace(",", "")) * 1_000_000,
+            "as_of": as_of,
+            "frequency": "周频",
+            "scope": "美国长期共同基金，不含ETF",
+            "source": "ICI公开周报",
+            "url": url,
+        })
+    if len(output) < 5:
+        raise ValueError("insufficient ICI weekly flow data")
+    return output
+
+
+def fetch_tic_cross_border_flows() -> list[dict[str, Any]]:
+    url = "https://ticdata.treasury.gov/resource-center/data-chart-center/tic/Documents/slt_table1.txt"
+    text = get_text(url, timeout=50)
+    row = next((line.split("\t") for line in text.splitlines() if line.startswith("Grand Total\t99996\t")), None)
+    if not row or len(row) < 17:
+        raise ValueError("missing TIC grand total")
+    categories = [
+        (4, "美国长期证券合计"), (7, "美国国债"), (10, "美国机构债"),
+        (13, "美国公司债"), (16, "美国股票"),
+    ]
+    output = []
+    for index, category in categories:
+        value = as_float(row[index])
+        if value is None:
+            continue
+        output.append({
+            "category": category,
+            "value_usd": value * 1_000_000,
+            "as_of": row[2],
+            "frequency": "月频",
+            "scope": "外国投资者对美国长期证券净买入",
+            "source": "美国财政部TIC",
+            "url": "https://home.treasury.gov/data/treasury-international-capital-tic-system",
+        })
+    if len(output) < 4:
+        raise ValueError("insufficient TIC flow data")
     return output
 
 
@@ -1029,7 +1392,11 @@ def fallback_payload(previous: dict[str, Any]) -> dict[str, Any]:
         "eia_energy": previous.get("eia_energy", []),
         "twelve_fx": previous.get("twelve_fx", []),
         "market_history": previous.get("market_history", []),
+        "commodity_market": previous.get("commodity_market", []),
+        "cftc_positions": previous.get("cftc_positions", []),
         "etf_fund_flows": previous.get("etf_fund_flows", []),
+        "ici_weekly_flows": previous.get("ici_weekly_flows", []),
+        "tic_cross_border_flows": previous.get("tic_cross_border_flows", []),
         "gdelt_news": previous.get("gdelt_news", []),
         "alpha_news": previous.get("alpha_news", []),
         "ai_model_pricing": previous.get("ai_model_pricing", AI_MODEL_PRICING),
@@ -1072,7 +1439,11 @@ def main() -> int:
         ("eia_energy", fetch_eia_energy, payload["eia_energy"]),
         ("twelve_fx", fetch_twelve_fx, payload["twelve_fx"]),
         ("market_history", fetch_market_history, payload["market_history"]),
+        ("commodity_market", lambda: fetch_commodity_market(previous.get("commodity_market", [])), payload["commodity_market"]),
+        ("cftc_positions", fetch_cftc_positions, payload["cftc_positions"]),
         ("etf_fund_flows", lambda: fetch_etf_fund_flows(previous.get("etf_fund_flows", [])), payload["etf_fund_flows"]),
+        ("ici_weekly_flows", fetch_ici_weekly_flows, payload["ici_weekly_flows"]),
+        ("tic_cross_border_flows", fetch_tic_cross_border_flows, payload["tic_cross_border_flows"]),
         ("event_calendar", fetch_event_calendar, payload["event_calendar"]),
         ("gdelt_news", fetch_gdelt_news, payload["gdelt_news"]),
         ("alpha_news", fetch_alpha_news, payload["alpha_news"]),

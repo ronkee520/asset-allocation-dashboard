@@ -2,7 +2,10 @@ export type HistoryPoint = { date: string; close: number };
 export type HistorySeries = { symbol: string; label: string; name: string; points: HistoryPoint[]; source: string; url: string };
 export type QuoteRow = { symbol: string; name: string; price: number | null; change_pct: number | null; volume?: number | null; market_cap?: number | null; source: string; url: string };
 export type MacroRow = { series_id: string; name: string; category: string; value: number | null; previous: number | null; change: number | null; date: string; driver: string; source: string; url: string };
-export type EtfFlowRow = { symbol: string; asset: string; issuer: string; as_of: string; nav: number | null; shares_outstanding: number | null; shares_change: number | null; shares_change_pct: number | null; estimated_flow: number | null; method: string; source: string; url: string; data_status?: string };
+export type EtfFlowRow = { symbol: string; asset: string; asset_class?: string; region?: string; segment?: string; issuer: string; as_of: string; nav: number | null; shares_outstanding: number | null; shares_change: number | null; shares_change_pct: number | null; estimated_flow: number | null; flow_5d?: number | null; flow_20d?: number | null; aum?: number | null; flow_intensity?: number | null; method: string; source: string; url: string; data_status?: string; history?: Array<Record<string, string | number | null>> };
+export type CommodityRow = { symbol:string; name:string; category:string; market:string; unit:string; price:number|null; volume?:number|null; as_of:string; change_1d:number|null; change_20d:number|null; change_60d:number|null; volatility_20d:number|null; range_percentile:number|null; range_low:number|null; range_high:number|null; source:string; source_type:string; url:string; history?:Array<{date:string;close:number;volume?:number|null}> };
+export type CftcRow = { name:string; contract:string; as_of:string; open_interest:number|null; managed_money_long:number; managed_money_short:number; managed_money_net:number; weekly_change:number; net_pct_open_interest:number|null; source:string; frequency:string; url:string };
+export type FundFlowRow = { category:string; value_usd:number; as_of:string; frequency:string; scope:string; source:string; url:string };
 export type AiChainRow = { segment:string; group:string; constituents?:string; leaders:string; change:number; breadth?:number; relative_volume?:number; valuation_pe?:number|null; turnover_usd?:number; strength:number; signal:string; sample_size?:number; method?:string; as_of?:string };
 export type CalendarEvent = { date:string; region:string; event:string; importance:string; assets:string; source:string; source_name?:string };
 export type ScoreBacktestRow = { asset:string; symbol:string; sample_size:number; hit_rate_20d:number|null; avg_forward_return_20d:number|null; max_drawdown:number; current_percentile:number; history_days:number; method:string };
@@ -14,7 +17,11 @@ export type DashboardData = {
   eia_energy?: Array<Record<string, string | number | null>>;
   twelve_fx?: Array<Record<string, string | number | null>>;
   market_history?: HistorySeries[];
+  commodity_market?: CommodityRow[];
+  cftc_positions?: CftcRow[];
   etf_fund_flows?: EtfFlowRow[];
+  ici_weekly_flows?: FundFlowRow[];
+  tic_cross_border_flows?: FundFlowRow[];
   gdelt_news?: Array<Record<string, string | number | null>>;
   alpha_news?: Array<Record<string, string | number | null>>;
   ai_model_pricing?: Array<Record<string, string | number | null>>;
@@ -27,15 +34,13 @@ export type DashboardData = {
 export const navigation = [
   { href: "/", label: "总览", key: "overview" },
   { href: "/allocation", label: "资产打分", key: "allocation" },
-  { href: "/regime", label: "宏观象限", key: "regime" },
+  { href: "/regime", label: "普林格时钟", key: "regime" },
   { href: "/correlation", label: "相关性", key: "correlation" },
   { href: "/markets", label: "全球市场", key: "markets" },
-  { href: "/etf-flows", label: "ETF资金", key: "etf-flows" },
+  { href: "/etf-flows", label: "全球资金流", key: "etf-flows" },
   { href: "/ai-chain", label: "AI产业链", key: "ai-chain" },
   { href: "/calendar", label: "事件日历", key: "calendar" },
-  { href: "/research", label: "数据与新闻", key: "research" },
-  { href: "/workspace", label: "我的工作区", key: "workspace" },
-  { href: "/report", label: "晨报", key: "report" },
+  { href: "/research", label: "大宗商品", key: "research" },
 ];
 
 export const fallbackHistory: HistorySeries[] = [
@@ -140,4 +145,26 @@ export function assetScores(data: DashboardData, history: HistorySeries[]) {
   });
 }
 
-export function macroRegime(data: DashboardData){const rows=new Map((data.fred_macro??[]).map(i=>[i.series_id,i]));const growthUp=(rows.get("UNRATE")?.change??0)<=0&&(rows.get("T10Y2Y")?.change??0)>=-0.03;const inflationUp=(rows.get("CPIAUCSL")?.change??0)>0;const quadrant=growthUp?(inflationUp?"再通胀":"金发姑娘"):(inflationUp?"滞胀":"衰退/通缩");const map:Record<string,{focus:string;avoid:string}>={"再通胀":{focus:"股票、商品、铜、价值风格",avoid:"长久期债券"},"金发姑娘":{focus:"股票、AI、信用债、黄金",avoid:"美元现金"},"滞胀":{focus:"黄金、商品、能源、防御股",avoid:"成长股与长债"},"衰退/通缩":{focus:"美债、黄金、美元、高质量资产",avoid:"周期商品与高收益债"}};return{quadrant,growthUp,inflationUp,...map[quadrant]}}
+export const pringStages = [
+  { stage:1, name:"筑底", pattern:[1,-1,-1], focus:"债券、黄金、高质量资产", avoid:"周期商品与高贝塔股票" },
+  { stage:2, name:"早期复苏", pattern:[1,1,-1], focus:"债券、股票、成长风格", avoid:"周期商品" },
+  { stage:3, name:"全面复苏", pattern:[1,1,1], focus:"股票、商品、周期与小盘", avoid:"现金与纯防御资产" },
+  { stage:4, name:"过热", pattern:[-1,1,1], focus:"商品、资源、价值与通胀受益资产", avoid:"长久期债券" },
+  { stage:5, name:"滞胀", pattern:[-1,-1,1], focus:"商品、黄金、能源与防御股", avoid:"成长股与信用债" },
+  { stage:6, name:"衰退", pattern:[-1,-1,-1], focus:"债券、美元、黄金与现金", avoid:"股票、工业品与高收益债" },
+] as const;
+
+export function pringCycle(data: DashboardData, history: HistorySeries[]) {
+  const find = (label:string) => history.find(item=>item.label===label);
+  const bond = lastChange(find("美债")??fallbackHistory.find(item=>item.label==="美债")!,60);
+  const stock = ["美股","A股","港股"].map(label=>lastChange(find(label)??fallbackHistory.find(item=>item.label===label)!,60)).reduce((sum,value)=>sum+value,0)/3;
+  const commodities = (data.commodity_market??[]).map(item=>item.change_60d).filter((value):value is number=>Number.isFinite(value));
+  const commodity = commodities.length ? commodities.reduce((sum,value)=>sum+value,0)/commodities.length : ["铜","原油"].map(label=>lastChange(find(label)??fallbackHistory.find(item=>item.label===label)!,60)).reduce((sum,value)=>sum+value,0)/2;
+  const values=[bond,stock,commodity], signs=values.map(value=>value>=0?1:-1);
+  const ranked=pringStages.map(item=>({item,mismatch:item.pattern.reduce((sum,expected,index)=>sum+(expected===signs[index]?0:1),0)})).sort((a,b)=>a.mismatch-b.mismatch);
+  const current=ranked[0].item;
+  const confidence=Math.round(clamp(58+Math.min(30,values.reduce((sum,value)=>sum+Math.abs(value),0)*1.4)-ranked[0].mismatch*12,45,90));
+  return { ...current, confidence, signals:[{label:"债券",value:bond},{label:"股票",value:stock},{label:"商品",value:commodity}] };
+}
+
+export function macroRegime(data: DashboardData, history: HistorySeries[]=fallbackHistory){const cycle=pringCycle(data,history);return{quadrant:`阶段${cycle.stage} · ${cycle.name}`,growthUp:cycle.stage>=2&&cycle.stage<=4,inflationUp:cycle.stage>=3&&cycle.stage<=5,focus:cycle.focus,avoid:cycle.avoid}}

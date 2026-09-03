@@ -4,7 +4,7 @@ import { TerminalDashboard } from "../app/components/TerminalDashboard";
 import "../app/globals.css";
 import "../app/readability.css";
 
-const known = new Set(["allocation", "regime", "correlation", "markets", "etf-flows", "ai-chain", "calendar", "research", "workspace", "report"]);
+const known = new Set(["allocation", "regime", "correlation", "markets", "etf-flows", "ai-chain", "calendar", "research"]);
 const tail = window.location.pathname.split("/").filter(Boolean).at(-1) ?? "";
 const section = known.has(tail) ? tail : "overview";
 

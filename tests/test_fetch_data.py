@@ -1,3 +1,6 @@
+import csv
+import io
+import json
 import sys
 import unittest
 from pathlib import Path
@@ -56,9 +59,71 @@ class EtfFundFlowTests(unittest.TestCase):
         with patch.object(fetch_data, "get_page_text", side_effect=page), patch.object(fetch_data.time, "sleep"):
             rows = fetch_data.fetch_etf_fund_flows(previous)
 
-        self.assertEqual(len(rows), 5)
+        self.assertEqual(len(rows), len(fetch_data.ETF_FUND_SOURCES))
         self.assertTrue(all(row["shares_change"] == 1_000_000 for row in rows))
         self.assertTrue(all(row["estimated_flow"] == 10_000_000 for row in rows))
+        self.assertTrue(all(row["asset_class"] in {"股票", "债券", "商品"} for row in rows))
+
+
+class PublicMarketDataTests(unittest.TestCase):
+    def test_parses_sina_continuous_futures_jsonp(self):
+        text = '/*notice*/\nvar _RB0=([{"d":"2026-09-03","c":"3142.000","v":"802624"}]);'
+        rows = fetch_data.parse_sina_futures_jsonp(text)
+        self.assertEqual(rows[0]["d"], "2026-09-03")
+        self.assertEqual(rows[0]["c"], "3142.000")
+
+    def test_commodity_refresh_keeps_per_symbol_cache(self):
+        previous = [{"symbol": spec[0], "name": spec[1], "price": 1} for spec in fetch_data.COMMODITY_SPECS]
+        china_rows = [{"d": f"2026-08-{index + 1:02d}", "c": str(3100 + index), "v": "802624"} for index in range(21)]
+        china = f"var _X=({json.dumps(china_rows)});"
+        with patch.object(fetch_data, "get_json", side_effect=ValueError("limited")), patch.object(fetch_data, "get_text", return_value=china), patch.object(fetch_data.time, "sleep"):
+            rows = fetch_data.fetch_commodity_market(previous)
+        self.assertEqual(len(rows), len(fetch_data.COMMODITY_SPECS) + len(fetch_data.CHINA_COMMODITY_SPECS))
+        self.assertEqual(sum(row.get("data_status") == "cached" for row in rows), len(fetch_data.COMMODITY_SPECS))
+
+    def test_commodity_analytics_include_momentum_and_risk(self):
+        points = [{"date": f"2026-01-{(index % 28) + 1:02d}", "close": 100 + index} for index in range(80)]
+        metrics = fetch_data._changes_and_risk(points)
+        self.assertGreater(metrics["change_20d"], 0)
+        self.assertGreater(metrics["change_60d"], metrics["change_20d"])
+        self.assertEqual(metrics["range_percentile"], 100)
+
+    def test_parses_cftc_managed_money_positions(self):
+        stream = io.StringIO()
+        writer = csv.writer(stream)
+        for prefix, _name in fetch_data.CFTC_MARKETS:
+            fields = ["0"] * 80
+            fields[0] = f"{prefix} - TEST EXCHANGE"
+            fields[2] = "2026-08-25"
+            fields[7] = "1000"
+            fields[13] = "400"
+            fields[14] = "250"
+            fields[61] = "30"
+            fields[62] = "10"
+            writer.writerow(fields)
+        with patch.object(fetch_data, "get_text", return_value=stream.getvalue()):
+            result = fetch_data.fetch_cftc_positions()
+        self.assertEqual(len(result), len(fetch_data.CFTC_MARKETS))
+        self.assertEqual(result[0]["managed_money_net"], 150)
+        self.assertEqual(result[0]["weekly_change"], 20)
+        self.assertEqual(result[0]["net_pct_open_interest"], 15)
+
+    def test_parses_tic_cross_border_totals(self):
+        fields = ["0"] * 17
+        fields[0], fields[1], fields[2] = "Grand Total", "99996", "2026-06"
+        fields[4], fields[7], fields[10], fields[13], fields[16] = "15.5", "10.0", "-2.0", "3.0", "4.5"
+        with patch.object(fetch_data, "get_text", return_value="\t".join(fields)):
+            result = fetch_data.fetch_tic_cross_border_flows()
+        self.assertEqual(result[0]["value_usd"], 15_500_000)
+        self.assertEqual(result[-1]["value_usd"], 4_500_000)
+
+    def test_parses_ici_weekly_flows(self):
+        labels = ["Total equity", "Domestic", "World", "Hybrid", "Total bond", "Taxable", "Municipal", "Total"]
+        text = "week ended Wednesday, August 26, 2026 " + " ".join(f"| {label} | 1,250" for label in labels)
+        with patch.object(fetch_data, "get_page_text", return_value=text):
+            result = fetch_data.fetch_ici_weekly_flows()
+        self.assertGreaterEqual(len(result), 5)
+        self.assertEqual(result[0]["value_usd"], 1_250_000_000)
 
 
 class DerivedAnalyticsTests(unittest.TestCase):

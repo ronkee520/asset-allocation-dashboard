@@ -1,81 +1,73 @@
-# 全球资产配置监控台
+# 全球资产配置研究终端
 
-面向资产配置分析师的跨资产 dashboard，覆盖 A股/港股/美股、ETF、利率、汇率、商品、AI 产业链、AI 模型价格和新闻线索。
+面向资产配置分析师的跨资产研究看板，覆盖全球权益、债券、汇率、商品、AI产业链、资金流、宏观事件与相对配置评分。
 
-## 如何打开
+## 在线访问
 
-### 本机查看
+[打开全球资产配置研究终端](https://ronkee520.github.io/asset-allocation-dashboard/)
 
-双击 `打开网站.bat`：脚本会先尝试运行 `scripts/fetch_data.py` 刷新公开数据，然后用 Microsoft Edge 打开 `index.html`。
+公开页面由 GitHub Actions 每 4 小时尝试更新。访问者直接打开固定链接即可使用，无需在本地运行脚本，也不会接触数据源密钥。
 
-双击 `打开单文件版.bat`：直接用 Microsoft Edge 打开 `index.html`，使用上一次保存的数据快照。
+## 主要模块
 
-### GitHub Pages
+1. 全球资产配置总览与八类资产相对打分
+2. 资产评分的历史分位、20日命中率、信号后收益与最大回撤
+3. 普林格六阶段经济周期时钟及资产映射
+4. 20日/60日跨资产相关性与轮动矩阵
+5. 全球市场行情与趋势比较
+6. 全球资金流：代表性ETF一级市场净申赎、资产类别与区域轮动、ICI周度基金流、TIC月度跨境证券流
+7. AI产业链成分股行情、广度、相对成交量、估值与强度排名
+8. 全球高影响事件月历
+9. 大宗商品全景：能源、贵金属、工业金属、黑色系、谷物、软商品、畜牧、建材及CFTC管理基金仓位
 
-发布后固定访问地址通常是：
+## 数据口径
 
-`https://ronkee520.github.io/asset-allocation-dashboard/`
+### ETF一级市场资金流
 
-GitHub Actions 会每 4 小时尝试刷新一次 `data/latest.json` 和 `data/latest.js`。网页只读取生成后的公开数据文件，不会读取 API Key。
+`估算净申赎 = 相邻披露日流通份额变化 × 当日 NAV`
 
-## API Key 安全
+流通份额和 NAV 来自 State Street、iShares、Global X 等基金发行商公开页面。该指标用于估算 ETF 创建与赎回，不代表二级市场主动买卖，也不等于全球全基金数据库。
 
-本地密钥文件夹 `APIkey与使用文档（链接）汇总/` 已加入 `.gitignore`，不会进入公开仓库。
+### 其他资金流
 
-在 GitHub 仓库中需要把 Key 放到 `Settings -> Secrets and variables -> Actions -> New repository secret`：
+- ICI：美国长期共同基金周度估算，不含 ETF。
+- 美国财政部 TIC：外国投资者对美国长期证券的月度净买卖。
+- 免费公开数据无法完整复制 EPFR、Wind 或 Choice 的全球基金、机构类型和日频行业资金流。
+
+### 大宗商品
+
+- 国际商品：Yahoo Finance 公开期货日线。
+- 中国黑色系：新浪财经连续期货日线，覆盖螺纹钢、热卷和铁矿石。
+- 管理基金仓位：CFTC Disaggregated Commitments of Traders 周报。
+- 能源库存：EIA 官方数据。
+
+连续期货和公开聚合行情适合趋势研究，不等同于具体可交易合约的实时成交报价。
+
+## 数据更新
+
+- GitHub Actions：每 4 小时尝试刷新并发布。
+- FMP：核心行情与 AI 成分股行情、成交量和估值。
+- FRED：宏观数据与官方发布日历。
+- EIA：能源库存和供需数据。
+- ETF发行商：NAV、流通份额和最近披露历史。
+- CFTC、ICI、TIC：按各自官方周频或月频发布节奏更新。
+- 模型价格：尝试读取厂商官方价格页；无法自动读取时保留最近核验的官方基准。
+- 新闻中文摘要：使用本地资产配置规则生成，不需要 Gemini API Key。
+
+## 数据纪律
+
+- 页面保留来源链接、数据日期、更新频率和来源状态。
+- `online` 表示本轮抓取成功，`cached` 表示本轮失败并沿用上一版，`fallback` 表示没有可用历史缓存。
+- 资产打分、普林格周期阶段、产业链强度和资金价格状态均为研究模型输出，不构成投资建议或收益保证。
+
+## API Key
+
+仓库密钥通过 GitHub Actions Secrets 保存，不会出现在公开网页或数据文件中。当前自动更新使用：
 
 - `FMP_API_KEY`
 - `FRED_API_KEY`
 - `EIA_API_KEY`
 - `ALPHA_VANTAGE_API_KEY`
 - `TWELVE_DATA_API_KEY`
-- `GEMINI_API_KEY`（可选；用于高质量中文新闻摘要，没有它时自动使用规则摘要）
 
-GDELT 不需要 API Key。
-
-## 数据更新策略
-
-- GitHub Actions：每 4 小时运行一次。
-- FMP：核心行情每 4 小时更新；AI 成分股 TTM PE 每日更新一次，预计合计约 133 次/日，低于 250 次免费额度。
-- FRED/EIA：宏观与能源低频数据，失败时保留上一版缓存。
-- Alpha Vantage/GDELT：新闻线索，标题可跳转原文。
-- Yahoo Finance 公共行情端点：提供六个月 ETF 日线及 AI 链条缺失行情，用于动量、相关性和产业链广度。
-- ETF 发行商官网：读取 SPY、GLD、TLT、EWH、BOTZ 的 NAV 与流通份额，保存最近 31 个交易日快照。
-- 事件日历：FRED 官方发布日历滚动读取未来 180 天，美联储官网补充 FOMC 会议日程。
-- 模型价格：定时读取各厂商官方价格页；DeepSeek 等可解析来源实时更新，拒绝自动访问的页面保留经核验官方基准。
-- 中文新闻摘要：配置 Gemini Key 后对标题与发布方摘要进行中文投研摘要；没有 Key 时网站仍正常运行并使用规则摘要。
-
-### ETF 资金流口径
-
-`估算净申赎 = 相邻两个交易日的流通份额变化 × 当日 NAV`
-
-该口径使用 State Street、iShares、Global X 的公开基金数据，可反映 ETF 一级市场创建/赎回，不需要 Choice 或 Wind。它不等同于二级市场成交方向，也无法拆分具体机构；全市场历史、机构维度和盘中申赎仍适合使用商业数据源。
-
-### 数据纪律
-
-- 行情、宏观、能源、汇率、新闻和发行商份额均保留来源链接及数据源状态。
-- `online` 表示本轮抓取成功，`cached` 表示本轮失败并沿用上一版，`fallback` 表示没有可用历史缓存。
-- 资产打分、宏观象限、产业链强度属于模型输出，不代表收益承诺或投资建议。
-
-## 当前模块
-
-- 全球资产配置总览与八类资产相对打分
-- 增长 × 通胀宏观四象限
-- 20/60 日跨资产相关性与轮动
-- 全球市场与 ETF 成交动能
-- ETF 发行商份额及净申赎估算
-- AI 产业链 25 只成分股行情、广度、相对成交量、估值与全球模型 Token 价格
-- 八类资产历史分位、20 日命中率、信号后收益与区间最大回撤
-- 全球事件月历、宏观底表和可回溯新闻
-- 收藏、搜索、可拖拽工作区及晨报导出
-
-## 关键文件
-
-- `index.html`：GitHub Pages 首页。
-- `资产配置Dashboard_单文件版.html`：同版单文件页面。
-- `data/latest.json`：公开数据快照。
-- `data/latest.js`：给本地双击 HTML 使用的公开数据快照。
-- `scripts/fetch_data.py`：本地和 GitHub Actions 共用的数据抓取脚本。
-- `.github/workflows/update-data.yml`：定时更新数据。
-- `.github/workflows/deploy-pages.yml`：部署 GitHub Pages。
-
+CFTC、ICI、TIC、Yahoo Finance、新浪财经和 ETF 发行商公开页面不需要额外申请 Key。当前版本不使用 USDA FAS API。
