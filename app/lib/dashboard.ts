@@ -9,6 +9,8 @@ export type FundFlowRow = { category:string; value_usd:number; as_of:string; fre
 export type AiChainRow = { segment:string; group:string; constituents?:string; leaders:string; change:number; breadth?:number; relative_volume?:number; valuation_pe?:number|null; turnover_usd?:number; strength:number; signal:string; sample_size?:number; method?:string; as_of?:string };
 export type CalendarEvent = { date:string; region:string; event:string; importance:string; assets:string; source:string; source_name?:string };
 export type ScoreBacktestRow = { asset:string; symbol:string; sample_size:number; hit_rate_20d:number|null; avg_forward_return_20d:number|null; max_drawdown:number; current_percentile:number; history_days:number; method:string };
+export type ScoreFactor = { key:string; bucket:string; label:string; observed:string; as_of:string; source:string; status:string; url:string; weight:number; percentile:number; contribution:number; logic:string; available:boolean };
+export type AssetScore = { key:string; asset:string; group:"core"|"equity"; proxy:string; benchmark:string; score:number; percentile:number; view:string; confidence:number; driver:string; description:string; factors:ScoreFactor[]; positives:string[]; risks:string[] };
 export type DashboardData = {
   generated_at?: string;
   pricing_generated_at?: string;
@@ -91,6 +93,91 @@ export function correlation(a: number[], b: number[]) { const n = Math.min(a.len
 export function lastChange(series: HistorySeries, days = 1) { const p=series.points; return p.length>days?(p.at(-1)!.close/p.at(-(days+1))!.close-1)*100:0 }
 export function clamp(value: number, min=0,max=100){return Math.min(max,Math.max(min,value))}
 
+const scoreDefinitions = [
+  { key:"equity", asset:"全球股票", group:"core" as const, symbols:["ACWI","SPY"], proxy:"ACWI / SPY", benchmark:"全球多资产", description:"全球股票核心仓位；优先采用ACWI，数据缺失时以SPY代表发达市场权益。" },
+  { key:"bonds", asset:"债券", group:"core" as const, symbols:["AGG","TLT"], proxy:"AGG / IEF / TLT", benchmark:"全球股票", description:"综合债券配置方向；同时观察综合债、期限利率、通胀和信用压力，而非只代表长久期美债。" },
+  { key:"commodities", asset:"商品", group:"core" as const, symbols:["DBC","CPER","USO"], proxy:"DBC / 商品篮子", benchmark:"全球股票", description:"黄金以外的大宗商品组合，覆盖能源、工业金属、农产品与黑色系的趋势和仓位。" },
+  { key:"gold", asset:"黄金", group:"core" as const, symbols:["GLD"], proxy:"GLD", benchmark:"全球股票", description:"黄金战略与战术配置，重点观察实际利率、美元、资金申赎、仓位和价格趋势。" },
+  { key:"usd", asset:"美元", group:"core" as const, symbols:["UUP"], proxy:"UUP / 美元广义指数", benchmark:"全球股票", description:"美元及现金类防御暴露，反映利差、避险需求和美元自身趋势。" },
+  { key:"ai", asset:"AI", group:"equity" as const, symbols:["BOTZ","SOXX"], proxy:"BOTZ / SOXX", benchmark:"全球股票", description:"权益卫星方向，评价AI主题相对大盘的趋势、产业宽度、估值、资金流和利率敏感度。" },
+  { key:"hk", asset:"港股", group:"equity" as const, symbols:["EWH"], proxy:"EWH", benchmark:"全球股票", description:"权益卫星方向，结合港股趋势、全球流动性、人民币环境与ETF资金流。" },
+  { key:"china-a", asset:"A股", group:"equity" as const, symbols:["ASHR"], proxy:"ASHR", benchmark:"全球股票", description:"权益卫星方向，结合A股趋势、国内增长代理、人民币环境和中国股票ETF资金流。" },
+] as const;
+
+export const defaultPortfolioWeights: Record<string, number> = { equity:30, bonds:30, commodities:10, gold:10, usd:5, ai:5, hk:5, "china-a":5 };
+
+function percentileRank(values:number[], current:number) {
+  const clean=values.filter(Number.isFinite); return clean.length ? clean.filter(value=>value<=current).length/clean.length*100 : 50;
+}
+function rollingChanges(series:HistorySeries|undefined, days:number) {
+  if (!series || series.points.length<=days) return [];
+  return series.points.slice(days).map((point,index)=>(point.close/series.points[index].close-1)*100).filter(Number.isFinite);
+}
+function momentumFactor(series:HistorySeries|undefined, days:number) {
+  const values=rollingChanges(series,days), current=values.at(-1)??0;
+  return { value:current, score:percentileRank(values,current), available:Boolean(series&&values.length>=20), observed:`${current>=0?"+":""}${current.toFixed(2)}%`, asOf:series?.points.at(-1)?.date??"无数据", source:series?.source??"待更新", url:series?.url??"#" };
+}
+function volatilityFactor(series:HistorySeries|undefined) {
+  if (!series || series.points.length<42) return { value:0,score:50,available:false,observed:"无数据",asOf:"无数据",source:"待更新",url:"#" };
+  const daily=returns(series,series.points.length-1), windows:number[]=[];
+  for(let index=19;index<daily.length;index++){const sample=daily.slice(index-19,index+1),mean=sample.reduce((sum,value)=>sum+value,0)/sample.length;windows.push(Math.sqrt(sample.reduce((sum,value)=>sum+(value-mean)**2,0)/sample.length)*Math.sqrt(252));}
+  const current=windows.at(-1)??0;
+  return { value:current,score:100-percentileRank(windows,current),available:windows.length>=20,observed:`${current.toFixed(1)}% 年化`,asOf:series.points.at(-1)?.date??"无数据",source:series.source,url:series.url };
+}
+function relativeFactor(series:HistorySeries|undefined, benchmark:HistorySeries|undefined) {
+  if(!series||!benchmark) return {value:0,score:50,available:false,observed:"无数据",asOf:"无数据",source:"待更新",url:"#"};
+  if(series.symbol===benchmark.symbol) return {value:0,score:50,available:true,observed:"基准资产",asOf:series.points.at(-1)?.date??"无数据",source:`${series.source}配置基准`,url:series.url};
+  const asset=rollingChanges(series,20),base=rollingChanges(benchmark,20),length=Math.min(asset.length,base.length),values=asset.slice(-length).map((value,index)=>value-base.slice(-length)[index]),current=values.at(-1)??0;
+  return {value:current,score:percentileRank(values,current),available:length>=20,observed:`${current>=0?"+":""}${current.toFixed(2)}pct`,asOf:series.points.at(-1)?.date??"无数据",source:`${series.source}相对强弱`,url:series.url};
+}
+function scaledScore(value:number|null|undefined, scale:number, direction=1){return Number.isFinite(value)?clamp(50+direction*Number(value)/scale*25):50}
+
+export function assetScores(data: DashboardData, history: HistorySeries[]):AssetScore[] {
+  const bySymbol=new Map(history.map(item=>[item.symbol,item])), macro=new Map((data.fred_macro??[]).map(item=>[item.series_id,item])), flows=data.etf_fund_flows??[], commodityRows=data.commodity_market??[], cftc=data.cftc_positions??[],statuses=new Map((data.source_status??[]).map(row=>[String(row.key),String(row.status??"unknown")]));
+  const benchmark=bySymbol.get("ACWI")??bySymbol.get("SPY");
+  const seriesFor=(symbols:readonly string[])=>symbols.map(symbol=>bySymbol.get(symbol)).find(Boolean);
+  const flowFactor=(symbols:string[])=>{const selected=flows.filter(row=>symbols.includes(row.symbol)),all=flows.map(row=>Number(row.flow_intensity??(row.aum?Number(row.flow_5d??row.estimated_flow??0)/row.aum*100:null))).filter(Number.isFinite),value=selected.length?selected.reduce((sum,row)=>sum+Number(row.flow_intensity??(row.aum?Number(row.flow_5d??row.estimated_flow??0)/row.aum*100:0)),0)/selected.length:null;return {score:value===null?50:percentileRank(all,value),available:value!==null,observed:value===null?"无数据":`${value>=0?"+":""}${value.toFixed(3)}% AUM`,asOf:selected.map(row=>row.as_of).sort().at(-1)??"无数据",source:"基金公司公开份额 / NAV",url:selected[0]?.url??"#"};};
+  const macroFactor=(ids:string[],scale:number,direction:number,label:string)=>{const rows=ids.map(id=>macro.get(id)).filter((row):row is MacroRow=>Boolean(row)),value=rows.length?rows.reduce((sum,row)=>sum+Number(row.change??0),0)/rows.length:null;return {score:scaledScore(value,scale,direction),available:value!==null,observed:value===null?"无数据":`${value>=0?"+":""}${value.toFixed(3)}`,asOf:rows.map(row=>row.date).sort().at(-1)??"无数据",source:`FRED · ${label}`,url:rows[0]?.url??"#"};};
+  const positionFactor=(names:string[])=>{const rows=cftc.filter(row=>names.some(name=>row.name.includes(name))),values=cftc.map(row=>row.net_pct_open_interest).filter((value):value is number=>Number.isFinite(value)),value=rows.length?rows.reduce((sum,row)=>sum+Number(row.net_pct_open_interest??0),0)/rows.length:null;return {score:value===null?50:percentileRank(values,value),available:value!==null,observed:value===null?"无数据":`${value>=0?"+":""}${value.toFixed(1)}% OI`,asOf:rows.map(row=>row.as_of).sort().at(-1)??"无数据",source:"CFTC管理基金仓位",url:rows[0]?.url??"#"};};
+  const chainBreadth=()=>{const rows=data.ai_chain_metrics??[],value=rows.length?rows.reduce((sum,row)=>sum+Number(row.breadth??50),0)/rows.length:null;return {score:value??50,available:value!==null,observed:value===null?"无数据":`${value.toFixed(0)}%成分上涨`,asOf:rows.map(row=>row.as_of??"").sort().at(-1)??"无数据",source:"AI产业链成分行情",url:"/ai-chain"};};
+  return scoreDefinitions.map(definition=>{
+    const series=seriesFor(definition.symbols),m20=momentumFactor(series,20),m60=momentumFactor(series,60),relative=relativeFactor(series,benchmark),vol=volatilityFactor(series);
+    let macroInput=macroFactor(["DGS10","BAMLH0A0HYM2"],.2,-1,"利率与信用"); let thematic=flowFactor([...definition.symbols]); let thematicLabel="ETF资金流"; let thematicLogic="同批代表性ETF资金流强度的横向分位";
+    if(definition.key==="bonds") macroInput=macroFactor(["DGS10","CPIAUCSL"],.2,-1,"利率与通胀");
+    if(definition.key==="commodities"){macroInput=macroFactor(["INDPRO"],.5,1,"工业生产");thematic=positionFactor(["原油","铜","玉米","大豆","小麦"]);thematicLabel="管理基金仓位";thematicLogic="CFTC净仓占未平仓比例的跨品种分位";}
+    if(definition.key==="gold"){macroInput=macroFactor([macro.has("DFII10")?"DFII10":"DGS10"],.2,-1,macro.has("DFII10")?"实际利率":"名义利率代理");thematic=positionFactor(["黄金"]);thematicLabel="黄金管理基金仓位";thematicLogic="CFTC黄金净仓占未平仓比例的跨品种分位";}
+    if(definition.key==="usd") macroInput=macroFactor(["DGS2"],.2,1,"美国短端利率");
+    if(definition.key==="ai"){macroInput=macroFactor([macro.has("DFII10")?"DFII10":"DGS10"],.2,-1,"长端折现率");thematic=chainBreadth();thematicLabel="AI产业宽度";thematicLogic="AI产业链各分组成分上涨比例均值";}
+    if(definition.key==="hk"||definition.key==="china-a") macroInput=macroFactor(["INDPRO"],.5,1,"增长动能代理");
+    const inputs=[
+      {key:"trend20",bucket:"趋势",label:"20日趋势",weight:25,...m20,logic:"当前20日收益在该代理历史滚动20日收益中的分位"},
+      {key:"trend60",bucket:"趋势",label:"60日趋势",weight:15,...m60,logic:"当前60日收益在该代理历史滚动60日收益中的分位"},
+      {key:"macro",bucket:"宏观",label:"宏观适配度",weight:20,...macroInput,logic:"按公开宏观指标变化和预设风险方向映射；阈值与方向在模型说明中公开"},
+      {key:"flow",bucket:"资金/仓位",label:thematicLabel,weight:15,...thematic,logic:thematicLogic},
+      {key:"relative",bucket:"相对价值",label:"相对全球股票强弱",weight:15,...relative,logic:"代理资产20日收益减全球股票20日收益的历史分位"},
+      {key:"risk",bucket:"风险",label:"波动率约束",weight:10,...vol,logic:"20日年化波动率历史分位取反，波动越低得分越高"},
+    ];
+    const factors:ScoreFactor[]=inputs.map(input=>{const sourceKey=input.key==="macro"?"fred_macro":input.key==="flow"?(definition.key==="commodities"||definition.key==="gold"?"cftc_positions":definition.key==="ai"?"ai_chain_quotes":"etf_fund_flows"):"market_history",status=statuses.get(sourceKey)??(input.available?"unverified":"missing");return {key:input.key,bucket:input.bucket,label:input.label,observed:input.observed,as_of:input.asOf,source:input.source,status,url:input.url,weight:input.weight,percentile:Math.round(input.score),contribution:Number((input.score*input.weight/100).toFixed(1)),logic:input.logic,available:input.available}});
+    const quality=(status:string)=>status==="online"||status==="local"?1:["cached","baseline","unverified"].includes(status)?.7:.35,percentile=factors.reduce((sum,factor)=>sum+factor.contribution,0),score=Math.round(60+percentile*.3),coverage=factors.reduce((sum,factor)=>sum+(factor.available?factor.weight*quality(factor.status):0),0),confidence=Math.min(95,Math.round(coverage*(.65+Math.min(1,(series?.points.length??0)/756)*.35)));
+    const sorted=factors.slice().sort((a,b)=>b.contribution-a.contribution),positives=factors.filter(factor=>factor.percentile>=60).sort((a,b)=>b.percentile-a.percentile).slice(0,3).map(factor=>`${factor.label} ${factor.percentile}分位`),risks=factors.filter(factor=>factor.percentile<=40).sort((a,b)=>a.percentile-b.percentile).slice(0,3).map(factor=>`${factor.label} ${factor.percentile}分位`);
+    const view=score>=85?"强超配":score>=79?"超配":score>=73?"中性":score>=67?"谨慎":"低配";
+    return {key:definition.key,asset:definition.asset,group:definition.group,proxy:definition.proxy,benchmark:definition.benchmark,score,percentile:Math.round(percentile),view,confidence,driver:`主要支撑：${sorted[0]?.label??"建立数据"}；主要约束：${factors.slice().sort((a,b)=>a.percentile-b.percentile)[0]?.label??"建立数据"}`,description:definition.description,factors,positives,risks};
+  });
+}
+
+export function marketRiskAppetite(data:DashboardData,history:HistorySeries[]){
+  const scores=assetScores(data,history),get=(key:string)=>scores.find(item=>item.key===key)?.percentile??50,factor=(key:string,names:string[])=>{const item=scores.find(score=>score.key===key),selected=item?.factors.filter(entry=>names.includes(entry.key))??[];return selected.length?selected.reduce((sum,entry)=>sum+entry.percentile,0)/selected.length:50},macro=new Map((data.fred_macro??[]).map(item=>[item.series_id,item])),equity=["equity","hk","china-a"].reduce((sum,key)=>sum+factor(key,["trend20","trend60"]),0)/3,credit=scaledScore(macro.get("BAMLH0A0HYM2")?.change,.2,-1),vol=volatilityFactor(history.find(item=>item.symbol==="ACWI")??history.find(item=>item.symbol==="SPY")).score,cycle=(factor("commodities",["trend20","trend60"])+equity)/2,usd=100-factor("usd",["trend20","trend60"]),riskFlows=(data.etf_fund_flows??[]).filter(row=>row.asset_class==="股票"&&row.estimated_flow!==null),flow=riskFlows.length?riskFlows.filter(row=>Number(row.estimated_flow)>0).length/riskFlows.length*100:50;
+  const factors=[{label:"权益趋势与宽度",weight:25,value:equity},{label:"信用环境",weight:20,value:credit},{label:"波动率环境",weight:20,value:vol},{label:"周期资产强弱",weight:15,value:cycle},{label:"美元融资压力",weight:10,value:usd},{label:"风险ETF资金广度",weight:10,value:flow}].map(item=>({...item,value:Math.round(item.value),contribution:Number((item.value*item.weight/100).toFixed(1))})),score=Math.round(factors.reduce((sum,item)=>sum+item.contribution,0));
+  return {score,label:score>=65?"风险偏好偏强":score<40?"风险偏好偏弱":"风险偏好中性",factors};
+}
+
+export function portfolioRiskAnalytics(weights:Record<string,number>,scores:AssetScore[],history:HistorySeries[]){
+  const mapping:Record<string,string[]>={equity:["ACWI","SPY"],bonds:["AGG","TLT"],commodities:["DBC","CPER"],gold:["GLD"],usd:["UUP"],ai:["BOTZ"],hk:["EWH"],"china-a":["ASHR"]},keys=scoreDefinitions.map(item=>item.key),series=keys.map(key=>mapping[key].map(symbol=>history.find(item=>item.symbol===symbol)).find(Boolean)),daily=series.map(item=>item?returns(item,Math.min(252,item.points.length-1)):[]),length=Math.min(...daily.filter(item=>item.length).map(item=>item.length)),w=keys.map(key=>Number(weights[key]??0)/100),matrix=daily.map(item=>item.slice(-length).map(value=>value/100)),means=matrix.map(row=>row.reduce((sum,value)=>sum+value,0)/Math.max(1,row.length)),cov=matrix.map((row,i)=>matrix.map((other,j)=>row.reduce((sum,value,index)=>sum+(value-means[i])*(other[index]-means[j]),0)/Math.max(1,length-1))),portfolioReturns=Array.from({length},(_,day)=>matrix.reduce((sum,row,index)=>sum+(row[day]??0)*w[index],0)),variance=w.reduce((sum,wi,i)=>sum+wi*w.reduce((inner,wj,j)=>inner+wj*(cov[i]?.[j]??0),0),0),volatility=Math.sqrt(Math.max(0,variance))*Math.sqrt(252)*100;
+  let wealth=1,peak=1,maxDrawdown=0;portfolioReturns.forEach(value=>{wealth*=1+value;peak=Math.max(peak,wealth);maxDrawdown=Math.min(maxDrawdown,(wealth/peak-1)*100)});
+  const marginal=w.map((_,i)=>w.reduce((sum,wj,j)=>sum+wj*(cov[i]?.[j]??0),0)),rawRisk=w.map((wi,i)=>wi*marginal[i]),riskTotal=rawRisk.reduce((sum,value)=>sum+value,0),riskContributions=keys.map((key,index)=>({key,label:scoreDefinitions.find(item=>item.key===key)!.asset,value:riskTotal>0?rawRisk[index]/riskTotal*100:0})),allocationScore=scores.reduce((sum,item)=>sum+item.score*Number(weights[item.key]??0)/100,0),hhi=w.reduce((sum,value)=>sum+value*value,0)*100;
+  return {allocationScore:Math.round(allocationScore),volatility:Number(volatility.toFixed(1)),maxDrawdown:Number(maxDrawdown.toFixed(1)),concentration:Number(hhi.toFixed(1)),riskContributions:riskContributions.sort((a,b)=>b.value-a.value),sampleDays:length,label:volatility>=18?"高风险":volatility>=11?"中高风险":volatility>=7?"中等风险":"稳健风险"};
+}
+
 export function newsSummaryZh(item: Record<string, string | number | null>) {
   const supplied = String(item.summary_zh ?? "").trim();
   if (supplied) return supplied;
@@ -121,28 +208,6 @@ export function newsSummaryZh(item: Record<string, string | number | null>) {
   if (has("earnings", "results", "revenue", "profit")) return "新闻聚焦公司业绩与经营指引，实际结果和管理层预期可能影响个股定价，并向所属行业传导。";
   if (has("s&p 500", "stocks", "market", "markets", "invest")) return "报道反映权益市场或个股投资线索，需结合估值、盈利趋势和宏观环境判断其对整体风险偏好的影响。";
   return `该报道聚焦“${title || "全球市场动态"}”，建议结合原文、行情变化及相关资产基本面判断其配置影响。`;
-}
-
-export function assetScores(data: DashboardData, history: HistorySeries[]) {
-  const byLabel=new Map(history.map((i)=>[i.label,i])); const quote=new Map((data.fmp_quotes??[]).map((i)=>[i.symbol,i.change_pct??0])); const macro=new Map((data.fred_macro??[]).map((i)=>[i.series_id,i.change??0]));
-  const momentum=(label:string)=>lastChange(byLabel.get(label)??fallbackHistory[0],20);
-  const risk=clamp(55+momentum("美股")*1.8-(macro.get("BAMLH0A0HYM2")??0)*70-(macro.get("DGS10")??0)*18);
-  const raw = [
-    {asset:"股票",raw:risk,driver:"全球权益动量 / 信用利差 / 长端利率"},
-    {asset:"债券",raw:clamp(52-(macro.get("DGS10")??0)*120+momentum("美债")*2),driver:"10Y收益率变化 / 久期价格趋势"},
-    {asset:"商品",raw:clamp(50+momentum("铜")*2.1+momentum("原油")*1.2),driver:"铜与原油20日动量"},
-    {asset:"黄金",raw:clamp(50+momentum("黄金")*2.4-(macro.get("DGS10")??0)*35),driver:"黄金动量 / 实际利率代理"},
-    {asset:"美元",raw:clamp(50+momentum("美元")*3+(macro.get("DGS10")??0)*30),driver:"美元动量 / 美债利率"},
-    {asset:"AI",raw:clamp(50+momentum("AI")*2+((quote.get("NVDA")??0)+(quote.get("MSFT")??0))*3),driver:"BOTZ动量 / NVDA与MSFT强弱"},
-    {asset:"港股",raw:clamp(50+momentum("港股")*2.5),driver:"香港市场ETF 20日动量"},
-    {asset:"A股",raw:clamp(50+momentum("A股")*2.5),driver:"沪深300ETF 20日动量"},
-  ];
-  const low=Math.min(...raw.map(i=>i.raw)),high=Math.max(...raw.map(i=>i.raw)),spread=Math.max(1,high-low);
-  return raw.map((item)=>{
-    const score=Math.round(62+(item.raw-low)/spread*26);
-    const view=score>=85?"强超配":score>=79?"超配":score>=73?"中性":score>=67?"谨慎":"低配";
-    return {asset:item.asset,score,view,driver:item.driver};
-  });
 }
 
 export const pringStages = [

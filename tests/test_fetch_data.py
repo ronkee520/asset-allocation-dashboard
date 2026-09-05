@@ -149,7 +149,7 @@ class DerivedAnalyticsTests(unittest.TestCase):
 
     def test_backtest_is_generated_without_future_signal_inputs(self):
         points = [{"date": f"2026-01-{(i % 28) + 1:02d}", "close": 100 + i * 0.4 + (i % 5) * 0.1} for i in range(126)]
-        history = [{"symbol": symbol, "points": points} for symbol in ("SPY", "TLT", "CPER", "GLD", "UUP", "BOTZ", "EWH", "ASHR")]
+        history = [{"symbol": symbol, "points": points} for symbol in ("ACWI", "AGG", "DBC", "GLD", "UUP", "BOTZ", "EWH", "ASHR")]
         rows = fetch_data.build_score_backtest(history)
         self.assertEqual(len(rows), 8)
         self.assertTrue(all(row["history_days"] == 126 for row in rows))

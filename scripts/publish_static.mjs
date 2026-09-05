@@ -4,6 +4,7 @@ import { resolve } from "node:path";
 const root = resolve(import.meta.dirname, "..");
 const source = resolve(root, "gh-pages-dist");
 const routes = ["allocation", "regime", "correlation", "markets", "etf-flows", "ai-chain", "calendar", "research"];
+const allocationDetails = ["equity", "bonds", "commodities", "gold", "usd", "ai", "hk", "china-a"];
 const retiredRoutes = ["workspace", "report"];
 
 await rm(resolve(root, "assets"), { recursive: true, force: true });
@@ -15,9 +16,14 @@ for (const route of routes) {
   await mkdir(target, { recursive: true });
   await writeFile(resolve(target, "index.html"), html, "utf8");
 }
+for (const detail of allocationDetails) {
+  const target = resolve(root, "allocation", detail);
+  await mkdir(target, { recursive: true });
+  await writeFile(resolve(target, "index.html"), html, "utf8");
+}
 for (const route of retiredRoutes) {
   await rm(resolve(root, route), { recursive: true, force: true });
 }
 await rm(source, { recursive: true, force: true });
-console.log(`Published ${routes.length + 1} static pages.`);
+console.log(`Published ${routes.length + allocationDetails.length + 1} static pages.`);
 

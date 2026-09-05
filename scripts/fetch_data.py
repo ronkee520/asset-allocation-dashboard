@@ -205,6 +205,7 @@ def fetch_fred_series() -> list[dict[str, Any]]:
     series = [
         ("DGS10", "美国10年期国债收益率", "利率", "久期资产折现率、成长股估值、黄金机会成本"),
         ("DGS2", "美国2年期国债收益率", "利率", "政策利率预期、收益率曲线"),
+        ("DFII10", "美国10年期实际利率", "利率", "黄金机会成本与长久期成长资产折现率"),
         ("T10Y2Y", "美国10Y-2Y利差", "利率", "衰退预期、曲线修复、银行股压力"),
         ("FEDFUNDS", "联邦基金有效利率", "政策", "美元流动性和全球贴现率锚"),
         ("CPIAUCSL", "美国CPI同比", "通胀", "同比通胀方向、降息交易节奏"),
@@ -212,6 +213,8 @@ def fetch_fred_series() -> list[dict[str, Any]]:
         ("BAMLH0A0HYM2", "美国高收益债利差", "信用", "信用风险偏好、权益下行保护"),
         ("INDPRO", "美国工业产出指数", "增长", "实体生产动能与经济周期方向"),
         ("PPIACO", "美国生产者价格指数", "通胀", "上游价格压力与商品周期验证"),
+        ("VIXCLS", "CBOE波动率指数", "风险", "权益风险厌恶和波动率环境"),
+        ("DTWEXBGS", "美元广义贸易加权指数", "汇率", "全球美元流动性与非美资产压力"),
     ]
     output = []
     for series_id, name, category, driver in series:
@@ -448,19 +451,25 @@ def fetch_market_history() -> list[dict[str, Any]]:
     avoid consuming any of the metered API quotas.
     """
     symbols = [
+        ("ACWI", "全球股票", "MSCI全球股票 ETF"),
         ("SPY", "美股", "S&P 500 ETF"),
         ("ASHR", "A股", "沪深300 ETF"),
         ("EWH", "港股", "香港市场 ETF"),
         ("GLD", "黄金", "黄金 ETF"),
         ("UUP", "美元", "美元指数 ETF"),
         ("TLT", "美债", "20年期美债 ETF"),
+        ("AGG", "综合债", "美国综合债券 ETF"),
+        ("IEF", "中期美债", "7-10年期美债 ETF"),
+        ("HYG", "高收益债", "美国高收益公司债 ETF"),
+        ("DBC", "综合商品", "综合商品 ETF"),
         ("CPER", "铜", "铜期货 ETF"),
         ("USO", "原油", "原油 ETF"),
         ("BOTZ", "AI", "机器人与AI ETF"),
+        ("SOXX", "半导体", "美国半导体 ETF"),
     ]
     output = []
     for symbol, label, name in symbols:
-        url = f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?range=6mo&interval=1d&events=history"
+        url = f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?range=5y&interval=1d&events=history"
         payload = get_json(url, timeout=35)
         result = (payload.get("chart", {}).get("result") or [None])[0]
         if not result:
@@ -483,7 +492,7 @@ def fetch_market_history() -> list[dict[str, Any]]:
                 "symbol": symbol,
                 "label": label,
                 "name": name,
-                "points": points[-126:],
+                "points": points[-1260:],
                 "source": "Yahoo Finance",
                 "url": f"https://finance.yahoo.com/quote/{symbol}/history/",
             })
@@ -850,10 +859,11 @@ def _series_raw_scores(points: list[dict[str, Any]]) -> list[tuple[int, float]]:
 
 
 def build_score_backtest(history: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    asset_map = {"股票": "SPY", "债券": "TLT", "商品": "CPER", "黄金": "GLD", "美元": "UUP", "AI": "BOTZ", "港股": "EWH", "A股": "ASHR"}
+    asset_map = {"全球股票": ("ACWI", "SPY"), "债券": ("AGG", "TLT"), "商品": ("DBC", "CPER"), "黄金": ("GLD",), "美元": ("UUP",), "AI": ("BOTZ",), "港股": ("EWH",), "A股": ("ASHR",)}
     series_map = {str(item.get("symbol")): item for item in history}
     output = []
-    for asset, symbol in asset_map.items():
+    for asset, symbols in asset_map.items():
+        symbol = next((candidate for candidate in symbols if candidate in series_map), symbols[0])
         series = series_map.get(symbol)
         if not series:
             continue
@@ -882,7 +892,7 @@ def build_score_backtest(history: list[dict[str, Any]]) -> list[dict[str, Any]]:
             "hit_rate_20d": round(sum(value > 0 for value in observations) / len(observations) * 100, 1) if observations else None,
             "avg_forward_return_20d": round(sum(observations) / len(observations), 2) if observations else None,
             "max_drawdown": round(max_drawdown, 2), "current_percentile": round(current_percentile, 1),
-            "history_days": len(points), "method": "60日内技术信号达到历史前40%后，检验未来20日收益；无前视数据",
+            "history_days": len(points), "method": "价格子模型使用20/60日动量与20日波动率；信号达到历史前40%后检验未来20日收益，无前视数据",
         })
     return output
 
