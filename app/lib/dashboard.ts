@@ -11,6 +11,11 @@ export type CalendarEvent = { date:string; region:string; event:string; importan
 export type ScoreBacktestRow = { asset:string; symbol:string; sample_size:number; hit_rate_20d:number|null; avg_forward_return_20d:number|null; max_drawdown:number; current_percentile:number; history_days:number; method:string };
 export type ScoreFactor = { key:string; bucket:string; label:string; observed:string; as_of:string; source:string; status:string; url:string; weight:number; percentile:number; contribution:number; logic:string; available:boolean };
 export type AssetScore = { key:string; asset:string; group:"core"|"equity"; proxy:string; benchmark:string; score:number; percentile:number; view:string; confidence:number; driver:string; description:string; factors:ScoreFactor[]; positives:string[]; risks:string[] };
+export type PringProxy = { symbol:string; name:string; weight:number; return20:number; return60:number; blended:number; date:string; source:string; status:string; url:string };
+export type PringSignal = { label:string; value:number; return20:number; return60:number; direction:1|-1; agreement:number; expected:number; components:PringProxy[] };
+export type PringStageFit = { stage:number; name:string; fit:number; pattern:readonly number[]; matched:number };
+export type PringMacroCheck = { id:string; label:string; value:number|null; change:number|null; date:string; source:string; status:string; url:string; verdict:"支持"|"冲突"|"中性"; rationale:string };
+export type CorrelationResult = { value:number; sampleSize:number; startDate:string; endDate:string };
 export type DashboardData = {
   generated_at?: string;
   pricing_generated_at?: string;
@@ -90,6 +95,16 @@ export function eventRows(data: DashboardData): CalendarEvent[] { const today=ne
 
 export function returns(series: HistorySeries, days: number) { const closes = series.points.map((p) => p.close).filter(Number.isFinite).slice(-(days + 1)); return closes.slice(1).map((v, i) => (v / closes[i] - 1) * 100) }
 export function correlation(a: number[], b: number[]) { const n = Math.min(a.length, b.length); if (n < 3) return 0; const x = a.slice(-n), y = b.slice(-n), mx = x.reduce((s,v)=>s+v,0)/n, my=y.reduce((s,v)=>s+v,0)/n; let num=0,dx=0,dy=0; for(let i=0;i<n;i++){const vx=x[i]-mx,vy=y[i]-my;num+=vx*vy;dx+=vx*vx;dy+=vy*vy} return dx&&dy?num/Math.sqrt(dx*dy):0 }
+export function correlationForSeries(a:HistorySeries,b:HistorySeries,days:number):CorrelationResult {
+  if(a.symbol===b.symbol){const points=a.points.slice(-(days+1));return {value:1,sampleSize:Math.max(0,points.length-1),startDate:points[0]?.date??"-",endDate:points.at(-1)?.date??"-"}}
+  const right=new Map(b.points.map(point=>[point.date,point.close])),common=a.points.filter(point=>right.has(point.date)).map(point=>({date:point.date,left:point.close,right:right.get(point.date)!})).slice(-(days+1));
+  const leftReturns=common.slice(1).map((point,index)=>(point.left/common[index].left-1)*100),rightReturns=common.slice(1).map((point,index)=>(point.right/common[index].right-1)*100);
+  return {value:correlation(leftReturns,rightReturns),sampleSize:leftReturns.length,startDate:common[0]?.date??"-",endDate:common.at(-1)?.date??"-"};
+}
+export function correlationUniverse(history:HistorySeries[]) {
+  const definitions=[['SPY','美股'],['ASHR','A股'],['GLD','黄金'],['UUP','美元'],['AGG','债券'],['CPER','铜'],['USO','原油']] as const;
+  return definitions.flatMap(([symbol,label])=>{const series=history.find(item=>item.symbol===symbol)??(symbol==='AGG'?history.find(item=>item.symbol==='TLT'):undefined);return series?[{...series,label:String(label)} as HistorySeries]:[]});
+}
 export function lastChange(series: HistorySeries, days = 1) { const p=series.points; return p.length>days?(p.at(-1)!.close/p.at(-(days+1))!.close-1)*100:0 }
 export function clamp(value: number, min=0,max=100){return Math.min(max,Math.max(min,value))}
 
@@ -220,16 +235,23 @@ export const pringStages = [
 ] as const;
 
 export function pringCycle(data: DashboardData, history: HistorySeries[]) {
-  const find = (label:string) => history.find(item=>item.label===label);
-  const bond = lastChange(find("美债")??fallbackHistory.find(item=>item.label==="美债")!,60);
-  const stock = ["美股","A股","港股"].map(label=>lastChange(find(label)??fallbackHistory.find(item=>item.label===label)!,60)).reduce((sum,value)=>sum+value,0)/3;
-  const commodities = (data.commodity_market??[]).map(item=>item.change_60d).filter((value):value is number=>Number.isFinite(value));
-  const commodity = commodities.length ? commodities.reduce((sum,value)=>sum+value,0)/commodities.length : ["铜","原油"].map(label=>lastChange(find(label)??fallbackHistory.find(item=>item.label===label)!,60)).reduce((sum,value)=>sum+value,0)/2;
-  const values=[bond,stock,commodity], signs=values.map(value=>value>=0?1:-1);
-  const ranked=pringStages.map(item=>({item,mismatch:item.pattern.reduce((sum,expected,index)=>sum+(expected===signs[index]?0:1),0)})).sort((a,b)=>a.mismatch-b.mismatch);
-  const current=ranked[0].item;
-  const confidence=Math.round(clamp(58+Math.min(30,values.reduce((sum,value)=>sum+Math.abs(value),0)*1.4)-ranked[0].mismatch*12,45,90));
-  return { ...current, confidence, signals:[{label:"债券",value:bond},{label:"股票",value:stock},{label:"商品",value:commodity}] };
+  const sourceStatuses=new Map((data.source_status??[]).map(item=>[String(item.key),String(item.status??"unknown")])),historyStatus=sourceStatuses.get("market_history")??"unverified",commodityStatus=sourceStatuses.get("commodity_market")??"unverified",macroStatus=sourceStatuses.get("fred_macro")??"unverified";
+  const makeProxy=(symbol:string,name:string,weight:number):PringProxy|null=>{const series=history.find(item=>item.symbol===symbol);if(!series)return null;const return20=lastChange(series,20),return60=lastChange(series,60);return {symbol,name,weight,return20,return60,blended:return20*.35+return60*.65,date:series.points.at(-1)?.date??"-",source:series.source,status:historyStatus,url:series.url}};
+  const makeSignal=(label:string,definitions:Array<[string,string,number]>,synthetic?:PringProxy):PringSignal=>{const components=definitions.map(item=>makeProxy(...item)).filter((item):item is PringProxy=>Boolean(item));if(synthetic)components.push(synthetic);const total=components.reduce((sum,item)=>sum+item.weight,0)||1,return20=components.reduce((sum,item)=>sum+item.return20*item.weight/total,0),return60=components.reduce((sum,item)=>sum+item.return60*item.weight/total,0),value=return20*.35+return60*.65,direction=(value>=0?1:-1) as 1|-1,agreement=components.reduce((sum,item)=>sum+(((item.blended>=0?1:-1)===direction)?item.weight:0),0)/total*100;return {label,value,return20,return60,direction,agreement,expected:0,components}};
+  const commodityRows=data.commodity_market??[],commodity20=commodityRows.map(item=>item.change_20d).filter((value):value is number=>Number.isFinite(value)),commodity60=commodityRows.map(item=>item.change_60d).filter((value):value is number=>Number.isFinite(value)),basket20=commodity20.length?commodity20.reduce((sum,value)=>sum+value,0)/commodity20.length:0,basket60=commodity60.length?commodity60.reduce((sum,value)=>sum+value,0)/commodity60.length:0,basket:PringProxy|undefined=commodityRows.length?{symbol:"COMPOSITE",name:`公开商品篮子（${commodityRows.length}品种）`,weight:.2,return20:basket20,return60:basket60,blended:basket20*.35+basket60*.65,date:commodityRows.map(item=>item.as_of).sort().at(-1)??"-",source:"商品公开日线组合",status:commodityStatus,url:commodityRows[0]?.url??"#"}:undefined;
+  const signals=[
+    makeSignal("债券",[["AGG","综合债券 ETF",.5],["IEF","7-10年美债 ETF",.25],["TLT","长期美债 ETF",.25]]),
+    makeSignal("股票",[["ACWI","全球股票 ETF",.4],["SPY","美国股票 ETF",.25],["ASHR","A股 ETF",.175],["EWH","港股 ETF",.175]]),
+    makeSignal("商品",[["DBC","综合商品 ETF",.45],["CPER","铜 ETF",.2],["USO","原油 ETF",.15]],basket),
+  ];
+  const stageFits:PringStageFit[]=pringStages.map(stage=>{const componentFits=signals.map((signal,index)=>50+50*Math.tanh(stage.pattern[index]*signal.value/6)),fit=componentFits.reduce((sum,value)=>sum+value,0)/componentFits.length,matched=signals.filter((signal,index)=>signal.direction===stage.pattern[index]).length;return {stage:stage.stage,name:stage.name,fit:Number(fit.toFixed(1)),pattern:stage.pattern,matched}}).sort((a,b)=>b.fit-a.fit),current=pringStages.find(stage=>stage.stage===stageFits[0].stage)!,runnerUp=stageFits[1];
+  const expectedPattern=[...current.pattern];signals.forEach((signal,index)=>signal.expected=expectedPattern[index]);
+  const statusQuality=(status:string)=>status==="online"||status==="local"?100:["cached","baseline","unverified"].includes(status)?70:35,proxyQuality=signals.flatMap(signal=>signal.components).reduce((sum,item)=>sum+statusQuality(item.status),0)/Math.max(1,signals.flatMap(signal=>signal.components).length),agreement=signals.reduce((sum,signal)=>sum+signal.agreement,0)/signals.length,margin=Math.min(100,Math.max(0,(stageFits[0].fit-runnerUp.fit)*5)),confidence=Math.round(clamp(stageFits[0].fit*.45+agreement*.25+proxyQuality*.2+margin*.1,40,95));
+  const macroMap=new Map((data.fred_macro??[]).map(item=>[item.series_id,item])),growthExpected=current.stage>=2&&current.stage<=4?1:-1,inflationExpected=current.stage>=3&&current.stage<=5?1:-1,creditExpected=current.stage>=2&&current.stage<=4?-1:1;
+  const macroCheck=(ids:string[],label:string,expected:number,rationale:string):PringMacroCheck=>{const rows=ids.map(id=>macroMap.get(id)).filter((item):item is MacroRow=>Boolean(item)),changes=rows.map(item=>item.change).filter((value):value is number=>Number.isFinite(value)),change=changes.length?changes.reduce((sum,value)=>sum+value,0)/changes.length:null,value=rows[0]?.value??null,verdict=change===null||Math.abs(change)<1e-9?"中性":Math.sign(change)===expected?"支持":"冲突";return {id:ids.join("+"),label,value,change,date:rows.map(item=>item.date).sort().at(-1)??"-",source:rows.map(item=>item.source).filter(Boolean).join(" / ")||"待更新",status:macroStatus,url:rows[0]?.url??"#",verdict,rationale}};
+  const macroChecks=[macroCheck(["INDPRO"],"工业生产",growthExpected,"检验实体增长方向"),macroCheck(["CPIAUCSL","PPIACO"],"通胀与上游价格",inflationExpected,"检验通胀方向"),macroCheck(["BAMLH0A0HYM2"],"高收益债利差",creditExpected,"检验信用扩张或压力"),macroCheck(["DGS10"],"美国10年期收益率",current.stage===4||current.stage===5?1:-1,"检验利率周期方向")];
+  const actualPattern=signals.map(signal=>signal.direction),supports=signals.filter(signal=>signal.direction===signal.expected).map(signal=>`${signal.label}${signal.direction>0?"上行":"下行"}`),conflicts=signals.filter(signal=>signal.direction!==signal.expected).map(signal=>`${signal.label}${signal.direction>0?"上行":"下行"}`),asOf=signals.flatMap(signal=>signal.components.map(item=>item.date)).sort().at(-1)??"-";
+  return {...current,confidence,fit:stageFits[0].fit,runnerUp,stageFits,signals,macroChecks,actualPattern,supports,conflicts,asOf,formula:"综合趋势 = 35% × 20日收益 + 65% × 60日收益；阶段拟合 = 三类资产方向模板的双曲正切相似度均值"};
 }
 
 export function macroRegime(data: DashboardData, history: HistorySeries[]=fallbackHistory){const cycle=pringCycle(data,history);return{quadrant:`阶段${cycle.stage} · ${cycle.name}`,growthUp:cycle.stage>=2&&cycle.stage<=4,inflationUp:cycle.stage>=3&&cycle.stage<=5,focus:cycle.focus,avoid:cycle.avoid}}
