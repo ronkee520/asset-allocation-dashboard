@@ -1,4 +1,20 @@
 /* Readability overrides keep the dense terminal layout while lifting small UI text. */
+body::after {
+  content: "SUSTech Ren Keyi";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 1000;
+  transform: translate(-50%, -50%) rotate(-28deg);
+  color: rgba(168, 20, 53, 0.08);
+  font-size: clamp(24px, 5vw, 72px);
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
 .brand strong { font-size: 14px; }
 .brand small { font-size: 11px; }
 .sidebar nav a { font-size: 14px; }
