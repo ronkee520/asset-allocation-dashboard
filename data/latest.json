@@ -20,7 +20,7 @@
       "name": "Apple Inc.",
       "price": 333.69,
       "change_pct": 1.02022,
-      "volume": 31878433.0,
+      "volume": 33278552.0,
       "avg_volume": null,
       "pe": null,
       "price_avg_50": 322.4162,
@@ -35,7 +35,7 @@
       "name": "NVIDIA Corporation",
       "price": 233.95,
       "change_pct": 1.33847,
-      "volume": 134470648.0,
+      "volume": 135167817.0,
       "avg_volume": null,
       "pe": null,
       "price_avg_50": 218.2782,
@@ -50,7 +50,7 @@
       "name": "Microsoft Corporation",
       "price": 517.53,
       "change_pct": 0.92239,
-      "volume": 17179496.0,
+      "volume": 17822339.0,
       "avg_volume": null,
       "pe": null,
       "price_avg_50": 487.7242,
@@ -65,7 +65,7 @@
       "name": "Alphabet Inc.",
       "price": 343.5,
       "change_pct": 1.55511,
-      "volume": 22734069.0,
+      "volume": 23772148.0,
       "avg_volume": null,
       "pe": null,
       "price_avg_50": 344.3664,
@@ -80,7 +80,7 @@
       "name": "Amazon.com, Inc.",
       "price": 251.52,
       "change_pct": 1.32538,
-      "volume": 33047205.0,
+      "volume": 33433392.0,
       "avg_volume": null,
       "pe": null,
       "price_avg_50": 256.5438,
@@ -95,7 +95,7 @@
       "name": "Meta Platforms, Inc.",
       "price": 728.08,
       "change_pct": 0.29617,
-      "volume": 12873427.0,
+      "volume": 12964079.0,
       "avg_volume": null,
       "pe": null,
       "price_avg_50": 625.0396,
@@ -125,7 +125,7 @@
       "name": "Advanced Micro Devices, Inc.",
       "price": 633.91,
       "change_pct": 2.95259,
-      "volume": 19323673.0,
+      "volume": 19865309.0,
       "avg_volume": null,
       "pe": null,
       "price_avg_50": 513.5342,
@@ -168,7 +168,7 @@
       "name": "Advanced Micro Devices, Inc.",
       "price": 633.91,
       "change_pct": 2.95259,
-      "volume": 19323673.0,
+      "volume": 19865309.0,
       "avg_volume": 22453955.0,
       "pe": 160.891,
       "source": "FMP",
@@ -183,7 +183,7 @@
       "name": "Amazon.com, Inc.",
       "price": 251.52,
       "change_pct": 1.32538,
-      "volume": 33047205.0,
+      "volume": 33433392.0,
       "avg_volume": 34854665.0,
       "pe": 19.962,
       "source": "FMP",
@@ -275,7 +275,7 @@
       "name": "Alphabet Inc.",
       "price": 343.5,
       "change_pct": 1.55511,
-      "volume": 22734069.0,
+      "volume": 23772148.0,
       "avg_volume": 27219450.0,
       "pe": 16.899,
       "source": "FMP",
@@ -334,7 +334,7 @@
       "name": "Microsoft Corporation",
       "price": 517.53,
       "change_pct": 0.92239,
-      "volume": 17179496.0,
+      "volume": 17822339.0,
       "avg_volume": 21570125.0,
       "pe": 28.752,
       "source": "FMP",
@@ -371,7 +371,7 @@
       "name": "NVIDIA Corporation",
       "price": 233.95,
       "change_pct": 1.33847,
-      "volume": 134470648.0,
+      "volume": 135167817.0,
       "avg_volume": 109941645.0,
       "pe": 29.428,
       "source": "FMP",
@@ -496,7 +496,7 @@
       "source": "FMP ratios-ttm"
     }
   ],
-  "valuation_generated_at": "2026-10-04T14:11:11Z",
+  "valuation_generated_at": "2026-10-04T19:44:39Z",
   "fred_macro": [
     {
       "series_id": "DGS10",
@@ -77910,7 +77910,7 @@
         {
           "date": "2026-09-25",
           "close": 4321.2001953125,
-          "volume": 140092.0
+          "volume": 164814.0
         },
         {
           "date": "2026-09-28",
@@ -99499,7 +99499,7 @@
         {
           "date": "2026-09-16",
           "close": 218.4499969482422,
-          "volume": 23418.0
+          "volume": 13896.0
         },
         {
           "date": "2026-09-17",
@@ -105968,13 +105968,73 @@
   "alpha_news": [
     {
       "theme": "市场情绪",
+      "title": "The Copper Treasure Hunt: 3 Ways to Look for a Payoff",
+      "source": "InvestorPlace",
+      "published_at": "20261004T172312",
+      "url": "https://investorplace.com/smartmoney/2026/10/the-copper-treasure-hunt-3-ways-to-look-for-a-payoff/",
+      "summary": "This article discusses the investment opportunities in copper, emphasizing its critical role in the AI buildout and the electrification trend. It highlights three ways to invest: F",
+      "sentiment": "Somewhat-Bullish",
+      "score": 0.311727,
+      "summary_zh": "新闻涉及AI或半导体产业景气，需结合订单、资本开支、供需与估值，评估芯片、云计算及主题ETF影响。",
+      "summary_method": "本地资产配置规则"
+    },
+    {
+      "theme": "市场情绪",
+      "title": "Microchip Technology stock gained 4.98 percent on Ethernet expansion in",
+      "source": "AD HOC NEWS",
+      "published_at": "20261004T171536",
+      "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/microchip-technology-stock-gained-4-98-percent-on-ethernet-expansion-in/70227395",
+      "summary": "Microchip Technology stock (MCHP) rose 4.98% to USD 82.41 on October 2, 2026, driven by the expansion of its Ethernet portfolio for automotive and industrial networks with new LAN8",
+      "sentiment": "Bullish",
+      "score": 0.438007,
+      "summary_zh": "新闻涉及AI或半导体产业景气，需结合订单、资本开支、供需与估值，评估芯片、云计算及主题ETF影响。",
+      "summary_method": "本地资产配置规则"
+    },
+    {
+      "theme": "市场情绪",
+      "title": "MercadoLibre vs. Uber Technologies: Which Stock Is a Better Buy in 2026?",
+      "source": "Yahoo Finance",
+      "published_at": "20261004T151215",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/mercadolibre-vs-uber-technologies-stock-151108119.html",
+      "summary": "This article compares MercadoLibre and Uber Technologies to determine which stock is a better investment in 2026. It analyzes their business models, financial performance for fisca",
+      "sentiment": "Neutral",
+      "score": 0.147242,
+      "summary_zh": "报道反映权益市场或个股线索，需结合估值、盈利趋势和宏观环境判断其对整体风险偏好的影响。",
+      "summary_method": "本地资产配置规则"
+    },
+    {
+      "theme": "市场情绪",
+      "title": "Emerson Electric (EMR) Has A Fresh Update, So Why Is It Drawing Attention?",
+      "source": "Simply Wall Street",
+      "published_at": "20261004T112046",
+      "url": "https://simplywall.st/stocks/us/capital-goods/nyse-emr/emerson-electric/news/emerson-electric-emr-has-a-fresh-update-so-why-is-it-drawing/amp",
+      "summary": "Emerson Electric (EMR) is opening a new 3,500-square-meter Middle East and Africa Service Center in Qatar, focusing on automation support. This announcement comes amidst a strong p",
+      "sentiment": "Somewhat-Bullish",
+      "score": 0.284878,
+      "summary_zh": "该报道聚焦“Emerson Electric (EMR) Has A Fresh Update, So Why Is It Drawing Attentio”，建议结合原文、行情变化及相关资产基本面判断其配置影响。",
+      "summary_method": "本地资产配置规则"
+    },
+    {
+      "theme": "市场情绪",
+      "title": "TripAdvisor, Inc. (TRIP) stock price, news, quote and history",
+      "source": "Yahoo Finance UK",
+      "published_at": "20261004T080514",
+      "url": "https://uk.finance.yahoo.com/quote/TRIP/latest-news/",
+      "summary": "This page provides a comprehensive overview of TripAdvisor, Inc. (TRIP) stock, including its current price, recent news headlines, and related financial data. It highlights various",
+      "sentiment": "Neutral",
+      "score": 0.024439,
+      "summary_zh": "报道反映权益市场或个股线索，需结合估值、盈利趋势和宏观环境判断其对整体风险偏好的影响。",
+      "summary_method": "本地资产配置规则"
+    },
+    {
+      "theme": "市场情绪",
       "title": "Key facts: Amazon.com, Inc. data-center investments; Ohio AI buildout",
       "source": "TradingView",
       "published_at": "20261004T065140",
       "url": "https://www.tradingview.com/news/tradingview:b3b6963780c9f:0-key-facts-amazon-com-inc-data-center-investments-ohio-ai-buildout/",
       "summary": "Amazon (AMZN) has revealed its cumulative data-center investments since 2011 and its ongoing significant projects across various U.S. states, emphasizing its vast scale despite scr",
       "sentiment": "Somewhat-Bullish",
-      "score": 0.24597,
+      "score": 0.243889,
       "summary_zh": "新闻涉及AI或半导体产业景气，需结合订单、资本开支、供需与估值，评估芯片、云计算及主题ETF影响。",
       "summary_method": "本地资产配置规则"
     },
@@ -105986,7 +106046,7 @@
       "url": "https://www.marketbeat.com/instant-alerts/analyst-advanced-micro-devices-nasdaq-amd-stock-lifted-to-buy-by-wall-street-zen-2026-10-04/",
       "summary": "Wall Street Zen has upgraded Advanced Micro Devices (NASDAQ:AMD) from a \"hold\" to a \"buy\" rating, aligning with the broader analyst consensus of a \"Moderate Buy\" and an average pri",
       "sentiment": "Somewhat-Bullish",
-      "score": 0.259288,
+      "score": 0.264101,
       "summary_zh": "报道反映权益市场或个股线索，需结合估值、盈利趋势和宏观环境判断其对整体风险偏好的影响。",
       "summary_method": "本地资产配置规则"
     },
@@ -105998,68 +106058,8 @@
       "url": "https://simplywall.st/stocks/us/real-estate/nyse-dlr/digital-realty-trust/news/should-ai-data-center-expansion-require-action-from-digital",
       "summary": "Digital Realty Trust (DLR) has enhanced its AI infrastructure by integrating Blackfuel's liquid-cooled inference platform into its Barcelona facility and establishing a new cable l",
       "sentiment": "Somewhat-Bullish",
-      "score": 0.23453,
+      "score": 0.248707,
       "summary_zh": "新闻涉及AI或半导体产业景气，需结合订单、资本开支、供需与估值，评估芯片、云计算及主题ETF影响。",
-      "summary_method": "本地资产配置规则"
-    },
-    {
-      "theme": "市场情绪",
-      "title": "Top Growth Stocks For October 2026",
-      "source": "Simply Wall Street",
-      "published_at": "20261004T022527",
-      "url": "https://simplywall.st/stocks/us/semiconductors/nasdaq-himx/himax-technologies/news/top-growth-stocks-for-october-2026/amp",
-      "summary": "This article identifies three high-growth stocks with significant insider ownership for October 2026: Himax Technologies, Nu Holdings, and Figure Technology Solutions. It highlight",
-      "sentiment": "Somewhat-Bullish",
-      "score": 0.326184,
-      "summary_zh": "报道反映权益市场或个股线索，需结合估值、盈利趋势和宏观环境判断其对整体风险偏好的影响。",
-      "summary_method": "本地资产配置规则"
-    },
-    {
-      "theme": "市场情绪",
-      "title": "Is Tower Semiconductor (TSEM) A Bargain As Index Inclusion Draws Fresh Buyers?",
-      "source": "Simply Wall Street",
-      "published_at": "20261004T015937",
-      "url": "https://simplywall.st/stocks/us/semiconductors/nasdaq-tsem/tower-semiconductor/news/is-tower-semiconductor-tsem-a-bargain-as-index-inclusion-dra",
-      "summary": "Tower Semiconductor (TSEM) has been included in the PHLX Semiconductor Sector Index, leading to strong stock momentum and significant gains for long-term holders. While the company",
-      "sentiment": "Somewhat-Bullish",
-      "score": 0.263831,
-      "summary_zh": "新闻涉及AI或半导体产业景气，需结合订单、资本开支、供需与估值，评估芯片、云计算及主题ETF影响。",
-      "summary_method": "本地资产配置规则"
-    },
-    {
-      "theme": "市场情绪",
-      "title": "What Werner Enterprises Investors Had To Stomach, And Where It’s Playing Out Again",
-      "source": "Simply Wall Street",
-      "published_at": "20261003T213345",
-      "url": "https://simplywall.st/stocks/us/transportation/nasdaq-wern/werner-enterprises/news/what-werner-enterprises-investors-had-to-stomach-and-where-i",
-      "summary": "Werner Enterprises investors have seen a 31.0% return over the past year, but the company faces a complex outlook with diverging fair value estimates from analysts. While the compa",
-      "sentiment": "Somewhat-Bullish",
-      "score": 0.236967,
-      "summary_zh": "新闻涉及AI或半导体产业景气，需结合订单、资本开支、供需与估值，评估芯片、云计算及主题ETF影响。",
-      "summary_method": "本地资产配置规则"
-    },
-    {
-      "theme": "市场情绪",
-      "title": "What Bilibili's 49% Fall Can Still Teach You About The Story That Breaks First",
-      "source": "Simply Wall Street",
-      "published_at": "20261003T172953",
-      "url": "https://simplywall.st/stocks/us/media/nasdaq-bili/bilibili/news/what-bilibilis-49-fall-can-still-teach-you-about-the-story-t/amp",
-      "summary": "Bilibili (NasdaqGS:BILI) shareholders experienced a 49.4% loss over the past year, prompting an analysis of the conflicting bullish and bearish narratives that existed prior to thi",
-      "sentiment": "Somewhat-Bearish",
-      "score": -0.227217,
-      "summary_zh": "该报道聚焦“What Bilibili's 49% Fall Can Still Teach You About The Story That Breaks”，建议结合原文、行情变化及相关资产基本面判断其配置影响。",
-      "summary_method": "本地资产配置规则"
-    },
-    {
-      "theme": "市场情绪",
-      "title": "Bond Volatility Could Determine How S&P 500 Breadth Gap Closes, Morgan Stanley Says",
-      "source": "Yahoo Finance UK",
-      "published_at": "20261003T144223",
-      "url": "https://uk.finance.yahoo.com/news/bond-volatility-could-determine-p-144334476.html",
-      "summary": "Morgan Stanley anticipates that the divergence between the S&P 500 and broader market participation will narrow in the coming month, with bond market volatility being a key factor.",
-      "sentiment": "Neutral",
-      "score": 0.016212,
-      "summary_zh": "报道关注债券收益率或利率预期变化，可能影响美元、黄金、权益估值及跨资产风险偏好。",
       "summary_method": "本地资产配置规则"
     }
   ],
@@ -106074,7 +106074,7 @@
       "focus": "旗舰推理、Agent与复杂研究",
       "url": "https://platform.openai.com/pricing",
       "price_status": "官方基准",
-      "verified_at": "2026-10-04T14:11:11Z"
+      "verified_at": "2026-10-04T19:44:39Z"
     },
     {
       "provider": "OpenAI",
@@ -106086,7 +106086,7 @@
       "focus": "通用知识工作与投研自动化",
       "url": "https://platform.openai.com/pricing",
       "price_status": "官方基准",
-      "verified_at": "2026-10-04T14:11:11Z"
+      "verified_at": "2026-10-04T19:44:39Z"
     },
     {
       "provider": "OpenAI",
@@ -106098,7 +106098,7 @@
       "focus": "高频摘要、分类与批量处理",
       "url": "https://platform.openai.com/pricing",
       "price_status": "官方基准",
-      "verified_at": "2026-10-04T14:11:11Z"
+      "verified_at": "2026-10-04T19:44:39Z"
     },
     {
       "provider": "Anthropic",
@@ -106110,7 +106110,7 @@
       "focus": "高难度研究与长文档",
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-04T14:11:12Z"
+      "verified_at": "2026-10-04T19:44:40Z"
     },
     {
       "provider": "Anthropic",
@@ -106122,7 +106122,7 @@
       "focus": "复杂推理、多Agent与专业研究",
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-04T14:11:12Z"
+      "verified_at": "2026-10-04T19:44:40Z"
     },
     {
       "provider": "Anthropic",
@@ -106134,7 +106134,7 @@
       "focus": "代码、知识工作与长上下文",
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-04T14:11:12Z"
+      "verified_at": "2026-10-04T19:44:40Z"
     },
     {
       "provider": "Anthropic",
@@ -106146,7 +106146,7 @@
       "focus": "低延迟与高吞吐任务",
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-04T14:11:12Z"
+      "verified_at": "2026-10-04T19:44:40Z"
     },
     {
       "provider": "Google",
@@ -106158,7 +106158,7 @@
       "focus": "多模态、Agent与代码",
       "url": "https://ai.google.dev/gemini-api/docs/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-04T14:11:12Z"
+      "verified_at": "2026-10-04T19:44:40Z"
     },
     {
       "provider": "Google",
@@ -106170,7 +106170,7 @@
       "focus": "高质量快速推理与搜索增强",
       "url": "https://ai.google.dev/gemini-api/docs/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-04T14:11:12Z"
+      "verified_at": "2026-10-04T19:44:40Z"
     },
     {
       "provider": "Google",
@@ -106182,7 +106182,7 @@
       "focus": "翻译、数据处理与大规模调用",
       "url": "https://ai.google.dev/gemini-api/docs/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-04T14:11:12Z"
+      "verified_at": "2026-10-04T19:44:40Z"
     },
     {
       "provider": "xAI",
@@ -106194,7 +106194,7 @@
       "focus": "实时信息、代码与Agent",
       "url": "https://docs.x.ai/developers/grok-4-6",
       "price_status": "官方实时",
-      "verified_at": "2026-10-04T14:11:13Z"
+      "verified_at": "2026-10-04T19:44:41Z"
     },
     {
       "provider": "xAI",
@@ -106218,7 +106218,7 @@
       "focus": "旗舰多语言与企业任务",
       "url": "https://docs.mistral.ai/inference/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-04T14:11:13Z"
+      "verified_at": "2026-10-04T19:44:41Z"
     },
     {
       "provider": "Mistral",
@@ -106230,7 +106230,7 @@
       "focus": "多模态、代码与Agent",
       "url": "https://docs.mistral.ai/inference/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-04T14:11:13Z"
+      "verified_at": "2026-10-04T19:44:41Z"
     },
     {
       "provider": "Mistral",
@@ -106242,7 +106242,7 @@
       "focus": "低成本生产任务",
       "url": "https://docs.mistral.ai/inference/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-04T14:11:13Z"
+      "verified_at": "2026-10-04T19:44:41Z"
     },
     {
       "provider": "DeepSeek",
@@ -106289,14 +106289,14 @@
       "leaders": "AVGO · AMD · NVDA",
       "change": 1.397,
       "breadth": 75.0,
-      "relative_volume": 1.01,
+      "relative_volume": 1.02,
       "valuation_pe": 95.2,
-      "turnover_usd": 81711151195,
+      "turnover_usd": 82217602360,
       "strength": 81,
       "signal": "GPU、HBM与高速互连决定训练和推理基础设施供给",
       "sample_size": 4,
       "method": "成分股行情自动计算",
-      "as_of": "2026-10-04T14:11:11Z"
+      "as_of": "2026-10-04T19:44:39Z"
     },
     {
       "segment": "上游",
@@ -106312,7 +106312,7 @@
       "signal": "先进制程扩产与设备订单反映算力资本开支兑现",
       "sample_size": 4,
       "method": "成分股行情自动计算",
-      "as_of": "2026-10-04T14:11:11Z"
+      "as_of": "2026-10-04T19:44:39Z"
     },
     {
       "segment": "中游",
@@ -106321,14 +106321,14 @@
       "leaders": "ORCL · GOOGL · AMZN",
       "change": 1.717,
       "breadth": 100.0,
-      "relative_volume": 0.89,
+      "relative_volume": 0.91,
       "valuation_pe": 20.0,
-      "turnover_usd": 30039592066,
+      "turnover_usd": 30825996494,
       "strength": 84,
       "signal": "云增速、AI订单和资本开支回报率共同决定景气",
       "sample_size": 4,
       "method": "成分股行情自动计算",
-      "as_of": "2026-10-04T14:11:11Z"
+      "as_of": "2026-10-04T19:44:39Z"
     },
     {
       "segment": "中游",
@@ -106344,7 +106344,7 @@
       "signal": "数据中心负荷推动电源、电网与工程投资",
       "sample_size": 3,
       "method": "成分股行情自动计算",
-      "as_of": "2026-10-04T14:11:11Z"
+      "as_of": "2026-10-04T19:44:39Z"
     },
     {
       "segment": "中游",
@@ -106360,7 +106360,7 @@
       "signal": "高功率机柜提升液冷渗透率和单柜价值量",
       "sample_size": 2,
       "method": "成分股行情自动计算",
-      "as_of": "2026-10-04T14:11:11Z"
+      "as_of": "2026-10-04T19:44:39Z"
     },
     {
       "segment": "下游",
@@ -106376,7 +106376,7 @@
       "signal": "关注AI产品付费转化、席位扩张和利润兑现",
       "sample_size": 3,
       "method": "成分股行情自动计算",
-      "as_of": "2026-10-04T14:11:11Z"
+      "as_of": "2026-10-04T19:44:39Z"
     },
     {
       "segment": "下游",
@@ -106392,7 +106392,7 @@
       "signal": "订单、自动化渗透率与量产节奏决定主题持续性",
       "sample_size": 2,
       "method": "成分股行情自动计算",
-      "as_of": "2026-10-04T14:11:11Z"
+      "as_of": "2026-10-04T19:44:39Z"
     },
     {
       "segment": "材料",
@@ -106408,7 +106408,7 @@
       "signal": "电气化需求与资源供给约束共同影响材料价值",
       "sample_size": 3,
       "method": "成分股行情自动计算",
-      "as_of": "2026-10-04T14:11:11Z"
+      "as_of": "2026-10-04T19:44:39Z"
     }
   ],
   "event_calendar": [
@@ -106656,8 +106656,8 @@
       "method": "价格子模型使用20/60日动量与20日波动率；信号达到历史前40%后检验未来20日收益，无前视数据"
     }
   ],
-  "pricing_generated_at": "2026-10-04T14:11:14Z",
-  "generated_at": "2026-10-04T14:11:14Z",
+  "pricing_generated_at": "2026-10-04T19:44:43Z",
+  "generated_at": "2026-10-04T19:44:43Z",
   "refresh_policy": {
     "workflow_cron": "23 */4 * * *",
     "description": "GitHub Actions 每4小时尝试更新；低频宏观源即使失败也保留上一版缓存。"
@@ -106666,138 +106666,138 @@
     {
       "key": "fmp_quotes",
       "status": "online",
-      "updated_at": "2026-10-04T14:10:10Z",
-      "latency_ms": 7768
+      "updated_at": "2026-10-04T19:43:06Z",
+      "latency_ms": 12960
     },
     {
       "key": "ai_chain_quotes",
       "status": "online",
-      "updated_at": "2026-10-04T14:10:11Z",
-      "latency_ms": 246
+      "updated_at": "2026-10-04T19:43:07Z",
+      "latency_ms": 582
     },
     {
       "key": "ai_valuations",
       "status": "online",
-      "updated_at": "2026-10-04T14:10:11Z",
+      "updated_at": "2026-10-04T19:43:07Z",
       "latency_ms": 0
     },
     {
       "key": "fred_macro",
       "status": "online",
-      "updated_at": "2026-10-04T14:10:21Z",
-      "latency_ms": 9717
+      "updated_at": "2026-10-04T19:43:16Z",
+      "latency_ms": 9352
     },
     {
       "key": "eia_energy",
       "status": "online",
-      "updated_at": "2026-10-04T14:10:22Z",
-      "latency_ms": 512
+      "updated_at": "2026-10-04T19:43:17Z",
+      "latency_ms": 285
     },
     {
       "key": "market_history",
       "status": "online",
-      "updated_at": "2026-10-04T14:10:22Z",
+      "updated_at": "2026-10-04T19:43:17Z",
       "latency_ms": 0,
       "message": "主源：Twelve Data复权日线；双源验证 15/15"
     },
     {
       "key": "twelve_fx",
       "status": "online",
-      "updated_at": "2026-10-04T14:10:23Z",
-      "latency_ms": 408
+      "updated_at": "2026-10-04T19:43:18Z",
+      "latency_ms": 453
     },
     {
       "key": "commodity_market",
       "status": "online",
-      "updated_at": "2026-10-04T14:10:36Z",
-      "latency_ms": 13572
+      "updated_at": "2026-10-04T19:43:35Z",
+      "latency_ms": 17182
     },
     {
       "key": "cftc_positions",
       "status": "online",
-      "updated_at": "2026-10-04T14:10:37Z",
-      "latency_ms": 45
+      "updated_at": "2026-10-04T19:43:36Z",
+      "latency_ms": 155
     },
     {
       "key": "etf_fund_flows",
       "status": "online",
-      "updated_at": "2026-10-04T14:10:50Z",
-      "latency_ms": 13149
+      "updated_at": "2026-10-04T19:43:50Z",
+      "latency_ms": 14337
     },
     {
       "key": "ici_weekly_flows",
       "status": "online",
-      "updated_at": "2026-10-04T14:10:51Z",
-      "latency_ms": 374
+      "updated_at": "2026-10-04T19:43:51Z",
+      "latency_ms": 719
     },
     {
       "key": "tic_cross_border_flows",
       "status": "online",
-      "updated_at": "2026-10-04T14:10:51Z",
-      "latency_ms": 281
+      "updated_at": "2026-10-04T19:43:52Z",
+      "latency_ms": 772
     },
     {
       "key": "event_calendar",
       "status": "online",
-      "updated_at": "2026-10-04T14:10:53Z",
-      "latency_ms": 1236
+      "updated_at": "2026-10-04T19:43:53Z",
+      "latency_ms": 799
     },
     {
       "key": "gdelt_news",
       "status": "cached",
-      "updated_at": "2026-10-04T13:09:47Z",
+      "updated_at": "2026-10-04T14:11:14Z",
       "message": "ValueError"
     },
     {
       "key": "alpha_news",
       "status": "online",
-      "updated_at": "2026-10-04T14:11:11Z",
-      "latency_ms": 269
+      "updated_at": "2026-10-04T19:44:39Z",
+      "latency_ms": 541
     },
     {
       "key": "news_summary_zh",
       "status": "local",
-      "updated_at": "2026-10-04T14:11:11Z",
+      "updated_at": "2026-10-04T19:44:39Z",
       "message": "本地规则摘要 18 条；无需外部模型API"
     },
     {
       "key": "model_pricing_openai",
       "status": "baseline",
-      "updated_at": "2026-10-04T14:11:11Z",
+      "updated_at": "2026-10-04T19:44:39Z",
       "message": "官方基准价；官方页拒绝自动抓取"
     },
     {
       "key": "model_pricing_anthropic",
       "status": "online",
-      "updated_at": "2026-10-04T14:11:12Z",
-      "latency_ms": 412,
+      "updated_at": "2026-10-04T19:44:40Z",
+      "latency_ms": 334,
       "message": "parsed 4"
     },
     {
       "key": "model_pricing_google",
       "status": "online",
-      "updated_at": "2026-10-04T14:11:12Z",
-      "latency_ms": 275,
+      "updated_at": "2026-10-04T19:44:40Z",
+      "latency_ms": 426,
       "message": "parsed 3"
     },
     {
       "key": "model_pricing_xai",
       "status": "online",
-      "updated_at": "2026-10-04T14:11:13Z",
-      "latency_ms": 126,
+      "updated_at": "2026-10-04T19:44:41Z",
+      "latency_ms": 327,
       "message": "parsed 1"
     },
     {
       "key": "model_pricing_mistral",
       "status": "online",
-      "updated_at": "2026-10-04T14:11:13Z",
-      "latency_ms": 191,
+      "updated_at": "2026-10-04T19:44:41Z",
+      "latency_ms": 217,
       "message": "parsed 3"
     },
     {
       "key": "model_pricing_deepseek",
       "status": "cached",
-      "updated_at": "2026-10-04T14:11:14Z",
+      "updated_at": "2026-10-04T19:44:43Z",
       "message": "ValueError"
     }
   ]
