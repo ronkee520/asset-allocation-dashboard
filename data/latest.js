@@ -496,7 +496,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "source": "FMP ratios-ttm"
     }
   ],
-  "valuation_generated_at": "2026-10-04T06:44:48Z",
+  "valuation_generated_at": "2026-10-04T13:09:44Z",
   "fred_macro": [
     {
       "series_id": "DGS10",
@@ -671,27 +671,27 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "USD/CNH",
       "name": "US Dollar / Chinese Yuan Offshore",
-      "price": 6.71208,
-      "change_pct": 0.063507965,
-      "previous_close": 6.70782,
+      "price": 6.71225,
+      "change_pct": 0.0028307256,
+      "previous_close": 6.71206,
       "source": "Twelve Data",
       "url": "https://twelvedata.com/"
     },
     {
       "symbol": "EUR/USD",
       "name": "Euro / US Dollar",
-      "price": 1.12565,
-      "change_pct": 0.012438806,
-      "previous_close": 1.12551,
+      "price": 1.1258,
+      "change_pct": 0.001776546,
+      "previous_close": 1.12578,
       "source": "Twelve Data",
       "url": "https://twelvedata.com/"
     },
     {
       "symbol": "USD/JPY",
       "name": "US Dollar / Japanese Yen",
-      "price": 157.85702,
-      "change_pct": -0.0047509092,
-      "previous_close": 157.86452,
+      "price": 157.8779,
+      "change_pct": 0.002540002,
+      "previous_close": 157.87389,
       "source": "Twelve Data",
       "url": "https://twelvedata.com/"
     }
@@ -77910,7 +77910,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
         {
           "date": "2026-09-25",
           "close": 4321.2001953125,
-          "volume": 164814.0
+          "volume": 140092.0
         },
         {
           "date": "2026-09-28",
@@ -105968,13 +105968,25 @@ window.__ASSET_DASHBOARD_DATA__ = {
   "alpha_news": [
     {
       "theme": "市场情绪",
+      "title": "Key facts: Amazon.com, Inc. data-center investments; Ohio AI buildout",
+      "source": "TradingView",
+      "published_at": "20261004T065140",
+      "url": "https://www.tradingview.com/news/tradingview:b3b6963780c9f:0-key-facts-amazon-com-inc-data-center-investments-ohio-ai-buildout/",
+      "summary": "Amazon (AMZN) has revealed its cumulative data-center investments since 2011 and its ongoing significant projects across various U.S. states, emphasizing its vast scale despite scr",
+      "sentiment": "Somewhat-Bullish",
+      "score": 0.241032,
+      "summary_zh": "新闻涉及AI或半导体产业景气，需结合订单、资本开支、供需与估值，评估芯片、云计算及主题ETF影响。",
+      "summary_method": "本地资产配置规则"
+    },
+    {
+      "theme": "市场情绪",
       "title": "Advanced Micro Devices (NASDAQ:AMD) Stock Lifted to \"Buy\" by Wall Street Zen",
       "source": "MarketBeat",
       "published_at": "20261004T051952",
       "url": "https://www.marketbeat.com/instant-alerts/analyst-advanced-micro-devices-nasdaq-amd-stock-lifted-to-buy-by-wall-street-zen-2026-10-04/",
       "summary": "Wall Street Zen has upgraded Advanced Micro Devices (NASDAQ:AMD) from a \"hold\" to a \"buy\" rating, aligning with the broader analyst consensus of a \"Moderate Buy\" and an average pri",
       "sentiment": "Somewhat-Bullish",
-      "score": 0.274442,
+      "score": 0.268396,
       "summary_zh": "报道反映权益市场或个股线索，需结合估值、盈利趋势和宏观环境判断其对整体风险偏好的影响。",
       "summary_method": "本地资产配置规则"
     },
@@ -105986,8 +105998,20 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "url": "https://simplywall.st/stocks/us/real-estate/nyse-dlr/digital-realty-trust/news/should-ai-data-center-expansion-require-action-from-digital",
       "summary": "Digital Realty Trust (DLR) has enhanced its AI infrastructure by integrating Blackfuel's liquid-cooled inference platform into its Barcelona facility and establishing a new cable l",
       "sentiment": "Somewhat-Bullish",
-      "score": 0.259104,
+      "score": 0.247633,
       "summary_zh": "新闻涉及AI或半导体产业景气，需结合订单、资本开支、供需与估值，评估芯片、云计算及主题ETF影响。",
+      "summary_method": "本地资产配置规则"
+    },
+    {
+      "theme": "市场情绪",
+      "title": "Top Growth Stocks For October 2026",
+      "source": "Simply Wall Street",
+      "published_at": "20261004T022527",
+      "url": "https://simplywall.st/stocks/us/semiconductors/nasdaq-himx/himax-technologies/news/top-growth-stocks-for-october-2026/amp",
+      "summary": "This article identifies three high-growth stocks with significant insider ownership for October 2026: Himax Technologies, Nu Holdings, and Figure Technology Solutions. It highlight",
+      "sentiment": "Somewhat-Bullish",
+      "score": 0.313265,
+      "summary_zh": "报道反映权益市场或个股线索，需结合估值、盈利趋势和宏观环境判断其对整体风险偏好的影响。",
       "summary_method": "本地资产配置规则"
     },
     {
@@ -105998,7 +106022,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "url": "https://simplywall.st/stocks/us/semiconductors/nasdaq-tsem/tower-semiconductor/news/is-tower-semiconductor-tsem-a-bargain-as-index-inclusion-dra",
       "summary": "Tower Semiconductor (TSEM) has been included in the PHLX Semiconductor Sector Index, leading to strong stock momentum and significant gains for long-term holders. While the company",
       "sentiment": "Somewhat-Bullish",
-      "score": 0.261311,
+      "score": 0.253673,
       "summary_zh": "新闻涉及AI或半导体产业景气，需结合订单、资本开支、供需与估值，评估芯片、云计算及主题ETF影响。",
       "summary_method": "本地资产配置规则"
     },
@@ -106010,7 +106034,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "url": "https://simplywall.st/stocks/us/transportation/nasdaq-wern/werner-enterprises/news/what-werner-enterprises-investors-had-to-stomach-and-where-i",
       "summary": "Werner Enterprises investors have seen a 31.0% return over the past year, but the company faces a complex outlook with diverging fair value estimates from analysts. While the compa",
       "sentiment": "Somewhat-Bullish",
-      "score": 0.227564,
+      "score": 0.194877,
       "summary_zh": "新闻涉及AI或半导体产业景气，需结合订单、资本开支、供需与估值，评估芯片、云计算及主题ETF影响。",
       "summary_method": "本地资产配置规则"
     },
@@ -106022,7 +106046,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "url": "https://simplywall.st/stocks/us/media/nasdaq-bili/bilibili/news/what-bilibilis-49-fall-can-still-teach-you-about-the-story-t/amp",
       "summary": "Bilibili (NasdaqGS:BILI) shareholders experienced a 49.4% loss over the past year, prompting an analysis of the conflicting bullish and bearish narratives that existed prior to thi",
       "sentiment": "Somewhat-Bearish",
-      "score": -0.242993,
+      "score": -0.204287,
       "summary_zh": "该报道聚焦“What Bilibili's 49% Fall Can Still Teach You About The Story That Breaks”，建议结合原文、行情变化及相关资产基本面判断其配置影响。",
       "summary_method": "本地资产配置规则"
     },
@@ -106034,32 +106058,8 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "url": "https://uk.finance.yahoo.com/news/bond-volatility-could-determine-p-144334476.html",
       "summary": "Morgan Stanley anticipates that the divergence between the S&P 500 and broader market participation will narrow in the coming month, with bond market volatility being a key factor.",
       "sentiment": "Neutral",
-      "score": 0.017455,
+      "score": 0.031265,
       "summary_zh": "报道关注债券收益率或利率预期变化，可能影响美元、黄金、权益估值及跨资产风险偏好。",
-      "summary_method": "本地资产配置规则"
-    },
-    {
-      "theme": "市场情绪",
-      "title": "Nasdaq Gains Over 1% as Lumentum Holdings (LITE) Surges 15.27% Amid Payroll Data",
-      "source": "GuruFocus",
-      "published_at": "20261003T053206",
-      "url": "https://www.gurufocus.com/news/9108040/nasdaq-gains-over-1-as-lumentum-holdings-lite-surges-1527-amid-payroll-data",
-      "summary": "The Nasdaq Composite Index gained over 1% on October 2, 2026, driven by positive payroll data, with Lumentum Holdings Inc (LITE) surging 15.27% to become the top performer. Despite",
-      "sentiment": "Neutral",
-      "score": 0.034337,
-      "summary_zh": "新闻涉及AI或半导体产业景气，需结合订单、资本开支、供需与估值，评估芯片、云计算及主题ETF影响。",
-      "summary_method": "本地资产配置规则"
-    },
-    {
-      "theme": "市场情绪",
-      "title": "TLCVD Bond Profile: Coupon and Redemption",
-      "source": "TradingView",
-      "published_at": "20261003T050027",
-      "url": "https://www.tradingview.com/symbols/BCBA-TLCVD/profile/",
-      "summary": "This article provides a detailed profile of the TLCVD bond issued by Telecom Argentina S.A., including its coupon payments and redemption information. It covers key facts such as i",
-      "sentiment": "Neutral",
-      "score": 0.023207,
-      "summary_zh": "新闻涉及AI或半导体产业景气，需结合订单、资本开支、供需与估值，评估芯片、云计算及主题ETF影响。",
       "summary_method": "本地资产配置规则"
     }
   ],
@@ -106074,7 +106074,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "旗舰推理、Agent与复杂研究",
       "url": "https://platform.openai.com/pricing",
       "price_status": "官方基准",
-      "verified_at": "2026-10-04T06:44:49Z"
+      "verified_at": "2026-10-04T13:09:44Z"
     },
     {
       "provider": "OpenAI",
@@ -106086,7 +106086,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "通用知识工作与投研自动化",
       "url": "https://platform.openai.com/pricing",
       "price_status": "官方基准",
-      "verified_at": "2026-10-04T06:44:49Z"
+      "verified_at": "2026-10-04T13:09:44Z"
     },
     {
       "provider": "OpenAI",
@@ -106098,7 +106098,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "高频摘要、分类与批量处理",
       "url": "https://platform.openai.com/pricing",
       "price_status": "官方基准",
-      "verified_at": "2026-10-04T06:44:49Z"
+      "verified_at": "2026-10-04T13:09:44Z"
     },
     {
       "provider": "Anthropic",
@@ -106110,7 +106110,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "高难度研究与长文档",
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-04T06:44:50Z"
+      "verified_at": "2026-10-04T13:09:44Z"
     },
     {
       "provider": "Anthropic",
@@ -106122,7 +106122,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "复杂推理、多Agent与专业研究",
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-04T06:44:50Z"
+      "verified_at": "2026-10-04T13:09:44Z"
     },
     {
       "provider": "Anthropic",
@@ -106134,7 +106134,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "代码、知识工作与长上下文",
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-04T06:44:50Z"
+      "verified_at": "2026-10-04T13:09:44Z"
     },
     {
       "provider": "Anthropic",
@@ -106146,7 +106146,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "低延迟与高吞吐任务",
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-04T06:44:50Z"
+      "verified_at": "2026-10-04T13:09:44Z"
     },
     {
       "provider": "Google",
@@ -106158,7 +106158,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "多模态、Agent与代码",
       "url": "https://ai.google.dev/gemini-api/docs/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-04T06:44:52Z"
+      "verified_at": "2026-10-04T13:09:45Z"
     },
     {
       "provider": "Google",
@@ -106170,7 +106170,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "高质量快速推理与搜索增强",
       "url": "https://ai.google.dev/gemini-api/docs/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-04T06:44:52Z"
+      "verified_at": "2026-10-04T13:09:45Z"
     },
     {
       "provider": "Google",
@@ -106182,7 +106182,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "翻译、数据处理与大规模调用",
       "url": "https://ai.google.dev/gemini-api/docs/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-04T06:44:52Z"
+      "verified_at": "2026-10-04T13:09:45Z"
     },
     {
       "provider": "xAI",
@@ -106194,7 +106194,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "实时信息、代码与Agent",
       "url": "https://docs.x.ai/developers/grok-4-6",
       "price_status": "官方实时",
-      "verified_at": "2026-10-04T06:44:54Z"
+      "verified_at": "2026-10-04T13:09:46Z"
     },
     {
       "provider": "xAI",
@@ -106218,7 +106218,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "旗舰多语言与企业任务",
       "url": "https://docs.mistral.ai/inference/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-04T06:44:55Z"
+      "verified_at": "2026-10-04T13:09:46Z"
     },
     {
       "provider": "Mistral",
@@ -106230,7 +106230,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "多模态、代码与Agent",
       "url": "https://docs.mistral.ai/inference/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-04T06:44:55Z"
+      "verified_at": "2026-10-04T13:09:46Z"
     },
     {
       "provider": "Mistral",
@@ -106242,7 +106242,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "低成本生产任务",
       "url": "https://docs.mistral.ai/inference/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-04T06:44:55Z"
+      "verified_at": "2026-10-04T13:09:46Z"
     },
     {
       "provider": "DeepSeek",
@@ -106296,7 +106296,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "signal": "GPU、HBM与高速互连决定训练和推理基础设施供给",
       "sample_size": 4,
       "method": "成分股行情自动计算",
-      "as_of": "2026-10-04T06:44:48Z"
+      "as_of": "2026-10-04T13:09:44Z"
     },
     {
       "segment": "上游",
@@ -106312,7 +106312,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "signal": "先进制程扩产与设备订单反映算力资本开支兑现",
       "sample_size": 4,
       "method": "成分股行情自动计算",
-      "as_of": "2026-10-04T06:44:48Z"
+      "as_of": "2026-10-04T13:09:44Z"
     },
     {
       "segment": "中游",
@@ -106328,7 +106328,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "signal": "云增速、AI订单和资本开支回报率共同决定景气",
       "sample_size": 4,
       "method": "成分股行情自动计算",
-      "as_of": "2026-10-04T06:44:48Z"
+      "as_of": "2026-10-04T13:09:44Z"
     },
     {
       "segment": "中游",
@@ -106344,7 +106344,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "signal": "数据中心负荷推动电源、电网与工程投资",
       "sample_size": 3,
       "method": "成分股行情自动计算",
-      "as_of": "2026-10-04T06:44:48Z"
+      "as_of": "2026-10-04T13:09:44Z"
     },
     {
       "segment": "中游",
@@ -106360,7 +106360,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "signal": "高功率机柜提升液冷渗透率和单柜价值量",
       "sample_size": 2,
       "method": "成分股行情自动计算",
-      "as_of": "2026-10-04T06:44:48Z"
+      "as_of": "2026-10-04T13:09:44Z"
     },
     {
       "segment": "下游",
@@ -106376,7 +106376,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "signal": "关注AI产品付费转化、席位扩张和利润兑现",
       "sample_size": 3,
       "method": "成分股行情自动计算",
-      "as_of": "2026-10-04T06:44:48Z"
+      "as_of": "2026-10-04T13:09:44Z"
     },
     {
       "segment": "下游",
@@ -106392,7 +106392,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "signal": "订单、自动化渗透率与量产节奏决定主题持续性",
       "sample_size": 2,
       "method": "成分股行情自动计算",
-      "as_of": "2026-10-04T06:44:48Z"
+      "as_of": "2026-10-04T13:09:44Z"
     },
     {
       "segment": "材料",
@@ -106408,7 +106408,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "signal": "电气化需求与资源供给约束共同影响材料价值",
       "sample_size": 3,
       "method": "成分股行情自动计算",
-      "as_of": "2026-10-04T06:44:48Z"
+      "as_of": "2026-10-04T13:09:44Z"
     }
   ],
   "event_calendar": [
@@ -106656,8 +106656,8 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "method": "价格子模型使用20/60日动量与20日波动率；信号达到历史前40%后检验未来20日收益，无前视数据"
     }
   ],
-  "pricing_generated_at": "2026-10-04T06:44:56Z",
-  "generated_at": "2026-10-04T06:44:56Z",
+  "pricing_generated_at": "2026-10-04T13:09:47Z",
+  "generated_at": "2026-10-04T13:09:47Z",
   "refresh_policy": {
     "workflow_cron": "23 */4 * * *",
     "description": "GitHub Actions 每4小时尝试更新；低频宏观源即使失败也保留上一版缓存。"
@@ -106666,138 +106666,138 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "key": "fmp_quotes",
       "status": "online",
-      "updated_at": "2026-10-04T06:39:23Z",
-      "latency_ms": 31183
+      "updated_at": "2026-10-04T13:08:07Z",
+      "latency_ms": 10421
     },
     {
       "key": "ai_chain_quotes",
       "status": "online",
-      "updated_at": "2026-10-04T06:39:26Z",
-      "latency_ms": 2553
+      "updated_at": "2026-10-04T13:08:08Z",
+      "latency_ms": 767
     },
     {
       "key": "ai_valuations",
       "status": "online",
-      "updated_at": "2026-10-04T06:39:26Z",
+      "updated_at": "2026-10-04T13:08:08Z",
       "latency_ms": 0
     },
     {
       "key": "fred_macro",
-      "status": "cached",
-      "updated_at": "2026-10-04T06:06:11Z",
-      "message": "TimeoutError"
+      "status": "online",
+      "updated_at": "2026-10-04T13:08:19Z",
+      "latency_ms": 11302
     },
     {
       "key": "eia_energy",
       "status": "online",
-      "updated_at": "2026-10-04T06:40:08Z",
-      "latency_ms": 1176
+      "updated_at": "2026-10-04T13:08:20Z",
+      "latency_ms": 372
     },
     {
       "key": "market_history",
       "status": "online",
-      "updated_at": "2026-10-04T06:42:58Z",
-      "latency_ms": 169611,
+      "updated_at": "2026-10-04T13:08:20Z",
+      "latency_ms": 0,
       "message": "主源：Twelve Data复权日线；双源验证 15/15"
     },
     {
       "key": "twelve_fx",
       "status": "online",
-      "updated_at": "2026-10-04T06:42:59Z",
-      "latency_ms": 845
+      "updated_at": "2026-10-04T13:08:21Z",
+      "latency_ms": 394
     },
     {
       "key": "commodity_market",
       "status": "online",
-      "updated_at": "2026-10-04T06:43:19Z",
-      "latency_ms": 19876
+      "updated_at": "2026-10-04T13:08:40Z",
+      "latency_ms": 19209
     },
     {
       "key": "cftc_positions",
       "status": "online",
-      "updated_at": "2026-10-04T06:43:20Z",
-      "latency_ms": 555
+      "updated_at": "2026-10-04T13:08:41Z",
+      "latency_ms": 117
     },
     {
       "key": "etf_fund_flows",
       "status": "online",
-      "updated_at": "2026-10-04T06:43:54Z",
-      "latency_ms": 34520
+      "updated_at": "2026-10-04T13:08:56Z",
+      "latency_ms": 14825
     },
     {
       "key": "ici_weekly_flows",
-      "status": "cached",
-      "updated_at": "2026-10-04T06:06:11Z",
-      "message": "HTTPError"
+      "status": "online",
+      "updated_at": "2026-10-04T13:08:56Z",
+      "latency_ms": 409
     },
     {
       "key": "tic_cross_border_flows",
       "status": "online",
-      "updated_at": "2026-10-04T06:43:56Z",
-      "latency_ms": 819
+      "updated_at": "2026-10-04T13:08:57Z",
+      "latency_ms": 614
     },
     {
       "key": "event_calendar",
-      "status": "cached",
-      "updated_at": "2026-10-04T06:06:11Z",
-      "message": "TimeoutError"
+      "status": "online",
+      "updated_at": "2026-10-04T13:08:59Z",
+      "latency_ms": 1371
     },
     {
       "key": "gdelt_news",
-      "status": "online",
-      "updated_at": "2026-10-04T06:44:47Z",
-      "latency_ms": 14181
+      "status": "cached",
+      "updated_at": "2026-10-04T06:44:56Z",
+      "message": "ValueError"
     },
     {
       "key": "alpha_news",
       "status": "online",
-      "updated_at": "2026-10-04T06:44:48Z",
-      "latency_ms": 1389
+      "updated_at": "2026-10-04T13:09:43Z",
+      "latency_ms": 381
     },
     {
       "key": "news_summary_zh",
       "status": "local",
-      "updated_at": "2026-10-04T06:44:49Z",
+      "updated_at": "2026-10-04T13:09:44Z",
       "message": "本地规则摘要 18 条；无需外部模型API"
     },
     {
       "key": "model_pricing_openai",
       "status": "baseline",
-      "updated_at": "2026-10-04T06:44:49Z",
+      "updated_at": "2026-10-04T13:09:44Z",
       "message": "官方基准价；官方页拒绝自动抓取"
     },
     {
       "key": "model_pricing_anthropic",
       "status": "online",
-      "updated_at": "2026-10-04T06:44:50Z",
-      "latency_ms": 1124,
+      "updated_at": "2026-10-04T13:09:44Z",
+      "latency_ms": 408,
       "message": "parsed 4"
     },
     {
       "key": "model_pricing_google",
       "status": "online",
-      "updated_at": "2026-10-04T06:44:52Z",
-      "latency_ms": 1323,
+      "updated_at": "2026-10-04T13:09:45Z",
+      "latency_ms": 487,
       "message": "parsed 3"
     },
     {
       "key": "model_pricing_xai",
       "status": "online",
-      "updated_at": "2026-10-04T06:44:54Z",
-      "latency_ms": 1910,
+      "updated_at": "2026-10-04T13:09:46Z",
+      "latency_ms": 283,
       "message": "parsed 1"
     },
     {
       "key": "model_pricing_mistral",
       "status": "online",
-      "updated_at": "2026-10-04T06:44:55Z",
-      "latency_ms": 667,
+      "updated_at": "2026-10-04T13:09:46Z",
+      "latency_ms": 314,
       "message": "parsed 3"
     },
     {
       "key": "model_pricing_deepseek",
       "status": "cached",
-      "updated_at": "2026-10-04T06:44:55Z",
+      "updated_at": "2026-10-04T13:09:47Z",
       "message": "ValueError"
     }
   ]
