@@ -66,6 +66,25 @@ class EtfFundFlowTests(unittest.TestCase):
 
 
 class PublicMarketDataTests(unittest.TestCase):
+    def test_parses_multi_provider_adjusted_history(self):
+        fmp = [
+            {"date": "2026-10-02", "adjClose": 101.5},
+            {"date": "2026-10-01", "adjClose": 100.0},
+        ]
+        twelve = {"values": [
+            {"datetime": "2026-10-01", "close": "100.1"},
+            {"datetime": "2026-10-02", "close": "101.4"},
+        ]}
+        self.assertEqual(fetch_data.parse_fmp_adjusted_history(fmp)[0]["date"], "2026-10-01")
+        self.assertEqual(fetch_data.parse_twelve_history(twelve)[-1]["close"], 101.4)
+
+    def test_cross_source_deviation_uses_latest_common_date(self):
+        primary = [{"date": "2026-10-01", "close": 100}, {"date": "2026-10-02", "close": 102}]
+        validator = [{"date": "2026-10-02", "close": 101.9}]
+        deviation, date = fetch_data._latest_common_deviation(primary, validator)
+        self.assertEqual(date, "2026-10-02")
+        self.assertAlmostEqual(deviation, abs(102 / 101.9 - 1) * 100)
+
     def test_parses_sina_continuous_futures_jsonp(self):
         text = '/*notice*/\nvar _RB0=([{"d":"2026-09-03","c":"3142.000","v":"802624"}]);'
         rows = fetch_data.parse_sina_futures_jsonp(text)

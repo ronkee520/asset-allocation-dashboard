@@ -444,59 +444,172 @@ def fetch_twelve_fx() -> list[dict[str, Any]]:
     return output
 
 
-def fetch_market_history() -> list[dict[str, Any]]:
-    """Fetch daily adjusted closes from Yahoo's public chart endpoint.
+MARKET_HISTORY_SPECS = [
+    ("ACWI", "全球股票", "MSCI全球股票 ETF"),
+    ("SPY", "美股", "S&P 500 ETF"),
+    ("ASHR", "A股", "沪深300 ETF"),
+    ("EWH", "港股", "香港市场 ETF"),
+    ("GLD", "黄金", "黄金 ETF"),
+    ("UUP", "美元", "美元指数 ETF"),
+    ("TLT", "美债", "20年期美债 ETF"),
+    ("AGG", "综合债", "美国综合债券 ETF"),
+    ("IEF", "中期美债", "7-10年期美债 ETF"),
+    ("HYG", "高收益债", "美国高收益公司债 ETF"),
+    ("DBC", "综合商品", "综合商品 ETF"),
+    ("CPER", "铜", "铜期货 ETF"),
+    ("USO", "原油", "原油 ETF"),
+    ("BOTZ", "AI", "机器人与AI ETF"),
+    ("SOXX", "半导体", "美国半导体 ETF"),
+]
 
-    The ETF proxies keep the cross-asset matrix comparable across regions and
-    avoid consuming any of the metered API quotas.
-    """
-    symbols = [
-        ("ACWI", "全球股票", "MSCI全球股票 ETF"),
-        ("SPY", "美股", "S&P 500 ETF"),
-        ("ASHR", "A股", "沪深300 ETF"),
-        ("EWH", "港股", "香港市场 ETF"),
-        ("GLD", "黄金", "黄金 ETF"),
-        ("UUP", "美元", "美元指数 ETF"),
-        ("TLT", "美债", "20年期美债 ETF"),
-        ("AGG", "综合债", "美国综合债券 ETF"),
-        ("IEF", "中期美债", "7-10年期美债 ETF"),
-        ("HYG", "高收益债", "美国高收益公司债 ETF"),
-        ("DBC", "综合商品", "综合商品 ETF"),
-        ("CPER", "铜", "铜期货 ETF"),
-        ("USO", "原油", "原油 ETF"),
-        ("BOTZ", "AI", "机器人与AI ETF"),
-        ("SOXX", "半导体", "美国半导体 ETF"),
-    ]
+
+def parse_fmp_adjusted_history(payload: Any) -> list[dict[str, Any]]:
+    rows = payload if isinstance(payload, list) else payload.get("historical", []) if isinstance(payload, dict) else []
+    points = []
+    for row in rows:
+        value = as_float(row.get("adjClose") if row.get("adjClose") is not None else row.get("close"))
+        date = str(row.get("date") or "")[:10]
+        if date and value is not None:
+            points.append({"date": date, "close": value})
+    return sorted(points, key=lambda item: item["date"])[-1260:]
+
+
+def parse_twelve_history(payload: Any) -> list[dict[str, Any]]:
+    rows = payload.get("values", []) if isinstance(payload, dict) else []
+    points = []
+    for row in rows:
+        value = as_float(row.get("close"))
+        date = str(row.get("datetime") or "")[:10]
+        if date and value is not None:
+            points.append({"date": date, "close": value})
+    return sorted(points, key=lambda item: item["date"])[-1260:]
+
+
+def parse_yahoo_history(payload: Any) -> list[dict[str, Any]]:
+    result = (payload.get("chart", {}).get("result") or [None])[0] if isinstance(payload, dict) else None
+    if not result:
+        return []
+    timestamps = result.get("timestamp") or []
+    closes = ((result.get("indicators", {}).get("adjclose") or [{}])[0].get("adjclose")
+              or (result.get("indicators", {}).get("quote") or [{}])[0].get("close")
+              or [])
+    points = []
+    for timestamp, close in zip(timestamps, closes):
+        value = as_float(close)
+        if value is not None:
+            points.append({"date": datetime.fromtimestamp(timestamp, timezone.utc).date().isoformat(), "close": value})
+    return points[-1260:]
+
+
+def _latest_common_deviation(left: list[dict[str, Any]], right: list[dict[str, Any]]) -> tuple[float | None, str]:
+    right_map = {item["date"]: item["close"] for item in right}
+    for item in reversed(left):
+        peer = right_map.get(item["date"])
+        if peer not in (None, 0):
+            return abs(item["close"] / peer - 1) * 100, item["date"]
+    return None, ""
+
+
+def fetch_market_history(previous_rows: list[dict[str, Any]] | None = None) -> list[dict[str, Any]]:
+    """Build ETF history from two metered sources with Yahoo as a per-symbol fallback."""
+    today = datetime.now(timezone.utc).date().isoformat()
+    previous_map = {str(item.get("symbol")): item for item in (previous_rows or [])}
+    if len(previous_map) >= len(MARKET_HISTORY_SPECS) and all(item.get("refresh_date") == today for item in previous_map.values()):
+        return [previous_map[symbol] for symbol, _label, _name in MARKET_HISTORY_SPECS if symbol in previous_map]
+
+    symbols = [item[0] for item in MARKET_HISTORY_SPECS]
+    start_date = (datetime.now(timezone.utc).date() - timedelta(days=1830)).isoformat()
+    fmp_key = local_key("FMP_API_KEY")
+    twelve_key = local_key("TWELVE_DATA_API_KEY")
+
+    twelve_rows: dict[str, list[dict[str, Any]]] = {}
+    if twelve_key:
+        for offset in range(0, len(symbols), 3):
+            batch = symbols[offset:offset + 3]
+            url = "https://api.twelvedata.com/time_series?" + urlencode({
+                "symbol": ",".join(batch), "interval": "1day", "outputsize": 1260,
+                "order": "ASC", "adjustment": "all", "apikey": twelve_key,
+            })
+            try:
+                payload = get_json(url, timeout=90)
+                for symbol in batch:
+                    block = payload.get(symbol, {}) if isinstance(payload, dict) else {}
+                    points = parse_twelve_history(block)
+                    if len(points) >= 20:
+                        twelve_rows[symbol] = points
+            except (HTTPError, URLError, TimeoutError, OSError, ValueError, KeyError, TypeError):
+                pass
+            time.sleep(31)
+
+    def fetch_symbol(symbol: str) -> tuple[str, list[dict[str, Any]], list[dict[str, Any]]]:
+        fmp_points: list[dict[str, Any]] = []
+        yahoo_points: list[dict[str, Any]] = []
+        if fmp_key:
+            url = "https://financialmodelingprep.com/stable/historical-price-eod/dividend-adjusted?" + urlencode({
+                "symbol": symbol, "from": start_date, "to": today, "apikey": fmp_key,
+            })
+            try:
+                fmp_points = parse_fmp_adjusted_history(get_json(url, timeout=45))
+            except (HTTPError, URLError, TimeoutError, OSError, ValueError, KeyError, TypeError):
+                fmp_points = []
+        if len(fmp_points) < 20 or len(twelve_rows.get(symbol, [])) < 20:
+            url = f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?range=5y&interval=1d&events=history"
+            try:
+                yahoo_points = parse_yahoo_history(get_json(url, timeout=35))
+            except (HTTPError, URLError, TimeoutError, OSError, ValueError, KeyError, TypeError):
+                yahoo_points = []
+        return symbol, fmp_points, yahoo_points
+
+    provider_rows: dict[str, dict[str, list[dict[str, Any]]]] = {symbol: {} for symbol in symbols}
+    with ThreadPoolExecutor(max_workers=4) as executor:
+        futures = [executor.submit(fetch_symbol, symbol) for symbol in symbols]
+        for future in as_completed(futures):
+            symbol, fmp_points, yahoo_points = future.result()
+            if len(fmp_points) >= 20:
+                provider_rows[symbol]["FMP复权日线"] = fmp_points
+            if len(twelve_rows.get(symbol, [])) >= 20:
+                provider_rows[symbol]["Twelve Data复权日线"] = twelve_rows[symbol]
+            if len(yahoo_points) >= 20:
+                provider_rows[symbol]["Yahoo Finance复权日线"] = yahoo_points
+
+    priority = ["Twelve Data复权日线", "FMP复权日线", "Yahoo Finance复权日线"]
+    provider_urls = {
+        "FMP复权日线": "https://site.financialmodelingprep.com/developer/docs",
+        "Twelve Data复权日线": "https://twelvedata.com/docs",
+        "Yahoo Finance复权日线": "https://finance.yahoo.com/",
+    }
     output = []
-    for symbol, label, name in symbols:
-        url = f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?range=5y&interval=1d&events=history"
-        payload = get_json(url, timeout=35)
-        result = (payload.get("chart", {}).get("result") or [None])[0]
-        if not result:
+    for symbol, label, name in MARKET_HISTORY_SPECS:
+        providers = provider_rows.get(symbol, {})
+        primary = next((provider for provider in priority if provider in providers), "")
+        if not primary:
+            cached = previous_map.get(symbol)
+            if cached:
+                cached = dict(cached)
+                cached["data_status"] = "cached"
+                output.append(cached)
             continue
-        timestamps = result.get("timestamp") or []
-        closes = ((result.get("indicators", {}).get("adjclose") or [{}])[0].get("adjclose")
-                  or (result.get("indicators", {}).get("quote") or [{}])[0].get("close")
-                  or [])
-        points = []
-        for timestamp, close in zip(timestamps, closes):
-            value = as_float(close)
-            if value is None:
+        points = providers[primary]
+        checks = []
+        for provider, candidate in providers.items():
+            if provider == primary:
                 continue
-            points.append({
-                "date": datetime.fromtimestamp(timestamp, timezone.utc).date().isoformat(),
-                "close": value,
-            })
-        if len(points) >= 20:
-            output.append({
-                "symbol": symbol,
-                "label": label,
-                "name": name,
-                "points": points[-1260:],
-                "source": "Yahoo Finance",
-                "url": f"https://finance.yahoo.com/quote/{symbol}/history/",
-            })
-        time.sleep(0.35)
+            deviation, common_date = _latest_common_deviation(points, candidate)
+            if deviation is not None:
+                checks.append({"source": provider, "deviation_pct": round(deviation, 4), "common_date": common_date})
+        max_deviation = max((item["deviation_pct"] for item in checks), default=None)
+        validation_status = "通过" if max_deviation is not None and max_deviation <= 1 else "关注" if max_deviation is not None else "单源"
+        validation_names = "、".join(item["source"] for item in checks) or "暂无第二来源"
+        note = f"{primary}为计算主序列；{validation_names}交叉验证"
+        if max_deviation is not None:
+            note += f"，最新共同收盘最大偏差{max_deviation:.2f}%"
+        output.append({
+            "symbol": symbol, "label": label, "name": name, "points": points,
+            "source": primary, "url": provider_urls[primary], "refresh_date": today,
+            "source_count": len(providers), "source_chain": list(providers),
+            "validation_status": validation_status, "validation_checks": checks,
+            "source_note": note, "data_status": "online",
+        })
     if len(output) < 6:
         raise ValueError("insufficient market history")
     return output
@@ -1447,8 +1560,8 @@ def main() -> int:
         ("ai_valuations", lambda: fetch_ai_valuations(previous.get("ai_valuations", []), previous.get("valuation_generated_at", "")), payload["ai_valuations"]),
         ("fred_macro", fetch_fred_series, payload["fred_macro"]),
         ("eia_energy", fetch_eia_energy, payload["eia_energy"]),
+        ("market_history", lambda: fetch_market_history(previous.get("market_history", [])), payload["market_history"]),
         ("twelve_fx", fetch_twelve_fx, payload["twelve_fx"]),
-        ("market_history", fetch_market_history, payload["market_history"]),
         ("commodity_market", lambda: fetch_commodity_market(previous.get("commodity_market", [])), payload["commodity_market"]),
         ("cftc_positions", fetch_cftc_positions, payload["cftc_positions"]),
         ("etf_fund_flows", lambda: fetch_etf_fund_flows(previous.get("etf_fund_flows", [])), payload["etf_fund_flows"]),
@@ -1460,6 +1573,10 @@ def main() -> int:
     ]:
         data, status = safe_source(previous, key, fetcher, fallback)
         payload[key] = data
+        if key == "market_history" and isinstance(data, list):
+            primary_sources = sorted({str(item.get("source")) for item in data if item.get("source")})
+            verified = sum(int(item.get("source_count") or 0) >= 2 for item in data)
+            status["message"] = f"主源：{' / '.join(primary_sources)}；双源验证 {verified}/{len(data)}"
         statuses.append(status)
         time.sleep(0.25)
 

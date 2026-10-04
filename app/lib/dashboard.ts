@@ -1,5 +1,5 @@
 export type HistoryPoint = { date: string; close: number };
-export type HistorySeries = { symbol: string; label: string; name: string; points: HistoryPoint[]; source: string; url: string };
+export type HistorySeries = { symbol: string; label: string; name: string; points: HistoryPoint[]; source: string; url: string; source_count?: number; source_chain?: string[]; validation_status?: string; source_note?: string; data_status?: string };
 export type QuoteRow = { symbol: string; name: string; price: number | null; change_pct: number | null; volume?: number | null; market_cap?: number | null; source: string; url: string };
 export type MacroRow = { series_id: string; name: string; category: string; value: number | null; previous: number | null; change: number | null; date: string; driver: string; source: string; url: string };
 export type EtfFlowRow = { symbol: string; asset: string; asset_class?: string; region?: string; segment?: string; issuer: string; as_of: string; nav: number | null; shares_outstanding: number | null; shares_change: number | null; shares_change_pct: number | null; estimated_flow: number | null; flow_5d?: number | null; flow_20d?: number | null; aum?: number | null; flow_intensity?: number | null; method: string; source: string; url: string; data_status?: string; history?: Array<Record<string, string | number | null>> };

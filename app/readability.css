@@ -21,6 +21,25 @@ body::after {
 .sidebar-foot { font-size: 12px; }
 .search-box input { font-size: 13px; }
 .top-actions > span { font-size: 12px; }
+.source-provenance { margin: 10px 16px 0; border: 1px solid var(--line); background: #fff; }
+.source-provenance summary { min-height: 42px; display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; cursor: pointer; list-style: none; }
+.source-provenance summary::-webkit-details-marker { display: none; }
+.source-provenance summary > span { display: flex; align-items: center; gap: 7px; }
+.source-provenance summary strong { font-size: 12px; }
+.source-provenance summary small { color: var(--muted); font-size: 10px; }
+.source-provenance summary > svg { color: var(--muted); transition: transform .18s ease; }
+.source-provenance[open] summary > svg { transform: rotate(90deg); }
+.source-provenance-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); }
+.source-provenance-grid > div { min-height: 92px; padding: 12px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.source-provenance-grid strong, .source-provenance-grid span, .source-provenance-grid small { display: block; }
+.source-provenance-grid strong { color: var(--red); font-size: 11px; }
+.source-provenance-grid span { margin-top: 7px; font-size: 11px; line-height: 1.5; }
+.source-provenance-grid small { margin-top: 6px; color: var(--muted); font-size: 9px; }
+.source-provenance > p { margin: 0; padding: 10px 12px; color: var(--muted); font-size: 10px; line-height: 1.55; }
+.market-source { position: relative; display: grid; grid-template-columns: 1fr 14px; gap: 2px 5px; align-items: center; }
+.market-source strong { font-size: 10px; }
+.market-source small { grid-column: 1 / -1; color: var(--muted); font-size: 8px; line-height: 1.35; }
+.source-note { margin: 7px 0 0; color: var(--muted); font-size: 9px; line-height: 1.5; }
 .page-header > div:first-child > span,
 .panel-head > div > span { font-size: 11px; }
 .page-header h1 { font-size: 29px; }
@@ -495,6 +514,9 @@ body::after {
 }
 
 @media (max-width: 760px) {
+  .source-provenance { margin: 8px 10px 0; }
+  .source-provenance summary > span { align-items: flex-start; flex-wrap: wrap; }
+  .source-provenance-grid { grid-template-columns: 1fr; }
   .score-grid.score-grid-5, .score-grid.score-grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .score-group-label { align-items: flex-start; flex-direction: column; gap: 2px; }
   .methodology-body { grid-template-columns: 1fr; }
