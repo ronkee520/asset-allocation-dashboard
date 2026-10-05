@@ -3,14 +3,14 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "SPY",
       "name": "State Street SPDR S&P 500 ETF",
-      "price": 769.64,
-      "change_pct": 0.73954,
-      "volume": 45857487.0,
+      "price": 774.1499,
+      "change_pct": 0.58598,
+      "volume": 16282853.0,
       "avg_volume": null,
       "pe": null,
       "price_avg_50": 763.7022,
       "price_avg_200": 720.471,
-      "market_cap": 819849948259.0,
+      "market_cap": 824654066134.0,
       "exchange": "AMEX",
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/SPY"
@@ -18,14 +18,14 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "AAPL",
       "name": "Apple Inc.",
-      "price": 333.69,
-      "change_pct": 1.02022,
-      "volume": 33278552.0,
+      "price": 333.59,
+      "change_pct": -0.02996793,
+      "volume": 11872950.0,
       "avg_volume": null,
       "pe": null,
       "price_avg_50": 322.4162,
       "price_avg_200": 289.1586,
-      "market_cap": 4901023823640.0,
+      "market_cap": 4899555088040.0,
       "exchange": "NASDAQ",
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/AAPL"
@@ -33,14 +33,14 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "NVDA",
       "name": "NVIDIA Corporation",
-      "price": 233.95,
-      "change_pct": 1.33847,
-      "volume": 135167817.0,
+      "price": 237.31,
+      "change_pct": 1.43621,
+      "volume": 54129952.0,
       "avg_volume": null,
       "pe": null,
       "price_avg_50": 218.2782,
       "price_avg_200": 200.7146,
-      "market_cap": 5666502950000.0,
+      "market_cap": 5747885510000.0,
       "exchange": "NASDAQ",
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/NVDA"
@@ -48,14 +48,14 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "MSFT",
       "name": "Microsoft Corporation",
-      "price": 517.53,
-      "change_pct": 0.92239,
-      "volume": 17822339.0,
+      "price": 525.45,
+      "change_pct": 1.53035,
+      "volume": 13662826.9273,
       "avg_volume": null,
       "pe": null,
       "price_avg_50": 487.7242,
       "price_avg_200": 432.83096,
-      "market_cap": 3842944891500.0,
+      "market_cap": 3901755247500.0,
       "exchange": "NASDAQ",
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/MSFT"
@@ -63,14 +63,14 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "GOOGL",
       "name": "Alphabet Inc.",
-      "price": 343.5,
-      "change_pct": 1.55511,
-      "volume": 23772148.0,
+      "price": 345.8201,
+      "change_pct": 0.67543,
+      "volume": 8508368.0,
       "avg_volume": null,
       "pe": null,
       "price_avg_50": 344.3664,
       "price_avg_200": 338.91815,
-      "market_cap": 4157075226740.9995,
+      "market_cap": 4185153321544.0,
       "exchange": "NASDAQ",
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/GOOGL"
@@ -78,14 +78,14 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "AMZN",
       "name": "Amazon.com, Inc.",
-      "price": 251.52,
-      "change_pct": 1.32538,
-      "volume": 33433392.0,
+      "price": 252.93,
+      "change_pct": 0.56059,
+      "volume": 15770115.0,
       "avg_volume": null,
       "pe": null,
       "price_avg_50": 256.5438,
       "price_avg_200": 241.3629,
-      "market_cap": 2705625792000.0,
+      "market_cap": 2720793303000.0,
       "exchange": "NASDAQ",
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/AMZN"
@@ -93,14 +93,14 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "META",
       "name": "Meta Platforms, Inc.",
-      "price": 728.08,
-      "change_pct": 0.29617,
-      "volume": 12964079.0,
+      "price": 742.94,
+      "change_pct": 2.04098,
+      "volume": 7870600.0,
       "avg_volume": null,
       "pe": null,
       "price_avg_50": 625.0396,
       "price_avg_200": 628.38257,
-      "market_cap": 1854774021886.0,
+      "market_cap": 1892629672316.0,
       "exchange": "NASDAQ",
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/META"
@@ -108,14 +108,14 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "TSM",
       "name": "Taiwan Semiconductor Manufacturing Company Limited",
-      "price": 472.78,
-      "change_pct": 2.95732,
-      "volume": 9722477.0,
+      "price": 484.67,
+      "change_pct": 2.51491,
+      "volume": 6682741.62657,
       "avg_volume": null,
       "pe": null,
       "price_avg_50": 424.8956,
       "price_avg_200": 387.16614,
-      "market_cap": 2452064014400.0,
+      "market_cap": 2513731261600.0,
       "exchange": "NYSE",
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/TSM"
@@ -123,14 +123,14 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "AMD",
       "name": "Advanced Micro Devices, Inc.",
-      "price": 633.91,
-      "change_pct": 2.95259,
-      "volume": 19865309.0,
+      "price": 631.775,
+      "change_pct": -0.3368,
+      "volume": 7608123.0,
       "avg_volume": null,
       "pe": null,
       "price_avg_50": 513.5342,
       "price_avg_200": 374.7236,
-      "market_cap": 1033653646000.0,
+      "market_cap": 1030172315000.0,
       "exchange": "NASDAQ",
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/AMD"
@@ -138,14 +138,14 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "JPM",
       "name": "JPMorgan Chase & Co.",
-      "price": 332.38,
-      "change_pct": -0.24011,
-      "volume": 6539384.0,
+      "price": 333.055,
+      "change_pct": 0.20308,
+      "volume": 2017587.0,
       "avg_volume": null,
       "pe": null,
       "price_avg_50": 352.2368,
       "price_avg_200": 321.7671,
-      "market_cap": 890615533800.0,
+      "market_cap": 892424203050.0,
       "exchange": "NYSE",
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/JPM"
@@ -155,10 +155,10 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "AMAT",
       "name": "AMAT",
-      "price": 540.0399780273438,
-      "change_pct": 2.029093232961854,
-      "volume": 6074600.0,
-      "avg_volume": 6333765.0,
+      "price": 535.8800048828125,
+      "change_pct": -0.7703083686001921,
+      "volume": 1903245.0,
+      "avg_volume": 6354805.263157895,
       "pe": null,
       "source": "Yahoo Finance",
       "url": "https://finance.yahoo.com/quote/AMAT/"
@@ -166,40 +166,40 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "AMD",
       "name": "Advanced Micro Devices, Inc.",
-      "price": 633.91,
-      "change_pct": 2.95259,
-      "volume": 19865309.0,
-      "avg_volume": 22453955.0,
+      "price": 631.775,
+      "change_pct": -0.3368,
+      "volume": 7608123.0,
+      "avg_volume": 22860936.842105262,
       "pe": 160.891,
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/AMD",
       "price_avg_50": 513.5342,
       "price_avg_200": 374.7236,
-      "market_cap": 1033653646000.0,
+      "market_cap": 1030172315000.0,
       "exchange": "NASDAQ"
     },
     {
       "symbol": "AMZN",
       "name": "Amazon.com, Inc.",
-      "price": 251.52,
-      "change_pct": 1.32538,
-      "volume": 33433392.0,
-      "avg_volume": 34854665.0,
+      "price": 252.93,
+      "change_pct": 0.56059,
+      "volume": 15770115.0,
+      "avg_volume": 35412894.7368421,
       "pe": 19.962,
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/AMZN",
       "price_avg_50": 256.5438,
       "price_avg_200": 241.3629,
-      "market_cap": 2705625792000.0,
+      "market_cap": 2720793303000.0,
       "exchange": "NASDAQ"
     },
     {
       "symbol": "ASML",
       "name": "ASML",
-      "price": 1867.31005859375,
-      "change_pct": 3.2524409135243237,
-      "volume": 1344400.0,
-      "avg_volume": 1367790.0,
+      "price": 1856.06494140625,
+      "change_pct": -0.6022094261072253,
+      "volume": 744066.0,
+      "avg_volume": 1367052.6315789474,
       "pe": null,
       "source": "Yahoo Finance",
       "url": "https://finance.yahoo.com/quote/ASML/"
@@ -207,10 +207,10 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "AVGO",
       "name": "AVGO",
-      "price": 355.1400146484375,
-      "change_pct": 3.346525290940039,
-      "volume": 24607000.0,
-      "avg_volume": 26818245.0,
+      "price": 362.82000732421875,
+      "change_pct": 2.162525302417384,
+      "volume": 9524722.0,
+      "avg_volume": 24624526.315789472,
       "pe": null,
       "source": "Yahoo Finance",
       "url": "https://finance.yahoo.com/quote/AVGO/"
@@ -218,10 +218,10 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "BOTZ",
       "name": "BOTZ",
-      "price": 36.029998779296875,
-      "change_pct": 1.6934757802794742,
-      "volume": 570500.0,
-      "avg_volume": 610900.0,
+      "price": 36.1150016784668,
+      "change_pct": 0.23592257021880503,
+      "volume": 341091.0,
+      "avg_volume": 600621.052631579,
       "pe": null,
       "source": "Yahoo Finance",
       "url": "https://finance.yahoo.com/quote/BOTZ/"
@@ -229,10 +229,10 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "CEG",
       "name": "CEG",
-      "price": 257.489990234375,
-      "change_pct": -0.5523030739987611,
-      "volume": 3670500.0,
-      "avg_volume": 3034130.0,
+      "price": 268.23150634765625,
+      "change_pct": 4.171624731316359,
+      "volume": 1536229.0,
+      "avg_volume": 3069452.6315789474,
       "pe": null,
       "source": "Yahoo Finance",
       "url": "https://finance.yahoo.com/quote/CEG/"
@@ -240,10 +240,10 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "CRM",
       "name": "CRM",
-      "price": 234.69000244140625,
-      "change_pct": -0.8449871052306546,
-      "volume": 7901800.0,
-      "avg_volume": 12490195.0,
+      "price": 228.8000030517578,
+      "change_pct": -2.5096933522419484,
+      "volume": 2651142.0,
+      "avg_volume": 12167726.315789474,
       "pe": null,
       "source": "Yahoo Finance",
       "url": "https://finance.yahoo.com/quote/CRM/"
@@ -251,10 +251,10 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "ETN",
       "name": "ETN",
-      "price": 436.1099853515625,
-      "change_pct": -0.2675661889408487,
-      "volume": 2093600.0,
-      "avg_volume": 2083440.0,
+      "price": 437.18499755859375,
+      "change_pct": 0.24650025065686698,
+      "volume": 685176.0,
+      "avg_volume": 2126100.0,
       "pe": null,
       "source": "Yahoo Finance",
       "url": "https://finance.yahoo.com/quote/ETN/"
@@ -262,10 +262,10 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "FCX",
       "name": "FCX",
-      "price": 72.04000091552734,
-      "change_pct": 3.983836871912949,
-      "volume": 11946300.0,
-      "avg_volume": 11323975.0,
+      "price": 73.06999969482422,
+      "change_pct": 1.4297595311036027,
+      "volume": 5699157.0,
+      "avg_volume": 11572647.368421054,
       "pe": null,
       "source": "Yahoo Finance",
       "url": "https://finance.yahoo.com/quote/FCX/"
@@ -273,25 +273,25 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "GOOGL",
       "name": "Alphabet Inc.",
-      "price": 343.5,
-      "change_pct": 1.55511,
-      "volume": 23772148.0,
-      "avg_volume": 27219450.0,
+      "price": 345.8201,
+      "change_pct": 0.67543,
+      "volume": 8508368.0,
+      "avg_volume": 27590052.63157895,
       "pe": 16.899,
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/GOOGL",
       "price_avg_50": 344.3664,
       "price_avg_200": 338.91815,
-      "market_cap": 4157075226740.9995,
+      "market_cap": 4185153321544.0,
       "exchange": "NASDAQ"
     },
     {
       "symbol": "ISRG",
       "name": "ISRG",
-      "price": 391.95001220703125,
-      "change_pct": -2.3153170804129486,
-      "volume": 1833100.0,
-      "avg_volume": 2411950.0,
+      "price": 403.8999938964844,
+      "change_pct": 3.0488535061305333,
+      "volume": 644041.0,
+      "avg_volume": 2433952.6315789474,
       "pe": null,
       "source": "Yahoo Finance",
       "url": "https://finance.yahoo.com/quote/ISRG/"
@@ -299,10 +299,10 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "LRCX",
       "name": "LRCX",
-      "price": 347.489990234375,
-      "change_pct": 2.1728856213575343,
-      "volume": 7457400.0,
-      "avg_volume": 9551450.0,
+      "price": 344.5199890136719,
+      "change_pct": -0.8547012300123891,
+      "volume": 2666004.0,
+      "avg_volume": 9627568.421052631,
       "pe": null,
       "source": "Yahoo Finance",
       "url": "https://finance.yahoo.com/quote/LRCX/"
@@ -310,10 +310,10 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "MOD",
       "name": "MOD",
-      "price": 178.1999969482422,
-      "change_pct": -5.818936300908694,
-      "volume": 1268000.0,
-      "avg_volume": 1343295.0,
+      "price": 182.8000030517578,
+      "change_pct": 2.5813727173360723,
+      "volume": 577732.0,
+      "avg_volume": 1349794.7368421052,
       "pe": null,
       "source": "Yahoo Finance",
       "url": "https://finance.yahoo.com/quote/MOD/"
@@ -321,10 +321,10 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "MP",
       "name": "MP",
-      "price": 46.970001220703125,
-      "change_pct": 1.9093101870294227,
-      "volume": 4390200.0,
-      "avg_volume": 5334240.0,
+      "price": 46.779998779296875,
+      "change_pct": -0.4045187065537137,
+      "volume": 1757801.0,
+      "avg_volume": 5295378.947368421,
       "pe": null,
       "source": "Yahoo Finance",
       "url": "https://finance.yahoo.com/quote/MP/"
@@ -332,25 +332,25 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "MSFT",
       "name": "Microsoft Corporation",
-      "price": 517.53,
-      "change_pct": 0.92239,
-      "volume": 17822339.0,
-      "avg_volume": 21570125.0,
+      "price": 525.45,
+      "change_pct": 1.53035,
+      "volume": 13662826.9273,
+      "avg_volume": 21419900.0,
       "pe": 28.752,
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/MSFT",
       "price_avg_50": 487.7242,
       "price_avg_200": 432.83096,
-      "market_cap": 3842944891500.0,
+      "market_cap": 3901755247500.0,
       "exchange": "NASDAQ"
     },
     {
       "symbol": "MU",
       "name": "MU",
-      "price": 1074.8900146484375,
-      "change_pct": -2.050319366830411,
-      "volume": 27224500.0,
-      "avg_volume": 26212065.0,
+      "price": 1066.31005859375,
+      "change_pct": -0.7982171141010852,
+      "volume": 9924690.0,
+      "avg_volume": 25896863.157894738,
       "pe": null,
       "source": "Yahoo Finance",
       "url": "https://finance.yahoo.com/quote/MU/"
@@ -358,10 +358,10 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "NOW",
       "name": "NOW",
-      "price": 134.3800048828125,
-      "change_pct": -2.4535349584786093,
-      "volume": 8849200.0,
-      "avg_volume": 12282185.0,
+      "price": 135.5749969482422,
+      "change_pct": 0.8892632996045702,
+      "volume": 3886405.0,
+      "avg_volume": 11779736.842105264,
       "pe": null,
       "source": "Yahoo Finance",
       "url": "https://finance.yahoo.com/quote/NOW/"
@@ -369,25 +369,25 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "NVDA",
       "name": "NVIDIA Corporation",
-      "price": 233.95,
-      "change_pct": 1.33847,
-      "volume": 135167817.0,
-      "avg_volume": 109941645.0,
+      "price": 237.31,
+      "change_pct": 1.43621,
+      "volume": 54129952.0,
+      "avg_volume": 108616500.0,
       "pe": 29.428,
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/NVDA",
       "price_avg_50": 218.2782,
       "price_avg_200": 200.7146,
-      "market_cap": 5666502950000.0,
+      "market_cap": 5747885510000.0,
       "exchange": "NASDAQ"
     },
     {
       "symbol": "ORCL",
       "name": "ORCL",
-      "price": 142.3000030517578,
-      "change_pct": 3.0636601022306698,
-      "volume": 35330300.0,
-      "avg_volume": 35768065.0,
+      "price": 143.39999389648438,
+      "change_pct": 0.7730083071934013,
+      "volume": 10656536.0,
+      "avg_volume": 36793610.526315786,
       "pe": null,
       "source": "Yahoo Finance",
       "url": "https://finance.yahoo.com/quote/ORCL/"
@@ -395,10 +395,10 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "PLTR",
       "name": "PLTR",
-      "price": 188.75,
-      "change_pct": -0.6788009533290951,
-      "volume": 17824100.0,
-      "avg_volume": 24042200.0,
+      "price": 188.36000061035156,
+      "change_pct": -0.20662219319123043,
+      "volume": 8187253.0,
+      "avg_volume": 22768268.42105263,
       "pe": 149.802,
       "source": "Yahoo Finance",
       "url": "https://finance.yahoo.com/quote/PLTR/"
@@ -406,10 +406,10 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "PWR",
       "name": "PWR",
-      "price": 676.5599975585938,
-      "change_pct": 2.10685518971101,
-      "volume": 868400.0,
-      "avg_volume": 824975.0,
+      "price": 688.1300048828125,
+      "change_pct": 1.7101228813364289,
+      "volume": 336300.0,
+      "avg_volume": 833868.4210526316,
       "pe": null,
       "source": "Yahoo Finance",
       "url": "https://finance.yahoo.com/quote/PWR/"
@@ -417,10 +417,10 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "SCCO",
       "name": "SCCO",
-      "price": 205.5399932861328,
-      "change_pct": 3.1723682495254035,
-      "volume": 882600.0,
-      "avg_volume": 1067735.0,
+      "price": 206.27999877929688,
+      "change_pct": 0.36002992961758906,
+      "volume": 286877.0,
+      "avg_volume": 1060826.3157894737,
       "pe": null,
       "source": "Yahoo Finance",
       "url": "https://finance.yahoo.com/quote/SCCO/"
@@ -428,25 +428,25 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "TSM",
       "name": "Taiwan Semiconductor Manufacturing Company Limited",
-      "price": 472.78,
-      "change_pct": 2.95732,
-      "volume": 9722477.0,
-      "avg_volume": 10056585.0,
+      "price": 484.67,
+      "change_pct": 2.51491,
+      "volume": 6682741.62657,
+      "avg_volume": 10049700.0,
       "pe": 29.848,
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/TSM",
       "price_avg_50": 424.8956,
       "price_avg_200": 387.16614,
-      "market_cap": 2452064014400.0,
+      "market_cap": 2513731261600.0,
       "exchange": "NYSE"
     },
     {
       "symbol": "VRT",
       "name": "VRT",
-      "price": 252.17999267578125,
-      "change_pct": 2.4622126112542553,
-      "volume": 3344900.0,
-      "avg_volume": 5363950.0,
+      "price": 254.86000061035156,
+      "change_pct": 1.0627361457718365,
+      "volume": 2600539.0,
+      "avg_volume": 5424436.842105263,
       "pe": null,
       "source": "Yahoo Finance",
       "url": "https://finance.yahoo.com/quote/VRT/"
@@ -496,7 +496,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "source": "FMP ratios-ttm"
     }
   ],
-  "valuation_generated_at": "2026-10-05T06:01:59Z",
+  "valuation_generated_at": "2026-10-05T17:15:55Z",
   "fred_macro": [
     {
       "series_id": "DGS10",
@@ -586,10 +586,10 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "series_id": "BAMLH0A0HYM2",
       "name": "美国高收益债利差",
       "category": "信用",
-      "value": 3.24,
-      "previous": 3.12,
-      "change": 0.1200000000000001,
-      "date": "2026-10-01",
+      "value": 3.1,
+      "previous": 3.24,
+      "change": -0.14000000000000012,
+      "date": "2026-10-02",
       "driver": "信用风险偏好、权益下行保护",
       "source": "FRED",
       "url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2"
@@ -622,10 +622,10 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "series_id": "VIXCLS",
       "name": "CBOE波动率指数",
       "category": "风险",
-      "value": 16.39,
-      "previous": 16.34,
-      "change": 0.05000000000000071,
-      "date": "2026-10-01",
+      "value": 15.31,
+      "previous": 16.39,
+      "change": -1.08,
+      "date": "2026-10-02",
       "driver": "权益风险厌恶和波动率环境",
       "source": "FRED",
       "url": "https://fred.stlouisfed.org/series/VIXCLS"
@@ -671,8 +671,8 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "USD/CNH",
       "name": "US Dollar / Chinese Yuan Offshore",
-      "price": 6.70991,
-      "change_pct": -0.034861634,
+      "price": 6.70602,
+      "change_pct": -0.092815375,
       "previous_close": 6.71225,
       "source": "Twelve Data",
       "url": "https://twelvedata.com/"
@@ -680,8 +680,8 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "EUR/USD",
       "name": "Euro / US Dollar",
-      "price": 1.11911,
-      "change_pct": -0.59424409,
+      "price": 1.11992,
+      "change_pct": -0.52229526,
       "previous_close": 1.1258,
       "source": "Twelve Data",
       "url": "https://twelvedata.com/"
@@ -689,8 +689,8 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "USD/JPY",
       "name": "US Dollar / Japanese Yen",
-      "price": 157.86289,
-      "change_pct": -0.0095073471,
+      "price": 158.156,
+      "change_pct": 0.17614878,
       "previous_close": 157.8779,
       "source": "Twelve Data",
       "url": "https://twelvedata.com/"
@@ -76680,8 +76680,8 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "category": "贵金属",
       "market": "COMEX",
       "unit": "美元/盎司",
-      "price": 4166.10009765625,
-      "volume": 24651.0,
+      "price": 4158.10009765625,
+      "volume": 96752.0,
       "as_of": "2026-10-05",
       "source": "Yahoo Finance公开日线",
       "source_type": "公开行情",
@@ -77939,15 +77939,15 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-10-05",
-          "close": 4166.10009765625,
-          "volume": 24651.0
+          "close": 4158.10009765625,
+          "volume": 96752.0
         }
       ],
-      "change_1d": 0.0913027207811945,
-      "change_20d": -6.93606739995748,
-      "change_60d": 1.2737900152145043,
-      "volatility_20d": 16.094892284754245,
-      "range_percentile": 15.141034865779282,
+      "change_1d": -0.10089871533329742,
+      "change_20d": -7.11477445051999,
+      "change_60d": 1.0793178947348325,
+      "volatility_20d": 16.041603170066395,
+      "range_percentile": 14.55188982009573,
       "range_low": 3960.5,
       "range_high": 5318.39990234375
     },
@@ -77957,8 +77957,8 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "category": "贵金属",
       "market": "COMEX",
       "unit": "美元/盎司",
-      "price": 61.369998931884766,
-      "volume": 5926.0,
+      "price": 61.29499816894531,
+      "volume": 26844.0,
       "as_of": "2026-10-05",
       "source": "Yahoo Finance公开日线",
       "source_type": "公开行情",
@@ -79216,15 +79216,15 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-10-05",
-          "close": 61.369998931884766,
-          "volume": 5926.0
+          "close": 61.29499816894531,
+          "volume": 26844.0
         }
       ],
-      "change_1d": 2.3225531688089163,
-      "change_20d": -7.081318373110412,
-      "change_60d": 2.6099765476060632,
-      "volatility_20d": 33.111376389232326,
-      "range_percentile": 21.61183677407498,
+      "change_1d": 2.1975039641952687,
+      "change_20d": -7.194875031651005,
+      "change_60d": 2.484576080599177,
+      "volatility_20d": 32.987058316301756,
+      "range_percentile": 21.5023753752662,
       "range_low": 46.5620002746582,
       "range_high": 115.08000183105469
     },
@@ -79234,8 +79234,8 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "category": "贵金属",
       "market": "NYMEX",
       "unit": "美元/盎司",
-      "price": 1725.800048828125,
-      "volume": 1965.0,
+      "price": 1725.0,
+      "volume": 13782.0,
       "as_of": "2026-10-05",
       "source": "Yahoo Finance公开日线",
       "source_type": "公开行情",
@@ -80493,15 +80493,15 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-10-05",
-          "close": 1725.800048828125,
-          "volume": 1965.0
+          "close": 1725.0,
+          "volume": 13782.0
         }
       ],
-      "change_1d": 2.530899411361731,
-      "change_20d": -5.2278940786312456,
-      "change_60d": 6.655959141411372,
-      "volatility_20d": 35.49269112040851,
-      "range_percentile": 16.44912970125543,
+      "change_1d": 2.48336799196216,
+      "change_20d": -5.271828665568368,
+      "change_60d": 6.606515420986425,
+      "volatility_20d": 35.446240579275596,
+      "range_percentile": 16.389796499974832,
       "range_low": 1504.0,
       "range_high": 2852.39990234375
     },
@@ -80511,8 +80511,8 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "category": "贵金属",
       "market": "NYMEX",
       "unit": "美元/盎司",
-      "price": 1172.0,
-      "volume": 501.0,
+      "price": 1177.5,
+      "volume": 4599.0,
       "as_of": "2026-10-05",
       "source": "Yahoo Finance公开日线",
       "source_type": "公开行情",
@@ -81770,15 +81770,15 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-10-05",
-          "close": 1172.0,
-          "volume": 501.0
+          "close": 1177.5,
+          "volume": 4599.0
         }
       ],
-      "change_1d": 0.9387670866638276,
-      "change_20d": -15.689517258930008,
-      "change_60d": -7.446896090337618,
-      "volatility_20d": 31.574856150528962,
-      "range_percentile": 1.0804941718318861,
+      "change_1d": 1.4124558400568699,
+      "change_20d": -15.293862263131475,
+      "change_60d": -7.012559851853705,
+      "volatility_20d": 31.949407060916933,
+      "range_percentile": 1.6256964318753102,
       "range_low": 1161.0999755859375,
       "range_high": 2169.89990234375
     },
@@ -81788,8 +81788,8 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "category": "工业金属",
       "market": "COMEX",
       "unit": "美元/磅",
-      "price": 6.568999767303467,
-      "volume": 4788.0,
+      "price": 6.636000156402588,
+      "volume": 26366.0,
       "as_of": "2026-10-05",
       "source": "Yahoo Finance公开日线",
       "source_type": "公开行情",
@@ -83047,15 +83047,15 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-10-05",
-          "close": 6.568999767303467,
-          "volume": 4788.0
+          "close": 6.636000156402588,
+          "volume": 26366.0
         }
       ],
-      "change_1d": 1.1860699797447083,
-      "change_20d": -0.4244407192470767,
-      "change_60d": 5.382205234353976,
-      "volatility_20d": 25.848632146348884,
-      "range_percentile": 88.00509666865288,
+      "change_1d": 2.218115390036557,
+      "change_20d": 0.5911783175780227,
+      "change_60d": 6.457049046949126,
+      "volatility_20d": 26.68241513056891,
+      "range_percentile": 91.43222584369062,
       "range_low": 4.848499774932861,
       "range_high": 6.803500175476074
     },
@@ -83065,9 +83065,9 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "category": "工业金属",
       "market": "COMEX",
       "unit": "美元/吨",
-      "price": 3191.75,
-      "volume": 0.0,
-      "as_of": "2026-10-02",
+      "price": 3254.75,
+      "volume": 111.0,
+      "as_of": "2026-10-05",
       "source": "Yahoo Finance公开日线",
       "source_type": "公开行情",
       "url": "https://finance.yahoo.com/quote/ALI=F/",
@@ -84321,13 +84321,18 @@ window.__ASSET_DASHBOARD_DATA__ = {
           "date": "2026-10-02",
           "close": 3191.75,
           "volume": 0.0
+        },
+        {
+          "date": "2026-10-05",
+          "close": 3254.75,
+          "volume": 111.0
         }
       ],
-      "change_1d": -0.19543464665415788,
-      "change_20d": -7.832803927230724,
-      "change_60d": -8.519633132702776,
-      "volatility_20d": 18.272777855586828,
-      "range_percentile": 36.961985548224945,
+      "change_1d": 1.9738388031644183,
+      "change_20d": -5.364541687867996,
+      "change_60d": -4.545787814355895,
+      "volatility_20d": 19.985841264541474,
+      "range_percentile": 40.92051523719761,
       "range_low": 2603.5,
       "range_high": 4195.0
     },
@@ -84337,8 +84342,8 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "category": "能源",
       "market": "NYMEX",
       "unit": "美元/桶",
-      "price": 89.86000061035156,
-      "volume": 20605.0,
+      "price": 90.27999877929688,
+      "volume": 181516.0,
       "as_of": "2026-10-05",
       "source": "Yahoo Finance公开日线",
       "source_type": "公开行情",
@@ -85596,15 +85601,15 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-10-05",
-          "close": 89.86000061035156,
-          "volume": 20605.0
+          "close": 90.27999877929688,
+          "volume": 181516.0
         }
       ],
-      "change_1d": -1.371967941637775,
-      "change_20d": -1.770881818030945,
-      "change_60d": 25.836711948009427,
-      "volatility_20d": 45.606468128861465,
-      "range_percentile": 59.96879725590449,
+      "change_1d": -0.910988722966144,
+      "change_20d": -1.3117670896387934,
+      "change_60d": 26.4248622734633,
+      "volatility_20d": 45.465572886991005,
+      "range_percentile": 60.696949465509164,
       "range_low": 55.27000045776367,
       "range_high": 112.94999694824219
     },
@@ -85614,8 +85619,8 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "category": "能源",
       "market": "ICE",
       "unit": "美元/桶",
-      "price": 101.48999786376953,
-      "volume": 2819.0,
+      "price": 100.93000030517578,
+      "volume": 33611.0,
       "as_of": "2026-10-05",
       "source": "Yahoo Finance公开日线",
       "source_type": "公开行情",
@@ -86873,15 +86878,15 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-10-05",
-          "close": 101.48999786376953,
-          "volume": 2819.0
+          "close": 100.93000030517578,
+          "volume": 33611.0
         }
       ],
-      "change_1d": -0.7432783728415382,
-      "change_20d": 5.4112994916166945,
-      "change_60d": 33.52189844945934,
-      "volatility_20d": 40.93388662944902,
-      "range_percentile": 71.63048877036063,
+      "change_1d": -1.2909532467718532,
+      "change_20d": 4.8296651275807845,
+      "change_60d": 32.78515651700935,
+      "volatility_20d": 41.15247953398585,
+      "range_percentile": 70.68820784201107,
       "range_low": 58.91999816894531,
       "range_high": 118.3499984741211
     },
@@ -86891,8 +86896,8 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "category": "能源",
       "market": "NYMEX",
       "unit": "美元/MMBtu",
-      "price": 3.0220000743865967,
-      "volume": 7084.0,
+      "price": 3.052999973297119,
+      "volume": 111282.0,
       "as_of": "2026-10-05",
       "source": "Yahoo Finance公开日线",
       "source_type": "公开行情",
@@ -88150,15 +88155,15 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-10-05",
-          "close": 3.0220000743865967,
-          "volume": 7084.0
+          "close": 3.052999973297119,
+          "volume": 111282.0
         }
       ],
-      "change_1d": -0.4283364440345161,
-      "change_20d": 1.5798376894345934,
-      "change_60d": 2.789116175856887,
-      "volatility_20d": 49.10633422742489,
-      "range_percentile": 10.107354037196291,
+      "change_1d": 0.5930770002434471,
+      "change_20d": 2.6218511315947213,
+      "change_60d": 3.843534485624911,
+      "volatility_20d": 49.08833553978381,
+      "range_percentile": 10.73526367225747,
       "range_low": 2.5230000019073486,
       "range_high": 7.460000038146973
     },
@@ -88168,8 +88173,8 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "category": "能源",
       "market": "NYMEX",
       "unit": "美元/加仑",
-      "price": 4.52810001373291,
-      "volume": 1509.0,
+      "price": 4.535600185394287,
+      "volume": 25574.0,
       "as_of": "2026-10-05",
       "source": "Yahoo Finance公开日线",
       "source_type": "公开行情",
@@ -89427,15 +89432,15 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-10-05",
-          "close": 4.52810001373291,
-          "volume": 1509.0
+          "close": 4.535600185394287,
+          "volume": 25574.0
         }
       ],
-      "change_1d": 0.5998522589830246,
-      "change_20d": -0.266512909219041,
-      "change_60d": 27.433657057815488,
-      "volatility_20d": 49.06534546720997,
-      "range_percentile": 77.10354572220788,
+      "change_1d": 0.766482006286151,
+      "change_20d": -0.10131817604177584,
+      "change_60d": 27.6447332929852,
+      "volatility_20d": 49.09292786418008,
+      "range_percentile": 77.33753852926097,
       "range_low": 2.0566999912261963,
       "range_high": 5.26200008392334
     },
@@ -89445,8 +89450,8 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "category": "谷物",
       "market": "CBOT",
       "unit": "美分/蒲式耳",
-      "price": 496.75,
-      "volume": 36503.0,
+      "price": 497.5,
+      "volume": 159994.0,
       "as_of": "2026-10-05",
       "source": "Yahoo Finance公开日线",
       "source_type": "公开行情",
@@ -90704,15 +90709,15 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-10-05",
-          "close": 496.75,
-          "volume": 36503.0
+          "close": 497.5,
+          "volume": 159994.0
         }
       ],
-      "change_1d": -0.20090406830738372,
-      "change_20d": -2.978515625,
-      "change_60d": 13.413242009132432,
-      "volatility_20d": 26.399497545394183,
-      "range_percentile": 67.19858156028369,
+      "change_1d": -0.050226017076848706,
+      "change_20d": -2.83203125,
+      "change_60d": 13.584474885844756,
+      "volatility_20d": 26.40007366823451,
+      "range_percentile": 67.73049645390071,
       "range_low": 402.0,
       "range_high": 543.0
     },
@@ -90722,8 +90727,8 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "category": "谷物",
       "market": "CBOT",
       "unit": "美分/蒲式耳",
-      "price": 688.25,
-      "volume": 4984.0,
+      "price": 690.5,
+      "volume": 52522.0,
       "as_of": "2026-10-05",
       "source": "Yahoo Finance公开日线",
       "source_type": "公开行情",
@@ -91981,15 +91986,15 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-10-05",
-          "close": 688.25,
-          "volume": 4984.0
+          "close": 690.5,
+          "volume": 52522.0
         }
       ],
-      "change_1d": 0.7686676427525629,
-      "change_20d": -3.8756983240223475,
-      "change_60d": 8.9003164556962,
-      "volatility_20d": 24.970032370506548,
-      "range_percentile": 70.86031452358927,
+      "change_1d": 1.0980966325036645,
+      "change_20d": -3.5614525139664788,
+      "change_60d": 9.256329113924044,
+      "volatility_20d": 25.15390838134061,
+      "range_percentile": 71.69287696577243,
       "range_low": 496.75,
       "range_high": 767.0
     },
@@ -91999,8 +92004,8 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "category": "谷物",
       "market": "CBOT",
       "unit": "美分/蒲式耳",
-      "price": 1282.75,
-      "volume": 10873.0,
+      "price": 1285.75,
+      "volume": 91026.0,
       "as_of": "2026-10-05",
       "source": "Yahoo Finance公开日线",
       "source_type": "公开行情",
@@ -93258,15 +93263,15 @@ window.__ASSET_DASHBOARD_DATA__ = {
         },
         {
           "date": "2026-10-05",
-          "close": 1282.75,
-          "volume": 10873.0
+          "close": 1285.75,
+          "volume": 91026.0
         }
       ],
-      "change_1d": 0.35204380989635187,
-      "change_20d": -0.8502415458937151,
-      "change_60d": 7.208524864187216,
-      "volatility_20d": 19.441061100045847,
-      "range_percentile": 85.9253499222395,
+      "change_1d": 0.5867396831605642,
+      "change_20d": -0.618357487922705,
+      "change_60d": 7.459256163811112,
+      "volatility_20d": 19.516770748075924,
+      "range_percentile": 86.85847589424573,
       "range_low": 1006.5,
       "range_high": 1328.0
     },
@@ -93276,9 +93281,9 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "category": "软商品",
       "market": "ICE",
       "unit": "美分/磅",
-      "price": 288.75,
-      "volume": 13368.0,
-      "as_of": "2026-10-02",
+      "price": 292.95001220703125,
+      "volume": 14877.0,
+      "as_of": "2026-10-05",
       "source": "Yahoo Finance公开日线",
       "source_type": "公开行情",
       "url": "https://finance.yahoo.com/quote/KC=F/",
@@ -94532,13 +94537,18 @@ window.__ASSET_DASHBOARD_DATA__ = {
           "date": "2026-10-02",
           "close": 288.75,
           "volume": 13368.0
+        },
+        {
+          "date": "2026-10-05",
+          "close": 292.95001220703125,
+          "volume": 14877.0
         }
       ],
-      "change_1d": 0.17346053772766545,
-      "change_20d": -10.975799424574074,
-      "change_60d": -19.106320177816716,
-      "volatility_20d": 30.403155208697736,
-      "range_percentile": 24.87380905719863,
+      "change_1d": 1.454549682088735,
+      "change_20d": -9.653041724893985,
+      "change_60d": -14.591833175792635,
+      "volatility_20d": 31.154568492057095,
+      "range_percentile": 27.229396143968327,
       "range_low": 244.39999389648438,
       "range_high": 422.70001220703125
     },
@@ -94548,9 +94558,9 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "category": "软商品",
       "market": "ICE",
       "unit": "美分/磅",
-      "price": 19.93000030517578,
-      "volume": 63244.0,
-      "as_of": "2026-10-02",
+      "price": 20.729999542236328,
+      "volume": 123023.0,
+      "as_of": "2026-10-05",
       "source": "Yahoo Finance公开日线",
       "source_type": "公开行情",
       "url": "https://finance.yahoo.com/quote/SB=F/",
@@ -95804,15 +95814,20 @@ window.__ASSET_DASHBOARD_DATA__ = {
           "date": "2026-10-02",
           "close": 19.93000030517578,
           "volume": 63244.0
+        },
+        {
+          "date": "2026-10-05",
+          "close": 20.729999542236328,
+          "volume": 123023.0
         }
       ],
-      "change_1d": 5.2270313791066725,
-      "change_20d": 10.293307370029027,
-      "change_60d": 31.812172328193398,
-      "volatility_20d": 37.56441545854291,
+      "change_1d": 4.014045282542167,
+      "change_20d": 14.720530671475384,
+      "change_60d": 39.31451198120646,
+      "volatility_20d": 39.389264762682245,
       "range_percentile": 100.0,
       "range_low": 13.3100004196167,
-      "range_high": 19.93000030517578
+      "range_high": 20.729999542236328
     },
     {
       "symbol": "CT=F",
@@ -95820,9 +95835,9 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "category": "软商品",
       "market": "ICE",
       "unit": "美分/磅",
-      "price": 75.1500015258789,
-      "volume": 0.0,
-      "as_of": "2026-10-02",
+      "price": 80.51000213623047,
+      "volume": 20034.0,
+      "as_of": "2026-10-05",
       "source": "Yahoo Finance公开日线",
       "source_type": "公开行情",
       "url": "https://finance.yahoo.com/quote/CT=F/",
@@ -97076,13 +97091,18 @@ window.__ASSET_DASHBOARD_DATA__ = {
           "date": "2026-10-02",
           "close": 75.1500015258789,
           "volume": 0.0
+        },
+        {
+          "date": "2026-10-05",
+          "close": 80.51000213623047,
+          "volume": 20034.0
         }
       ],
-      "change_1d": 1.5129039106444697,
-      "change_20d": -9.848847198128674,
-      "change_60d": -1.3261582033417874,
-      "volatility_20d": 27.61156631092655,
-      "range_percentile": 45.9856468259635,
+      "change_1d": 7.1324025302990535,
+      "change_20d": -2.3173939276238675,
+      "change_60d": 0.7382432192227117,
+      "volatility_20d": 38.06335767865882,
+      "range_percentile": 63.47912392924832,
       "range_low": 61.060001373291016,
       "range_high": 91.69999694824219
     },
@@ -97092,9 +97112,9 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "category": "软商品",
       "market": "ICE",
       "unit": "美元/吨",
-      "price": 5670.0,
-      "volume": 29119.0,
-      "as_of": "2026-10-02",
+      "price": 5851.0,
+      "volume": 20158.0,
+      "as_of": "2026-10-05",
       "source": "Yahoo Finance公开日线",
       "source_type": "公开行情",
       "url": "https://finance.yahoo.com/quote/CC=F/",
@@ -98348,13 +98368,18 @@ window.__ASSET_DASHBOARD_DATA__ = {
           "date": "2026-10-02",
           "close": 5670.0,
           "volume": 29119.0
+        },
+        {
+          "date": "2026-10-05",
+          "close": 5851.0,
+          "volume": 20158.0
         }
       ],
-      "change_1d": 5.370748931425395,
-      "change_20d": -6.389301634472511,
-      "change_60d": -10.128388017118406,
-      "volatility_20d": 41.321128650251964,
-      "range_percentile": 74.55867082035307,
+      "change_1d": 3.1922398589065315,
+      "change_20d": -3.798092732653735,
+      "change_60d": -1.1488427099172194,
+      "volatility_20d": 43.00569758478992,
+      "range_percentile": 79.25752855659398,
       "range_low": 2798.0,
       "range_high": 6650.0
     },
@@ -98364,9 +98389,9 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "category": "畜牧",
       "market": "CME",
       "unit": "美分/磅",
-      "price": 218.85000610351562,
-      "volume": 9334.0,
-      "as_of": "2026-10-02",
+      "price": 220.14999389648438,
+      "volume": 17077.0,
+      "as_of": "2026-10-05",
       "source": "Yahoo Finance公开日线",
       "source_type": "公开行情",
       "url": "https://finance.yahoo.com/quote/LE=F/",
@@ -99620,13 +99645,18 @@ window.__ASSET_DASHBOARD_DATA__ = {
           "date": "2026-10-02",
           "close": 218.85000610351562,
           "volume": 9334.0
+        },
+        {
+          "date": "2026-10-05",
+          "close": 220.14999389648438,
+          "volume": 17077.0
         }
       ],
-      "change_1d": -0.20519696396720244,
-      "change_20d": 2.123193181037375,
-      "change_60d": -6.971304525604404,
-      "volatility_20d": 15.590928236874921,
-      "range_percentile": 23.020893051834523,
+      "change_1d": 0.5940085705795406,
+      "change_20d": 3.3810739851722893,
+      "change_60d": -6.398810904351205,
+      "volatility_20d": 15.433371562986558,
+      "range_percentile": 25.546366852370827,
       "range_low": 207.0,
       "range_high": 258.4750061035156
     },
@@ -106033,98 +106063,98 @@ window.__ASSET_DASHBOARD_DATA__ = {
   "alpha_news": [
     {
       "theme": "市场情绪",
-      "title": "Arista (ANET) Has $13.3 Billion of Cash and No Debt at All. What Is That Worth?",
-      "source": "Yahoo Finance Singapore",
-      "published_at": "20261005T011705",
-      "url": "https://sg.finance.yahoo.com/news/arista-anet-13-3-billion-010014704.html",
-      "summary": "Arista (ANET) holds a substantial $13.3 billion in cash with no debt, making its enterprise value significantly lower than its market capitalization. While this strong balance shee",
-      "sentiment": "Somewhat-Bullish",
-      "score": 0.176601,
+      "title": "What Could Arista Networks Stock Be Worth In Three Years?",
+      "source": "Trefis",
+      "published_at": "20261005T153343",
+      "url": "https://www.trefis.com/stock/anet/articles/617538/what-could-arista-networks-stock-be-worth-in-three-years/2026-10-05",
+      "summary": "Arista Networks (ANET) stock has seen significant growth, returning 64% over the past six months, and Trefis projects its stock could reach $366 a share in three years, a 76.7% ups",
+      "sentiment": "Bullish",
+      "score": 0.369033,
       "summary_zh": "报道反映权益市场或个股线索，需结合估值、盈利趋势和宏观环境判断其对整体风险偏好的影响。",
       "summary_method": "本地资产配置规则"
     },
     {
       "theme": "市场情绪",
-      "title": "Exponent stock fell 3.72 percent on October 2",
-      "source": "AD HOC NEWS",
-      "published_at": "20261004T223200",
-      "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/exponent-stock-fell-3-72-percent-on-october-2/70228300",
-      "summary": "Exponent's stock fell 3.72% on October 2, 2026, closing at USD 67.30 on Nasdaq. This drop occurred despite a strong Q2 fiscal year 2026 performance, where net revenue rose 12% and ",
-      "sentiment": "Somewhat-Bullish",
-      "score": 0.190738,
-      "summary_zh": "新闻聚焦公司业绩或经营指引，实际结果与管理层预期可能影响个股定价，并向所属行业传导。",
+      "title": "Why Is Everyone Ignoring Autodesk Stock’s High Cash Yield?",
+      "source": "Trefis",
+      "published_at": "20261005T150306",
+      "url": "https://www.trefis.com/stock/adsk/articles/617525/why-is-everyone-ignoring-autodesk-stocks-high-cash-yield/2026-10-05",
+      "summary": "Autodesk (ADSK) stock boasts a free cash flow yield of 6.3%, significantly higher than the S&P 500 median, yet its stock price has fallen. The company converts a substantial 36% of",
+      "sentiment": "Neutral",
+      "score": -0.116301,
+      "summary_zh": "报道关注债券收益率或利率预期变化，可能影响美元、黄金、权益估值及跨资产风险偏好。",
       "summary_method": "本地资产配置规则"
     },
     {
       "theme": "市场情绪",
-      "title": "NIO (NIO) Is Down 5.9% After Q3 Delivery Growth Slows Has The Bull Case Changed?",
+      "title": "The $2 Trillion Private-Credit Market Just Got Some Good News - but Its Biggest Test May Still Be Coming",
+      "source": "24/7 Wall St.",
+      "published_at": "20261005T143209",
+      "url": "https://247wallst.com/investing/2026/10/05/the-2-trillion-private-credit-market-just-got-some-good-news-but-its-biggest-test-may-still-be-coming/",
+      "summary": "The private-credit market is experiencing some relief as withdrawal requests from Blue Owl Capital funds are shrinking, signaling easing pressure on the sector. Despite this positi",
+      "sentiment": "Neutral",
+      "score": -0.042412,
+      "summary_zh": "报道反映权益市场或个股线索，需结合估值、盈利趋势和宏观环境判断其对整体风险偏好的影响。",
+      "summary_method": "本地资产配置规则"
+    },
+    {
+      "theme": "市场情绪",
+      "title": "Kyndryl stock gets Dallas AI lab with 300-job plan",
+      "source": "AD HOC NEWS",
+      "published_at": "20261005T135620",
+      "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/kyndryl-stock-gets-dallas-ai-lab-with-300-job-plan/70233697",
+      "summary": "Kyndryl Holdings (NYSE: KD) has opened its first US AI Innovation Lab in Dallas, planning to create up to 300 jobs over four years to enhance its AI and modernization services. Whi",
+      "sentiment": "Neutral",
+      "score": 0.136751,
+      "summary_zh": "新闻涉及AI或半导体产业景气，需结合订单、资本开支、供需与估值，评估芯片、云计算及主题ETF影响。",
+      "summary_method": "本地资产配置规则"
+    },
+    {
+      "theme": "市场情绪",
+      "title": "Western Digital Corp Stock (WDC) Opened Up by 5.97% on Oct 5: What Investors Need To Know",
+      "source": "TradingKey",
+      "published_at": "20261005T134809",
+      "url": "https://www.tradingkey.com/news/market-movers/262200153-market-movers-wdc-20261005",
+      "summary": "Western Digital Corp (WDC) shares opened up by 5.97% on October 5th, driven by a broader rebound in the AI storage and semiconductor sectors. The company's stock recovery was fuele",
+      "sentiment": "Bullish",
+      "score": 0.392888,
+      "summary_zh": "新闻涉及AI或半导体产业景气，需结合订单、资本开支、供需与估值，评估芯片、云计算及主题ETF影响。",
+      "summary_method": "本地资产配置规则"
+    },
+    {
+      "theme": "市场情绪",
+      "title": "Seagate Technology Holdings PLC Stock (STX) Opened Up by 4.43% on Oct 5: What Investors Need To Know",
+      "source": "TradingKey",
+      "published_at": "20261005T134322",
+      "url": "https://www.tradingkey.com/news/market-movers/262200152-market-movers-stx-20261005",
+      "summary": "Seagate Technology Holdings PLC (STX) stock opened up by 4.43% on October 5, driven by an intraday recovery after competitor capacity expansion fears were calmed by analysts. The c",
+      "sentiment": "Somewhat-Bullish",
+      "score": 0.32546,
+      "summary_zh": "报道反映权益市场或个股线索，需结合估值、盈利趋势和宏观环境判断其对整体风险偏好的影响。",
+      "summary_method": "本地资产配置规则"
+    },
+    {
+      "theme": "市场情绪",
+      "title": "Alibaba vs. Uber Technologies: Which Stock Is a Better Buy in 2026?",
       "source": "Yahoo Finance",
-      "published_at": "20261004T215450",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/nio-nio-down-5-9-220550752.html",
-      "summary": "NIO reported 37,408 vehicle deliveries in September 2026 and 109,178 in Q3, bringing year-to-date deliveries to 300,301. While overall deliveries grew, the slowdown to 25.4% growth",
-      "sentiment": "Somewhat-Bearish",
-      "score": -0.169134,
-      "summary_zh": "该报道聚焦“NIO (NIO) Is Down 5.9% After Q3 Delivery Growth Slows Has The Bull Case ”，建议结合原文、行情变化及相关资产基本面判断其配置影响。",
+      "published_at": "20261005T133254",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/alibaba-vs-uber-technologies-stock-133250647.html",
+      "summary": "This article compares Alibaba Group and Uber Technologies, assessing which stock is a better buy for investors in 2026. It delves into the business models, financial performance, r",
+      "sentiment": "Neutral",
+      "score": 0.14579,
+      "summary_zh": "报道反映权益市场或个股线索，需结合估值、盈利趋势和宏观环境判断其对整体风险偏好的影响。",
       "summary_method": "本地资产配置规则"
     },
     {
       "theme": "市场情绪",
-      "title": "Manhattan Associates stock launches Editions after 9.3 percent growth",
-      "source": "AD HOC NEWS",
-      "published_at": "20261004T201900",
-      "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/manhattan-associates-stock-launches-editions-after-9-3-percent-growth/70227683",
-      "summary": "Manhattan Associates (MANH) stock is highlighted after the company launched new \"Editions\" for its Manhattan Active platform, coinciding with a 9.3% year-over-year revenue growth i",
-      "sentiment": "Bullish",
-      "score": 0.447585,
-      "summary_zh": "新闻聚焦公司业绩或经营指引，实际结果与管理层预期可能影响个股定价，并向所属行业传导。",
-      "summary_method": "本地资产配置规则"
-    },
-    {
-      "theme": "市场情绪",
-      "title": "Micron Has a Major Catalyst: A Huge Buyback Could Be Coming",
-      "source": "Benzinga",
-      "published_at": "20261004T181239",
-      "url": "https://www.benzinga.com/markets/equities/26/10/62152836/micron-stock-has-a-major-catalyst-a-huge-buyback-could-be-coming",
-      "summary": "Micron Technology, despite strong financial results, saw its shares waver last week. A major catalyst expected to boost its stock is a potential large share repurchase program, dri",
-      "sentiment": "Somewhat-Bullish",
-      "score": 0.348133,
-      "summary_zh": "新闻聚焦公司业绩或经营指引，实际结果与管理层预期可能影响个股定价，并向所属行业传导。",
-      "summary_method": "本地资产配置规则"
-    },
-    {
-      "theme": "市场情绪",
-      "title": "Life360 stock gained 6.95 percent as Q2 growth held firm",
-      "source": "AD HOC NEWS",
-      "published_at": "20261004T173304",
-      "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/life360-stock-gained-6-95-percent-as-q2-growth-held-firm/70226555",
-      "summary": "Life360's stock rose 6.95% to USD 43.10 after its Q2 2026 revenue increased by 38% to USD 158.96 million. Despite missing EPS consensus, the company saw significant growth in subsc",
-      "sentiment": "Bullish",
-      "score": 0.418874,
-      "summary_zh": "新闻涉及AI或半导体产业景气，需结合订单、资本开支、供需与估值，评估芯片、云计算及主题ETF影响。",
-      "summary_method": "本地资产配置规则"
-    },
-    {
-      "theme": "市场情绪",
-      "title": "The Copper Treasure Hunt: 3 Ways to Look for a Payoff",
-      "source": "InvestorPlace",
-      "published_at": "20261004T172312",
-      "url": "https://investorplace.com/smartmoney/2026/10/the-copper-treasure-hunt-3-ways-to-look-for-a-payoff/",
-      "summary": "This article discusses the investment opportunities in copper, emphasizing its critical role in the AI buildout and the electrification trend. It highlights three ways to invest: F",
-      "sentiment": "Somewhat-Bullish",
-      "score": 0.334286,
-      "summary_zh": "新闻涉及AI或半导体产业景气，需结合订单、资本开支、供需与估值，评估芯片、云计算及主题ETF影响。",
-      "summary_method": "本地资产配置规则"
-    },
-    {
-      "theme": "市场情绪",
-      "title": "Microchip Technology stock gained 4.98 percent on Ethernet expansion in",
-      "source": "AD HOC NEWS",
-      "published_at": "20261004T171536",
-      "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/microchip-technology-stock-gained-4-98-percent-on-ethernet-expansion-in/70227395",
-      "summary": "Microchip Technology stock (MCHP) rose 4.98% to USD 82.41 on October 2, 2026, driven by the expansion of its Ethernet portfolio for automotive and industrial networks with new LAN8",
-      "sentiment": "Bullish",
-      "score": 0.438546,
-      "summary_zh": "新闻涉及AI或半导体产业景气，需结合订单、资本开支、供需与估值，评估芯片、云计算及主题ETF影响。",
+      "title": "McDonald’s Stock Draws Fresh Target Cuts – Wells Fargo Says Analyst Day Message Is Still ‘Hard To Digest’",
+      "source": "TradingView",
+      "published_at": "20261005T131210",
+      "url": "https://www.tradingview.com/news/stocktwits:8a8e76901094b:0-mcdonald-s-stock-draws-fresh-target-cuts-wells-fargo-says-analyst-day-message-is-still-hard-to-digest/",
+      "summary": "Wells Fargo and Guggenheim have lowered their price targets for McDonald's stock following the company's recent Analyst Day, citing concerns over pricing, value, and the \"NEXT\" str",
+      "sentiment": "Neutral",
+      "score": 0.035214,
+      "summary_zh": "报道反映权益市场或个股线索，需结合估值、盈利趋势和宏观环境判断其对整体风险偏好的影响。",
       "summary_method": "本地资产配置规则"
     }
   ],
@@ -106139,7 +106169,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "旗舰推理、Agent与复杂研究",
       "url": "https://platform.openai.com/pricing",
       "price_status": "官方基准",
-      "verified_at": "2026-10-05T06:01:59Z"
+      "verified_at": "2026-10-05T17:15:55Z"
     },
     {
       "provider": "OpenAI",
@@ -106151,7 +106181,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "通用知识工作与投研自动化",
       "url": "https://platform.openai.com/pricing",
       "price_status": "官方基准",
-      "verified_at": "2026-10-05T06:01:59Z"
+      "verified_at": "2026-10-05T17:15:55Z"
     },
     {
       "provider": "OpenAI",
@@ -106163,7 +106193,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "高频摘要、分类与批量处理",
       "url": "https://platform.openai.com/pricing",
       "price_status": "官方基准",
-      "verified_at": "2026-10-05T06:01:59Z"
+      "verified_at": "2026-10-05T17:15:55Z"
     },
     {
       "provider": "Anthropic",
@@ -106175,7 +106205,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "高难度研究与长文档",
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-05T06:01:59Z"
+      "verified_at": "2026-10-05T17:15:56Z"
     },
     {
       "provider": "Anthropic",
@@ -106187,7 +106217,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "复杂推理、多Agent与专业研究",
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-05T06:01:59Z"
+      "verified_at": "2026-10-05T17:15:56Z"
     },
     {
       "provider": "Anthropic",
@@ -106199,7 +106229,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "代码、知识工作与长上下文",
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-05T06:01:59Z"
+      "verified_at": "2026-10-05T17:15:56Z"
     },
     {
       "provider": "Anthropic",
@@ -106211,7 +106241,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "低延迟与高吞吐任务",
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-05T06:01:59Z"
+      "verified_at": "2026-10-05T17:15:56Z"
     },
     {
       "provider": "Google",
@@ -106223,7 +106253,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "多模态、Agent与代码",
       "url": "https://ai.google.dev/gemini-api/docs/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-05T06:02:00Z"
+      "verified_at": "2026-10-05T17:15:57Z"
     },
     {
       "provider": "Google",
@@ -106235,7 +106265,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "高质量快速推理与搜索增强",
       "url": "https://ai.google.dev/gemini-api/docs/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-05T06:02:00Z"
+      "verified_at": "2026-10-05T17:15:57Z"
     },
     {
       "provider": "Google",
@@ -106247,7 +106277,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "翻译、数据处理与大规模调用",
       "url": "https://ai.google.dev/gemini-api/docs/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-05T06:02:00Z"
+      "verified_at": "2026-10-05T17:15:57Z"
     },
     {
       "provider": "xAI",
@@ -106259,7 +106289,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "实时信息、代码与Agent",
       "url": "https://docs.x.ai/developers/grok-4-6",
       "price_status": "官方实时",
-      "verified_at": "2026-10-05T06:02:01Z"
+      "verified_at": "2026-10-05T17:15:57Z"
     },
     {
       "provider": "xAI",
@@ -106283,7 +106313,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "旗舰多语言与企业任务",
       "url": "https://docs.mistral.ai/inference/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-05T06:02:01Z"
+      "verified_at": "2026-10-05T17:15:58Z"
     },
     {
       "provider": "Mistral",
@@ -106295,7 +106325,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "多模态、代码与Agent",
       "url": "https://docs.mistral.ai/inference/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-05T06:02:01Z"
+      "verified_at": "2026-10-05T17:15:58Z"
     },
     {
       "provider": "Mistral",
@@ -106307,7 +106337,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "低成本生产任务",
       "url": "https://docs.mistral.ai/inference/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-05T06:02:01Z"
+      "verified_at": "2026-10-05T17:15:58Z"
     },
     {
       "provider": "DeepSeek",
@@ -106351,129 +106381,129 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "segment": "上游",
       "group": "GPU / HBM",
       "constituents": "NVDA · AMD · MU · AVGO",
-      "leaders": "AVGO · AMD · NVDA",
-      "change": 1.397,
-      "breadth": 75.0,
-      "relative_volume": 1.02,
+      "leaders": "AVGO · NVDA · AMD",
+      "change": 0.616,
+      "breadth": 50.0,
+      "relative_volume": 0.4,
       "valuation_pe": 95.2,
-      "turnover_usd": 82217602360,
-      "strength": 81,
+      "turnover_usd": 31690757299,
+      "strength": 72,
       "signal": "GPU、HBM与高速互连决定训练和推理基础设施供给",
       "sample_size": 4,
       "method": "成分股行情自动计算",
-      "as_of": "2026-10-05T06:01:59Z"
+      "as_of": "2026-10-05T17:15:55Z"
     },
     {
       "segment": "上游",
       "group": "晶圆 / 设备",
       "constituents": "TSM · ASML · AMAT · LRCX",
-      "leaders": "ASML · TSM · LRCX",
-      "change": 2.603,
-      "breadth": 100.0,
-      "relative_volume": 0.92,
+      "leaders": "TSM · ASML · AMAT",
+      "change": 0.072,
+      "breadth": 25.0,
+      "relative_volume": 0.45,
       "valuation_pe": 29.8,
-      "turnover_usd": 12978903023,
-      "strength": 87,
+      "turnover_usd": 6558361810,
+      "strength": 65,
       "signal": "先进制程扩产与设备订单反映算力资本开支兑现",
       "sample_size": 4,
       "method": "成分股行情自动计算",
-      "as_of": "2026-10-05T06:01:59Z"
+      "as_of": "2026-10-05T17:15:55Z"
     },
     {
       "segment": "中游",
       "group": "云与算力平台",
       "constituents": "MSFT · GOOGL · AMZN · ORCL",
-      "leaders": "ORCL · GOOGL · AMZN",
-      "change": 1.717,
+      "leaders": "MSFT · ORCL · GOOGL",
+      "change": 0.885,
       "breadth": 100.0,
-      "relative_volume": 0.91,
+      "relative_volume": 0.42,
       "valuation_pe": 20.0,
-      "turnover_usd": 30825996494,
-      "strength": 84,
+      "turnover_usd": 15638379466,
+      "strength": 83,
       "signal": "云增速、AI订单和资本开支回报率共同决定景气",
       "sample_size": 4,
       "method": "成分股行情自动计算",
-      "as_of": "2026-10-05T06:01:59Z"
+      "as_of": "2026-10-05T17:15:55Z"
     },
     {
       "segment": "中游",
       "group": "电力 / 电网",
       "constituents": "CEG · ETN · PWR",
-      "leaders": "PWR · ETN · CEG",
-      "change": 0.429,
-      "breadth": 33.3,
-      "relative_volume": 1.09,
+      "leaders": "CEG · PWR · ETN",
+      "change": 2.043,
+      "breadth": 100.0,
+      "relative_volume": 0.41,
       "valuation_pe": null,
-      "turnover_usd": 2445681576,
-      "strength": 73,
+      "turnover_usd": 943031807,
+      "strength": 88,
       "signal": "数据中心负荷推动电源、电网与工程投资",
       "sample_size": 3,
       "method": "成分股行情自动计算",
-      "as_of": "2026-10-05T06:01:59Z"
+      "as_of": "2026-10-05T17:15:55Z"
     },
     {
       "segment": "中游",
       "group": "液冷 / 热管理",
       "constituents": "VRT · MOD",
-      "leaders": "VRT · MOD",
-      "change": -1.678,
-      "breadth": 50.0,
-      "relative_volume": 0.78,
+      "leaders": "MOD · VRT",
+      "change": 1.822,
+      "breadth": 100.0,
+      "relative_volume": 0.45,
       "valuation_pe": null,
-      "turnover_usd": 1069474454,
-      "strength": 67,
+      "turnover_usd": 768382782,
+      "strength": 88,
       "signal": "高功率机柜提升液冷渗透率和单柜价值量",
       "sample_size": 2,
       "method": "成分股行情自动计算",
-      "as_of": "2026-10-05T06:01:59Z"
+      "as_of": "2026-10-05T17:15:55Z"
     },
     {
       "segment": "下游",
       "group": "应用 / SaaS",
       "constituents": "PLTR · CRM · NOW",
-      "leaders": "PLTR · CRM · NOW",
-      "change": -1.326,
-      "breadth": 0.0,
-      "relative_volume": 0.7,
+      "leaders": "NOW · PLTR · CRM",
+      "change": -0.609,
+      "breadth": 33.3,
+      "relative_volume": 0.3,
       "valuation_pe": 149.8,
-      "turnover_usd": 6407927876,
+      "turnover_usd": 2675631624,
       "strength": 62,
       "signal": "关注AI产品付费转化、席位扩张和利润兑现",
       "sample_size": 3,
       "method": "成分股行情自动计算",
-      "as_of": "2026-10-05T06:01:59Z"
+      "as_of": "2026-10-05T17:15:55Z"
     },
     {
       "segment": "下游",
       "group": "机器人",
       "constituents": "BOTZ · ISRG",
-      "leaders": "BOTZ · ISRG",
-      "change": -0.311,
-      "breadth": 50.0,
-      "relative_volume": 0.85,
+      "leaders": "ISRG · BOTZ",
+      "change": 1.642,
+      "breadth": 100.0,
+      "relative_volume": 0.42,
       "valuation_pe": null,
-      "turnover_usd": 739038682,
-      "strength": 71,
+      "turnover_usd": 272446658,
+      "strength": 86,
       "signal": "订单、自动化渗透率与量产节奏决定主题持续性",
       "sample_size": 2,
       "method": "成分股行情自动计算",
-      "as_of": "2026-10-05T06:01:59Z"
+      "as_of": "2026-10-05T17:15:55Z"
     },
     {
       "segment": "材料",
       "group": "铜 / 稀土材料",
       "constituents": "FCX · SCCO · MP",
       "leaders": "FCX · SCCO · MP",
-      "change": 3.022,
-      "breadth": 100.0,
-      "relative_volume": 0.9,
+      "change": 0.462,
+      "breadth": 66.7,
+      "relative_volume": 0.36,
       "valuation_pe": null,
-      "turnover_usd": 1248228760,
-      "strength": 88,
+      "turnover_usd": 557844316,
+      "strength": 74,
       "signal": "电气化需求与资源供给约束共同影响材料价值",
       "sample_size": 3,
       "method": "成分股行情自动计算",
-      "as_of": "2026-10-05T06:01:59Z"
+      "as_of": "2026-10-05T17:15:55Z"
     }
   ],
   "event_calendar": [
@@ -106721,8 +106751,8 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "method": "价格子模型使用20/60日动量与20日波动率；信号达到历史前40%后检验未来20日收益，无前视数据"
     }
   ],
-  "pricing_generated_at": "2026-10-05T06:02:02Z",
-  "generated_at": "2026-10-05T06:02:02Z",
+  "pricing_generated_at": "2026-10-05T17:15:59Z",
+  "generated_at": "2026-10-05T17:15:59Z",
   "refresh_policy": {
     "workflow_cron": "23 */4 * * *",
     "description": "GitHub Actions 每4小时尝试更新；低频宏观源即使失败也保留上一版缓存。"
@@ -106731,138 +106761,138 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "key": "fmp_quotes",
       "status": "online",
-      "updated_at": "2026-10-05T05:56:59Z",
-      "latency_ms": 10276
+      "updated_at": "2026-10-05T17:14:49Z",
+      "latency_ms": 8839
     },
     {
       "key": "ai_chain_quotes",
       "status": "online",
-      "updated_at": "2026-10-05T05:57:00Z",
-      "latency_ms": 409
+      "updated_at": "2026-10-05T17:14:49Z",
+      "latency_ms": 299
     },
     {
       "key": "ai_valuations",
       "status": "online",
-      "updated_at": "2026-10-05T05:57:01Z",
-      "latency_ms": 1011
+      "updated_at": "2026-10-05T17:14:50Z",
+      "latency_ms": 0
     },
     {
       "key": "fred_macro",
       "status": "online",
-      "updated_at": "2026-10-05T05:57:11Z",
-      "latency_ms": 9770
+      "updated_at": "2026-10-05T17:14:59Z",
+      "latency_ms": 9306
     },
     {
       "key": "eia_energy",
       "status": "online",
-      "updated_at": "2026-10-05T05:57:12Z",
-      "latency_ms": 294
+      "updated_at": "2026-10-05T17:15:00Z",
+      "latency_ms": 429
     },
     {
       "key": "market_history",
       "status": "online",
-      "updated_at": "2026-10-05T05:59:49Z",
-      "latency_ms": 157438,
+      "updated_at": "2026-10-05T17:15:00Z",
+      "latency_ms": 0,
       "message": "主源：Twelve Data复权日线；双源验证 15/15"
     },
     {
       "key": "twelve_fx",
       "status": "online",
-      "updated_at": "2026-10-05T05:59:50Z",
-      "latency_ms": 348
+      "updated_at": "2026-10-05T17:15:01Z",
+      "latency_ms": 448
     },
     {
       "key": "commodity_market",
       "status": "online",
-      "updated_at": "2026-10-05T06:00:05Z",
-      "latency_ms": 14704
+      "updated_at": "2026-10-05T17:15:20Z",
+      "latency_ms": 18457
     },
     {
       "key": "cftc_positions",
       "status": "online",
-      "updated_at": "2026-10-05T06:00:05Z",
-      "latency_ms": 98
+      "updated_at": "2026-10-05T17:15:20Z",
+      "latency_ms": 53
     },
     {
       "key": "etf_fund_flows",
       "status": "online",
-      "updated_at": "2026-10-05T06:00:21Z",
-      "latency_ms": 15260
+      "updated_at": "2026-10-05T17:15:37Z",
+      "latency_ms": 16720
     },
     {
       "key": "ici_weekly_flows",
       "status": "online",
-      "updated_at": "2026-10-05T06:00:22Z",
-      "latency_ms": 463
+      "updated_at": "2026-10-05T17:15:37Z",
+      "latency_ms": 280
     },
     {
       "key": "tic_cross_border_flows",
       "status": "online",
-      "updated_at": "2026-10-05T06:00:22Z",
-      "latency_ms": 372
+      "updated_at": "2026-10-05T17:15:38Z",
+      "latency_ms": 376
     },
     {
       "key": "event_calendar",
       "status": "online",
-      "updated_at": "2026-10-05T06:00:33Z",
-      "latency_ms": 10941
+      "updated_at": "2026-10-05T17:15:39Z",
+      "latency_ms": 946
     },
     {
       "key": "gdelt_news",
       "status": "cached",
-      "updated_at": "2026-10-04T23:20:38Z",
+      "updated_at": "2026-10-05T06:02:02Z",
       "message": "ValueError"
     },
     {
       "key": "alpha_news",
       "status": "online",
-      "updated_at": "2026-10-05T06:01:58Z",
-      "latency_ms": 711
+      "updated_at": "2026-10-05T17:15:55Z",
+      "latency_ms": 362
     },
     {
       "key": "news_summary_zh",
       "status": "local",
-      "updated_at": "2026-10-05T06:01:59Z",
+      "updated_at": "2026-10-05T17:15:55Z",
       "message": "本地规则摘要 18 条；无需外部模型API"
     },
     {
       "key": "model_pricing_openai",
       "status": "baseline",
-      "updated_at": "2026-10-05T06:01:59Z",
+      "updated_at": "2026-10-05T17:15:55Z",
       "message": "官方基准价；官方页拒绝自动抓取"
     },
     {
       "key": "model_pricing_anthropic",
       "status": "online",
-      "updated_at": "2026-10-05T06:01:59Z",
-      "latency_ms": 362,
+      "updated_at": "2026-10-05T17:15:56Z",
+      "latency_ms": 407,
       "message": "parsed 4"
     },
     {
       "key": "model_pricing_google",
       "status": "online",
-      "updated_at": "2026-10-05T06:02:00Z",
-      "latency_ms": 764,
+      "updated_at": "2026-10-05T17:15:57Z",
+      "latency_ms": 549,
       "message": "parsed 3"
     },
     {
       "key": "model_pricing_xai",
       "status": "online",
-      "updated_at": "2026-10-05T06:02:01Z",
-      "latency_ms": 221,
+      "updated_at": "2026-10-05T17:15:57Z",
+      "latency_ms": 406,
       "message": "parsed 1"
     },
     {
       "key": "model_pricing_mistral",
       "status": "online",
-      "updated_at": "2026-10-05T06:02:01Z",
-      "latency_ms": 341,
+      "updated_at": "2026-10-05T17:15:58Z",
+      "latency_ms": 227,
       "message": "parsed 3"
     },
     {
       "key": "model_pricing_deepseek",
       "status": "cached",
-      "updated_at": "2026-10-05T06:02:02Z",
+      "updated_at": "2026-10-05T17:15:59Z",
       "message": "ValueError"
     }
   ]
