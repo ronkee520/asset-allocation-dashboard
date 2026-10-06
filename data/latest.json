@@ -3,14 +3,14 @@
     {
       "symbol": "SPY",
       "name": "State Street SPDR S&P 500 ETF",
-      "price": 779.815,
-      "change_pct": 0.64337,
-      "volume": 20168602.0,
+      "price": 779.09,
+      "change_pct": 0.5498,
+      "volume": 36017885.0,
       "avg_volume": null,
       "pe": null,
       "price_avg_50": 764.4202,
       "price_avg_200": 720.9508,
-      "market_cap": 830688747208.0,
+      "market_cap": 829916449494.0,
       "exchange": "AMEX",
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/SPY"
@@ -18,14 +18,14 @@
     {
       "symbol": "AAPL",
       "name": "Apple Inc.",
-      "price": 333.22,
-      "change_pct": 0.09913221,
-      "volume": 14314970.0,
+      "price": 333.63,
+      "change_pct": 0.2223,
+      "volume": 30438844.0,
       "avg_volume": null,
       "pe": null,
       "price_avg_50": 322.4136,
       "price_avg_200": 289.45,
-      "market_cap": 4894120784249.0,
+      "market_cap": 4900142582280.0,
       "exchange": "NASDAQ",
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/AAPL"
@@ -33,14 +33,14 @@
     {
       "symbol": "NVDA",
       "name": "NVIDIA Corporation",
-      "price": 240.1877,
-      "change_pct": 0.53901,
-      "volume": 66380565.0,
+      "price": 239.24,
+      "change_pct": 0.14232,
+      "volume": 101482897.0,
       "avg_volume": null,
       "pe": null,
       "price_avg_50": 218.9194,
       "price_avg_200": 201.0205,
-      "market_cap": 5817586281700.0,
+      "market_cap": 5794632040000.0,
       "exchange": "NASDAQ",
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/NVDA"
@@ -48,14 +48,14 @@
     {
       "symbol": "MSFT",
       "name": "Microsoft Corporation",
-      "price": 530.9497,
-      "change_pct": 1.09861,
-      "volume": 11768399.0,
+      "price": 529.3,
+      "change_pct": 0.78449,
+      "volume": 21098949.0,
       "avg_volume": null,
       "pe": null,
       "price_avg_50": 490.5938,
       "price_avg_200": 433.0749,
-      "market_cap": 3942593544835.0005,
+      "market_cap": 3930343615000.0,
       "exchange": "NASDAQ",
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/MSFT"
@@ -63,14 +63,14 @@
     {
       "symbol": "GOOGL",
       "name": "Alphabet Inc.",
-      "price": 348.67,
-      "change_pct": 0.63498,
-      "volume": 10491659.0,
+      "price": 347.68,
+      "change_pct": 0.34924,
+      "volume": 18702460.0,
       "avg_volume": null,
       "pe": null,
       "price_avg_50": 344.901,
       "price_avg_200": 339.11765,
-      "market_cap": 4219643142090.0,
+      "market_cap": 4207662051916.0,
       "exchange": "NASDAQ",
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/GOOGL"
@@ -78,14 +78,14 @@
     {
       "symbol": "AMZN",
       "name": "Amazon.com, Inc.",
-      "price": 256.5205,
-      "change_pct": 2.03679,
-      "volume": 20042147.93112,
+      "price": 256.29,
+      "change_pct": 1.94511,
+      "volume": 34067715.0,
       "avg_volume": null,
       "pe": null,
       "price_avg_50": 256.9296,
       "price_avg_200": 241.5071,
-      "market_cap": 2759416670550.0,
+      "market_cap": 2756937159000.0,
       "exchange": "NASDAQ",
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/AMZN"
@@ -93,14 +93,14 @@
     {
       "symbol": "META",
       "name": "Meta Platforms, Inc.",
-      "price": 743.5666,
-      "change_pct": 0.22464,
-      "volume": 6693618.0,
+      "price": 738.88,
+      "change_pct": -0.40706,
+      "volume": 12557926.0,
       "avg_volume": null,
       "pe": null,
       "price_avg_50": 627.9738,
       "price_avg_200": 628.8063,
-      "market_cap": 1894225927401.0,
+      "market_cap": 1882286876842.0,
       "exchange": "NASDAQ",
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/META"
@@ -108,14 +108,14 @@
     {
       "symbol": "TSM",
       "name": "Taiwan Semiconductor Manufacturing Company Limited",
-      "price": 483.625,
-      "change_pct": -0.44772,
-      "volume": 5704402.0,
+      "price": 482.3,
+      "change_pct": -0.72046,
+      "volume": 8328553.0,
       "avg_volume": null,
       "pe": null,
       "price_avg_50": 426.5434,
       "price_avg_200": 388.1608,
-      "market_cap": 2508311390000.0,
+      "market_cap": 2501439304000.0,
       "exchange": "NYSE",
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/TSM"
@@ -123,14 +123,14 @@
     {
       "symbol": "AMD",
       "name": "Advanced Micro Devices, Inc.",
-      "price": 654.8999,
-      "change_pct": 3.66441,
-      "volume": 17769558.0,
+      "price": 649.42,
+      "change_pct": 2.79699,
+      "volume": 24224687.0,
       "avg_volume": null,
       "pe": null,
       "price_avg_50": 515.7302,
       "price_avg_200": 376.8365,
-      "market_cap": 1067879776940.0,
+      "market_cap": 1058944252000.0,
       "exchange": "NASDAQ",
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/AMD"
@@ -138,14 +138,14 @@
     {
       "symbol": "JPM",
       "name": "JPMorgan Chase & Co.",
-      "price": 331.026,
-      "change_pct": -0.40736,
-      "volume": 2490077.0,
+      "price": 331.28,
+      "change_pct": -0.33095,
+      "volume": 6287462.0,
       "avg_volume": null,
       "pe": null,
       "price_avg_50": 351.8202,
       "price_avg_200": 321.85126,
-      "market_cap": 886987479877.0,
+      "market_cap": 887668072800.0,
       "exchange": "NYSE",
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/JPM"
@@ -155,9 +155,9 @@
     {
       "symbol": "AMAT",
       "name": "AMAT",
-      "price": 530.5,
-      "change_pct": -2.1723147931796527,
-      "volume": 2581379.0,
+      "price": 530.27001953125,
+      "change_pct": -2.2147247025115946,
+      "volume": 4881227.0,
       "avg_volume": 6269265.0,
       "pe": null,
       "source": "Yahoo Finance",
@@ -166,39 +166,39 @@
     {
       "symbol": "AMD",
       "name": "Advanced Micro Devices, Inc.",
-      "price": 654.8999,
-      "change_pct": 3.66441,
-      "volume": 17769558.0,
-      "avg_volume": 22404380.0,
+      "price": 649.42,
+      "change_pct": 2.79699,
+      "volume": 24224687.0,
+      "avg_volume": 22405755.0,
       "pe": 160.343,
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/AMD",
       "price_avg_50": 515.7302,
       "price_avg_200": 376.8365,
-      "market_cap": 1067879776940.0,
+      "market_cap": 1058944252000.0,
       "exchange": "NASDAQ"
     },
     {
       "symbol": "AMZN",
       "name": "Amazon.com, Inc.",
-      "price": 256.5205,
-      "change_pct": 2.03679,
-      "volume": 20042147.93112,
-      "avg_volume": 35602685.0,
+      "price": 256.29,
+      "change_pct": 1.94511,
+      "volume": 34067715.0,
+      "avg_volume": 35607960.0,
       "pe": 19.952,
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/AMZN",
       "price_avg_50": 256.9296,
       "price_avg_200": 241.5071,
-      "market_cap": 2759416670550.0,
+      "market_cap": 2756937159000.0,
       "exchange": "NASDAQ"
     },
     {
       "symbol": "ASML",
       "name": "ASML",
-      "price": 1823.324951171875,
-      "change_pct": -1.9643970227566032,
-      "volume": 1095635.0,
+      "price": 1834.0999755859375,
+      "change_pct": -1.385051023653039,
+      "volume": 1626585.0,
       "avg_volume": 1368005.0,
       "pe": null,
       "source": "Yahoo Finance",
@@ -207,10 +207,10 @@
     {
       "symbol": "AVGO",
       "name": "AVGO",
-      "price": 377.9700012207031,
-      "change_pct": 4.264707466994788,
-      "volume": 21032825.0,
-      "avg_volume": 24466335.0,
+      "price": 375.80999755859375,
+      "change_pct": 3.668860840992405,
+      "volume": 30811427.0,
+      "avg_volume": 24469010.0,
       "pe": null,
       "source": "Yahoo Finance",
       "url": "https://finance.yahoo.com/quote/AVGO/"
@@ -218,9 +218,9 @@
     {
       "symbol": "BOTZ",
       "name": "BOTZ",
-      "price": 36.20009994506836,
-      "change_pct": 0.00027398377573373267,
-      "volume": 365490.0,
+      "price": 36.16999816894531,
+      "change_pct": -0.08288009215970948,
+      "volume": 510646.0,
       "avg_volume": 599520.0,
       "pe": null,
       "source": "Yahoo Finance",
@@ -229,9 +229,9 @@
     {
       "symbol": "CEG",
       "name": "CEG",
-      "price": 298.30999755859375,
-      "change_pct": 11.467753905296751,
-      "volume": 9707546.0,
+      "price": 300.3999938964844,
+      "change_pct": 12.248710626028858,
+      "volume": 13476624.0,
       "avg_volume": 3091985.0,
       "pe": null,
       "source": "Yahoo Finance",
@@ -240,9 +240,9 @@
     {
       "symbol": "CRM",
       "name": "CRM",
-      "price": 224.85499572753906,
-      "change_pct": -2.147612038287816,
-      "volume": 3002183.0,
+      "price": 224.99000549316406,
+      "change_pct": -2.0888584939344312,
+      "volume": 7297354.0,
       "avg_volume": 11877615.0,
       "pe": null,
       "source": "Yahoo Finance",
@@ -251,9 +251,9 @@
     {
       "symbol": "ETN",
       "name": "ETN",
-      "price": 443.6700134277344,
-      "change_pct": 2.5589475654260285,
-      "volume": 716992.0,
+      "price": 445.0899963378906,
+      "change_pct": 2.8871914142752697,
+      "volume": 1592915.0,
       "avg_volume": 2091130.0,
       "pe": null,
       "source": "Yahoo Finance",
@@ -262,9 +262,9 @@
     {
       "symbol": "FCX",
       "name": "FCX",
-      "price": 72.94499969482422,
-      "change_pct": 0.475208302967256,
-      "volume": 5521004.0,
+      "price": 72.55999755859375,
+      "change_pct": -0.055097680947746586,
+      "volume": 9178485.0,
       "avg_volume": 11679040.0,
       "pe": null,
       "source": "Yahoo Finance",
@@ -273,24 +273,24 @@
     {
       "symbol": "GOOGL",
       "name": "Alphabet Inc.",
-      "price": 348.67,
-      "change_pct": 0.63498,
-      "volume": 10491659.0,
-      "avg_volume": 27491800.0,
+      "price": 347.68,
+      "change_pct": 0.34924,
+      "volume": 18702460.0,
+      "avg_volume": 27493775.0,
       "pe": 17.072,
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/GOOGL",
       "price_avg_50": 344.901,
       "price_avg_200": 339.11765,
-      "market_cap": 4219643142090.0,
+      "market_cap": 4207662051916.0,
       "exchange": "NASDAQ"
     },
     {
       "symbol": "ISRG",
       "name": "ISRG",
-      "price": 405.3399963378906,
-      "change_pct": -0.28046019917959963,
-      "volume": 666626.0,
+      "price": 404.760009765625,
+      "change_pct": -0.42314533906095964,
+      "volume": 1649924.0,
       "avg_volume": 2395450.0,
       "pe": null,
       "source": "Yahoo Finance",
@@ -299,9 +299,9 @@
     {
       "symbol": "LRCX",
       "name": "LRCX",
-      "price": 331.9200134277344,
-      "change_pct": -4.01387358450237,
-      "volume": 4098547.0,
+      "price": 333.8900146484375,
+      "change_pct": -3.444179746952969,
+      "volume": 7662677.0,
       "avg_volume": 9452065.0,
       "pe": null,
       "source": "Yahoo Finance",
@@ -310,9 +310,9 @@
     {
       "symbol": "MOD",
       "name": "MOD",
-      "price": 189.2899932861328,
-      "change_pct": 3.4880484917649612,
-      "volume": 1205091.0,
+      "price": 189.91000366210938,
+      "change_pct": 3.827018675769711,
+      "volume": 1709300.0,
       "avg_volume": 1348330.0,
       "pe": null,
       "source": "Yahoo Finance",
@@ -321,9 +321,9 @@
     {
       "symbol": "MP",
       "name": "MP",
-      "price": 48.249900817871094,
-      "change_pct": 3.010035569364322,
-      "volume": 2757962.0,
+      "price": 48.529998779296875,
+      "change_pct": 3.608024383440589,
+      "volume": 4317253.0,
       "avg_volume": 5226115.0,
       "pe": null,
       "source": "Yahoo Finance",
@@ -332,25 +332,25 @@
     {
       "symbol": "MSFT",
       "name": "Microsoft Corporation",
-      "price": 530.9497,
-      "change_pct": 1.09861,
-      "volume": 11768399.0,
-      "avg_volume": 21678645.0,
+      "price": 529.3,
+      "change_pct": 0.78449,
+      "volume": 21098949.0,
+      "avg_volume": 21680095.0,
       "pe": 29.177,
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/MSFT",
       "price_avg_50": 490.5938,
       "price_avg_200": 433.0749,
-      "market_cap": 3942593544835.0005,
+      "market_cap": 3930343615000.0,
       "exchange": "NASDAQ"
     },
     {
       "symbol": "MU",
       "name": "MU",
-      "price": 1060.4949951171875,
-      "change_pct": -0.3256669374343213,
-      "volume": 13417428.0,
-      "avg_volume": 25518025.0,
+      "price": 1045.56005859375,
+      "change_pct": -1.7293792077981096,
+      "volume": 21725080.0,
+      "avg_volume": 25520755.0,
       "pe": null,
       "source": "Yahoo Finance",
       "url": "https://finance.yahoo.com/quote/MU/"
@@ -358,10 +358,10 @@
     {
       "symbol": "NOW",
       "name": "NOW",
-      "price": 136.9149932861328,
-      "change_pct": 0.613603353793879,
-      "volume": 5343431.0,
-      "avg_volume": 11582435.0,
+      "price": 137.97000122070312,
+      "change_pct": 1.3888884216763264,
+      "volume": 9463744.0,
+      "avg_volume": 11583085.0,
       "pe": null,
       "source": "Yahoo Finance",
       "url": "https://finance.yahoo.com/quote/NOW/"
@@ -369,25 +369,25 @@
     {
       "symbol": "NVDA",
       "name": "NVIDIA Corporation",
-      "price": 240.1877,
-      "change_pct": 0.53901,
-      "volume": 66380565.0,
-      "avg_volume": 109530330.0,
+      "price": 239.24,
+      "change_pct": 0.14232,
+      "volume": 101482897.0,
+      "avg_volume": 109556910.0,
       "pe": 30.05,
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/NVDA",
       "price_avg_50": 218.9194,
       "price_avg_200": 201.0205,
-      "market_cap": 5817586281700.0,
+      "market_cap": 5794632040000.0,
       "exchange": "NASDAQ"
     },
     {
       "symbol": "ORCL",
       "name": "ORCL",
-      "price": 145.68499755859375,
-      "change_pct": 2.249439870270309,
-      "volume": 11813442.0,
-      "avg_volume": 35858600.0,
+      "price": 144.77000427246094,
+      "change_pct": 1.6072491673153833,
+      "volume": 20003405.0,
+      "avg_volume": 35861360.0,
       "pe": null,
       "source": "Yahoo Finance",
       "url": "https://finance.yahoo.com/quote/ORCL/"
@@ -395,10 +395,10 @@
     {
       "symbol": "PLTR",
       "name": "PLTR",
-      "price": 192.5447998046875,
-      "change_pct": 1.6604044400982954,
-      "volume": 11936225.0,
-      "avg_volume": 22519380.0,
+      "price": 192.07000732421875,
+      "change_pct": 1.4097220241694686,
+      "volume": 17636801.0,
+      "avg_volume": 22520755.0,
       "pe": 150.317,
       "source": "Yahoo Finance",
       "url": "https://finance.yahoo.com/quote/PLTR/"
@@ -406,9 +406,9 @@
     {
       "symbol": "PWR",
       "name": "PWR",
-      "price": 716.030029296875,
-      "change_pct": 4.771596851449655,
-      "volume": 601598.0,
+      "price": 719.5599975585938,
+      "change_pct": 5.288112076346541,
+      "volume": 1132545.0,
       "avg_volume": 838900.0,
       "pe": null,
       "source": "Yahoo Finance",
@@ -417,9 +417,9 @@
     {
       "symbol": "SCCO",
       "name": "SCCO",
-      "price": 206.41000366210938,
-      "change_pct": 0.5455747540580314,
-      "volume": 616911.0,
+      "price": 204.25999450683594,
+      "change_pct": -0.5017286828302714,
+      "volume": 1048332.0,
       "avg_volume": 1055655.0,
       "pe": null,
       "source": "Yahoo Finance",
@@ -428,25 +428,25 @@
     {
       "symbol": "TSM",
       "name": "Taiwan Semiconductor Manufacturing Company Limited",
-      "price": 483.625,
-      "change_pct": -0.44772,
-      "volume": 5704402.0,
-      "avg_volume": 10092560.0,
+      "price": 482.3,
+      "change_pct": -0.72046,
+      "volume": 8328553.0,
+      "avg_volume": 10093740.0,
       "pe": 29.848,
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/TSM",
       "price_avg_50": 426.5434,
       "price_avg_200": 388.1608,
-      "market_cap": 2508311390000.0,
+      "market_cap": 2501439304000.0,
       "exchange": "NYSE"
     },
     {
       "symbol": "VRT",
       "name": "VRT",
-      "price": 252.9199981689453,
-      "change_pct": -0.27600227179199743,
-      "volume": 2807150.0,
-      "avg_volume": 5370285.0,
+      "price": 253.13999938964844,
+      "change_pct": -0.18925784117189703,
+      "volume": 4239144.0,
+      "avg_volume": 5370825.0,
       "pe": null,
       "source": "Yahoo Finance",
       "url": "https://finance.yahoo.com/quote/VRT/"
@@ -496,16 +496,16 @@
       "source": "FMP ratios-ttm"
     }
   ],
-  "valuation_generated_at": "2026-10-06T18:32:09Z",
+  "valuation_generated_at": "2026-10-06T23:56:07Z",
   "fred_macro": [
     {
       "series_id": "DGS10",
       "name": "美国10年期国债收益率",
       "category": "利率",
-      "value": 5.28,
-      "previous": 5.24,
-      "change": 0.040000000000000036,
-      "date": "2026-10-02",
+      "value": 5.31,
+      "previous": 5.28,
+      "change": 0.02999999999999936,
+      "date": "2026-10-05",
       "driver": "久期资产折现率、成长股估值、黄金机会成本",
       "source": "FRED",
       "url": "https://fred.stlouisfed.org/series/DGS10"
@@ -514,10 +514,10 @@
       "series_id": "DGS2",
       "name": "美国2年期国债收益率",
       "category": "利率",
-      "value": 4.83,
-      "previous": 4.78,
-      "change": 0.04999999999999982,
-      "date": "2026-10-02",
+      "value": 4.84,
+      "previous": 4.83,
+      "change": 0.009999999999999787,
+      "date": "2026-10-05",
       "driver": "政策利率预期、收益率曲线",
       "source": "FRED",
       "url": "https://fred.stlouisfed.org/series/DGS2"
@@ -526,10 +526,10 @@
       "series_id": "DFII10",
       "name": "美国10年期实际利率",
       "category": "利率",
-      "value": 2.92,
-      "previous": 2.88,
-      "change": 0.040000000000000036,
-      "date": "2026-10-02",
+      "value": 2.95,
+      "previous": 2.92,
+      "change": 0.03000000000000025,
+      "date": "2026-10-05",
       "driver": "黄金机会成本与长久期成长资产折现率",
       "source": "FRED",
       "url": "https://fred.stlouisfed.org/series/DFII10"
@@ -538,10 +538,10 @@
       "series_id": "T10Y2Y",
       "name": "美国10Y-2Y利差",
       "category": "利率",
-      "value": 0.47,
-      "previous": 0.45,
-      "change": 0.019999999999999962,
-      "date": "2026-10-05",
+      "value": 0.48,
+      "previous": 0.47,
+      "change": 0.010000000000000009,
+      "date": "2026-10-06",
       "driver": "衰退预期、曲线修复、银行股压力",
       "source": "FRED",
       "url": "https://fred.stlouisfed.org/series/T10Y2Y"
@@ -671,27 +671,27 @@
     {
       "symbol": "USD/CNH",
       "name": "US Dollar / Chinese Yuan Offshore",
-      "price": 6.70222,
-      "change_pct": -0.02491091,
-      "previous_close": 6.70389,
+      "price": 6.70206,
+      "change_pct": -0.0017904622,
+      "previous_close": 6.70218,
       "source": "Twelve Data",
       "url": "https://twelvedata.com/"
     },
     {
       "symbol": "EUR/USD",
       "name": "Euro / US Dollar",
-      "price": 1.12605,
-      "change_pct": 0.36096257,
-      "previous_close": 1.122,
+      "price": 1.12536,
+      "change_pct": -0.058613524,
+      "previous_close": 1.12602,
       "source": "Twelve Data",
       "url": "https://twelvedata.com/"
     },
     {
       "symbol": "USD/JPY",
       "name": "US Dollar / Japanese Yen",
-      "price": 158.10039,
-      "change_pct": 0.081660356,
-      "previous_close": 157.97139,
+      "price": 158.26844,
+      "change_pct": 0.060123912,
+      "previous_close": 158.17334,
       "source": "Twelve Data",
       "url": "https://twelvedata.com/"
     }
@@ -76770,8 +76770,8 @@
       "category": "贵金属",
       "market": "COMEX",
       "unit": "美元/盎司",
-      "price": 4198.7998046875,
-      "volume": 109895.0,
+      "price": 4194.7001953125,
+      "volume": 3101.0,
       "as_of": "2026-10-06",
       "source": "Yahoo Finance公开日线",
       "source_type": "公开行情",
@@ -78000,7 +78000,7 @@
         {
           "date": "2026-09-25",
           "close": 4321.2001953125,
-          "volume": 140092.0
+          "volume": 164814.0
         },
         {
           "date": "2026-09-28",
@@ -78034,15 +78034,15 @@
         },
         {
           "date": "2026-10-06",
-          "close": 4198.7998046875,
-          "volume": 109895.0
+          "close": 4194.7001953125,
+          "volume": 3101.0
         }
       ],
-      "change_1d": 1.0103926571743527,
-      "change_20d": -5.411133032496062,
-      "change_60d": 4.820627003256539,
-      "volatility_20d": 16.612123167012914,
-      "range_percentile": 17.54914366487485,
+      "change_1d": 0.9117684855128427,
+      "change_20d": -5.5034873775062,
+      "change_60d": 4.718282608394886,
+      "volatility_20d": 16.519423223556622,
+      "range_percentile": 17.247235595809965,
       "range_low": 3960.5,
       "range_high": 5318.39990234375
     },
@@ -78052,8 +78052,8 @@
       "category": "贵金属",
       "market": "COMEX",
       "unit": "美元/盎司",
-      "price": 61.904998779296875,
-      "volume": 22788.0,
+      "price": 61.7400016784668,
+      "volume": 340.0,
       "as_of": "2026-10-06",
       "source": "Yahoo Finance公开日线",
       "source_type": "公开行情",
@@ -79316,15 +79316,15 @@
         },
         {
           "date": "2026-10-06",
-          "close": 61.904998779296875,
-          "volume": 22788.0
+          "close": 61.7400016784668,
+          "volume": 340.0
         }
       ],
-      "change_1d": 1.7020146657998891,
-      "change_20d": -6.624731865845468,
-      "change_60d": 7.410556255202816,
-      "volatility_20d": 33.091504929692846,
-      "range_percentile": 22.392653253335187,
+      "change_1d": 1.430945480769119,
+      "change_20d": -6.873607543660986,
+      "change_60d": 7.124271936809756,
+      "volatility_20d": 32.89551028749891,
+      "range_percentile": 22.15184485688149,
       "range_low": 46.5620002746582,
       "range_high": 115.08000183105469
     },
@@ -79334,8 +79334,8 @@
       "category": "贵金属",
       "market": "NYMEX",
       "unit": "美元/盎司",
-      "price": 1715.0,
-      "volume": 13908.0,
+      "price": 1719.0,
+      "volume": 105.0,
       "as_of": "2026-10-06",
       "source": "Yahoo Finance公开日线",
       "source_type": "公开行情",
@@ -80598,15 +80598,15 @@
         },
         {
           "date": "2026-10-06",
-          "close": 1715.0,
-          "volume": 13908.0
+          "close": 1719.0,
+          "volume": 105.0
         }
       ],
-      "change_1d": 0.474543058766308,
-      "change_20d": -7.207009776589257,
-      "change_60d": 7.0403228227301495,
-      "volatility_20d": 34.09893505177415,
-      "range_percentile": 15.64817674884475,
+      "change_1d": 0.7088860163377841,
+      "change_20d": -6.9905829772343715,
+      "change_60d": 7.289979552345849,
+      "volatility_20d": 34.179860094027546,
+      "range_percentile": 15.944824649296782,
       "range_low": 1504.0,
       "range_high": 2852.39990234375
     },
@@ -80616,8 +80616,8 @@
       "category": "贵金属",
       "market": "NYMEX",
       "unit": "美元/盎司",
-      "price": 1176.0,
-      "volume": 5165.0,
+      "price": 1174.5,
+      "volume": 56.0,
       "as_of": "2026-10-06",
       "source": "Yahoo Finance公开日线",
       "source_type": "公开行情",
@@ -81880,15 +81880,15 @@
         },
         {
           "date": "2026-10-06",
-          "close": 1176.0,
-          "volume": 5165.0
+          "close": 1174.5,
+          "volume": 56.0
         }
       ],
-      "change_1d": 0.7539452704131477,
-      "change_20d": -13.248744380384647,
-      "change_60d": -5.3673415782286344,
-      "volatility_20d": 31.190916977563127,
-      "range_percentile": 1.477004906408922,
+      "change_1d": 0.6254325851192677,
+      "change_20d": -13.35939649214436,
+      "change_60d": -5.488046499684973,
+      "volatility_20d": 31.119127959349896,
+      "range_percentile": 1.3283133809425336,
       "range_low": 1161.0999755859375,
       "range_high": 2169.89990234375
     },
@@ -81898,8 +81898,8 @@
       "category": "工业金属",
       "market": "COMEX",
       "unit": "美元/磅",
-      "price": 6.656499862670898,
-      "volume": 23454.0,
+      "price": 6.65749979019165,
+      "volume": 266.0,
       "as_of": "2026-10-06",
       "source": "Yahoo Finance公开日线",
       "source_type": "公开行情",
@@ -83162,15 +83162,15 @@
         },
         {
           "date": "2026-10-06",
-          "close": 6.656499862670898,
-          "volume": 23454.0
+          "close": 6.65749979019165,
+          "volume": 266.0
         }
       ],
-      "change_1d": 1.0781277311065596,
-      "change_20d": -1.2242169882953013,
-      "change_60d": 6.7944821837474745,
-      "volatility_20d": 25.14446588916553,
-      "range_percentile": 92.48080395460121,
+      "change_1d": 1.0933115069271082,
+      "change_20d": -1.209379066586469,
+      "change_60d": 6.810524660124417,
+      "volatility_20d": 25.153093885837286,
+      "range_percentile": 92.53195113188436,
       "range_low": 4.848499774932861,
       "range_high": 6.803500175476074
     },
@@ -83180,8 +83180,8 @@
       "category": "工业金属",
       "market": "COMEX",
       "unit": "美元/吨",
-      "price": 3246.0,
-      "volume": 58.0,
+      "price": 3245.0,
+      "volume": 8.0,
       "as_of": "2026-10-06",
       "source": "Yahoo Finance公开日线",
       "source_type": "公开行情",
@@ -84444,15 +84444,15 @@
         },
         {
           "date": "2026-10-06",
-          "close": 3246.0,
-          "volume": 58.0
+          "close": 3245.0,
+          "volume": 8.0
         }
       ],
-      "change_1d": 0.23158869847150765,
-      "change_20d": -6.791098348887292,
-      "change_60d": -5.309218203033838,
-      "volatility_20d": 18.6090990456205,
-      "range_percentile": 40.37071944706252,
+      "change_1d": 0.2007102053419807,
+      "change_20d": -6.819813352476666,
+      "change_60d": -5.338389731621939,
+      "volatility_20d": 18.597365557000167,
+      "range_percentile": 40.30788564247565,
       "range_low": 2603.5,
       "range_high": 4195.0
     },
@@ -84462,8 +84462,8 @@
       "category": "能源",
       "market": "NYMEX",
       "unit": "美元/桶",
-      "price": 89.2699966430664,
-      "volume": 203274.0,
+      "price": 89.97000122070312,
+      "volume": 1466.0,
       "as_of": "2026-10-06",
       "source": "Yahoo Finance公开日线",
       "source_type": "公开行情",
@@ -85726,15 +85726,15 @@
         },
         {
           "date": "2026-10-06",
-          "close": 89.2699966430664,
-          "volume": 203274.0
+          "close": 89.97000122070312,
+          "volume": 1466.0
         }
       ],
-      "change_1d": -0.17891497435241766,
-      "change_20d": -4.041709325559218,
-      "change_60d": 14.243661812585584,
-      "volatility_20d": 45.353920195853654,
-      "range_percentile": 58.94590543346385,
+      "change_1d": 0.6038252417361223,
+      "change_20d": -3.289258947378093,
+      "change_60d": 15.139495678856974,
+      "volatility_20d": 45.43182571451254,
+      "range_percentile": 60.15950567657807,
       "range_low": 55.27000045776367,
       "range_high": 112.94999694824219
     },
@@ -85744,8 +85744,8 @@
       "category": "能源",
       "market": "ICE",
       "unit": "美元/桶",
-      "price": 100.3499984741211,
-      "volume": 36905.0,
+      "price": 101.16000366210938,
+      "volume": 103.0,
       "as_of": "2026-10-06",
       "source": "Yahoo Finance公开日线",
       "source_type": "公开行情",
@@ -87008,15 +87008,15 @@
         },
         {
           "date": "2026-10-06",
-          "close": 100.3499984741211,
-          "volume": 36905.0
+          "close": 101.16000366210938,
+          "volume": 103.0
         }
       ],
-      "change_1d": 0.029903089501726043,
-      "change_20d": 2.4816180051220993,
-      "change_60d": 20.468181029680643,
-      "volatility_20d": 41.14646343945413,
-      "range_percentile": 69.71226668758342,
+      "change_1d": 0.8373245313401778,
+      "change_20d": 3.3088292011341336,
+      "change_60d": 21.44057617771562,
+      "volatility_20d": 41.21011031910597,
+      "range_percentile": 71.07522341622024,
       "range_low": 58.91999816894531,
       "range_high": 118.3499984741211
     },
@@ -87026,8 +87026,8 @@
       "category": "能源",
       "market": "NYMEX",
       "unit": "美元/MMBtu",
-      "price": 3.1059999465942383,
-      "volume": 123999.0,
+      "price": 3.124000072479248,
+      "volume": 452.0,
       "as_of": "2026-10-06",
       "source": "Yahoo Finance公开日线",
       "source_type": "公开行情",
@@ -88290,15 +88290,15 @@
         },
         {
           "date": "2026-10-06",
-          "close": 3.1059999465942383,
-          "volume": 123999.0
+          "close": 3.124000072479248,
+          "volume": 452.0
         }
       ],
-      "change_1d": 1.3046302039170898,
-      "change_20d": 6.515777243779741,
-      "change_60d": 7.214355085989932,
-      "volatility_20d": 48.63159625741835,
-      "range_percentile": 11.808789556561246,
+      "change_1d": 1.8917184614054339,
+      "change_20d": 7.133065534859728,
+      "change_60d": 7.83569182823427,
+      "volatility_20d": 48.81698642958634,
+      "range_percentile": 12.173385986637838,
       "range_low": 2.5230000019073486,
       "range_high": 7.460000038146973
     },
@@ -88308,8 +88308,8 @@
       "category": "能源",
       "market": "NYMEX",
       "unit": "美元/加仑",
-      "price": 4.5605998039245605,
-      "volume": 30212.0,
+      "price": 4.5954999923706055,
+      "volume": 119.0,
       "as_of": "2026-10-06",
       "source": "Yahoo Finance公开日线",
       "source_type": "公开行情",
@@ -89572,15 +89572,15 @@
         },
         {
           "date": "2026-10-06",
-          "close": 4.5605998039245605,
-          "volume": 30212.0
+          "close": 4.5954999923706055,
+          "volume": 119.0
         }
       ],
-      "change_1d": 0.3388175063405052,
-      "change_20d": -0.15763039138999568,
-      "change_60d": 19.27502196280544,
-      "volatility_20d": 49.10861717604711,
-      "range_percentile": 78.11748479972817,
+      "change_1d": 1.1066646733756569,
+      "change_20d": 0.6064176865057114,
+      "change_60d": 20.187779258419457,
+      "volatility_20d": 49.23921342532795,
+      "range_percentile": 79.20631228660095,
       "range_low": 2.0566999912261963,
       "range_high": 5.26200008392334
     },
@@ -93437,7 +93437,7 @@
       "market": "ICE",
       "unit": "美分/磅",
       "price": 303.20001220703125,
-      "volume": 20967.0,
+      "volume": 0.0,
       "as_of": "2026-10-06",
       "source": "Yahoo Finance公开日线",
       "source_type": "公开行情",
@@ -94701,7 +94701,7 @@
         {
           "date": "2026-10-06",
           "close": 303.20001220703125,
-          "volume": 20967.0
+          "volume": 0.0
         }
       ],
       "change_1d": 3.6404118470171554,
@@ -94711,6 +94711,1288 @@
       "range_percentile": 32.97813363548528,
       "range_low": 244.39999389648438,
       "range_high": 422.70001220703125
+    },
+    {
+      "symbol": "SB=F",
+      "name": "原糖",
+      "category": "软商品",
+      "market": "ICE",
+      "unit": "美分/磅",
+      "price": 20.8700008392334,
+      "volume": 0.0,
+      "as_of": "2026-10-06",
+      "source": "Yahoo Finance公开日线",
+      "source_type": "公开行情",
+      "url": "https://finance.yahoo.com/quote/SB=F/",
+      "history": [
+        {
+          "date": "2025-10-06",
+          "close": 16.809999465942383,
+          "volume": 52134.0
+        },
+        {
+          "date": "2025-10-07",
+          "close": 16.6299991607666,
+          "volume": 62510.0
+        },
+        {
+          "date": "2025-10-08",
+          "close": 16.290000915527344,
+          "volume": 49143.0
+        },
+        {
+          "date": "2025-10-09",
+          "close": 16.260000228881836,
+          "volume": 38709.0
+        },
+        {
+          "date": "2025-10-10",
+          "close": 16.100000381469727,
+          "volume": 43290.0
+        },
+        {
+          "date": "2025-10-13",
+          "close": 15.609999656677246,
+          "volume": 93343.0
+        },
+        {
+          "date": "2025-10-14",
+          "close": 15.880000114440918,
+          "volume": 84042.0
+        },
+        {
+          "date": "2025-10-15",
+          "close": 15.6899995803833,
+          "volume": 48028.0
+        },
+        {
+          "date": "2025-10-16",
+          "close": 15.800000190734863,
+          "volume": 47602.0
+        },
+        {
+          "date": "2025-10-17",
+          "close": 15.5,
+          "volume": 40669.0
+        },
+        {
+          "date": "2025-10-20",
+          "close": 15.720000267028809,
+          "volume": 41488.0
+        },
+        {
+          "date": "2025-10-21",
+          "close": 15.239999771118164,
+          "volume": 73876.0
+        },
+        {
+          "date": "2025-10-22",
+          "close": 15.100000381469727,
+          "volume": 52812.0
+        },
+        {
+          "date": "2025-10-23",
+          "close": 15.289999961853027,
+          "volume": 44723.0
+        },
+        {
+          "date": "2025-10-24",
+          "close": 14.970000267028809,
+          "volume": 56318.0
+        },
+        {
+          "date": "2025-10-27",
+          "close": 14.460000038146973,
+          "volume": 84176.0
+        },
+        {
+          "date": "2025-10-28",
+          "close": 14.369999885559082,
+          "volume": 65658.0
+        },
+        {
+          "date": "2025-10-29",
+          "close": 14.420000076293945,
+          "volume": 61870.0
+        },
+        {
+          "date": "2025-10-30",
+          "close": 14.279999732971191,
+          "volume": 68654.0
+        },
+        {
+          "date": "2025-10-31",
+          "close": 14.430000305175781,
+          "volume": 62049.0
+        },
+        {
+          "date": "2025-11-03",
+          "close": 14.649999618530273,
+          "volume": 71588.0
+        },
+        {
+          "date": "2025-11-04",
+          "close": 14.220000267028809,
+          "volume": 60336.0
+        },
+        {
+          "date": "2025-11-05",
+          "close": 14.109999656677246,
+          "volume": 50615.0
+        },
+        {
+          "date": "2025-11-06",
+          "close": 14.1899995803833,
+          "volume": 53609.0
+        },
+        {
+          "date": "2025-11-07",
+          "close": 14.100000381469727,
+          "volume": 46723.0
+        },
+        {
+          "date": "2025-11-10",
+          "close": 14.199999809265137,
+          "volume": 55843.0
+        },
+        {
+          "date": "2025-11-11",
+          "close": 14.25,
+          "volume": 36604.0
+        },
+        {
+          "date": "2025-11-12",
+          "close": 14.520000457763672,
+          "volume": 49532.0
+        },
+        {
+          "date": "2025-11-13",
+          "close": 14.4399995803833,
+          "volume": 47402.0
+        },
+        {
+          "date": "2025-11-14",
+          "close": 14.960000038146973,
+          "volume": 80721.0
+        },
+        {
+          "date": "2025-11-17",
+          "close": 14.800000190734863,
+          "volume": 53266.0
+        },
+        {
+          "date": "2025-11-18",
+          "close": 14.699999809265137,
+          "volume": 50477.0
+        },
+        {
+          "date": "2025-11-19",
+          "close": 14.65999984741211,
+          "volume": 62101.0
+        },
+        {
+          "date": "2025-11-20",
+          "close": 14.65999984741211,
+          "volume": 39297.0
+        },
+        {
+          "date": "2025-11-21",
+          "close": 14.779999732971191,
+          "volume": 38908.0
+        },
+        {
+          "date": "2025-11-24",
+          "close": 14.819999694824219,
+          "volume": 38825.0
+        },
+        {
+          "date": "2025-11-25",
+          "close": 14.90999984741211,
+          "volume": 41114.0
+        },
+        {
+          "date": "2025-11-26",
+          "close": 15.140000343322754,
+          "volume": 65893.0
+        },
+        {
+          "date": "2025-11-28",
+          "close": 15.210000038146973,
+          "volume": 51461.0
+        },
+        {
+          "date": "2025-12-01",
+          "close": 14.760000228881836,
+          "volume": 82273.0
+        },
+        {
+          "date": "2025-12-02",
+          "close": 14.979999542236328,
+          "volume": 52631.0
+        },
+        {
+          "date": "2025-12-03",
+          "close": 14.930000305175781,
+          "volume": 48352.0
+        },
+        {
+          "date": "2025-12-04",
+          "close": 14.880000114440918,
+          "volume": 33367.0
+        },
+        {
+          "date": "2025-12-05",
+          "close": 14.800000190734863,
+          "volume": 50611.0
+        },
+        {
+          "date": "2025-12-08",
+          "close": 14.819999694824219,
+          "volume": 37709.0
+        },
+        {
+          "date": "2025-12-09",
+          "close": 14.670000076293945,
+          "volume": 72395.0
+        },
+        {
+          "date": "2025-12-10",
+          "close": 14.90999984741211,
+          "volume": 68134.0
+        },
+        {
+          "date": "2025-12-11",
+          "close": 14.850000381469727,
+          "volume": 29878.0
+        },
+        {
+          "date": "2025-12-12",
+          "close": 15.100000381469727,
+          "volume": 65924.0
+        },
+        {
+          "date": "2025-12-15",
+          "close": 14.949999809265137,
+          "volume": 51263.0
+        },
+        {
+          "date": "2025-12-16",
+          "close": 14.819999694824219,
+          "volume": 41726.0
+        },
+        {
+          "date": "2025-12-17",
+          "close": 14.760000228881836,
+          "volume": 34869.0
+        },
+        {
+          "date": "2025-12-18",
+          "close": 14.479999542236328,
+          "volume": 54925.0
+        },
+        {
+          "date": "2025-12-19",
+          "close": 14.819999694824219,
+          "volume": 47573.0
+        },
+        {
+          "date": "2025-12-22",
+          "close": 14.989999771118164,
+          "volume": 45335.0
+        },
+        {
+          "date": "2025-12-23",
+          "close": 15.199999809265137,
+          "volume": 56331.0
+        },
+        {
+          "date": "2025-12-24",
+          "close": 15.289999961853027,
+          "volume": 0.0
+        },
+        {
+          "date": "2025-12-26",
+          "close": 15.170000076293945,
+          "volume": 24319.0
+        },
+        {
+          "date": "2025-12-29",
+          "close": 15.260000228881836,
+          "volume": 40085.0
+        },
+        {
+          "date": "2025-12-30",
+          "close": 14.84000015258789,
+          "volume": 63491.0
+        },
+        {
+          "date": "2025-12-31",
+          "close": 15.010000228881836,
+          "volume": 0.0
+        },
+        {
+          "date": "2026-01-02",
+          "close": 14.600000381469727,
+          "volume": 52900.0
+        },
+        {
+          "date": "2026-01-05",
+          "close": 14.729999542236328,
+          "volume": 53203.0
+        },
+        {
+          "date": "2026-01-06",
+          "close": 14.760000228881836,
+          "volume": 48358.0
+        },
+        {
+          "date": "2026-01-07",
+          "close": 14.979999542236328,
+          "volume": 55010.0
+        },
+        {
+          "date": "2026-01-08",
+          "close": 14.970000267028809,
+          "volume": 65733.0
+        },
+        {
+          "date": "2026-01-09",
+          "close": 14.890000343322754,
+          "volume": 59477.0
+        },
+        {
+          "date": "2026-01-12",
+          "close": 14.84000015258789,
+          "volume": 53040.0
+        },
+        {
+          "date": "2026-01-13",
+          "close": 14.890000343322754,
+          "volume": 60926.0
+        },
+        {
+          "date": "2026-01-14",
+          "close": 14.680000305175781,
+          "volume": 68584.0
+        },
+        {
+          "date": "2026-01-15",
+          "close": 14.569999694824219,
+          "volume": 66408.0
+        },
+        {
+          "date": "2026-01-16",
+          "close": 14.960000038146973,
+          "volume": 71071.0
+        },
+        {
+          "date": "2026-01-20",
+          "close": 14.720000267028809,
+          "volume": 57608.0
+        },
+        {
+          "date": "2026-01-21",
+          "close": 14.739999771118164,
+          "volume": 46550.0
+        },
+        {
+          "date": "2026-01-22",
+          "close": 14.960000038146973,
+          "volume": 63742.0
+        },
+        {
+          "date": "2026-01-23",
+          "close": 14.729999542236328,
+          "volume": 59711.0
+        },
+        {
+          "date": "2026-01-26",
+          "close": 14.789999961853027,
+          "volume": 62401.0
+        },
+        {
+          "date": "2026-01-27",
+          "close": 14.829999923706055,
+          "volume": 72639.0
+        },
+        {
+          "date": "2026-01-28",
+          "close": 14.710000038146973,
+          "volume": 59188.0
+        },
+        {
+          "date": "2026-01-29",
+          "close": 14.699999809265137,
+          "volume": 73672.0
+        },
+        {
+          "date": "2026-01-30",
+          "close": 14.270000457763672,
+          "volume": 118342.0
+        },
+        {
+          "date": "2026-02-02",
+          "close": 14.260000228881836,
+          "volume": 96021.0
+        },
+        {
+          "date": "2026-02-03",
+          "close": 14.630000114440918,
+          "volume": 102353.0
+        },
+        {
+          "date": "2026-02-04",
+          "close": 14.4399995803833,
+          "volume": 82967.0
+        },
+        {
+          "date": "2026-02-05",
+          "close": 14.270000457763672,
+          "volume": 92619.0
+        },
+        {
+          "date": "2026-02-06",
+          "close": 14.109999656677246,
+          "volume": 131425.0
+        },
+        {
+          "date": "2026-02-09",
+          "close": 14.350000381469727,
+          "volume": 198541.0
+        },
+        {
+          "date": "2026-02-10",
+          "close": 14.119999885559082,
+          "volume": 154446.0
+        },
+        {
+          "date": "2026-02-11",
+          "close": 13.84000015258789,
+          "volume": 144218.0
+        },
+        {
+          "date": "2026-02-12",
+          "close": 13.75,
+          "volume": 124198.0
+        },
+        {
+          "date": "2026-02-13",
+          "close": 13.779999732971191,
+          "volume": 69612.0
+        },
+        {
+          "date": "2026-02-17",
+          "close": 13.859999656677246,
+          "volume": 78583.0
+        },
+        {
+          "date": "2026-02-18",
+          "close": 14.170000076293945,
+          "volume": 57694.0
+        },
+        {
+          "date": "2026-02-19",
+          "close": 14.069999694824219,
+          "volume": 47280.0
+        },
+        {
+          "date": "2026-02-20",
+          "close": 14.300000190734863,
+          "volume": 53798.0
+        },
+        {
+          "date": "2026-02-23",
+          "close": 14.449999809265137,
+          "volume": 50109.0
+        },
+        {
+          "date": "2026-02-24",
+          "close": 14.550000190734863,
+          "volume": 47578.0
+        },
+        {
+          "date": "2026-02-25",
+          "close": 14.59000015258789,
+          "volume": 35210.0
+        },
+        {
+          "date": "2026-02-26",
+          "close": 14.40999984741211,
+          "volume": 21306.0
+        },
+        {
+          "date": "2026-02-27",
+          "close": 14.300000190734863,
+          "volume": 58287.0
+        },
+        {
+          "date": "2026-03-02",
+          "close": 13.90999984741211,
+          "volume": 90526.0
+        },
+        {
+          "date": "2026-03-03",
+          "close": 13.930000305175781,
+          "volume": 66708.0
+        },
+        {
+          "date": "2026-03-04",
+          "close": 13.729999542236328,
+          "volume": 90013.0
+        },
+        {
+          "date": "2026-03-05",
+          "close": 13.720000267028809,
+          "volume": 73461.0
+        },
+        {
+          "date": "2026-03-06",
+          "close": 14.100000381469727,
+          "volume": 97386.0
+        },
+        {
+          "date": "2026-03-09",
+          "close": 14.59000015258789,
+          "volume": 165497.0
+        },
+        {
+          "date": "2026-03-10",
+          "close": 14.380000114440918,
+          "volume": 105847.0
+        },
+        {
+          "date": "2026-03-11",
+          "close": 14.25,
+          "volume": 74071.0
+        },
+        {
+          "date": "2026-03-12",
+          "close": 14.380000114440918,
+          "volume": 93275.0
+        },
+        {
+          "date": "2026-03-13",
+          "close": 14.369999885559082,
+          "volume": 59593.0
+        },
+        {
+          "date": "2026-03-16",
+          "close": 14.1899995803833,
+          "volume": 58213.0
+        },
+        {
+          "date": "2026-03-17",
+          "close": 14.449999809265137,
+          "volume": 74666.0
+        },
+        {
+          "date": "2026-03-18",
+          "close": 14.800000190734863,
+          "volume": 115340.0
+        },
+        {
+          "date": "2026-03-19",
+          "close": 15.369999885559082,
+          "volume": 172542.0
+        },
+        {
+          "date": "2026-03-20",
+          "close": 15.699999809265137,
+          "volume": 129367.0
+        },
+        {
+          "date": "2026-03-23",
+          "close": 15.520000457763672,
+          "volume": 122777.0
+        },
+        {
+          "date": "2026-03-24",
+          "close": 15.880000114440918,
+          "volume": 79935.0
+        },
+        {
+          "date": "2026-03-25",
+          "close": 15.550000190734863,
+          "volume": 94542.0
+        },
+        {
+          "date": "2026-03-26",
+          "close": 15.869999885559082,
+          "volume": 91708.0
+        },
+        {
+          "date": "2026-03-27",
+          "close": 15.760000228881836,
+          "volume": 71763.0
+        },
+        {
+          "date": "2026-03-30",
+          "close": 15.550000190734863,
+          "volume": 81128.0
+        },
+        {
+          "date": "2026-03-31",
+          "close": 15.520000457763672,
+          "volume": 82618.0
+        },
+        {
+          "date": "2026-04-01",
+          "close": 15.289999961853027,
+          "volume": 83403.0
+        },
+        {
+          "date": "2026-04-02",
+          "close": 15.0,
+          "volume": 75580.0
+        },
+        {
+          "date": "2026-04-06",
+          "close": 14.970000267028809,
+          "volume": 39386.0
+        },
+        {
+          "date": "2026-04-07",
+          "close": 14.579999923706055,
+          "volume": 92252.0
+        },
+        {
+          "date": "2026-04-08",
+          "close": 14.229999542236328,
+          "volume": 156592.0
+        },
+        {
+          "date": "2026-04-09",
+          "close": 13.920000076293945,
+          "volume": 153556.0
+        },
+        {
+          "date": "2026-04-10",
+          "close": 13.75,
+          "volume": 155172.0
+        },
+        {
+          "date": "2026-04-13",
+          "close": 13.680000305175781,
+          "volume": 140217.0
+        },
+        {
+          "date": "2026-04-14",
+          "close": 13.880000114440918,
+          "volume": 130923.0
+        },
+        {
+          "date": "2026-04-15",
+          "close": 13.510000228881836,
+          "volume": 59469.0
+        },
+        {
+          "date": "2026-04-16",
+          "close": 13.65999984741211,
+          "volume": 52879.0
+        },
+        {
+          "date": "2026-04-17",
+          "close": 13.3100004196167,
+          "volume": 29921.0
+        },
+        {
+          "date": "2026-04-20",
+          "close": 13.470000267028809,
+          "volume": 31558.0
+        },
+        {
+          "date": "2026-04-21",
+          "close": 13.430000305175781,
+          "volume": 39514.0
+        },
+        {
+          "date": "2026-04-22",
+          "close": 13.569999694824219,
+          "volume": 39393.0
+        },
+        {
+          "date": "2026-04-23",
+          "close": 13.600000381469727,
+          "volume": 32865.0
+        },
+        {
+          "date": "2026-04-24",
+          "close": 13.930000305175781,
+          "volume": 28450.0
+        },
+        {
+          "date": "2026-04-27",
+          "close": 13.829999923706055,
+          "volume": 35562.0
+        },
+        {
+          "date": "2026-04-28",
+          "close": 14.109999656677246,
+          "volume": 29634.0
+        },
+        {
+          "date": "2026-04-29",
+          "close": 14.680000305175781,
+          "volume": 19656.0
+        },
+        {
+          "date": "2026-04-30",
+          "close": 14.579999923706055,
+          "volume": 103437.0
+        },
+        {
+          "date": "2026-05-01",
+          "close": 14.949999809265137,
+          "volume": 104632.0
+        },
+        {
+          "date": "2026-05-04",
+          "close": 15.289999961853027,
+          "volume": 94189.0
+        },
+        {
+          "date": "2026-05-05",
+          "close": 15.369999885559082,
+          "volume": 109285.0
+        },
+        {
+          "date": "2026-05-06",
+          "close": 14.8100004196167,
+          "volume": 148332.0
+        },
+        {
+          "date": "2026-05-07",
+          "close": 14.539999961853027,
+          "volume": 91843.0
+        },
+        {
+          "date": "2026-05-08",
+          "close": 14.6899995803833,
+          "volume": 61209.0
+        },
+        {
+          "date": "2026-05-11",
+          "close": 14.90999984741211,
+          "volume": 63035.0
+        },
+        {
+          "date": "2026-05-12",
+          "close": 15.010000228881836,
+          "volume": 84734.0
+        },
+        {
+          "date": "2026-05-13",
+          "close": 15.380000114440918,
+          "volume": 84192.0
+        },
+        {
+          "date": "2026-05-14",
+          "close": 14.989999771118164,
+          "volume": 69710.0
+        },
+        {
+          "date": "2026-05-15",
+          "close": 14.800000190734863,
+          "volume": 49091.0
+        },
+        {
+          "date": "2026-05-18",
+          "close": 14.729999542236328,
+          "volume": 48212.0
+        },
+        {
+          "date": "2026-05-19",
+          "close": 15.010000228881836,
+          "volume": 64935.0
+        },
+        {
+          "date": "2026-05-20",
+          "close": 14.729999542236328,
+          "volume": 61726.0
+        },
+        {
+          "date": "2026-05-21",
+          "close": 14.899999618530273,
+          "volume": 52802.0
+        },
+        {
+          "date": "2026-05-22",
+          "close": 14.699999809265137,
+          "volume": 41558.0
+        },
+        {
+          "date": "2026-05-26",
+          "close": 14.539999961853027,
+          "volume": 53497.0
+        },
+        {
+          "date": "2026-05-27",
+          "close": 14.140000343322754,
+          "volume": 96713.0
+        },
+        {
+          "date": "2026-05-28",
+          "close": 13.930000305175781,
+          "volume": 78371.0
+        },
+        {
+          "date": "2026-05-29",
+          "close": 14.0600004196167,
+          "volume": 74188.0
+        },
+        {
+          "date": "2026-06-01",
+          "close": 14.449999809265137,
+          "volume": 81583.0
+        },
+        {
+          "date": "2026-06-02",
+          "close": 14.380000114440918,
+          "volume": 72335.0
+        },
+        {
+          "date": "2026-06-03",
+          "close": 14.239999771118164,
+          "volume": 86599.0
+        },
+        {
+          "date": "2026-06-04",
+          "close": 14.270000457763672,
+          "volume": 80222.0
+        },
+        {
+          "date": "2026-06-05",
+          "close": 14.140000343322754,
+          "volume": 117940.0
+        },
+        {
+          "date": "2026-06-08",
+          "close": 14.119999885559082,
+          "volume": 162560.0
+        },
+        {
+          "date": "2026-06-09",
+          "close": 14.079999923706055,
+          "volume": 140545.0
+        },
+        {
+          "date": "2026-06-10",
+          "close": 13.920000076293945,
+          "volume": 150871.0
+        },
+        {
+          "date": "2026-06-11",
+          "close": 13.789999961853027,
+          "volume": 120058.0
+        },
+        {
+          "date": "2026-06-12",
+          "close": 13.699999809265137,
+          "volume": 63327.0
+        },
+        {
+          "date": "2026-06-15",
+          "close": 13.680000305175781,
+          "volume": 76040.0
+        },
+        {
+          "date": "2026-06-16",
+          "close": 13.819999694824219,
+          "volume": 65259.0
+        },
+        {
+          "date": "2026-06-17",
+          "close": 13.850000381469727,
+          "volume": 51289.0
+        },
+        {
+          "date": "2026-06-18",
+          "close": 13.59000015258789,
+          "volume": 39504.0
+        },
+        {
+          "date": "2026-06-22",
+          "close": 13.350000381469727,
+          "volume": 62919.0
+        },
+        {
+          "date": "2026-06-23",
+          "close": 13.420000076293945,
+          "volume": 38650.0
+        },
+        {
+          "date": "2026-06-24",
+          "close": 13.420000076293945,
+          "volume": 54203.0
+        },
+        {
+          "date": "2026-06-25",
+          "close": 13.550000190734863,
+          "volume": 62276.0
+        },
+        {
+          "date": "2026-06-26",
+          "close": 13.979999542236328,
+          "volume": 36043.0
+        },
+        {
+          "date": "2026-06-29",
+          "close": 14.289999961853027,
+          "volume": 27026.0
+        },
+        {
+          "date": "2026-06-30",
+          "close": 14.34000015258789,
+          "volume": 63708.0
+        },
+        {
+          "date": "2026-07-01",
+          "close": 14.989999771118164,
+          "volume": 96075.0
+        },
+        {
+          "date": "2026-07-02",
+          "close": 14.850000381469727,
+          "volume": 74421.0
+        },
+        {
+          "date": "2026-07-06",
+          "close": 15.220000267028809,
+          "volume": 91581.0
+        },
+        {
+          "date": "2026-07-07",
+          "close": 15.140000343322754,
+          "volume": 81164.0
+        },
+        {
+          "date": "2026-07-08",
+          "close": 15.109999656677246,
+          "volume": 78646.0
+        },
+        {
+          "date": "2026-07-09",
+          "close": 15.119999885559082,
+          "volume": 54813.0
+        },
+        {
+          "date": "2026-07-10",
+          "close": 14.880000114440918,
+          "volume": 70711.0
+        },
+        {
+          "date": "2026-07-13",
+          "close": 14.75,
+          "volume": 61996.0
+        },
+        {
+          "date": "2026-07-14",
+          "close": 14.880000114440918,
+          "volume": 60035.0
+        },
+        {
+          "date": "2026-07-15",
+          "close": 14.850000381469727,
+          "volume": 41145.0
+        },
+        {
+          "date": "2026-07-16",
+          "close": 14.4399995803833,
+          "volume": 78616.0
+        },
+        {
+          "date": "2026-07-17",
+          "close": 14.829999923706055,
+          "volume": 62013.0
+        },
+        {
+          "date": "2026-07-20",
+          "close": 14.819999694824219,
+          "volume": 46963.0
+        },
+        {
+          "date": "2026-07-21",
+          "close": 14.880000114440918,
+          "volume": 45002.0
+        },
+        {
+          "date": "2026-07-22",
+          "close": 14.739999771118164,
+          "volume": 44823.0
+        },
+        {
+          "date": "2026-07-23",
+          "close": 14.6899995803833,
+          "volume": 42689.0
+        },
+        {
+          "date": "2026-07-24",
+          "close": 14.770000457763672,
+          "volume": 45966.0
+        },
+        {
+          "date": "2026-07-27",
+          "close": 14.579999923706055,
+          "volume": 39839.0
+        },
+        {
+          "date": "2026-07-28",
+          "close": 14.550000190734863,
+          "volume": 41218.0
+        },
+        {
+          "date": "2026-07-29",
+          "close": 14.5,
+          "volume": 51871.0
+        },
+        {
+          "date": "2026-07-30",
+          "close": 14.430000305175781,
+          "volume": 68965.0
+        },
+        {
+          "date": "2026-07-31",
+          "close": 14.65999984741211,
+          "volume": 69242.0
+        },
+        {
+          "date": "2026-08-03",
+          "close": 15.010000228881836,
+          "volume": 91314.0
+        },
+        {
+          "date": "2026-08-04",
+          "close": 15.039999961853027,
+          "volume": 102071.0
+        },
+        {
+          "date": "2026-08-05",
+          "close": 15.149999618530273,
+          "volume": 79278.0
+        },
+        {
+          "date": "2026-08-06",
+          "close": 15.569999694824219,
+          "volume": 120814.0
+        },
+        {
+          "date": "2026-08-07",
+          "close": 16.450000762939453,
+          "volume": 209693.0
+        },
+        {
+          "date": "2026-08-10",
+          "close": 16.469999313354492,
+          "volume": 167094.0
+        },
+        {
+          "date": "2026-08-11",
+          "close": 16.729999542236328,
+          "volume": 150591.0
+        },
+        {
+          "date": "2026-08-12",
+          "close": 16.420000076293945,
+          "volume": 171992.0
+        },
+        {
+          "date": "2026-08-13",
+          "close": 16.81999969482422,
+          "volume": 107028.0
+        },
+        {
+          "date": "2026-08-14",
+          "close": 16.600000381469727,
+          "volume": 81348.0
+        },
+        {
+          "date": "2026-08-17",
+          "close": 16.8700008392334,
+          "volume": 110032.0
+        },
+        {
+          "date": "2026-08-18",
+          "close": 17.469999313354492,
+          "volume": 161749.0
+        },
+        {
+          "date": "2026-08-19",
+          "close": 17.549999237060547,
+          "volume": 102926.0
+        },
+        {
+          "date": "2026-08-20",
+          "close": 17.520000457763672,
+          "volume": 171438.0
+        },
+        {
+          "date": "2026-08-21",
+          "close": 17.610000610351562,
+          "volume": 119548.0
+        },
+        {
+          "date": "2026-08-24",
+          "close": 17.649999618530273,
+          "volume": 91649.0
+        },
+        {
+          "date": "2026-08-25",
+          "close": 17.270000457763672,
+          "volume": 74823.0
+        },
+        {
+          "date": "2026-08-26",
+          "close": 17.59000015258789,
+          "volume": 86412.0
+        },
+        {
+          "date": "2026-08-27",
+          "close": 18.190000534057617,
+          "volume": 116988.0
+        },
+        {
+          "date": "2026-08-28",
+          "close": 17.559999465942383,
+          "volume": 112016.0
+        },
+        {
+          "date": "2026-08-31",
+          "close": 17.809999465942383,
+          "volume": 59018.0
+        },
+        {
+          "date": "2026-09-01",
+          "close": 18.360000610351562,
+          "volume": 107623.0
+        },
+        {
+          "date": "2026-09-02",
+          "close": 18.700000762939453,
+          "volume": 125318.0
+        },
+        {
+          "date": "2026-09-03",
+          "close": 18.06999969482422,
+          "volume": 166008.0
+        },
+        {
+          "date": "2026-09-04",
+          "close": 18.06999969482422,
+          "volume": 103928.0
+        },
+        {
+          "date": "2026-09-08",
+          "close": 18.100000381469727,
+          "volume": 133711.0
+        },
+        {
+          "date": "2026-09-09",
+          "close": 18.399999618530273,
+          "volume": 159829.0
+        },
+        {
+          "date": "2026-09-10",
+          "close": 18.729999542236328,
+          "volume": 151202.0
+        },
+        {
+          "date": "2026-09-11",
+          "close": 18.149999618530273,
+          "volume": 178353.0
+        },
+        {
+          "date": "2026-09-14",
+          "close": 18.15999984741211,
+          "volume": 125983.0
+        },
+        {
+          "date": "2026-09-15",
+          "close": 17.940000534057617,
+          "volume": 94810.0
+        },
+        {
+          "date": "2026-09-16",
+          "close": 17.969999313354492,
+          "volume": 82652.0
+        },
+        {
+          "date": "2026-09-17",
+          "close": 17.420000076293945,
+          "volume": 42798.0
+        },
+        {
+          "date": "2026-09-18",
+          "close": 17.360000610351562,
+          "volume": 31761.0
+        },
+        {
+          "date": "2026-09-21",
+          "close": 17.479999542236328,
+          "volume": 29428.0
+        },
+        {
+          "date": "2026-09-22",
+          "close": 17.59000015258789,
+          "volume": 33469.0
+        },
+        {
+          "date": "2026-09-23",
+          "close": 17.75,
+          "volume": 51040.0
+        },
+        {
+          "date": "2026-09-24",
+          "close": 17.579999923706055,
+          "volume": 30436.0
+        },
+        {
+          "date": "2026-09-25",
+          "close": 17.5,
+          "volume": 32204.0
+        },
+        {
+          "date": "2026-09-28",
+          "close": 17.459999084472656,
+          "volume": 36033.0
+        },
+        {
+          "date": "2026-09-29",
+          "close": 17.81999969482422,
+          "volume": 15887.0
+        },
+        {
+          "date": "2026-09-30",
+          "close": 17.6299991607666,
+          "volume": 69890.0
+        },
+        {
+          "date": "2026-10-01",
+          "close": 18.940000534057617,
+          "volume": 63244.0
+        },
+        {
+          "date": "2026-10-02",
+          "close": 19.93000030517578,
+          "volume": 131581.0
+        },
+        {
+          "date": "2026-10-05",
+          "close": 20.729999542236328,
+          "volume": 131581.0
+        },
+        {
+          "date": "2026-10-06",
+          "close": 20.8700008392334,
+          "volume": 0.0
+        }
+      ],
+      "change_1d": 0.6753560062161323,
+      "change_20d": 15.30386960985659,
+      "change_60d": 41.49153111344677,
+      "volatility_20d": 39.33853774592517,
+      "range_percentile": 100.0,
+      "range_low": 13.3100004196167,
+      "range_high": 20.8700008392334
     },
     {
       "symbol": "CT=F",
@@ -96001,7 +97283,7 @@
       "market": "ICE",
       "unit": "美元/吨",
       "price": 5762.0,
-      "volume": 14098.0,
+      "volume": 0.0,
       "as_of": "2026-10-06",
       "source": "Yahoo Finance公开日线",
       "source_type": "公开行情",
@@ -97265,7 +98547,7 @@
         {
           "date": "2026-10-06",
           "close": 5762.0,
-          "volume": 14098.0
+          "volume": 0.0
         }
       ],
       "change_1d": -1.789671041418106,
@@ -98477,7 +99759,7 @@
         {
           "date": "2026-09-16",
           "close": 218.4499969482422,
-          "volume": 23418.0
+          "volume": 13896.0
         },
         {
           "date": "2026-09-17",
@@ -103343,21 +104625,21 @@
       "region": "美国",
       "segment": "大盘",
       "issuer": "iShares",
-      "as_of": "2026-10-05",
-      "nav": 777.97,
-      "shares_outstanding": 1152900000,
-      "shares_change": 3500000.0,
-      "shares_change_pct": 0.3045066991473812,
-      "estimated_flow": 2722895000.0,
-      "flow_5d": 2569163500.0,
-      "flow_20d": 21730422500.0,
-      "aum": 896921613000.0,
-      "flow_intensity": 0.3035822707953855,
+      "as_of": "2026-10-06",
+      "nav": 782.52,
+      "shares_outstanding": 1149650000,
+      "shares_change": -3250000.0,
+      "shares_change_pct": -0.28189782288142945,
+      "estimated_flow": -2543190000.0,
+      "flow_5d": -281018500.0,
+      "flow_20d": 25651284500.0,
+      "aum": 899624118000.0,
+      "flow_intensity": -0.28269473317966337,
       "method": "发行商流通份额变化 × 当日NAV",
       "source": "基金发行商官网",
       "data_status": "online",
       "quality_status": "可计算",
-      "history_observations": 22,
+      "history_observations": 23,
       "url": "https://www.ishares.com/us/products/239726/ishares-core-sp-500-etf",
       "history": [
         {
@@ -103469,6 +104751,11 @@
           "date": "2026-10-05",
           "nav": 777.97,
           "shares_outstanding": 1152900000
+        },
+        {
+          "date": "2026-10-06",
+          "nav": 782.52,
+          "shares_outstanding": 1149650000
         }
       ]
     },
@@ -103479,21 +104766,21 @@
       "region": "美国",
       "segment": "小盘",
       "issuer": "iShares",
-      "as_of": "2026-10-05",
-      "nav": 282.89,
-      "shares_outstanding": 280150000,
-      "shares_change": -600000.0,
-      "shares_change_pct": -0.21371326803205698,
-      "estimated_flow": -169734000.0,
-      "flow_5d": 853829500.0,
-      "flow_20d": 2307553500.0,
-      "aum": 79251633500.0,
-      "flow_intensity": -0.21417097983223274,
+      "as_of": "2026-10-06",
+      "nav": 281.24,
+      "shares_outstanding": 279350000,
+      "shares_change": -800000.0,
+      "shares_change_pct": -0.28556130644297695,
+      "estimated_flow": -224992000.0,
+      "flow_5d": 252390000.0,
+      "flow_20d": 2185643500.0,
+      "aum": 78564394000.0,
+      "flow_intensity": -0.2863790943261142,
       "method": "发行商流通份额变化 × 当日NAV",
       "source": "基金发行商官网",
       "data_status": "online",
       "quality_status": "可计算",
-      "history_observations": 22,
+      "history_observations": 23,
       "url": "https://www.ishares.com/us/products/239710/ishares-russell-2000-etf",
       "history": [
         {
@@ -103605,6 +104892,11 @@
           "date": "2026-10-05",
           "nav": 282.89,
           "shares_outstanding": 280150000
+        },
+        {
+          "date": "2026-10-06",
+          "nav": 281.24,
+          "shares_outstanding": 279350000
         }
       ]
     },
@@ -104295,21 +105587,21 @@
       "region": "美国",
       "segment": "综合债",
       "issuer": "iShares",
-      "as_of": "2026-10-05",
-      "nav": 94.09,
-      "shares_outstanding": 1442900000,
-      "shares_change": 1600000.0,
-      "shares_change_pct": 0.11101089294387012,
-      "estimated_flow": 150544000.0,
-      "flow_5d": 687944000.0,
-      "flow_20d": 1605514000.0,
-      "aum": 135762461000.0,
-      "flow_intensity": 0.11088779541201746,
+      "as_of": "2026-10-06",
+      "nav": 94.29,
+      "shares_outstanding": 1444100000,
+      "shares_change": 1200000.0,
+      "shares_change_pct": 0.0831658465590131,
+      "estimated_flow": 113148000.00000001,
+      "flow_5d": 801092000.0,
+      "flow_20d": 1621752000.0,
+      "aum": 136164189000.00002,
+      "flow_intensity": 0.08309673845301573,
       "method": "发行商流通份额变化 × 当日NAV",
       "source": "基金发行商官网",
       "data_status": "online",
       "quality_status": "可计算",
-      "history_observations": 22,
+      "history_observations": 23,
       "url": "https://www.ishares.com/us/products/239458/ishares-core-total-us-bond-market-etf",
       "history": [
         {
@@ -104421,6 +105713,11 @@
           "date": "2026-10-05",
           "nav": 94.09,
           "shares_outstanding": 1442900000
+        },
+        {
+          "date": "2026-10-06",
+          "nav": 94.29,
+          "shares_outstanding": 1444100000
         }
       ]
     },
@@ -104431,21 +105728,21 @@
       "region": "美国",
       "segment": "高收益债",
       "issuer": "iShares",
-      "as_of": "2026-10-05",
-      "nav": 76.81,
-      "shares_outstanding": 234300000,
-      "shares_change": 2000000.0,
-      "shares_change_pct": 0.8609556607834696,
-      "estimated_flow": 153620000.0,
-      "flow_5d": 2131442000.0,
-      "flow_20d": 3070347000.0,
-      "aum": 17996583000.0,
-      "flow_intensity": 0.8536064874093043,
+      "as_of": "2026-10-06",
+      "nav": 77.15,
+      "shares_outstanding": 236500000,
+      "shares_change": 2200000.0,
+      "shares_change_pct": 0.9389671361502347,
+      "estimated_flow": 169730000.0,
+      "flow_5d": 1714452000.0,
+      "flow_20d": 3263813000.0,
+      "aum": 18245975000.0,
+      "flow_intensity": 0.9302325581395349,
       "method": "发行商流通份额变化 × 当日NAV",
       "source": "基金发行商官网",
       "data_status": "online",
       "quality_status": "可计算",
-      "history_observations": 22,
+      "history_observations": 23,
       "url": "https://www.ishares.com/us/products/239565/ishares-iboxx-high-yield-corporate-bond-etf",
       "history": [
         {
@@ -104557,6 +105854,11 @@
           "date": "2026-10-05",
           "nav": 76.81,
           "shares_outstanding": 234300000
+        },
+        {
+          "date": "2026-10-06",
+          "nav": 77.15,
+          "shares_outstanding": 236500000
         }
       ]
     },
@@ -104567,21 +105869,21 @@
       "region": "新兴市场",
       "segment": "主权债",
       "issuer": "iShares",
-      "as_of": "2026-10-05",
-      "nav": 90.09,
+      "as_of": "2026-10-06",
+      "nav": 90.78,
       "shares_outstanding": 140900000,
-      "shares_change": 300000.0,
-      "shares_change_pct": 0.21337126600284498,
-      "estimated_flow": 27027000.0,
-      "flow_5d": -26065000.0,
+      "shares_change": 0.0,
+      "shares_change_pct": 0.0,
+      "estimated_flow": 0.0,
+      "flow_5d": -99089000.0,
       "flow_20d": -1118625000.0,
-      "aum": 12693681000.0,
-      "flow_intensity": 0.21291696238466998,
+      "aum": 12790902000.0,
+      "flow_intensity": 0.0,
       "method": "发行商流通份额变化 × 当日NAV",
       "source": "基金发行商官网",
       "data_status": "online",
       "quality_status": "可计算",
-      "history_observations": 22,
+      "history_observations": 23,
       "url": "https://www.ishares.com/us/products/239572/ishares-jp-morgan-usd-emerging-markets-bond-etf",
       "history": [
         {
@@ -104693,6 +105995,11 @@
           "date": "2026-10-05",
           "nav": 90.09,
           "shares_outstanding": 140900000
+        },
+        {
+          "date": "2026-10-06",
+          "nav": 90.78,
+          "shares_outstanding": 140900000
         }
       ]
     },
@@ -104703,21 +106010,21 @@
       "region": "全球",
       "segment": "贵金属",
       "issuer": "iShares",
-      "as_of": "2026-10-05",
-      "nav": 55.82,
-      "shares_outstanding": 546300000,
-      "shares_change": 0.0,
-      "shares_change_pct": 0.0,
-      "estimated_flow": 0.0,
-      "flow_5d": -24550500.0,
-      "flow_20d": 36950500.0,
-      "aum": 30494466000.0,
-      "flow_intensity": 0.0,
+      "as_of": "2026-10-06",
+      "nav": 55.08,
+      "shares_outstanding": 545800000,
+      "shares_change": -500000.0,
+      "shares_change_pct": -0.09152480322167307,
+      "estimated_flow": -27540000.0,
+      "flow_5d": -112557500.0,
+      "flow_20d": 9410500.0,
+      "aum": 30062664000.0,
+      "flow_intensity": -0.09160864785635764,
       "method": "发行商流通份额变化 × 当日NAV",
       "source": "基金发行商官网",
       "data_status": "online",
       "quality_status": "可计算",
-      "history_observations": 22,
+      "history_observations": 23,
       "url": "https://www.ishares.com/us/products/239855/ishares-silver-trust-fund",
       "history": [
         {
@@ -104829,6 +106136,11 @@
           "date": "2026-10-05",
           "nav": 55.82,
           "shares_outstanding": 546300000
+        },
+        {
+          "date": "2026-10-06",
+          "nav": 55.08,
+          "shares_outstanding": 545800000
         }
       ]
     }
@@ -105165,7 +106477,7 @@
       "focus": "旗舰推理、Agent与复杂研究",
       "url": "https://platform.openai.com/pricing",
       "price_status": "官方基准",
-      "verified_at": "2026-10-06T18:32:09Z"
+      "verified_at": "2026-10-06T23:56:07Z"
     },
     {
       "provider": "OpenAI",
@@ -105177,7 +106489,7 @@
       "focus": "通用知识工作与投研自动化",
       "url": "https://platform.openai.com/pricing",
       "price_status": "官方基准",
-      "verified_at": "2026-10-06T18:32:09Z"
+      "verified_at": "2026-10-06T23:56:07Z"
     },
     {
       "provider": "OpenAI",
@@ -105189,7 +106501,7 @@
       "focus": "高频摘要、分类与批量处理",
       "url": "https://platform.openai.com/pricing",
       "price_status": "官方基准",
-      "verified_at": "2026-10-06T18:32:09Z"
+      "verified_at": "2026-10-06T23:56:07Z"
     },
     {
       "provider": "Anthropic",
@@ -105201,7 +106513,7 @@
       "focus": "高难度研究与长文档",
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-06T18:33:39Z"
+      "verified_at": "2026-10-06T23:56:08Z"
     },
     {
       "provider": "Anthropic",
@@ -105213,7 +106525,7 @@
       "focus": "复杂推理、多Agent与专业研究",
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-06T18:33:39Z"
+      "verified_at": "2026-10-06T23:56:08Z"
     },
     {
       "provider": "Anthropic",
@@ -105225,7 +106537,7 @@
       "focus": "代码、知识工作与长上下文",
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-06T18:33:39Z"
+      "verified_at": "2026-10-06T23:56:08Z"
     },
     {
       "provider": "Anthropic",
@@ -105237,7 +106549,7 @@
       "focus": "低延迟与高吞吐任务",
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-06T18:33:39Z"
+      "verified_at": "2026-10-06T23:56:08Z"
     },
     {
       "provider": "Google",
@@ -105249,7 +106561,7 @@
       "focus": "多模态、Agent与代码",
       "url": "https://ai.google.dev/gemini-api/docs/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-06T18:33:40Z"
+      "verified_at": "2026-10-06T23:56:08Z"
     },
     {
       "provider": "Google",
@@ -105261,7 +106573,7 @@
       "focus": "高质量快速推理与搜索增强",
       "url": "https://ai.google.dev/gemini-api/docs/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-06T18:33:40Z"
+      "verified_at": "2026-10-06T23:56:08Z"
     },
     {
       "provider": "Google",
@@ -105273,7 +106585,7 @@
       "focus": "翻译、数据处理与大规模调用",
       "url": "https://ai.google.dev/gemini-api/docs/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-06T18:33:40Z"
+      "verified_at": "2026-10-06T23:56:08Z"
     },
     {
       "provider": "xAI",
@@ -105285,7 +106597,7 @@
       "focus": "实时信息、代码与Agent",
       "url": "https://docs.x.ai/developers/grok-4-6",
       "price_status": "官方实时",
-      "verified_at": "2026-10-06T18:33:40Z"
+      "verified_at": "2026-10-06T23:56:09Z"
     },
     {
       "provider": "xAI",
@@ -105309,7 +106621,7 @@
       "focus": "旗舰多语言与企业任务",
       "url": "https://docs.mistral.ai/inference/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-06T18:33:41Z"
+      "verified_at": "2026-10-06T23:56:09Z"
     },
     {
       "provider": "Mistral",
@@ -105321,7 +106633,7 @@
       "focus": "多模态、代码与Agent",
       "url": "https://docs.mistral.ai/inference/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-06T18:33:41Z"
+      "verified_at": "2026-10-06T23:56:09Z"
     },
     {
       "provider": "Mistral",
@@ -105333,7 +106645,7 @@
       "focus": "低成本生产任务",
       "url": "https://docs.mistral.ai/inference/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-06T18:33:41Z"
+      "verified_at": "2026-10-06T23:56:09Z"
     },
     {
       "provider": "DeepSeek",
@@ -105378,128 +106690,128 @@
       "group": "GPU / HBM",
       "constituents": "NVDA · AMD · MU · AVGO",
       "leaders": "AVGO · AMD · NVDA",
-      "change": 2.036,
+      "change": 1.22,
       "breadth": 75.0,
-      "relative_volume": 0.7,
+      "relative_volume": 1.03,
       "valuation_pe": 95.2,
-      "turnover_usd": 49759969122,
+      "turnover_usd": 74304882733,
       "strength": 76,
       "signal": "GPU、HBM与高速互连决定训练和推理基础设施供给",
       "sample_size": 4,
       "method": "成分股行情自动计算",
-      "as_of": "2026-10-06T18:32:09Z"
+      "as_of": "2026-10-06T23:56:07Z"
     },
     {
       "segment": "上游",
       "group": "晶圆 / 设备",
       "constituents": "TSM · ASML · AMAT · LRCX",
       "leaders": "TSM · ASML · AMAT",
-      "change": -2.15,
+      "change": -1.941,
       "breadth": 0.0,
-      "relative_volume": 0.55,
+      "relative_volume": 0.9,
       "valuation_pe": 29.8,
-      "turnover_usd": 7486301385,
+      "turnover_usd": 12147040293,
       "strength": 62,
       "signal": "先进制程扩产与设备订单反映算力资本开支兑现",
       "sample_size": 4,
       "method": "成分股行情自动计算",
-      "as_of": "2026-10-06T18:32:09Z"
+      "as_of": "2026-10-06T23:56:07Z"
     },
     {
       "segment": "中游",
       "group": "云与算力平台",
       "constituents": "MSFT · GOOGL · AMZN · ORCL",
-      "leaders": "ORCL · AMZN · MSFT",
-      "change": 1.505,
+      "leaders": "AMZN · ORCL · MSFT",
+      "change": 1.172,
       "breadth": 100.0,
-      "relative_volume": 0.45,
+      "relative_volume": 0.79,
       "valuation_pe": 20.0,
-      "turnover_usd": 16768817739,
-      "strength": 76,
+      "turnover_usd": 29297252703,
+      "strength": 77,
       "signal": "云增速、AI订单和资本开支回报率共同决定景气",
       "sample_size": 4,
       "method": "成分股行情自动计算",
-      "as_of": "2026-10-06T18:32:09Z"
+      "as_of": "2026-10-06T23:56:07Z"
     },
     {
       "segment": "中游",
       "group": "电力 / 电网",
       "constituents": "CEG · ETN · PWR",
       "leaders": "CEG · PWR · ETN",
-      "change": 6.266,
+      "change": 6.808,
       "breadth": 100.0,
-      "relative_volume": 1.4,
+      "relative_volume": 2.16,
       "valuation_pe": null,
-      "turnover_usd": 3644728107,
+      "turnover_usd": 5572302376,
       "strength": 88,
       "signal": "数据中心负荷推动电源、电网与工程投资",
       "sample_size": 3,
       "method": "成分股行情自动计算",
-      "as_of": "2026-10-06T18:32:09Z"
+      "as_of": "2026-10-06T23:56:07Z"
     },
     {
       "segment": "中游",
       "group": "液冷 / 热管理",
       "constituents": "VRT · MOD",
       "leaders": "MOD · VRT",
-      "change": 1.606,
+      "change": 1.819,
       "breadth": 50.0,
-      "relative_volume": 0.71,
+      "relative_volume": 1.03,
       "valuation_pe": null,
-      "turnover_usd": 938096040,
-      "strength": 73,
+      "turnover_usd": 1397710079,
+      "strength": 75,
       "signal": "高功率机柜提升液冷渗透率和单柜价值量",
       "sample_size": 2,
       "method": "成分股行情自动计算",
-      "as_of": "2026-10-06T18:32:09Z"
+      "as_of": "2026-10-06T23:56:07Z"
     },
     {
       "segment": "下游",
       "group": "应用 / SaaS",
       "constituents": "PLTR · CRM · NOW",
       "leaders": "PLTR · NOW · CRM",
-      "change": 0.042,
+      "change": 0.237,
       "breadth": 66.7,
-      "relative_volume": 0.41,
+      "relative_volume": 0.74,
       "valuation_pe": 150.3,
-      "turnover_usd": 3704909718,
-      "strength": 69,
+      "turnover_usd": 6335044985,
+      "strength": 72,
       "signal": "关注AI产品付费转化、席位扩张和利润兑现",
       "sample_size": 3,
       "method": "成分股行情自动计算",
-      "as_of": "2026-10-06T18:32:09Z"
+      "as_of": "2026-10-06T23:56:07Z"
     },
     {
       "segment": "下游",
       "group": "机器人",
       "constituents": "BOTZ · ISRG",
       "leaders": "BOTZ · ISRG",
-      "change": -0.14,
-      "breadth": 50.0,
-      "relative_volume": 0.44,
+      "change": -0.253,
+      "breadth": 0.0,
+      "relative_volume": 0.77,
       "valuation_pe": null,
-      "turnover_usd": 283440955,
-      "strength": 67,
+      "turnover_usd": 686293319,
+      "strength": 64,
       "signal": "订单、自动化渗透率与量产节奏决定主题持续性",
       "sample_size": 2,
       "method": "成分股行情自动计算",
-      "as_of": "2026-10-06T18:32:09Z"
+      "as_of": "2026-10-06T23:56:07Z"
     },
     {
       "segment": "材料",
       "group": "铜 / 稀土材料",
       "constituents": "FCX · SCCO · MP",
-      "leaders": "MP · SCCO · FCX",
-      "change": 1.344,
-      "breadth": 100.0,
-      "relative_volume": 0.53,
+      "leaders": "MP · FCX · SCCO",
+      "change": 1.017,
+      "breadth": 33.3,
+      "relative_volume": 0.87,
       "valuation_pe": null,
-      "turnover_usd": 663137630,
-      "strength": 76,
+      "turnover_usd": 1089639421,
+      "strength": 70,
       "signal": "电气化需求与资源供给约束共同影响材料价值",
       "sample_size": 3,
       "method": "成分股行情自动计算",
-      "as_of": "2026-10-06T18:32:09Z"
+      "as_of": "2026-10-06T23:56:07Z"
     }
   ],
   "event_calendar": [
@@ -105809,8 +107121,8 @@
     "adjustment_note": "收益率使用数据提供方复权收盘价，以纳入分红与拆分影响；所有历史信号只使用信号日及以前数据。不同提供方复权与时区口径仍可能不同，近60个共同交易日同时核验价格与日收益偏差。",
     "etf_composition_note": "Twelve Data ETF成分、国别和资产配置接口需要Ultra/Enterprise等高阶套餐，当前免费方案不调用。"
   },
-  "pricing_generated_at": "2026-10-06T18:33:43Z",
-  "generated_at": "2026-10-06T18:33:43Z",
+  "pricing_generated_at": "2026-10-06T23:56:11Z",
+  "generated_at": "2026-10-06T23:56:11Z",
   "refresh_policy": {
     "workflow_cron": "23 */4 * * *",
     "description": "GitHub Actions 每4小时尝试更新；低频宏观源即使失败也保留上一版缓存。"
@@ -105819,139 +107131,139 @@
     {
       "key": "fmp_quotes",
       "status": "online",
-      "updated_at": "2026-10-06T18:30:08Z",
-      "latency_ms": 11970
+      "updated_at": "2026-10-06T23:54:34Z",
+      "latency_ms": 11886
     },
     {
       "key": "ai_chain_quotes",
       "status": "online",
-      "updated_at": "2026-10-06T18:30:09Z",
-      "latency_ms": 986
+      "updated_at": "2026-10-06T23:54:35Z",
+      "latency_ms": 326
     },
     {
       "key": "ai_valuations",
       "status": "online",
-      "updated_at": "2026-10-06T18:30:09Z",
+      "updated_at": "2026-10-06T23:54:35Z",
       "latency_ms": 0
     },
     {
       "key": "fred_macro",
       "status": "online",
-      "updated_at": "2026-10-06T18:30:36Z",
-      "latency_ms": 26771
+      "updated_at": "2026-10-06T23:54:45Z",
+      "latency_ms": 9301
     },
     {
       "key": "eia_energy",
       "status": "online",
-      "updated_at": "2026-10-06T18:30:37Z",
-      "latency_ms": 429
+      "updated_at": "2026-10-06T23:54:45Z",
+      "latency_ms": 324
     },
     {
       "key": "market_history",
       "status": "online",
-      "updated_at": "2026-10-06T18:30:37Z",
+      "updated_at": "2026-10-06T23:54:46Z",
       "latency_ms": 0,
       "message": "主源：Twelve Data复权日线；近60日多源核验 15/15"
     },
     {
       "key": "twelve_fx",
       "status": "online",
-      "updated_at": "2026-10-06T18:30:38Z",
-      "latency_ms": 389
+      "updated_at": "2026-10-06T23:54:46Z",
+      "latency_ms": 441
     },
     {
       "key": "commodity_market",
       "status": "online",
-      "updated_at": "2026-10-06T18:30:55Z",
-      "latency_ms": 16770
+      "updated_at": "2026-10-06T23:54:59Z",
+      "latency_ms": 12883
     },
     {
       "key": "cftc_positions",
       "status": "online",
-      "updated_at": "2026-10-06T18:30:55Z",
-      "latency_ms": 61
+      "updated_at": "2026-10-06T23:55:00Z",
+      "latency_ms": 97
     },
     {
       "key": "etf_fund_flows",
       "status": "online",
-      "updated_at": "2026-10-06T18:31:10Z",
-      "latency_ms": 14250,
+      "updated_at": "2026-10-06T23:55:14Z",
+      "latency_ms": 14035,
       "message": "发行商覆盖 16/16；可计算 16/16；缓存 0"
     },
     {
       "key": "ici_weekly_flows",
       "status": "online",
-      "updated_at": "2026-10-06T18:31:12Z",
-      "latency_ms": 1853
+      "updated_at": "2026-10-06T23:55:15Z",
+      "latency_ms": 384
     },
     {
       "key": "tic_cross_border_flows",
       "status": "online",
-      "updated_at": "2026-10-06T18:31:12Z",
-      "latency_ms": 250
+      "updated_at": "2026-10-06T23:55:15Z",
+      "latency_ms": 311
     },
     {
       "key": "event_calendar",
       "status": "online",
-      "updated_at": "2026-10-06T18:31:13Z",
-      "latency_ms": 981
+      "updated_at": "2026-10-06T23:55:16Z",
+      "latency_ms": 758
     },
     {
       "key": "gdelt_news",
       "status": "cached",
-      "updated_at": "2026-10-06T11:24:14Z",
+      "updated_at": "2026-10-06T18:33:43Z",
       "message": "ValueError"
     },
     {
       "key": "alpha_news",
       "status": "cached",
-      "updated_at": "2026-10-06T11:24:14Z",
+      "updated_at": "2026-10-06T18:33:43Z",
       "message": "ValueError"
     },
     {
       "key": "news_summary_zh",
       "status": "local",
-      "updated_at": "2026-10-06T18:32:09Z",
+      "updated_at": "2026-10-06T23:56:07Z",
       "message": "本地规则摘要 18 条；无需外部模型API"
     },
     {
       "key": "model_pricing_openai",
       "status": "baseline",
-      "updated_at": "2026-10-06T18:32:09Z",
+      "updated_at": "2026-10-06T23:56:07Z",
       "message": "官方基准价；官方页拒绝自动抓取"
     },
     {
       "key": "model_pricing_anthropic",
       "status": "online",
-      "updated_at": "2026-10-06T18:33:39Z",
-      "latency_ms": 89867,
+      "updated_at": "2026-10-06T23:56:08Z",
+      "latency_ms": 513,
       "message": "parsed 4"
     },
     {
       "key": "model_pricing_google",
       "status": "online",
-      "updated_at": "2026-10-06T18:33:40Z",
-      "latency_ms": 467,
+      "updated_at": "2026-10-06T23:56:08Z",
+      "latency_ms": 570,
       "message": "parsed 3"
     },
     {
       "key": "model_pricing_xai",
       "status": "online",
-      "updated_at": "2026-10-06T18:33:40Z",
-      "latency_ms": 264,
+      "updated_at": "2026-10-06T23:56:09Z",
+      "latency_ms": 329,
       "message": "parsed 1"
     },
     {
       "key": "model_pricing_mistral",
       "status": "online",
-      "updated_at": "2026-10-06T18:33:41Z",
-      "latency_ms": 492,
+      "updated_at": "2026-10-06T23:56:09Z",
+      "latency_ms": 257,
       "message": "parsed 3"
     },
     {
       "key": "model_pricing_deepseek",
       "status": "cached",
-      "updated_at": "2026-10-06T18:33:42Z",
+      "updated_at": "2026-10-06T23:56:11Z",
       "message": "ValueError"
     }
   ]
