@@ -501,7 +501,38 @@ def parse_yahoo_history(payload: Any) -> list[dict[str, Any]]:
     return points[-1260:]
 
 
+def _history_validation_window(
+    primary: list[dict[str, Any]],
+    validator: list[dict[str, Any]],
+    window: int = 60,
+) -> dict[str, Any]:
+    """Compare adjusted closes on common dates instead of trusting one endpoint."""
+    primary_map = {str(item.get("date")): as_float(item.get("close")) for item in primary}
+    validator_map = {str(item.get("date")): as_float(item.get("close")) for item in validator}
+    dates = sorted(
+        date for date in primary_map.keys() & validator_map.keys()
+        if primary_map[date] not in (None, 0) and validator_map[date] not in (None, 0)
+    )[-window:]
+    deviations = [abs(float(primary_map[date]) / float(validator_map[date]) - 1) * 100 for date in dates]
+    if not deviations:
+        return {
+            "common_points": 0, "start_date": "", "end_date": "",
+            "mean_deviation_pct": None, "max_deviation_pct": None,
+            "latest_deviation_pct": None, "status": "insufficient",
+        }
+    mean_deviation = sum(deviations) / len(deviations)
+    max_deviation = max(deviations)
+    status = "pass" if len(dates) >= 20 and mean_deviation <= 0.5 and max_deviation <= 2 else "review"
+    return {
+        "common_points": len(dates), "start_date": dates[0], "end_date": dates[-1],
+        "mean_deviation_pct": round(mean_deviation, 4),
+        "max_deviation_pct": round(max_deviation, 4),
+        "latest_deviation_pct": round(deviations[-1], 4), "status": status,
+    }
+
+
 def _latest_common_deviation(left: list[dict[str, Any]], right: list[dict[str, Any]]) -> tuple[float | None, str]:
+    """Compatibility helper retained for parser tests and downstream callers."""
     right_map = {item["date"]: item["close"] for item in right}
     for item in reversed(left):
         peer = right_map.get(item["date"])
@@ -514,7 +545,11 @@ def fetch_market_history(previous_rows: list[dict[str, Any]] | None = None) -> l
     """Build ETF history from two metered sources with Yahoo as a per-symbol fallback."""
     today = datetime.now(timezone.utc).date().isoformat()
     previous_map = {str(item.get("symbol")): item for item in (previous_rows or [])}
-    if len(previous_map) >= len(MARKET_HISTORY_SPECS) and all(item.get("refresh_date") == today for item in previous_map.values()):
+    if (
+        os.environ.get("FORCE_HISTORY_REFRESH") not in {"1", "validators"}
+        and len(previous_map) >= len(MARKET_HISTORY_SPECS)
+        and all(item.get("refresh_date") == today for item in previous_map.values())
+    ):
         return [previous_map[symbol] for symbol, _label, _name in MARKET_HISTORY_SPECS if symbol in previous_map]
 
     symbols = [item[0] for item in MARKET_HISTORY_SPECS]
@@ -523,12 +558,18 @@ def fetch_market_history(previous_rows: list[dict[str, Any]] | None = None) -> l
     twelve_key = local_key("TWELVE_DATA_API_KEY")
 
     twelve_rows: dict[str, list[dict[str, Any]]] = {}
-    if twelve_key:
+    validation_only = os.environ.get("FORCE_HISTORY_REFRESH") == "validators"
+    if validation_only:
+        for symbol, row in previous_map.items():
+            points = row.get("points") or []
+            if str(row.get("source", "")).startswith("Twelve Data") and len(points) >= 20:
+                twelve_rows[symbol] = points
+    elif twelve_key:
         for offset in range(0, len(symbols), 3):
             batch = symbols[offset:offset + 3]
             url = "https://api.twelvedata.com/time_series?" + urlencode({
                 "symbol": ",".join(batch), "interval": "1day", "outputsize": 1260,
-                "order": "ASC", "adjustment": "all", "apikey": twelve_key,
+                "order": "ASC", "adjust": "all", "apikey": twelve_key,
             })
             try:
                 payload = get_json(url, timeout=90)
@@ -553,11 +594,14 @@ def fetch_market_history(previous_rows: list[dict[str, Any]] | None = None) -> l
             except (HTTPError, URLError, TimeoutError, OSError, ValueError, KeyError, TypeError):
                 fmp_points = []
         if len(fmp_points) < 20 or len(twelve_rows.get(symbol, [])) < 20:
-            url = f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?range=5y&interval=1d&events=history"
-            try:
-                yahoo_points = parse_yahoo_history(get_json(url, timeout=35))
-            except (HTTPError, URLError, TimeoutError, OSError, ValueError, KeyError, TypeError):
-                yahoo_points = []
+            for host in ("query1.finance.yahoo.com", "query2.finance.yahoo.com"):
+                url = f"https://{host}/v8/finance/chart/{symbol}?range=5y&interval=1d&events=history"
+                try:
+                    yahoo_points = parse_yahoo_history(json.loads(get_text(url, timeout=35)))
+                    if len(yahoo_points) >= 20:
+                        break
+                except (HTTPError, URLError, TimeoutError, OSError, ValueError, KeyError, TypeError, json.JSONDecodeError):
+                    yahoo_points = []
         return symbol, fmp_points, yahoo_points
 
     provider_rows: dict[str, dict[str, list[dict[str, Any]]]] = {symbol: {} for symbol in symbols}
@@ -594,21 +638,25 @@ def fetch_market_history(previous_rows: list[dict[str, Any]] | None = None) -> l
         for provider, candidate in providers.items():
             if provider == primary:
                 continue
-            deviation, common_date = _latest_common_deviation(points, candidate)
-            if deviation is not None:
-                checks.append({"source": provider, "deviation_pct": round(deviation, 4), "common_date": common_date})
-        max_deviation = max((item["deviation_pct"] for item in checks), default=None)
-        validation_status = "通过" if max_deviation is not None and max_deviation <= 1 else "关注" if max_deviation is not None else "单源"
+            check = _history_validation_window(points, candidate, 60)
+            if check["common_points"]:
+                checks.append({"source": provider, **check})
+        passed = [item for item in checks if item["status"] == "pass"]
+        validation_status = "通过" if passed else "关注" if checks else "单源"
         validation_names = "、".join(item["source"] for item in checks) or "暂无第二来源"
         note = f"{primary}为计算主序列；{validation_names}交叉验证"
-        if max_deviation is not None:
-            note += f"，最新共同收盘最大偏差{max_deviation:.2f}%"
+        if checks:
+            strongest = max(checks, key=lambda item: item["common_points"])
+            note += (
+                f"，近{strongest['common_points']}个共同交易日均值偏差"
+                f"{strongest['mean_deviation_pct']:.2f}%、最大偏差{strongest['max_deviation_pct']:.2f}%"
+            )
         output.append({
             "symbol": symbol, "label": label, "name": name, "points": points,
             "source": primary, "url": provider_urls[primary], "refresh_date": today,
             "source_count": len(providers), "source_chain": list(providers),
             "validation_status": validation_status, "validation_checks": checks,
-            "source_note": note, "data_status": "online",
+            "validation_window": 60, "source_note": note, "data_status": "online",
         })
     if len(output) < 6:
         raise ValueError("insufficient market history")
@@ -1235,6 +1283,7 @@ def fetch_etf_fund_flows(previous_rows: list[dict[str, Any]] | None = None) -> l
                 cached = dict(previous)
                 cached.update({key: source[key] for key in ("asset", "asset_class", "region", "segment", "issuer")})
                 cached["data_status"] = "cached"
+                cached["quality_status"] = "缓存沿用"
                 output.append(cached)
             continue
         history = list(previous.get("history") or [])
@@ -1302,6 +1351,8 @@ def fetch_etf_fund_flows(previous_rows: list[dict[str, Any]] | None = None) -> l
             "method": "发行商流通份额变化 × 当日NAV",
             "source": "基金发行商官网",
             "data_status": "online",
+            "quality_status": "可计算" if estimated_flow is not None else "建立跨日基线",
+            "history_observations": len(history),
             "url": source["url"],
             "history": history,
         })
@@ -1309,6 +1360,61 @@ def fetch_etf_fund_flows(previous_rows: list[dict[str, Any]] | None = None) -> l
     if len(output) < 5:
         raise ValueError("insufficient official ETF fund data")
     return output
+
+
+def build_source_audit(payload: dict[str, Any]) -> dict[str, Any]:
+    history = payload.get("market_history") or []
+    flows = payload.get("etf_fund_flows") or []
+    today = datetime.now(timezone.utc).date()
+
+    def age_days(value: str) -> int | None:
+        try:
+            return (today - datetime.fromisoformat(str(value)[:10]).date()).days
+        except (TypeError, ValueError):
+            return None
+
+    history_available = len(history)
+    history_verified = sum(
+        item.get("validation_status") == "通过"
+        and any(int(check.get("common_points") or 0) >= 20 for check in item.get("validation_checks") or [])
+        for item in history
+    )
+    history_cached = sum(item.get("data_status") == "cached" for item in history)
+    history_stale = sum(
+        (age_days((item.get("points") or [{}])[-1].get("date", "")) or 0) > 5
+        for item in history if item.get("points")
+    )
+    flow_calculable = sum(item.get("estimated_flow") is not None for item in flows)
+    flow_cached = sum(item.get("data_status") == "cached" for item in flows)
+    flow_stale = sum((age_days(str(item.get("as_of") or "")) or 0) > 7 for item in flows)
+    warnings = []
+    if history_available < len(MARKET_HISTORY_SPECS):
+        warnings.append("跨资产历史行情覆盖不完整")
+    if history_verified < history_available:
+        warnings.append("部分历史序列未通过20点以上的多日交叉核验")
+    if history_cached or history_stale:
+        warnings.append("部分历史行情使用缓存或已超过新鲜度阈值")
+    if flow_calculable < len(flows):
+        warnings.append("部分ETF仍在建立跨披露日份额基线，暂不能计算最新净申赎")
+    if flow_cached or flow_stale:
+        warnings.append("部分ETF发行商数据使用缓存或披露日期偏旧")
+    return {
+        "history_expected": len(MARKET_HISTORY_SPECS),
+        "history_available": history_available,
+        "history_coverage_pct": round(history_available / max(1, len(MARKET_HISTORY_SPECS)) * 100, 1),
+        "history_window_verified": history_verified,
+        "history_cached": history_cached,
+        "history_stale": history_stale,
+        "history_validation_window": 60,
+        "flow_expected": len(ETF_FUND_SOURCES),
+        "flow_available": len(flows),
+        "flow_calculable": flow_calculable,
+        "flow_cached": flow_cached,
+        "flow_stale": flow_stale,
+        "warnings": warnings,
+        "survivorship_note": "历史模型使用当前仍存续的代表性ETF，不是包含退市标的的全历史证券库。",
+        "etf_composition_note": "Twelve Data ETF成分、国别和资产配置接口需要Ultra/Enterprise等高阶套餐，当前免费方案不调用。",
+    }
 
 
 def fetch_ici_weekly_flows() -> list[dict[str, Any]]:
@@ -1526,6 +1632,7 @@ def fallback_payload(previous: dict[str, Any]) -> dict[str, Any]:
         "ai_chain_metrics": previous.get("ai_chain_metrics", []),
         "event_calendar": previous.get("event_calendar", []),
         "score_backtest": previous.get("score_backtest", []),
+        "source_audit": previous.get("source_audit", {}),
     }
 
 
@@ -1542,6 +1649,21 @@ def main() -> int:
     previous = read_previous()
     payload = fallback_payload(previous)
     statuses = []
+
+    if "--history-validation-only" in sys.argv:
+        payload.update(previous)
+        payload["market_history"] = fetch_market_history(previous.get("market_history", []))
+        payload["source_audit"] = build_source_audit(payload)
+        old_statuses = [item for item in previous.get("source_status", []) if item.get("key") != "market_history"]
+        verified = sum(item.get("validation_status") == "通过" for item in payload["market_history"])
+        payload["source_status"] = old_statuses + [{
+            "key": "market_history", "status": "online", "updated_at": now_iso(),
+            "message": f"Twelve Data主源；近60日多源核验 {verified}/{len(payload['market_history'])}",
+        }]
+        payload["generated_at"] = now_iso()
+        write_payload(payload)
+        print(f"validated market history: {verified}/{len(payload['market_history'])}")
+        return 0
 
     if "--pricing-only" in sys.argv:
         pricing, pricing_statuses = fetch_ai_model_pricing(previous.get("ai_model_pricing", []))
@@ -1575,8 +1697,12 @@ def main() -> int:
         payload[key] = data
         if key == "market_history" and isinstance(data, list):
             primary_sources = sorted({str(item.get("source")) for item in data if item.get("source")})
-            verified = sum(int(item.get("source_count") or 0) >= 2 for item in data)
-            status["message"] = f"主源：{' / '.join(primary_sources)}；双源验证 {verified}/{len(data)}"
+            verified = sum(item.get("validation_status") == "通过" for item in data)
+            status["message"] = f"主源：{' / '.join(primary_sources)}；近60日多源核验 {verified}/{len(data)}"
+        if key == "etf_fund_flows" and isinstance(data, list):
+            calculable = sum(item.get("estimated_flow") is not None for item in data)
+            cached = sum(item.get("data_status") == "cached" for item in data)
+            status["message"] = f"发行商覆盖 {len(data)}/{len(ETF_FUND_SOURCES)}；可计算 {calculable}/{len(data)}；缓存 {cached}"
         statuses.append(status)
         time.sleep(0.25)
 
@@ -1604,6 +1730,7 @@ def main() -> int:
         "workflow_cron": "23 */4 * * *",
         "description": "GitHub Actions 每4小时尝试更新；低频宏观源即使失败也保留上一版缓存。",
     }
+    payload["source_audit"] = build_source_audit(payload)
     payload["source_status"] = statuses
 
     write_payload(payload)

@@ -85,6 +85,34 @@ class PublicMarketDataTests(unittest.TestCase):
         self.assertEqual(date, "2026-10-02")
         self.assertAlmostEqual(deviation, abs(102 / 101.9 - 1) * 100)
 
+    def test_cross_source_validation_uses_common_window(self):
+        primary = [{"date": f"2026-09-{index + 1:02d}", "close": 100 + index} for index in range(25)]
+        validator = [{"date": item["date"], "close": item["close"] * 1.001} for item in primary]
+        result = fetch_data._history_validation_window(primary, validator, 60)
+        self.assertEqual(result["common_points"], 25)
+        self.assertEqual(result["status"], "pass")
+        self.assertLess(result["mean_deviation_pct"], 0.2)
+
+    def test_source_audit_reports_coverage_and_flow_baselines(self):
+        history = []
+        for symbol, label, name in fetch_data.MARKET_HISTORY_SPECS:
+            history.append({
+                "symbol": symbol, "label": label, "name": name,
+                "points": [{"date": "2026-10-02", "close": 100}],
+                "validation_status": "通过",
+                "validation_checks": [{"common_points": 60}],
+                "data_status": "online",
+            })
+        flows = [
+            {"symbol": "SPY", "as_of": "2026-10-02", "estimated_flow": 1, "data_status": "online"},
+            {"symbol": "GLD", "as_of": "2026-10-02", "estimated_flow": None, "data_status": "online"},
+        ]
+        result = fetch_data.build_source_audit({"market_history": history, "etf_fund_flows": flows})
+        self.assertEqual(result["history_coverage_pct"], 100)
+        self.assertEqual(result["history_window_verified"], len(fetch_data.MARKET_HISTORY_SPECS))
+        self.assertEqual(result["flow_calculable"], 1)
+        self.assertTrue(any("跨披露日" in warning for warning in result["warnings"]))
+
     def test_parses_sina_continuous_futures_jsonp(self):
         text = '/*notice*/\nvar _RB0=([{"d":"2026-09-03","c":"3142.000","v":"802624"}]);'
         rows = fetch_data.parse_sina_futures_jsonp(text)

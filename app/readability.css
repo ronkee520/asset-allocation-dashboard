@@ -36,6 +36,9 @@ body::after {
 .source-provenance-grid span { margin-top: 7px; font-size: 11px; line-height: 1.5; }
 .source-provenance-grid small { margin-top: 6px; color: var(--muted); font-size: 9px; }
 .source-provenance > p { margin: 0; padding: 10px 12px; color: var(--muted); font-size: 10px; line-height: 1.55; }
+.source-audit-notes { padding: 9px 12px; color: var(--muted); font-size: 10px; line-height: 1.55; }
+.source-audit-notes p { margin: 3px 0; }
+.source-audit-notes .warning { color: #8a5a10; font-weight: 700; }
 .market-source { position: relative; display: grid; grid-template-columns: 1fr 14px; gap: 2px 5px; align-items: center; }
 .market-source strong { font-size: 10px; }
 .market-source small { grid-column: 1 / -1; color: var(--muted); font-size: 8px; line-height: 1.35; }
