@@ -87,7 +87,8 @@ body::after {
 .model-price-table .price-cell { color: var(--red); font-weight: 800; }
 .model-price-table .price-source { display: flex; align-items: center; gap: 6px; color: var(--red); }
 .official-flow-table .table-row { grid-template-columns: 1.1fr .55fr .75fr .75fr .6fr .85fr .75fr .75fr; min-width: 980px; }
-.backtest-table .table-row { grid-template-columns: .8fr .65fr .9fr .9fr 1fr 1fr .7fr; min-width: 820px; }
+.backtest-table .table-row { grid-template-columns: .8fr .62fr repeat(5, minmax(84px, .82fr)) .72fr; min-width: 980px; }
+.backtest-table .table-row > span small { display: block; margin-top: 3px; color: var(--muted); font-size: 9px; }
 .chain-table .table-row { grid-template-columns: .55fr .9fr 1.35fr .7fr .7fr .6fr .7fr .55fr; min-width: 1050px; }
 .score-method,
 .chain-method { border-bottom: 1px solid var(--line); background: #fffafa; }
@@ -280,6 +281,7 @@ body::after {
 .correlation-formula strong { display: block; color: var(--red); font: 800 18px/1.5 monospace; }
 .correlation-formula p { margin: 12px 0 0; color: var(--muted); font-size: 11px; line-height: 1.75; }
 .correlation-audit-table .table-row { grid-template-columns: 1.2fr .65fr .65fr .65fr .55fr 1fr .8fr; min-width: 980px; }
+.matrix-table td sup { margin-left: 2px; font-size: 8px; }
 .correlation-audit-table .table-row > span small { display: block; margin-top: 3px; color: var(--muted); font-size: 9px; }
 .correlation-source-grid { display: grid; grid-template-columns: repeat(2, 1fr); }
 .correlation-source-grid > a { min-height: 94px; padding: 13px 15px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); color: inherit; }
@@ -442,7 +444,7 @@ body::after {
 .portfolio-actions button { min-height: 34px; padding: 6px 11px; border: 1px solid var(--line); background: #fff; cursor: pointer; font-size: 10px; font-weight: 800; }
 .portfolio-actions button.primary { color: #fff; background: var(--red); border-color: var(--red); }
 .portfolio-actions button:disabled { cursor: not-allowed; opacity: .45; }
-.portfolio-kpis { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 1px solid var(--line); }
+.portfolio-kpis { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 1px solid var(--line); }
 .portfolio-kpis > div { min-height: 96px; padding: 14px 15px; border-right: 1px solid var(--line); }
 .portfolio-kpis span, .portfolio-kpis strong, .portfolio-kpis small { display: block; }
 .portfolio-kpis span { color: var(--muted); font-size: 10px; }

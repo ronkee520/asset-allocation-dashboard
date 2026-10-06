@@ -448,17 +448,17 @@ MARKET_HISTORY_SPECS = [
     ("ACWI", "全球股票", "MSCI全球股票 ETF"),
     ("SPY", "美股", "S&P 500 ETF"),
     ("ASHR", "A股", "沪深300 ETF"),
-    ("EWH", "港股", "香港市场 ETF"),
+    ("EWH", "港股", "MSCI香港市场 ETF"),
     ("GLD", "黄金", "黄金 ETF"),
-    ("UUP", "美元", "美元指数 ETF"),
+    ("UUP", "美元", "美元期货篮子 ETF（非现金）"),
     ("TLT", "美债", "20年期美债 ETF"),
     ("AGG", "综合债", "美国综合债券 ETF"),
     ("IEF", "中期美债", "7-10年期美债 ETF"),
     ("HYG", "高收益债", "美国高收益公司债 ETF"),
-    ("DBC", "综合商品", "综合商品 ETF"),
+    ("DBC", "综合商品", "能源、金属与农产品商品篮子 ETF"),
     ("CPER", "铜", "铜期货 ETF"),
     ("USO", "原油", "原油 ETF"),
-    ("BOTZ", "AI", "机器人与AI ETF"),
+    ("BOTZ", "AI", "机器人与自动化主题 ETF"),
     ("SOXX", "半导体", "美国半导体 ETF"),
 ]
 
@@ -506,7 +506,7 @@ def _history_validation_window(
     validator: list[dict[str, Any]],
     window: int = 60,
 ) -> dict[str, Any]:
-    """Compare adjusted closes on common dates instead of trusting one endpoint."""
+    """Compare both adjusted-price levels and same-date returns across providers."""
     primary_map = {str(item.get("date")): as_float(item.get("close")) for item in primary}
     validator_map = {str(item.get("date")): as_float(item.get("close")) for item in validator}
     dates = sorted(
@@ -514,20 +514,37 @@ def _history_validation_window(
         if primary_map[date] not in (None, 0) and validator_map[date] not in (None, 0)
     )[-window:]
     deviations = [abs(float(primary_map[date]) / float(validator_map[date]) - 1) * 100 for date in dates]
+    return_deviations = []
+    for previous_date, current_date in zip(dates, dates[1:]):
+        primary_return = float(primary_map[current_date]) / float(primary_map[previous_date]) - 1
+        validator_return = float(validator_map[current_date]) / float(validator_map[previous_date]) - 1
+        return_deviations.append(abs(primary_return - validator_return) * 10_000)
     if not deviations:
         return {
             "common_points": 0, "start_date": "", "end_date": "",
             "mean_deviation_pct": None, "max_deviation_pct": None,
-            "latest_deviation_pct": None, "status": "insufficient",
+            "latest_deviation_pct": None, "mean_return_deviation_bp": None,
+            "max_return_deviation_bp": None, "status": "insufficient",
         }
     mean_deviation = sum(deviations) / len(deviations)
     max_deviation = max(deviations)
-    status = "pass" if len(dates) >= 20 and mean_deviation <= 0.5 and max_deviation <= 2 else "review"
+    mean_return_deviation = sum(return_deviations) / len(return_deviations) if return_deviations else None
+    max_return_deviation = max(return_deviations) if return_deviations else None
+    status = "pass" if (
+        len(dates) >= 20
+        and mean_deviation <= 0.5
+        and max_deviation <= 2
+        and mean_return_deviation is not None and mean_return_deviation <= 5
+        and max_return_deviation is not None and max_return_deviation <= 25
+    ) else "review"
     return {
         "common_points": len(dates), "start_date": dates[0], "end_date": dates[-1],
         "mean_deviation_pct": round(mean_deviation, 4),
         "max_deviation_pct": round(max_deviation, 4),
-        "latest_deviation_pct": round(deviations[-1], 4), "status": status,
+        "latest_deviation_pct": round(deviations[-1], 4),
+        "mean_return_deviation_bp": round(mean_return_deviation, 2) if mean_return_deviation is not None else None,
+        "max_return_deviation_bp": round(max_return_deviation, 2) if max_return_deviation is not None else None,
+        "status": status,
     }
 
 
@@ -650,6 +667,7 @@ def fetch_market_history(previous_rows: list[dict[str, Any]] | None = None) -> l
             note += (
                 f"，近{strongest['common_points']}个共同交易日均值偏差"
                 f"{strongest['mean_deviation_pct']:.2f}%、最大偏差{strongest['max_deviation_pct']:.2f}%"
+                f"，日收益均差{strongest.get('mean_return_deviation_bp', 0):.2f}bp"
             )
         output.append({
             "symbol": symbol, "label": label, "name": name, "points": points,
@@ -820,11 +838,11 @@ def fetch_commodity_market(previous_rows: list[dict[str, Any]] | None = None) ->
 
 
 CFTC_MARKETS = [
-    ("GOLD", "黄金"), ("SILVER", "白银"), ("COPPER", "铜"),
-    ("CRUDE OIL, LIGHT SWEET", "WTI原油"), ("NATURAL GAS", "天然气"),
-    ("CORN", "玉米"), ("SOYBEANS", "大豆"), ("WHEAT-SRW", "小麦"),
-    ("COFFEE C", "咖啡"), ("SUGAR NO. 11", "原糖"), ("COTTON NO. 2", "棉花"),
-    ("COCOA", "可可"), ("LIVE CATTLE", "活牛"),
+    ("GOLD", "黄金", "COMMODITY EXCHANGE"), ("SILVER", "白银", "COMMODITY EXCHANGE"), ("COPPER", "铜", "COMMODITY EXCHANGE"),
+    ("CRUDE OIL, LIGHT SWEET", "WTI原油", "NEW YORK MERCANTILE EXCHANGE"), ("NAT GAS NYME", "天然气", "NEW YORK MERCANTILE EXCHANGE"),
+    ("CORN", "玉米", "CHICAGO BOARD OF TRADE"), ("SOYBEANS", "大豆", "CHICAGO BOARD OF TRADE"), ("WHEAT-SRW", "小麦", "CHICAGO BOARD OF TRADE"),
+    ("COFFEE C", "咖啡", "ICE FUTURES U.S."), ("SUGAR NO. 11", "原糖", "ICE FUTURES U.S."), ("COTTON NO. 2", "棉花", "ICE FUTURES U.S."),
+    ("COCOA", "可可", "ICE FUTURES U.S."), ("LIVE CATTLE", "活牛", "CHICAGO MERCANTILE EXCHANGE"),
 ]
 
 
@@ -832,8 +850,8 @@ def fetch_cftc_positions() -> list[dict[str, Any]]:
     text = get_text("https://www.cftc.gov/dea/newcot/f_disagg.txt", timeout=45)
     rows = list(csv.reader(io.StringIO(text)))
     output = []
-    for contract_prefix, display_name in CFTC_MARKETS:
-        row = next((item for item in rows if item and item[0].strip().upper().startswith(contract_prefix)), None)
+    for contract_prefix, display_name, exchange_name in CFTC_MARKETS:
+        row = next((item for item in rows if item and item[0].strip().upper().startswith(contract_prefix) and exchange_name in item[0].strip().upper()), None)
         if not row or len(row) < 79:
             continue
         long_position = as_float(row[13])
@@ -1019,6 +1037,39 @@ def _series_raw_scores(points: list[dict[str, Any]]) -> list[tuple[int, float]]:
     return output
 
 
+def _expanding_signal_observations(
+    points: list[dict[str, Any]],
+    quantile: float = 0.60,
+    horizon: int = 20,
+    minimum_prior_scores: int = 60,
+) -> tuple[list[tuple[int, float]], list[tuple[int, float]]]:
+    """Select signals with a prior-only threshold and non-overlapping forward windows."""
+    closes = [as_float(item.get("close")) for item in points]
+    scores = _series_raw_scores(points)
+    selected: list[tuple[int, float]] = []
+    baseline: list[tuple[int, float]] = []
+    last_signal_index = -horizon
+    last_baseline_index = -horizon
+    prior_values: list[float] = []
+    for index, raw in scores:
+        if index + horizon >= len(closes) or closes[index] in (None, 0) or closes[index + horizon] in (None, 0):
+            prior_values.append(raw)
+            continue
+        forward_return = (float(closes[index + horizon]) / float(closes[index]) - 1) * 100
+        if len(prior_values) >= minimum_prior_scores:
+            ranked = sorted(prior_values)
+            threshold_index = min(len(ranked) - 1, max(0, int(len(ranked) * quantile)))
+            threshold = ranked[threshold_index]
+            if raw >= threshold and index - last_signal_index >= horizon:
+                selected.append((index, forward_return))
+                last_signal_index = index
+            if index - last_baseline_index >= horizon:
+                baseline.append((index, forward_return))
+                last_baseline_index = index
+        prior_values.append(raw)
+    return selected, baseline
+
+
 def build_score_backtest(history: list[dict[str, Any]]) -> list[dict[str, Any]]:
     asset_map = {"全球股票": ("ACWI", "SPY"), "债券": ("AGG", "TLT"), "商品": ("DBC", "CPER"), "黄金": ("GLD",), "美元": ("UUP",), "AI": ("BOTZ",), "港股": ("EWH",), "A股": ("ASHR",)}
     series_map = {str(item.get("symbol")): item for item in history}
@@ -1036,13 +1087,13 @@ def build_score_backtest(history: list[dict[str, Any]]) -> list[dict[str, Any]]:
         raw_values = [value for _, value in scores]
         current_raw = raw_values[-1]
         current_percentile = sum(value <= current_raw for value in raw_values) / len(raw_values) * 100
-        ranked = sorted(raw_values)
-        threshold = ranked[max(0, int(len(ranked) * 0.6) - 1)]
-        observations = []
-        for index, raw in scores:
-            if raw < threshold or index + 20 >= len(closes) or not closes[index] or not closes[index + 20]:
-                continue
-            observations.append((closes[index + 20] / closes[index] - 1) * 100)
+        selected, baseline = _expanding_signal_observations(points)
+        observations = [value for _, value in selected]
+        baseline_observations = [value for _, value in baseline]
+        hit_rate = sum(value > 0 for value in observations) / len(observations) * 100 if observations else None
+        average_return = sum(observations) / len(observations) if observations else None
+        baseline_hit_rate = sum(value > 0 for value in baseline_observations) / len(baseline_observations) * 100 if baseline_observations else None
+        baseline_average_return = sum(baseline_observations) / len(baseline_observations) if baseline_observations else None
         peak, max_drawdown = 0.0, 0.0
         for close in (value for value in closes if value is not None):
             peak = max(peak, close)
@@ -1050,10 +1101,15 @@ def build_score_backtest(history: list[dict[str, Any]]) -> list[dict[str, Any]]:
                 max_drawdown = min(max_drawdown, (close / peak - 1) * 100)
         output.append({
             "asset": asset, "symbol": symbol, "sample_size": len(observations),
-            "hit_rate_20d": round(sum(value > 0 for value in observations) / len(observations) * 100, 1) if observations else None,
-            "avg_forward_return_20d": round(sum(observations) / len(observations), 2) if observations else None,
-            "max_drawdown": round(max_drawdown, 2), "current_percentile": round(current_percentile, 1),
-            "history_days": len(points), "method": "价格子模型使用20/60日动量与20日波动率；信号达到历史前40%后检验未来20日收益，无前视数据",
+            "hit_rate_20d": round(hit_rate, 1) if hit_rate is not None else None,
+            "avg_forward_return_20d": round(average_return, 2) if average_return is not None else None,
+            "baseline_sample_size": len(baseline_observations),
+            "baseline_hit_rate_20d": round(baseline_hit_rate, 1) if baseline_hit_rate is not None else None,
+            "baseline_avg_forward_return_20d": round(baseline_average_return, 2) if baseline_average_return is not None else None,
+            "excess_hit_rate_20d": round(hit_rate - baseline_hit_rate, 1) if hit_rate is not None and baseline_hit_rate is not None else None,
+            "excess_return_20d": round(average_return - baseline_average_return, 2) if average_return is not None and baseline_average_return is not None else None,
+            "underlying_max_drawdown": round(max_drawdown, 2), "current_percentile": round(current_percentile, 1),
+            "history_days": len(points), "method": "价格子模型使用20/60日动量与20日波动率；每个信号阈值仅由当时以前的扩展窗口确定，20日观察窗不重叠，并与无条件同期基准比较",
         })
     return output
 
@@ -1405,14 +1461,19 @@ def build_source_audit(payload: dict[str, Any]) -> dict[str, Any]:
         "history_window_verified": history_verified,
         "history_cached": history_cached,
         "history_stale": history_stale,
+        "history_cached_items": [str(item.get("symbol")) for item in history if item.get("data_status") == "cached"],
+        "history_stale_items": [str(item.get("symbol")) for item in history if item.get("points") and (age_days((item.get("points") or [{}])[-1].get("date", "")) or 0) > 5],
         "history_validation_window": 60,
         "flow_expected": len(ETF_FUND_SOURCES),
         "flow_available": len(flows),
         "flow_calculable": flow_calculable,
         "flow_cached": flow_cached,
         "flow_stale": flow_stale,
+        "flow_cached_items": [str(item.get("symbol")) for item in flows if item.get("data_status") == "cached"],
+        "flow_stale_items": [str(item.get("symbol")) for item in flows if (age_days(str(item.get("as_of") or "")) or 0) > 7],
         "warnings": warnings,
-        "survivorship_note": "历史模型使用当前仍存续的代表性ETF，不是包含退市标的的全历史证券库。",
+        "survivorship_note": "历史模型使用当前仍存续的代表性ETF，不是包含退市标的的全历史证券库；因此历史收益和命中率可能偏高、风险与相关性失效概率可能被低估。页面已将其作为模型偏差折扣，不将结果表述为机构级无偏回测。",
+        "adjustment_note": "收益率使用数据提供方复权收盘价，以纳入分红与拆分影响；所有历史信号只使用信号日及以前数据。不同提供方复权与时区口径仍可能不同，近60个共同交易日同时核验价格与日收益偏差。",
         "etf_composition_note": "Twelve Data ETF成分、国别和资产配置接口需要Ultra/Enterprise等高阶套餐，当前免费方案不调用。",
     }
 
@@ -1420,8 +1481,10 @@ def build_source_audit(payload: dict[str, Any]) -> dict[str, Any]:
 def fetch_ici_weekly_flows() -> list[dict[str, Any]]:
     url = "https://www.ici.org/research/stats/flows"
     text = get_page_text(url, timeout=45)
-    date_match = re.search(r"week ended Wednesday,\s+([A-Z][a-z]+\s+\d{1,2},\s+\d{4})", text)
-    as_of = datetime.strptime(date_match.group(1), "%B %d, %Y").date().isoformat() if date_match else ""
+    date_match = re.search(r"week ended(?:\s+Wednesday,)?\s+([A-Z][a-z]+\s+\d{1,2})(?:,\s+(\d{4}))?", text, re.IGNORECASE)
+    publication_match = re.search(r"([A-Z][a-z]+\s+\d{1,2},\s+\d{4})", text)
+    publication_year = datetime.strptime(publication_match.group(1), "%B %d, %Y").year if publication_match else datetime.now(timezone.utc).year
+    as_of = datetime.strptime(f"{date_match.group(1)}, {date_match.group(2) or publication_year}", "%B %d, %Y").date().isoformat() if date_match else ""
     labels = [
         ("Total equity", "股票基金"), ("Domestic", "美国股票基金"), ("World", "全球股票基金"),
         ("Hybrid", "混合基金"), ("Total bond", "债券基金"), ("Taxable", "应税债券基金"),

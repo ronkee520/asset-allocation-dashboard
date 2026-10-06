@@ -138,9 +138,9 @@ class PublicMarketDataTests(unittest.TestCase):
     def test_parses_cftc_managed_money_positions(self):
         stream = io.StringIO()
         writer = csv.writer(stream)
-        for prefix, _name in fetch_data.CFTC_MARKETS:
+        for prefix, _name, exchange in fetch_data.CFTC_MARKETS:
             fields = ["0"] * 80
-            fields[0] = f"{prefix} - TEST EXCHANGE"
+            fields[0] = f"{prefix} - {exchange}"
             fields[2] = "2026-08-25"
             fields[7] = "1000"
             fields[13] = "400"
@@ -154,6 +154,23 @@ class PublicMarketDataTests(unittest.TestCase):
         self.assertEqual(result[0]["managed_money_net"], 150)
         self.assertEqual(result[0]["weekly_change"], 20)
         self.assertEqual(result[0]["net_pct_open_interest"], 15)
+
+    def test_cftc_natural_gas_prefers_nymex_benchmark(self):
+        stream = io.StringIO()
+        writer = csv.writer(stream)
+        regional = ["0"] * 80
+        regional[0], regional[2], regional[7], regional[13], regional[14] = "NATURAL GAS - EP SAN JUAN BASIN", "2026-08-25", "100", "90", "10"
+        writer.writerow(regional)
+        for prefix, _name, exchange in fetch_data.CFTC_MARKETS:
+            fields = ["0"] * 80
+            fields[0], fields[2], fields[7], fields[13], fields[14] = f"{prefix} - {exchange}", "2026-08-25", "1000", "400", "250"
+            fields[61], fields[62] = "30", "10"
+            writer.writerow(fields)
+        with patch.object(fetch_data, "get_text", return_value=stream.getvalue()):
+            result = fetch_data.fetch_cftc_positions()
+        natural_gas = next(row for row in result if row["name"] == "天然气")
+        self.assertIn("NEW YORK MERCANTILE EXCHANGE", natural_gas["contract"])
+        self.assertEqual(natural_gas["managed_money_net"], 150)
 
     def test_parses_tic_cross_border_totals(self):
         fields = ["0"] * 17
@@ -171,6 +188,13 @@ class PublicMarketDataTests(unittest.TestCase):
             result = fetch_data.fetch_ici_weekly_flows()
         self.assertGreaterEqual(len(result), 5)
         self.assertEqual(result[0]["value_usd"], 1_250_000_000)
+
+    def test_ici_date_infers_year_from_publication_when_week_omits_it(self):
+        labels = ["Total equity", "Domestic", "World", "Hybrid", "Total bond", "Taxable", "Municipal", "Total"]
+        text = "September 30, 2026 week ended Wednesday, September 23 " + " ".join(f"| {label} | 1,250" for label in labels)
+        with patch.object(fetch_data, "get_page_text", return_value=text):
+            result = fetch_data.fetch_ici_weekly_flows()
+        self.assertEqual(result[0]["as_of"], "2026-09-23")
 
 
 class DerivedAnalyticsTests(unittest.TestCase):
@@ -201,6 +225,15 @@ class DerivedAnalyticsTests(unittest.TestCase):
         self.assertEqual(len(rows), 8)
         self.assertTrue(all(row["history_days"] == 126 for row in rows))
         self.assertTrue(all(0 <= row["current_percentile"] <= 100 for row in rows))
+        self.assertTrue(all("underlying_max_drawdown" in row for row in rows))
+
+    def test_expanding_backtest_signals_are_unchanged_by_future_append(self):
+        points = [{"date": f"D{i:04d}", "close": 100 + i * 0.15 + (i % 17) * 0.35} for i in range(360)]
+        extended = points + [{"date": f"D{i:04d}", "close": 154 + (i - 360) * 4} for i in range(360, 420)]
+        original_signals, _ = fetch_data._expanding_signal_observations(points)
+        extended_signals, _ = fetch_data._expanding_signal_observations(extended)
+        last_original_eligible = len(points) - 21
+        self.assertEqual(original_signals, [item for item in extended_signals if item[0] <= last_original_eligible])
 
     def test_event_calendar_filters_official_releases(self):
         payload = {"release_dates": [
