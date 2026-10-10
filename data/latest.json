@@ -8,8 +8,8 @@
       "volume": 22307034.0,
       "avg_volume": null,
       "pe": null,
-      "price_avg_50": 766.8368,
-      "price_avg_200": 722.4597,
+      "price_avg_50": 767.5744,
+      "price_avg_200": 722.9284,
       "market_cap": 829362525617.0,
       "exchange": "AMEX",
       "source": "FMP",
@@ -23,8 +23,8 @@
       "volume": 37821157.0,
       "avg_volume": null,
       "pe": null,
-      "price_avg_50": 322.3244,
-      "price_avg_200": 290.4151,
+      "price_avg_50": 322.3886,
+      "price_avg_200": 290.74344,
       "market_cap": 4944351523840.0,
       "exchange": "NASDAQ",
       "source": "FMP",
@@ -38,8 +38,8 @@
       "volume": 84307452.0,
       "avg_volume": null,
       "pe": null,
-      "price_avg_50": 221.3926,
-      "price_avg_200": 201.9261,
+      "price_avg_50": 222.0774,
+      "price_avg_200": 202.15405,
       "market_cap": 5553390880000.0,
       "exchange": "NASDAQ",
       "source": "FMP",
@@ -53,8 +53,8 @@
       "volume": 17890995.0,
       "avg_volume": null,
       "pe": null,
-      "price_avg_50": 498.7674,
-      "price_avg_200": 433.75314,
+      "price_avg_50": 500.4468,
+      "price_avg_200": 434.0039,
       "market_cap": 3973189038500.0,
       "exchange": "NASDAQ",
       "source": "FMP",
@@ -68,8 +68,8 @@
       "volume": 17231359.0,
       "avg_volume": null,
       "pe": null,
-      "price_avg_50": 345.8908,
-      "price_avg_200": 339.8183,
+      "price_avg_50": 346.2508,
+      "price_avg_200": 340.0277,
       "market_cap": 4255828454835.0005,
       "exchange": "NASDAQ",
       "source": "FMP",
@@ -83,8 +83,8 @@
       "volume": 33510286.0,
       "avg_volume": null,
       "pe": null,
-      "price_avg_50": 258.557,
-      "price_avg_200": 241.98155,
+      "price_avg_50": 259.0956,
+      "price_avg_200": 242.15155,
       "market_cap": 2822985753000.0,
       "exchange": "NASDAQ",
       "source": "FMP",
@@ -98,8 +98,8 @@
       "volume": 12586094.0,
       "avg_volume": null,
       "pe": null,
-      "price_avg_50": 636.1376,
-      "price_avg_200": 629.8481,
+      "price_avg_50": 639.7304,
+      "price_avg_200": 630.134,
       "market_cap": 1830802173262.0,
       "exchange": "NASDAQ",
       "source": "FMP",
@@ -113,8 +113,8 @@
       "volume": 9207499.0,
       "avg_volume": null,
       "pe": null,
-      "price_avg_50": 431.4718,
-      "price_avg_200": 390.9703,
+      "price_avg_50": 432.4718,
+      "price_avg_200": 391.77045,
       "market_cap": 2351083248800.0,
       "exchange": "NYSE",
       "source": "FMP",
@@ -128,8 +128,8 @@
       "volume": 13664055.0,
       "avg_volume": null,
       "pe": null,
-      "price_avg_50": 526.4668,
-      "price_avg_200": 383.3533,
+      "price_avg_50": 528.921,
+      "price_avg_200": 385.31906,
       "market_cap": 991567860000.0,
       "exchange": "NASDAQ",
       "source": "FMP",
@@ -143,8 +143,8 @@
       "volume": 4930606.0,
       "avg_volume": null,
       "pe": null,
-      "price_avg_50": 350.5014,
-      "price_avg_200": 322.0867,
+      "price_avg_50": 350.1442,
+      "price_avg_200": 322.1362,
       "market_cap": 892250034900.0,
       "exchange": "NYSE",
       "source": "FMP",
@@ -173,8 +173,8 @@
       "pe": 154.34,
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/AMD",
-      "price_avg_50": 526.4668,
-      "price_avg_200": 383.3533,
+      "price_avg_50": 528.921,
+      "price_avg_200": 385.31906,
       "market_cap": 991567860000.0,
       "exchange": "NASDAQ"
     },
@@ -188,8 +188,8 @@
       "pe": 20.828,
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/AMZN",
-      "price_avg_50": 258.557,
-      "price_avg_200": 241.98155,
+      "price_avg_50": 259.0956,
+      "price_avg_200": 242.15155,
       "market_cap": 2822985753000.0,
       "exchange": "NASDAQ"
     },
@@ -280,8 +280,8 @@
       "pe": 17.272,
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/GOOGL",
-      "price_avg_50": 345.8908,
-      "price_avg_200": 339.8183,
+      "price_avg_50": 346.2508,
+      "price_avg_200": 340.0277,
       "market_cap": 4255828454835.0005,
       "exchange": "NASDAQ"
     },
@@ -339,8 +339,8 @@
       "pe": 29.726,
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/MSFT",
-      "price_avg_50": 498.7674,
-      "price_avg_200": 433.75314,
+      "price_avg_50": 500.4468,
+      "price_avg_200": 434.0039,
       "market_cap": 3973189038500.0,
       "exchange": "NASDAQ"
     },
@@ -376,8 +376,8 @@
       "pe": 28.84,
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/NVDA",
-      "price_avg_50": 221.3926,
-      "price_avg_200": 201.9261,
+      "price_avg_50": 222.0774,
+      "price_avg_200": 202.15405,
       "market_cap": 5553390880000.0,
       "exchange": "NASDAQ"
     },
@@ -435,8 +435,8 @@
       "pe": 29.558,
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/TSM",
-      "price_avg_50": 431.4718,
-      "price_avg_200": 390.9703,
+      "price_avg_50": 432.4718,
+      "price_avg_200": 391.77045,
       "market_cap": 2351083248800.0,
       "exchange": "NYSE"
     },
@@ -496,7 +496,7 @@
       "source": "FMP ratios-ttm"
     }
   ],
-  "valuation_generated_at": "2026-10-10T06:08:47Z",
+  "valuation_generated_at": "2026-10-10T14:34:23Z",
   "fred_macro": [
     {
       "series_id": "DGS10",
@@ -671,8 +671,8 @@
     {
       "symbol": "USD/CNH",
       "name": "US Dollar / Chinese Yuan Offshore",
-      "price": 6.68953,
-      "change_pct": -0.057220888,
+      "price": 6.68777,
+      "change_pct": -0.083515604,
       "previous_close": 6.69336,
       "source": "Twelve Data",
       "url": "https://twelvedata.com/"
@@ -680,8 +680,8 @@
     {
       "symbol": "EUR/USD",
       "name": "Euro / US Dollar",
-      "price": 1.12019,
-      "change_pct": 0.0098207271,
+      "price": 1.12158,
+      "change_pct": 0.13391901,
       "previous_close": 1.12008,
       "source": "Twelve Data",
       "url": "https://twelvedata.com/"
@@ -689,8 +689,8 @@
     {
       "symbol": "USD/JPY",
       "name": "US Dollar / Japanese Yen",
-      "price": 158.319,
-      "change_pct": 0.044474321,
+      "price": 158.32146,
+      "change_pct": 0.046028837,
       "previous_close": 158.24862,
       "source": "Twelve Data",
       "url": "https://twelvedata.com/"
@@ -106479,102 +106479,102 @@
   "gdelt_news": [
     {
       "theme": "AI",
-      "title": "美30年期房貸利率升至7 . 49 % 創近3年新高",
-      "source": "epochtimes.com",
-      "published_at": "20261008T05300",
-      "url": "https://www.epochtimes.com/b5/26/10/7/n14865677.htm",
+      "title": "Nhà đầu tư  thở phào  với giá vàng",
+      "source": "baomoi.com",
+      "published_at": "20261010T06450",
+      "url": "https://baomoi.com/nha-dau-tu-tho-phao-voi-gia-vang-c56238753.epi",
       "summary": "用于追踪跨资产价格波动背后的新闻叙事，点击可查看原文来源。",
-      "summary_zh": "该报道聚焦“美30年期房貸利率升至7 . 49 % 創近3年新高”，建议结合原文、行情变化及相关资产基本面判断其配置影响。",
+      "summary_zh": "该报道聚焦“Nhà đầu tư thở phào với giá vàng”，建议结合原文、行情变化及相关资产基本面判断其配置影响。",
       "summary_method": "本地资产配置规则"
     },
     {
       "theme": "半导体",
-      "title": "Ультражесткие решения . ЦБ с пессимизмом смотрит на ключевую ставку и поблажек не обещает",
-      "source": "amic.ru",
-      "published_at": "20261008T05300",
-      "url": "https://www.amic.ru/news/ultrazhestkie-resheniya-cb-s-pessimizmom-smotrit-na-klyuchevuyu-stavku-i-poblazhek-ne-obeschaet-594060",
+      "title": "Gold Price Today : सोना इस हफ्ते हुआ महंगा , चांदी का दाम गिरा ? गोल्ड खरीदने या बेचने से पहले जान लें एक्सपर्ट की बात",
+      "source": "livehindustan.com",
+      "published_at": "20261010T06450",
+      "url": "https://www.livehindustan.com/business/personal-investments/gold-price-today-yellew-metal-rates-jumped-in-last-5-days-silver-get-cheaper-check-201791612624645.html",
       "summary": "用于追踪跨资产价格波动背后的新闻叙事，点击可查看原文来源。",
-      "summary_zh": "该报道聚焦“Ультражесткие решения . ЦБ с пессимизмом смотрит на ключевую ставку и по”，建议结合原文、行情变化及相关资产基本面判断其配置影响。",
+      "summary_zh": "新闻关注黄金及其驱动因素，后续重点观察美元、实际利率、央行政策预期和避险需求。",
       "summary_method": "本地资产配置规则"
     },
     {
       "theme": "能源",
-      "title": "RBI increases repo rate to 5 . 50 %: How does it impact a consumer ? ",
-      "source": "sentinelassam.com",
-      "published_at": "20261008T05300",
-      "url": "https://www.sentinelassam.com/topheadlines/rbi-increases-repo-rate-to-550-how-does-it-impact-a-consumer",
+      "title": "Altında en kritik çarşamba ! Fiyatların yönü için kırılma haftası",
+      "source": "turkiyegazetesi.com.tr",
+      "published_at": "20261010T06450",
+      "url": "https://www.turkiyegazetesi.com.tr/tasarruf-ortagim/altinda-en-kritik-carsamba-fiyatlarin-yonu-icin-kirilma-haftasi-1821747",
       "summary": "用于追踪跨资产价格波动背后的新闻叙事，点击可查看原文来源。",
-      "summary_zh": "该报道聚焦“RBI increases repo rate to 5 . 50 %: How does it impact a consumer ?”，建议结合原文、行情变化及相关资产基本面判断其配置影响。",
+      "summary_zh": "该报道聚焦“Altında en kritik çarşamba ! Fiyatların yönü için kırılma haftası”，建议结合原文、行情变化及相关资产基本面判断其配置影响。",
       "summary_method": "本地资产配置规则"
     },
     {
       "theme": "贵金属",
-      "title": "FxWirePro : EUR / NZD recovers from early dip , upside pressure builds",
-      "source": "econotimes.com",
-      "published_at": "20261008T05300",
-      "url": "http://www.econotimes.com/FxWirePro-EUR-NZD-recovers-from-early-dip-upside-pressure-builds-1754289",
+      "title": "新闻分析丨美债收益率走高令欧洲经济多角度承压 - 新华网",
+      "source": "news.cn",
+      "published_at": "20261010T06450",
+      "url": "https://www.news.cn/fortune/20261009/2efe592401b04a4292c83c77a4c969ec/c.html",
       "summary": "用于追踪跨资产价格波动背后的新闻叙事，点击可查看原文来源。",
-      "summary_zh": "该报道聚焦“FxWirePro : EUR / NZD recovers from early dip , upside pressure builds”，建议结合原文、行情变化及相关资产基本面判断其配置影响。",
+      "summary_zh": "报道关注债券收益率或利率预期变化，可能影响美元、黄金、权益估值及跨资产风险偏好。",
       "summary_method": "本地资产配置规则"
     },
     {
       "theme": "央行",
-      "title": "IEA紧急加码释储 ： 1亿桶石油待投放 ， 柴油危机为何持续发酵 ？_ 期市动态 _ 期货 _ 中金在线",
-      "source": "futures.cnfol.com",
-      "published_at": "20261008T05300",
-      "url": "http://futures.cnfol.com/qishidongtai/20261008/32389720.shtml",
+      "title": "RBI opens special dollar window for three state - run oil marketing companies",
+      "source": "moneycontrol.com",
+      "published_at": "20261010T06450",
+      "url": "https://www.moneycontrol.com/news/business/banks/rbi-opens-special-dollar-window-for-three-state-run-oil-marketing-companies-14048990.html",
       "summary": "用于追踪跨资产价格波动背后的新闻叙事，点击可查看原文来源。",
-      "summary_zh": "该报道聚焦“IEA紧急加码释储 ： 1亿桶石油待投放 ， 柴油危机为何持续发酵 ？_ 期市动态 _ 期货 _ 中金在线”，建议结合原文、行情变化及相关资产基本面判断其配置影响。",
+      "summary_zh": "新闻涉及原油供需、库存或产量变化，可能影响油价、能源股表现以及市场对通胀的判断。",
       "summary_method": "本地资产配置规则"
     },
     {
       "theme": "ETF",
-      "title": "Altın 2 ayın dibinden yükseldi ! Piyasalarda tepki alım hareketliliği",
-      "source": "bigpara.hurriyet.com.tr",
-      "published_at": "20261008T05300",
-      "url": "https://bigpara.hurriyet.com.tr/altin/haber/altin-2-ayin-dibinden-yukseldi-piyasalarda-tepki-alim-hareketliligi_ID102262339/",
+      "title": "RBI steps up rupee support , opens dollar window for oil companies",
+      "source": "thehindubusinessline.com",
+      "published_at": "20261010T06450",
+      "url": "https://www.thehindubusinessline.com/markets/forex/rbi-steps-up-rupee-support-opens-dollar-window-for-oil-companies/article71567043.ece",
       "summary": "用于追踪跨资产价格波动背后的新闻叙事，点击可查看原文来源。",
-      "summary_zh": "该报道聚焦“Altın 2 ayın dibinden yükseldi ! Piyasalarda tepki alım hareketliliği”，建议结合原文、行情变化及相关资产基本面判断其配置影响。",
+      "summary_zh": "新闻涉及原油供需、库存或产量变化，可能影响油价、能源股表现以及市场对通胀的判断。",
       "summary_method": "本地资产配置规则"
     },
     {
       "theme": "通胀",
-      "title": "Tecnología y el reto de la diversificación en la construcción de carteras",
-      "source": "estrategiasdeinversion.com",
-      "published_at": "20261008T05300",
-      "url": "https://www.estrategiasdeinversion.com/fondos/incertidumbre-macroeconomica-tecnologia-y-el-reto-n-957105",
+      "title": "Giá vàng trong nước cao nhất hai tuần",
+      "source": "baomoi.com",
+      "published_at": "20261010T06450",
+      "url": "https://baomoi.com/gia-vang-trong-nuoc-cao-nhat-hai-tuan-c56238761.epi",
       "summary": "用于追踪跨资产价格波动背后的新闻叙事，点击可查看原文来源。",
-      "summary_zh": "该报道聚焦“Tecnología y el reto de la diversificación en la construcción de cartera”，建议结合原文、行情变化及相关资产基本面判断其配置影响。",
+      "summary_zh": "新闻涉及AI或半导体产业景气，需结合订单、资本开支、供需与估值，评估芯片、云计算及主题ETF影响。",
       "summary_method": "本地资产配置规则"
     },
     {
       "theme": "商品",
-      "title": "Los ingleses Henley & Partners celebran su negocio de ciudadanías argentinas",
-      "source": "urgente24.com",
-      "published_at": "20261008T05300",
-      "url": "https://urgente24.com/actualidad/los-ingleses-henley-partners-celebran-su-negocio-ciudadanias-argentinas-n634313",
+      "title": "Borsada haftanın yükselenleri ! İşte para girişi ve çıkışı olan hisseler",
+      "source": "turkiyegazetesi.com.tr",
+      "published_at": "20261010T06450",
+      "url": "https://www.turkiyegazetesi.com.tr/tasarruf-ortagim/borsada-haftanin-yukselenleri-iste-para-girisi-ve-cikisi-olan-hisseler-1821746",
       "summary": "用于追踪跨资产价格波动背后的新闻叙事，点击可查看原文来源。",
-      "summary_zh": "该报道聚焦“Los ingleses Henley & Partners celebran su negocio de ciudadanías argent”，建议结合原文、行情变化及相关资产基本面判断其配置影响。",
+      "summary_zh": "该报道聚焦“Borsada haftanın yükselenleri ! İşte para girişi ve çıkışı olan hisseler”，建议结合原文、行情变化及相关资产基本面判断其配置影响。",
       "summary_method": "本地资产配置规则"
     },
     {
       "theme": "汇率",
-      "title": "Pháp có động thái mới nhằm hạ nhiệt giá nhiên liệu",
-      "source": "baomoi.com",
-      "published_at": "20261008T05300",
-      "url": "https://baomoi.com/phap-co-dong-thai-moi-nham-ha-nhiet-gia-nhien-lieu-c56222188.epi",
+      "title": "Gold könnte auf 3750 Dollar fallen – dann winken neue Rekorde",
+      "source": "focus.de",
+      "published_at": "20261010T06450",
+      "url": "https://www.focus.de/finanzen/boerse/gold-koennte-auf-3750-dollar-fallen-dann-winken-neue-rekorde_dffce674-13a5-4744-be9f-40474cc4ef33.html",
       "summary": "用于追踪跨资产价格波动背后的新闻叙事，点击可查看原文来源。",
-      "summary_zh": "该报道聚焦“Pháp có động thái mới nhằm hạ nhiệt giá nhiên liệu”，建议结合原文、行情变化及相关资产基本面判断其配置影响。",
+      "summary_zh": "新闻关注黄金及其驱动因素，后续重点观察美元、实际利率、央行政策预期和避险需求。",
       "summary_method": "本地资产配置规则"
     },
     {
       "theme": "宏观",
-      "title": "造车新势力9月交付量进一步分化",
-      "source": "auto.cyol.com",
-      "published_at": "20261008T05300",
-      "url": "http://auto.cyol.com/gb/articles/2026-10/08/content_dqeKaaF6nl.html",
+      "title": "Trump , Nobel Barış Ödülü kararına ateş püskürdü ! 8 savaş bitirdim , her biri için ayrı almalıydım",
+      "source": "turkiyegazetesi.com.tr",
+      "published_at": "20261010T06450",
+      "url": "https://www.turkiyegazetesi.com.tr/dunya/trump-nobel-baris-odulu-kararina-ates-puskurdu-8-savas-bitirdim-her-biri-icin-ayri-al-1821745",
       "summary": "用于追踪跨资产价格波动背后的新闻叙事，点击可查看原文来源。",
-      "summary_zh": "该报道聚焦“造车新势力9月交付量进一步分化”，建议结合原文、行情变化及相关资产基本面判断其配置影响。",
+      "summary_zh": "该报道聚焦“Trump , Nobel Barış Ödülü kararına ateş püskürdü ! 8 savaş bitirdim , he”，建议结合原文、行情变化及相关资产基本面判断其配置影响。",
       "summary_method": "本地资产配置规则"
     }
   ],
@@ -106687,7 +106687,7 @@
       "focus": "旗舰推理、Agent与复杂研究",
       "url": "https://platform.openai.com/pricing",
       "price_status": "官方基准",
-      "verified_at": "2026-10-10T06:08:48Z"
+      "verified_at": "2026-10-10T14:34:24Z"
     },
     {
       "provider": "OpenAI",
@@ -106699,7 +106699,7 @@
       "focus": "通用知识工作与投研自动化",
       "url": "https://platform.openai.com/pricing",
       "price_status": "官方基准",
-      "verified_at": "2026-10-10T06:08:48Z"
+      "verified_at": "2026-10-10T14:34:24Z"
     },
     {
       "provider": "OpenAI",
@@ -106711,7 +106711,7 @@
       "focus": "高频摘要、分类与批量处理",
       "url": "https://platform.openai.com/pricing",
       "price_status": "官方基准",
-      "verified_at": "2026-10-10T06:08:48Z"
+      "verified_at": "2026-10-10T14:34:24Z"
     },
     {
       "provider": "Anthropic",
@@ -106723,7 +106723,7 @@
       "focus": "高难度研究与长文档",
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-10T06:08:48Z"
+      "verified_at": "2026-10-10T14:34:25Z"
     },
     {
       "provider": "Anthropic",
@@ -106735,7 +106735,7 @@
       "focus": "复杂推理、多Agent与专业研究",
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-10T06:08:48Z"
+      "verified_at": "2026-10-10T14:34:25Z"
     },
     {
       "provider": "Anthropic",
@@ -106747,7 +106747,7 @@
       "focus": "代码、知识工作与长上下文",
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-10T06:08:48Z"
+      "verified_at": "2026-10-10T14:34:25Z"
     },
     {
       "provider": "Anthropic",
@@ -106759,7 +106759,7 @@
       "focus": "低延迟与高吞吐任务",
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-10T06:08:48Z"
+      "verified_at": "2026-10-10T14:34:25Z"
     },
     {
       "provider": "Google",
@@ -106783,7 +106783,7 @@
       "focus": "高质量快速推理与搜索增强",
       "url": "https://ai.google.dev/gemini-api/docs/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-10T06:08:49Z"
+      "verified_at": "2026-10-10T14:34:25Z"
     },
     {
       "provider": "Google",
@@ -106795,7 +106795,7 @@
       "focus": "翻译、数据处理与大规模调用",
       "url": "https://ai.google.dev/gemini-api/docs/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-10T06:08:49Z"
+      "verified_at": "2026-10-10T14:34:25Z"
     },
     {
       "provider": "xAI",
@@ -106807,7 +106807,7 @@
       "focus": "实时信息、代码与Agent",
       "url": "https://docs.x.ai/developers/grok-4-6",
       "price_status": "官方实时",
-      "verified_at": "2026-10-10T06:08:49Z"
+      "verified_at": "2026-10-10T14:34:26Z"
     },
     {
       "provider": "xAI",
@@ -106831,7 +106831,7 @@
       "focus": "旗舰多语言与企业任务",
       "url": "https://docs.mistral.ai/inference/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-10T06:08:50Z"
+      "verified_at": "2026-10-10T14:34:26Z"
     },
     {
       "provider": "Mistral",
@@ -106843,7 +106843,7 @@
       "focus": "多模态、代码与Agent",
       "url": "https://docs.mistral.ai/inference/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-10T06:08:50Z"
+      "verified_at": "2026-10-10T14:34:26Z"
     },
     {
       "provider": "Mistral",
@@ -106855,7 +106855,7 @@
       "focus": "低成本生产任务",
       "url": "https://docs.mistral.ai/inference/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-10-10T06:08:50Z"
+      "verified_at": "2026-10-10T14:34:26Z"
     },
     {
       "provider": "DeepSeek",
@@ -106909,7 +106909,7 @@
       "signal": "GPU、HBM与高速互连决定训练和推理基础设施供给",
       "sample_size": 4,
       "method": "成分股行情自动计算",
-      "as_of": "2026-10-10T06:08:47Z"
+      "as_of": "2026-10-10T14:34:23Z"
     },
     {
       "segment": "上游",
@@ -106925,7 +106925,7 @@
       "signal": "先进制程扩产与设备订单反映算力资本开支兑现",
       "sample_size": 4,
       "method": "成分股行情自动计算",
-      "as_of": "2026-10-10T06:08:47Z"
+      "as_of": "2026-10-10T14:34:23Z"
     },
     {
       "segment": "中游",
@@ -106941,7 +106941,7 @@
       "signal": "云增速、AI订单和资本开支回报率共同决定景气",
       "sample_size": 4,
       "method": "成分股行情自动计算",
-      "as_of": "2026-10-10T06:08:47Z"
+      "as_of": "2026-10-10T14:34:23Z"
     },
     {
       "segment": "中游",
@@ -106957,7 +106957,7 @@
       "signal": "数据中心负荷推动电源、电网与工程投资",
       "sample_size": 3,
       "method": "成分股行情自动计算",
-      "as_of": "2026-10-10T06:08:47Z"
+      "as_of": "2026-10-10T14:34:23Z"
     },
     {
       "segment": "中游",
@@ -106973,7 +106973,7 @@
       "signal": "高功率机柜提升液冷渗透率和单柜价值量",
       "sample_size": 2,
       "method": "成分股行情自动计算",
-      "as_of": "2026-10-10T06:08:47Z"
+      "as_of": "2026-10-10T14:34:23Z"
     },
     {
       "segment": "下游",
@@ -106989,7 +106989,7 @@
       "signal": "关注AI产品付费转化、席位扩张和利润兑现",
       "sample_size": 3,
       "method": "成分股行情自动计算",
-      "as_of": "2026-10-10T06:08:47Z"
+      "as_of": "2026-10-10T14:34:23Z"
     },
     {
       "segment": "下游",
@@ -107005,7 +107005,7 @@
       "signal": "订单、自动化渗透率与量产节奏决定主题持续性",
       "sample_size": 2,
       "method": "成分股行情自动计算",
-      "as_of": "2026-10-10T06:08:47Z"
+      "as_of": "2026-10-10T14:34:23Z"
     },
     {
       "segment": "材料",
@@ -107021,7 +107021,7 @@
       "signal": "电气化需求与资源供给约束共同影响材料价值",
       "sample_size": 3,
       "method": "成分股行情自动计算",
-      "as_of": "2026-10-10T06:08:47Z"
+      "as_of": "2026-10-10T14:34:23Z"
     }
   ],
   "event_calendar": [
@@ -107349,8 +107349,8 @@
     "adjustment_note": "收益率使用数据提供方复权收盘价，以纳入分红与拆分影响；所有历史信号只使用信号日及以前数据。不同提供方复权与时区口径仍可能不同，近60个共同交易日同时核验价格与日收益偏差。",
     "etf_composition_note": "Twelve Data ETF成分、国别和资产配置接口需要Ultra/Enterprise等高阶套餐，当前免费方案不调用。"
   },
-  "pricing_generated_at": "2026-10-10T06:08:51Z",
-  "generated_at": "2026-10-10T06:08:51Z",
+  "pricing_generated_at": "2026-10-10T14:34:28Z",
+  "generated_at": "2026-10-10T14:34:28Z",
   "refresh_policy": {
     "workflow_cron": "23 */4 * * *",
     "description": "GitHub Actions 每4小时尝试更新；低频宏观源即使失败也保留上一版缓存。"
@@ -107359,139 +107359,139 @@
     {
       "key": "fmp_quotes",
       "status": "online",
-      "updated_at": "2026-10-10T06:04:36Z",
-      "latency_ms": 9517
+      "updated_at": "2026-10-10T14:32:30Z",
+      "latency_ms": 8374
     },
     {
       "key": "ai_chain_quotes",
       "status": "online",
-      "updated_at": "2026-10-10T06:04:37Z",
-      "latency_ms": 887
+      "updated_at": "2026-10-10T14:32:31Z",
+      "latency_ms": 430
     },
     {
       "key": "ai_valuations",
       "status": "online",
-      "updated_at": "2026-10-10T06:04:39Z",
-      "latency_ms": 977
+      "updated_at": "2026-10-10T14:32:31Z",
+      "latency_ms": 0
     },
     {
       "key": "fred_macro",
       "status": "online",
-      "updated_at": "2026-10-10T06:04:49Z",
-      "latency_ms": 9954
+      "updated_at": "2026-10-10T14:32:41Z",
+      "latency_ms": 9622
     },
     {
       "key": "eia_energy",
       "status": "online",
-      "updated_at": "2026-10-10T06:04:50Z",
-      "latency_ms": 382
+      "updated_at": "2026-10-10T14:32:42Z",
+      "latency_ms": 438
     },
     {
       "key": "market_history",
       "status": "online",
-      "updated_at": "2026-10-10T06:07:28Z",
-      "latency_ms": 157766,
+      "updated_at": "2026-10-10T14:32:42Z",
+      "latency_ms": 0,
       "message": "主源：Twelve Data复权日线；近60日多源核验 15/15"
     },
     {
       "key": "twelve_fx",
       "status": "online",
-      "updated_at": "2026-10-10T06:07:28Z",
-      "latency_ms": 374
+      "updated_at": "2026-10-10T14:32:43Z",
+      "latency_ms": 418
     },
     {
       "key": "commodity_market",
       "status": "online",
-      "updated_at": "2026-10-10T06:07:43Z",
-      "latency_ms": 14253
+      "updated_at": "2026-10-10T14:32:57Z",
+      "latency_ms": 14259
     },
     {
       "key": "cftc_positions",
       "status": "online",
-      "updated_at": "2026-10-10T06:07:43Z",
-      "latency_ms": 102
+      "updated_at": "2026-10-10T14:32:58Z",
+      "latency_ms": 54
     },
     {
       "key": "etf_fund_flows",
       "status": "online",
-      "updated_at": "2026-10-10T06:07:57Z",
-      "latency_ms": 14129,
+      "updated_at": "2026-10-10T14:33:11Z",
+      "latency_ms": 12774,
       "message": "发行商覆盖 16/16；可计算 16/16；缓存 0"
     },
     {
       "key": "ici_weekly_flows",
       "status": "online",
-      "updated_at": "2026-10-10T06:07:58Z",
-      "latency_ms": 640
+      "updated_at": "2026-10-10T14:33:11Z",
+      "latency_ms": 568
     },
     {
       "key": "tic_cross_border_flows",
       "status": "online",
-      "updated_at": "2026-10-10T06:07:59Z",
-      "latency_ms": 260
+      "updated_at": "2026-10-10T14:33:12Z",
+      "latency_ms": 146
     },
     {
       "key": "event_calendar",
       "status": "online",
-      "updated_at": "2026-10-10T06:08:02Z",
-      "latency_ms": 3201
+      "updated_at": "2026-10-10T14:33:13Z",
+      "latency_ms": 1121
     },
     {
       "key": "gdelt_news",
-      "status": "cached",
-      "updated_at": "2026-10-09T21:04:40Z",
-      "message": "ValueError"
+      "status": "online",
+      "updated_at": "2026-10-10T14:34:23Z",
+      "latency_ms": 69517
     },
     {
       "key": "alpha_news",
       "status": "cached",
-      "updated_at": "2026-10-09T21:04:40Z",
+      "updated_at": "2026-10-10T06:08:51Z",
       "message": "ValueError"
     },
     {
       "key": "news_summary_zh",
       "status": "local",
-      "updated_at": "2026-10-10T06:08:48Z",
+      "updated_at": "2026-10-10T14:34:24Z",
       "message": "本地规则摘要 18 条；无需外部模型API"
     },
     {
       "key": "model_pricing_openai",
       "status": "baseline",
-      "updated_at": "2026-10-10T06:08:48Z",
+      "updated_at": "2026-10-10T14:34:24Z",
       "message": "官方基准价；官方页拒绝自动抓取"
     },
     {
       "key": "model_pricing_anthropic",
       "status": "online",
-      "updated_at": "2026-10-10T06:08:48Z",
-      "latency_ms": 341,
+      "updated_at": "2026-10-10T14:34:25Z",
+      "latency_ms": 427,
       "message": "parsed 4"
     },
     {
       "key": "model_pricing_google",
       "status": "online",
-      "updated_at": "2026-10-10T06:08:49Z",
-      "latency_ms": 460,
+      "updated_at": "2026-10-10T14:34:25Z",
+      "latency_ms": 761,
       "message": "parsed 2"
     },
     {
       "key": "model_pricing_xai",
       "status": "online",
-      "updated_at": "2026-10-10T06:08:49Z",
-      "latency_ms": 302,
+      "updated_at": "2026-10-10T14:34:26Z",
+      "latency_ms": 120,
       "message": "parsed 1"
     },
     {
       "key": "model_pricing_mistral",
       "status": "online",
-      "updated_at": "2026-10-10T06:08:50Z",
-      "latency_ms": 238,
+      "updated_at": "2026-10-10T14:34:26Z",
+      "latency_ms": 192,
       "message": "parsed 3"
     },
     {
       "key": "model_pricing_deepseek",
       "status": "cached",
-      "updated_at": "2026-10-10T06:08:51Z",
+      "updated_at": "2026-10-10T14:34:28Z",
       "message": "ValueError"
     }
   ]
