@@ -496,7 +496,7 @@
       "source": "FMP ratios-ttm"
     }
   ],
-  "valuation_generated_at": "2026-11-08T06:26:27Z",
+  "valuation_generated_at": "2026-11-08T15:26:08Z",
   "fred_macro": [
     {
       "series_id": "DGS10",
@@ -671,8 +671,8 @@
     {
       "symbol": "USD/CNH",
       "name": "US Dollar / Chinese Yuan Offshore",
-      "price": 6.67095,
-      "change_pct": 0.0014990593,
+      "price": 6.67079,
+      "change_pct": -0.0008994356,
       "previous_close": 6.67085,
       "source": "Twelve Data",
       "url": "https://twelvedata.com/"
@@ -680,8 +680,8 @@
     {
       "symbol": "EUR/USD",
       "name": "Euro / US Dollar",
-      "price": 1.11506,
-      "change_pct": 0.088863357,
+      "price": 1.11428,
+      "change_pct": 0.018849803,
       "previous_close": 1.11407,
       "source": "Twelve Data",
       "url": "https://twelvedata.com/"
@@ -689,8 +689,8 @@
     {
       "symbol": "USD/JPY",
       "name": "US Dollar / Japanese Yen",
-      "price": 158.46917,
-      "change_pct": -0.0078684193,
+      "price": 158.53979,
+      "change_pct": 0.036691947,
       "previous_close": 158.48164,
       "source": "Twelve Data",
       "url": "https://twelvedata.com/"
@@ -79344,8 +79344,8 @@
       "category": "贵金属",
       "market": "NYMEX",
       "unit": "美元/盎司",
-      "price": 1536.9000244140625,
-      "volume": 16143.0,
+      "price": 1538.199951171875,
+      "volume": 0.0,
       "as_of": "2026-11-06",
       "source": "Yahoo Finance公开日线",
       "source_type": "公开行情",
@@ -80598,15 +80598,15 @@
         },
         {
           "date": "2026-11-06",
-          "close": 1536.9000244140625,
-          "volume": 16143.0
+          "close": 1538.199951171875,
+          "volume": 0.0
         }
       ],
-      "change_1d": 0.8199947389009532,
-      "change_20d": -8.479724901659724,
-      "change_60d": -10.914672622724463,
-      "volatility_20d": 33.025338205053565,
-      "range_percentile": 7.359155562207337,
+      "change_1d": 0.9052693870899686,
+      "change_20d": -8.402316057497561,
+      "change_60d": -10.839323283830183,
+      "volatility_20d": 33.06698496015563,
+      "range_percentile": 7.45069970795105,
       "range_low": 1432.4000244140625,
       "range_high": 2852.39990234375
     },
@@ -80616,8 +80616,8 @@
       "category": "贵金属",
       "market": "NYMEX",
       "unit": "美元/盎司",
-      "price": 1017.0999755859375,
-      "volume": 8002.0,
+      "price": 1014.0999755859375,
+      "volume": 0.0,
       "as_of": "2026-11-06",
       "source": "Yahoo Finance公开日线",
       "source_type": "公开行情",
@@ -81870,15 +81870,15 @@
         },
         {
           "date": "2026-11-06",
-          "close": 1017.0999755859375,
-          "volume": 8002.0
+          "close": 1014.0999755859375,
+          "volume": 0.0
         }
       ],
-      "change_1d": -2.2958717016390517,
-      "change_20d": -10.819818010877903,
-      "change_60d": -23.09844288819509,
-      "volatility_20d": 41.19508990626566,
-      "range_percentile": 7.024758645540234,
+      "change_1d": -2.5840561396793915,
+      "change_20d": -11.082860536086148,
+      "change_60d": -23.325268841270653,
+      "volatility_20d": 41.36176400951957,
+      "range_percentile": 6.782803630112845,
       "range_low": 930.0,
       "range_high": 2169.89990234375
     },
@@ -86977,7 +86977,7 @@
       "market": "NYMEX",
       "unit": "美元/MMBtu",
       "price": 2.997999906539917,
-      "volume": 172864.0,
+      "volume": 156459.0,
       "as_of": "2026-11-06",
       "source": "Yahoo Finance公开日线",
       "source_type": "公开行情",
@@ -88231,7 +88231,7 @@
         {
           "date": "2026-11-06",
           "close": 2.997999906539917,
-          "volume": 172864.0
+          "volume": 156459.0
         }
       ],
       "change_1d": 1.7305693713920656,
@@ -106932,7 +106932,7 @@
       "focus": "旗舰推理、Agent与复杂研究",
       "url": "https://platform.openai.com/pricing",
       "price_status": "官方基准",
-      "verified_at": "2026-11-08T06:26:27Z"
+      "verified_at": "2026-11-08T15:26:08Z"
     },
     {
       "provider": "OpenAI",
@@ -106944,7 +106944,7 @@
       "focus": "通用知识工作与投研自动化",
       "url": "https://platform.openai.com/pricing",
       "price_status": "官方基准",
-      "verified_at": "2026-11-08T06:26:27Z"
+      "verified_at": "2026-11-08T15:26:08Z"
     },
     {
       "provider": "OpenAI",
@@ -106956,7 +106956,7 @@
       "focus": "高频摘要、分类与批量处理",
       "url": "https://platform.openai.com/pricing",
       "price_status": "官方基准",
-      "verified_at": "2026-11-08T06:26:27Z"
+      "verified_at": "2026-11-08T15:26:08Z"
     },
     {
       "provider": "Anthropic",
@@ -106968,7 +106968,7 @@
       "focus": "高难度研究与长文档",
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-11-08T06:26:28Z"
+      "verified_at": "2026-11-08T15:26:09Z"
     },
     {
       "provider": "Anthropic",
@@ -106980,7 +106980,7 @@
       "focus": "复杂推理、多Agent与专业研究",
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-11-08T06:26:28Z"
+      "verified_at": "2026-11-08T15:26:09Z"
     },
     {
       "provider": "Anthropic",
@@ -106992,7 +106992,7 @@
       "focus": "代码、知识工作与长上下文",
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-11-08T06:26:28Z"
+      "verified_at": "2026-11-08T15:26:09Z"
     },
     {
       "provider": "Anthropic",
@@ -107004,7 +107004,7 @@
       "focus": "低延迟与高吞吐任务",
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-11-08T06:26:28Z"
+      "verified_at": "2026-11-08T15:26:09Z"
     },
     {
       "provider": "Google",
@@ -107028,7 +107028,7 @@
       "focus": "高质量快速推理与搜索增强",
       "url": "https://ai.google.dev/gemini-api/docs/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-11-08T06:26:29Z"
+      "verified_at": "2026-11-08T15:26:09Z"
     },
     {
       "provider": "Google",
@@ -107040,7 +107040,7 @@
       "focus": "翻译、数据处理与大规模调用",
       "url": "https://ai.google.dev/gemini-api/docs/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-11-08T06:26:29Z"
+      "verified_at": "2026-11-08T15:26:09Z"
     },
     {
       "provider": "xAI",
@@ -107052,7 +107052,7 @@
       "focus": "实时信息、代码与Agent",
       "url": "https://docs.x.ai/developers/grok-4-6",
       "price_status": "官方实时",
-      "verified_at": "2026-11-08T06:26:29Z"
+      "verified_at": "2026-11-08T15:26:10Z"
     },
     {
       "provider": "xAI",
@@ -107100,7 +107100,7 @@
       "focus": "低成本生产任务",
       "url": "https://docs.mistral.ai/inference/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-11-08T06:26:30Z"
+      "verified_at": "2026-11-08T15:26:10Z"
     },
     {
       "provider": "DeepSeek",
@@ -107154,7 +107154,7 @@
       "signal": "GPU、HBM与高速互连决定训练和推理基础设施供给",
       "sample_size": 4,
       "method": "成分股行情自动计算",
-      "as_of": "2026-11-08T06:26:27Z"
+      "as_of": "2026-11-08T15:26:08Z"
     },
     {
       "segment": "上游",
@@ -107170,7 +107170,7 @@
       "signal": "先进制程扩产与设备订单反映算力资本开支兑现",
       "sample_size": 4,
       "method": "成分股行情自动计算",
-      "as_of": "2026-11-08T06:26:27Z"
+      "as_of": "2026-11-08T15:26:08Z"
     },
     {
       "segment": "中游",
@@ -107186,7 +107186,7 @@
       "signal": "云增速、AI订单和资本开支回报率共同决定景气",
       "sample_size": 4,
       "method": "成分股行情自动计算",
-      "as_of": "2026-11-08T06:26:27Z"
+      "as_of": "2026-11-08T15:26:08Z"
     },
     {
       "segment": "中游",
@@ -107202,7 +107202,7 @@
       "signal": "数据中心负荷推动电源、电网与工程投资",
       "sample_size": 3,
       "method": "成分股行情自动计算",
-      "as_of": "2026-11-08T06:26:27Z"
+      "as_of": "2026-11-08T15:26:08Z"
     },
     {
       "segment": "中游",
@@ -107218,7 +107218,7 @@
       "signal": "高功率机柜提升液冷渗透率和单柜价值量",
       "sample_size": 2,
       "method": "成分股行情自动计算",
-      "as_of": "2026-11-08T06:26:27Z"
+      "as_of": "2026-11-08T15:26:08Z"
     },
     {
       "segment": "下游",
@@ -107234,7 +107234,7 @@
       "signal": "关注AI产品付费转化、席位扩张和利润兑现",
       "sample_size": 3,
       "method": "成分股行情自动计算",
-      "as_of": "2026-11-08T06:26:27Z"
+      "as_of": "2026-11-08T15:26:08Z"
     },
     {
       "segment": "下游",
@@ -107250,7 +107250,7 @@
       "signal": "订单、自动化渗透率与量产节奏决定主题持续性",
       "sample_size": 2,
       "method": "成分股行情自动计算",
-      "as_of": "2026-11-08T06:26:27Z"
+      "as_of": "2026-11-08T15:26:08Z"
     },
     {
       "segment": "材料",
@@ -107266,7 +107266,7 @@
       "signal": "电气化需求与资源供给约束共同影响材料价值",
       "sample_size": 3,
       "method": "成分股行情自动计算",
-      "as_of": "2026-11-08T06:26:27Z"
+      "as_of": "2026-11-08T15:26:08Z"
     }
   ],
   "event_calendar": [
@@ -107574,8 +107574,8 @@
     "adjustment_note": "收益率使用数据提供方复权收盘价，以纳入分红与拆分影响；所有历史信号只使用信号日及以前数据。不同提供方复权与时区口径仍可能不同，近60个共同交易日同时核验价格与日收益偏差。",
     "etf_composition_note": "Twelve Data ETF成分、国别和资产配置接口需要Ultra/Enterprise等高阶套餐，当前免费方案不调用。"
   },
-  "pricing_generated_at": "2026-11-08T06:26:31Z",
-  "generated_at": "2026-11-08T06:26:31Z",
+  "pricing_generated_at": "2026-11-08T15:26:11Z",
+  "generated_at": "2026-11-08T15:26:11Z",
   "refresh_policy": {
     "workflow_cron": "23 */4 * * *",
     "description": "GitHub Actions 每4小时尝试更新；低频宏观源即使失败也保留上一版缓存。"
@@ -107584,139 +107584,139 @@
     {
       "key": "fmp_quotes",
       "status": "online",
-      "updated_at": "2026-11-08T06:22:13Z",
-      "latency_ms": 10028
+      "updated_at": "2026-11-08T15:24:28Z",
+      "latency_ms": 9636
     },
     {
       "key": "ai_chain_quotes",
       "status": "online",
-      "updated_at": "2026-11-08T06:22:14Z",
-      "latency_ms": 808
+      "updated_at": "2026-11-08T15:24:29Z",
+      "latency_ms": 1098
     },
     {
       "key": "ai_valuations",
       "status": "online",
-      "updated_at": "2026-11-08T06:22:15Z",
-      "latency_ms": 1007
+      "updated_at": "2026-11-08T15:24:29Z",
+      "latency_ms": 0
     },
     {
       "key": "fred_macro",
       "status": "online",
-      "updated_at": "2026-11-08T06:22:25Z",
-      "latency_ms": 10024
+      "updated_at": "2026-11-08T15:24:39Z",
+      "latency_ms": 9030
     },
     {
       "key": "eia_energy",
       "status": "online",
-      "updated_at": "2026-11-08T06:22:26Z",
-      "latency_ms": 311
+      "updated_at": "2026-11-08T15:24:39Z",
+      "latency_ms": 394
     },
     {
       "key": "market_history",
       "status": "online",
-      "updated_at": "2026-11-08T06:25:04Z",
-      "latency_ms": 157650,
+      "updated_at": "2026-11-08T15:24:39Z",
+      "latency_ms": 0,
       "message": "主源：Twelve Data复权日线；近60日多源核验 12/15"
     },
     {
       "key": "twelve_fx",
       "status": "online",
-      "updated_at": "2026-11-08T06:25:05Z",
-      "latency_ms": 393
+      "updated_at": "2026-11-08T15:24:40Z",
+      "latency_ms": 430
     },
     {
       "key": "commodity_market",
       "status": "online",
-      "updated_at": "2026-11-08T06:25:20Z",
-      "latency_ms": 15280
+      "updated_at": "2026-11-08T15:24:57Z",
+      "latency_ms": 16780
     },
     {
       "key": "cftc_positions",
       "status": "online",
-      "updated_at": "2026-11-08T06:25:20Z",
-      "latency_ms": 81
+      "updated_at": "2026-11-08T15:24:58Z",
+      "latency_ms": 140
     },
     {
       "key": "etf_fund_flows",
       "status": "online",
-      "updated_at": "2026-11-08T06:25:37Z",
-      "latency_ms": 16416,
+      "updated_at": "2026-11-08T15:25:15Z",
+      "latency_ms": 16760,
       "message": "发行商覆盖 16/16；可计算 16/16；缓存 1"
     },
     {
       "key": "ici_weekly_flows",
       "status": "online",
-      "updated_at": "2026-11-08T06:25:38Z",
-      "latency_ms": 408
+      "updated_at": "2026-11-08T15:25:15Z",
+      "latency_ms": 501
     },
     {
       "key": "tic_cross_border_flows",
       "status": "online",
-      "updated_at": "2026-11-08T06:25:38Z",
-      "latency_ms": 281
+      "updated_at": "2026-11-08T15:25:16Z",
+      "latency_ms": 756
     },
     {
       "key": "event_calendar",
       "status": "online",
-      "updated_at": "2026-11-08T06:25:40Z",
-      "latency_ms": 990
+      "updated_at": "2026-11-08T15:25:17Z",
+      "latency_ms": 797
     },
     {
       "key": "gdelt_news",
       "status": "cached",
-      "updated_at": "2026-11-07T23:46:35Z",
+      "updated_at": "2026-11-08T06:26:31Z",
       "message": "ValueError"
     },
     {
       "key": "alpha_news",
       "status": "cached",
-      "updated_at": "2026-11-07T23:46:35Z",
+      "updated_at": "2026-11-08T06:26:31Z",
       "message": "ValueError"
     },
     {
       "key": "news_summary_zh",
       "status": "local",
-      "updated_at": "2026-11-08T06:26:27Z",
+      "updated_at": "2026-11-08T15:26:08Z",
       "message": "本地规则摘要 18 条；无需外部模型API"
     },
     {
       "key": "model_pricing_openai",
       "status": "baseline",
-      "updated_at": "2026-11-08T06:26:27Z",
+      "updated_at": "2026-11-08T15:26:08Z",
       "message": "官方基准价；官方页拒绝自动抓取"
     },
     {
       "key": "model_pricing_anthropic",
       "status": "online",
-      "updated_at": "2026-11-08T06:26:28Z",
-      "latency_ms": 918,
+      "updated_at": "2026-11-08T15:26:09Z",
+      "latency_ms": 433,
       "message": "parsed 4"
     },
     {
       "key": "model_pricing_google",
       "status": "online",
-      "updated_at": "2026-11-08T06:26:29Z",
-      "latency_ms": 561,
+      "updated_at": "2026-11-08T15:26:09Z",
+      "latency_ms": 439,
       "message": "parsed 2"
     },
     {
       "key": "model_pricing_xai",
       "status": "online",
-      "updated_at": "2026-11-08T06:26:29Z",
-      "latency_ms": 240,
+      "updated_at": "2026-11-08T15:26:10Z",
+      "latency_ms": 339,
       "message": "parsed 1"
     },
     {
       "key": "model_pricing_mistral",
       "status": "online",
-      "updated_at": "2026-11-08T06:26:30Z",
-      "latency_ms": 445,
+      "updated_at": "2026-11-08T15:26:10Z",
+      "latency_ms": 345,
       "message": "parsed 1"
     },
     {
       "key": "model_pricing_deepseek",
       "status": "cached",
-      "updated_at": "2026-11-08T06:26:30Z",
+      "updated_at": "2026-11-08T15:26:11Z",
       "message": "ValueError"
     }
   ]
