@@ -100,7 +100,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "pe": null,
       "price_avg_50": 679.8062,
       "price_avg_200": 630.7674,
-      "market_cap": 1640694170978.0,
+      "market_cap": 1640314437445.0,
       "exchange": "NASDAQ",
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/META"
@@ -496,7 +496,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "source": "FMP ratios-ttm"
     }
   ],
-  "valuation_generated_at": "2026-11-15T06:55:28Z",
+  "valuation_generated_at": "2026-11-15T15:46:05Z",
   "fred_macro": [
     {
       "series_id": "DGS10",
@@ -671,8 +671,8 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "USD/CNH",
       "name": "US Dollar / Chinese Yuan Offshore",
-      "price": 6.67657,
-      "change_pct": 0.018725694,
+      "price": 6.67655,
+      "change_pct": 0.018426083,
       "previous_close": 6.67532,
       "source": "Twelve Data",
       "url": "https://twelvedata.com/"
@@ -680,8 +680,8 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "EUR/USD",
       "name": "Euro / US Dollar",
-      "price": 1.10218,
-      "change_pct": -0.0018145527,
+      "price": 1.10186,
+      "change_pct": -0.030847396,
       "previous_close": 1.1022,
       "source": "Twelve Data",
       "url": "https://twelvedata.com/"
@@ -689,8 +689,8 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "symbol": "USD/JPY",
       "name": "US Dollar / Japanese Yen",
-      "price": 159.69291,
-      "change_pct": 0.0064878723,
+      "price": 159.68214,
+      "change_pct": -0.00025675943,
       "previous_close": 159.68255,
       "source": "Twelve Data",
       "url": "https://twelvedata.com/"
@@ -106932,7 +106932,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "旗舰推理、Agent与复杂研究",
       "url": "https://platform.openai.com/pricing",
       "price_status": "官方基准",
-      "verified_at": "2026-11-15T06:55:28Z"
+      "verified_at": "2026-11-15T15:46:05Z"
     },
     {
       "provider": "OpenAI",
@@ -106944,7 +106944,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "通用知识工作与投研自动化",
       "url": "https://platform.openai.com/pricing",
       "price_status": "官方基准",
-      "verified_at": "2026-11-15T06:55:28Z"
+      "verified_at": "2026-11-15T15:46:05Z"
     },
     {
       "provider": "OpenAI",
@@ -106956,7 +106956,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "高频摘要、分类与批量处理",
       "url": "https://platform.openai.com/pricing",
       "price_status": "官方基准",
-      "verified_at": "2026-11-15T06:55:28Z"
+      "verified_at": "2026-11-15T15:46:05Z"
     },
     {
       "provider": "Anthropic",
@@ -106968,7 +106968,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "高难度研究与长文档",
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-11-15T06:55:29Z"
+      "verified_at": "2026-11-15T15:46:06Z"
     },
     {
       "provider": "Anthropic",
@@ -106980,7 +106980,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "复杂推理、多Agent与专业研究",
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-11-15T06:55:29Z"
+      "verified_at": "2026-11-15T15:46:06Z"
     },
     {
       "provider": "Anthropic",
@@ -106992,7 +106992,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "代码、知识工作与长上下文",
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-11-15T06:55:29Z"
+      "verified_at": "2026-11-15T15:46:06Z"
     },
     {
       "provider": "Anthropic",
@@ -107004,7 +107004,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "低延迟与高吞吐任务",
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-11-15T06:55:29Z"
+      "verified_at": "2026-11-15T15:46:06Z"
     },
     {
       "provider": "Google",
@@ -107028,7 +107028,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "高质量快速推理与搜索增强",
       "url": "https://ai.google.dev/gemini-api/docs/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-11-15T06:55:30Z"
+      "verified_at": "2026-11-15T15:46:06Z"
     },
     {
       "provider": "Google",
@@ -107040,7 +107040,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "翻译、数据处理与大规模调用",
       "url": "https://ai.google.dev/gemini-api/docs/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-11-15T06:55:30Z"
+      "verified_at": "2026-11-15T15:46:06Z"
     },
     {
       "provider": "xAI",
@@ -107052,7 +107052,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "实时信息、代码与Agent",
       "url": "https://docs.x.ai/developers/grok-4-6",
       "price_status": "官方实时",
-      "verified_at": "2026-11-15T06:55:30Z"
+      "verified_at": "2026-11-15T15:46:07Z"
     },
     {
       "provider": "xAI",
@@ -107100,7 +107100,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "focus": "低成本生产任务",
       "url": "https://docs.mistral.ai/inference/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-11-15T06:55:31Z"
+      "verified_at": "2026-11-15T15:46:07Z"
     },
     {
       "provider": "DeepSeek",
@@ -107154,7 +107154,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "signal": "GPU、HBM与高速互连决定训练和推理基础设施供给",
       "sample_size": 4,
       "method": "成分股行情自动计算",
-      "as_of": "2026-11-15T06:55:28Z"
+      "as_of": "2026-11-15T15:46:05Z"
     },
     {
       "segment": "上游",
@@ -107170,7 +107170,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "signal": "先进制程扩产与设备订单反映算力资本开支兑现",
       "sample_size": 4,
       "method": "成分股行情自动计算",
-      "as_of": "2026-11-15T06:55:28Z"
+      "as_of": "2026-11-15T15:46:05Z"
     },
     {
       "segment": "中游",
@@ -107186,7 +107186,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "signal": "云增速、AI订单和资本开支回报率共同决定景气",
       "sample_size": 4,
       "method": "成分股行情自动计算",
-      "as_of": "2026-11-15T06:55:28Z"
+      "as_of": "2026-11-15T15:46:05Z"
     },
     {
       "segment": "中游",
@@ -107202,7 +107202,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "signal": "数据中心负荷推动电源、电网与工程投资",
       "sample_size": 3,
       "method": "成分股行情自动计算",
-      "as_of": "2026-11-15T06:55:28Z"
+      "as_of": "2026-11-15T15:46:05Z"
     },
     {
       "segment": "中游",
@@ -107218,7 +107218,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "signal": "高功率机柜提升液冷渗透率和单柜价值量",
       "sample_size": 2,
       "method": "成分股行情自动计算",
-      "as_of": "2026-11-15T06:55:28Z"
+      "as_of": "2026-11-15T15:46:05Z"
     },
     {
       "segment": "下游",
@@ -107234,7 +107234,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "signal": "关注AI产品付费转化、席位扩张和利润兑现",
       "sample_size": 3,
       "method": "成分股行情自动计算",
-      "as_of": "2026-11-15T06:55:28Z"
+      "as_of": "2026-11-15T15:46:05Z"
     },
     {
       "segment": "下游",
@@ -107250,7 +107250,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "signal": "订单、自动化渗透率与量产节奏决定主题持续性",
       "sample_size": 2,
       "method": "成分股行情自动计算",
-      "as_of": "2026-11-15T06:55:28Z"
+      "as_of": "2026-11-15T15:46:05Z"
     },
     {
       "segment": "材料",
@@ -107266,7 +107266,7 @@ window.__ASSET_DASHBOARD_DATA__ = {
       "signal": "电气化需求与资源供给约束共同影响材料价值",
       "sample_size": 3,
       "method": "成分股行情自动计算",
-      "as_of": "2026-11-15T06:55:28Z"
+      "as_of": "2026-11-15T15:46:05Z"
     }
   ],
   "event_calendar": [
@@ -107573,8 +107573,8 @@ window.__ASSET_DASHBOARD_DATA__ = {
     "adjustment_note": "收益率使用数据提供方复权收盘价，以纳入分红与拆分影响；所有历史信号只使用信号日及以前数据。不同提供方复权与时区口径仍可能不同，近60个共同交易日同时核验价格与日收益偏差。",
     "etf_composition_note": "Twelve Data ETF成分、国别和资产配置接口需要Ultra/Enterprise等高阶套餐，当前免费方案不调用。"
   },
-  "pricing_generated_at": "2026-11-15T06:55:36Z",
-  "generated_at": "2026-11-15T06:55:36Z",
+  "pricing_generated_at": "2026-11-15T15:46:11Z",
+  "generated_at": "2026-11-15T15:46:11Z",
   "refresh_policy": {
     "workflow_cron": "23 */4 * * *",
     "description": "GitHub Actions 每4小时尝试更新；低频宏观源即使失败也保留上一版缓存。"
@@ -107583,139 +107583,139 @@ window.__ASSET_DASHBOARD_DATA__ = {
     {
       "key": "fmp_quotes",
       "status": "online",
-      "updated_at": "2026-11-15T06:51:44Z",
-      "latency_ms": 11027
+      "updated_at": "2026-11-15T15:44:23Z",
+      "latency_ms": 9531
     },
     {
       "key": "ai_chain_quotes",
       "status": "online",
-      "updated_at": "2026-11-15T06:51:45Z",
-      "latency_ms": 744
+      "updated_at": "2026-11-15T15:44:24Z",
+      "latency_ms": 828
     },
     {
       "key": "ai_valuations",
       "status": "online",
-      "updated_at": "2026-11-15T06:51:45Z",
+      "updated_at": "2026-11-15T15:44:25Z",
       "latency_ms": 0
     },
     {
       "key": "fred_macro",
       "status": "online",
-      "updated_at": "2026-11-15T06:51:54Z",
-      "latency_ms": 8967
+      "updated_at": "2026-11-15T15:44:36Z",
+      "latency_ms": 11240
     },
     {
       "key": "eia_energy",
       "status": "online",
-      "updated_at": "2026-11-15T06:51:55Z",
-      "latency_ms": 490
+      "updated_at": "2026-11-15T15:44:37Z",
+      "latency_ms": 379
     },
     {
       "key": "market_history",
       "status": "online",
-      "updated_at": "2026-11-15T06:54:33Z",
-      "latency_ms": 158239,
+      "updated_at": "2026-11-15T15:44:37Z",
+      "latency_ms": 0,
       "message": "主源：Twelve Data复权日线；近60日多源核验 15/15"
     },
     {
       "key": "twelve_fx",
       "status": "online",
-      "updated_at": "2026-11-15T06:54:34Z",
-      "latency_ms": 408
+      "updated_at": "2026-11-15T15:44:38Z",
+      "latency_ms": 436
     },
     {
       "key": "commodity_market",
       "status": "online",
-      "updated_at": "2026-11-15T06:54:50Z",
-      "latency_ms": 15535
+      "updated_at": "2026-11-15T15:44:54Z",
+      "latency_ms": 16200
     },
     {
       "key": "cftc_positions",
       "status": "online",
-      "updated_at": "2026-11-15T06:54:50Z",
-      "latency_ms": 218
+      "updated_at": "2026-11-15T15:44:55Z",
+      "latency_ms": 90
     },
     {
       "key": "etf_fund_flows",
       "status": "online",
-      "updated_at": "2026-11-15T06:55:05Z",
-      "latency_ms": 14307,
+      "updated_at": "2026-11-15T15:45:13Z",
+      "latency_ms": 18595,
       "message": "发行商覆盖 16/16；可计算 16/16；缓存 1"
     },
     {
       "key": "ici_weekly_flows",
       "status": "online",
-      "updated_at": "2026-11-15T06:55:05Z",
-      "latency_ms": 458
+      "updated_at": "2026-11-15T15:45:14Z",
+      "latency_ms": 322
     },
     {
       "key": "tic_cross_border_flows",
       "status": "online",
-      "updated_at": "2026-11-15T06:55:06Z",
-      "latency_ms": 442
+      "updated_at": "2026-11-15T15:45:15Z",
+      "latency_ms": 526
     },
     {
       "key": "event_calendar",
       "status": "online",
-      "updated_at": "2026-11-15T06:55:07Z",
-      "latency_ms": 928
+      "updated_at": "2026-11-15T15:45:16Z",
+      "latency_ms": 1230
     },
     {
       "key": "gdelt_news",
-      "status": "online",
-      "updated_at": "2026-11-15T06:55:27Z",
-      "latency_ms": 19600
+      "status": "cached",
+      "updated_at": "2026-11-15T06:55:36Z",
+      "message": "ValueError"
     },
     {
       "key": "alpha_news",
       "status": "cached",
-      "updated_at": "2026-11-15T00:01:33Z",
+      "updated_at": "2026-11-15T06:55:36Z",
       "message": "ValueError"
     },
     {
       "key": "news_summary_zh",
       "status": "local",
-      "updated_at": "2026-11-15T06:55:28Z",
+      "updated_at": "2026-11-15T15:46:05Z",
       "message": "本地规则摘要 18 条；无需外部模型API"
     },
     {
       "key": "model_pricing_openai",
       "status": "baseline",
-      "updated_at": "2026-11-15T06:55:28Z",
+      "updated_at": "2026-11-15T15:46:05Z",
       "message": "官方基准价；官方页拒绝自动抓取"
     },
     {
       "key": "model_pricing_anthropic",
       "status": "online",
-      "updated_at": "2026-11-15T06:55:29Z",
-      "latency_ms": 476,
+      "updated_at": "2026-11-15T15:46:06Z",
+      "latency_ms": 371,
       "message": "parsed 4"
     },
     {
       "key": "model_pricing_google",
       "status": "online",
-      "updated_at": "2026-11-15T06:55:30Z",
-      "latency_ms": 597,
+      "updated_at": "2026-11-15T15:46:06Z",
+      "latency_ms": 549,
       "message": "parsed 2"
     },
     {
       "key": "model_pricing_xai",
       "status": "online",
-      "updated_at": "2026-11-15T06:55:30Z",
-      "latency_ms": 360,
+      "updated_at": "2026-11-15T15:46:07Z",
+      "latency_ms": 271,
       "message": "parsed 1"
     },
     {
       "key": "model_pricing_mistral",
       "status": "online",
-      "updated_at": "2026-11-15T06:55:31Z",
-      "latency_ms": 535,
+      "updated_at": "2026-11-15T15:46:07Z",
+      "latency_ms": 291,
       "message": "parsed 1"
     },
     {
       "key": "model_pricing_deepseek",
       "status": "cached",
-      "updated_at": "2026-11-15T06:55:36Z",
+      "updated_at": "2026-11-15T15:46:11Z",
       "message": "ValueError"
     }
   ]
