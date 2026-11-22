@@ -496,7 +496,7 @@
       "source": "FMP ratios-ttm"
     }
   ],
-  "valuation_generated_at": "2026-11-22T07:12:48Z",
+  "valuation_generated_at": "2026-11-22T16:29:43Z",
   "fred_macro": [
     {
       "series_id": "DGS10",
@@ -671,8 +671,8 @@
     {
       "symbol": "USD/CNH",
       "name": "US Dollar / Chinese Yuan Offshore",
-      "price": 6.67674,
-      "change_pct": -0.0020967877,
+      "price": 6.67672,
+      "change_pct": -0.0023963288,
       "previous_close": 6.67688,
       "source": "Twelve Data",
       "url": "https://twelvedata.com/"
@@ -680,8 +680,8 @@
     {
       "symbol": "EUR/USD",
       "name": "Euro / US Dollar",
-      "price": 1.09699,
-      "change_pct": 0.016411229,
+      "price": 1.09679,
+      "change_pct": -0.0018234699,
       "previous_close": 1.09681,
       "source": "Twelve Data",
       "url": "https://twelvedata.com/"
@@ -689,8 +689,8 @@
     {
       "symbol": "USD/JPY",
       "name": "US Dollar / Japanese Yen",
-      "price": 158.55259,
-      "change_pct": -0.0086146958,
+      "price": 158.54396,
+      "change_pct": -0.014057216,
       "previous_close": 158.56625,
       "source": "Twelve Data",
       "url": "https://twelvedata.com/"
@@ -106764,6 +106764,16 @@
     },
     {
       "theme": "央行",
+      "title": "أسعار الذهب عالميًا .. الأونصة تتراجع إلى 3540 دولارًا",
+      "source": "elwatannews.com",
+      "published_at": "20261122T10300",
+      "url": "https://www.elwatannews.com/news/details/8401512",
+      "summary": "用于追踪跨资产价格波动背后的新闻叙事，点击可查看原文来源。",
+      "summary_zh": "该报道聚焦“أسعار الذهب عالميًا .. الأونصة تتراجع إلى 3540 دولارًا”，建议结合原文、行情变化及相关资产基本面判断其配置影响。",
+      "summary_method": "本地资产配置规则"
+    },
+    {
+      "theme": "ETF",
       "title": "Harga Emas Dunia Anjlok Nyaris ke Level Terendah",
       "source": "metrotvnews.com",
       "published_at": "20261121T10300",
@@ -106773,7 +106783,7 @@
       "summary_method": "本地资产配置规则"
     },
     {
-      "theme": "ETF",
+      "theme": "通胀",
       "title": "Gold , copper , aluminium dive to at least 7 - month lows",
       "source": "thehindu.com",
       "published_at": "20261121T16300",
@@ -106783,7 +106793,17 @@
       "summary_method": "本地资产配置规则"
     },
     {
-      "theme": "通胀",
+      "theme": "商品",
+      "title": "金价暴跌 ， 创14个月新低 ； 印度总理莫迪 ： 我很高兴 ， 我劝大家少买黄金 ， 印度人民就真的少买了 ， 许多人因此避免了损失",
+      "source": "163.com",
+      "published_at": "20261122T12300",
+      "url": "https://www.163.com/dy/article/LCBJG02405129QAF.html",
+      "summary": "用于追踪跨资产价格波动背后的新闻叙事，点击可查看原文来源。",
+      "summary_zh": "新闻关注黄金及其驱动因素，后续重点观察美元、实际利率、央行政策预期和避险需求。",
+      "summary_method": "本地资产配置规则"
+    },
+    {
+      "theme": "汇率",
       "title": "Nvidia stock crash : Record market cap wipeout deepens global tech sell - off ; shares plunge 14 %, Alphabet overtakes chipmaker",
       "source": "ibtimes.co.in",
       "published_at": "20261121T12300",
@@ -106793,33 +106813,13 @@
       "summary_method": "本地资产配置规则"
     },
     {
-      "theme": "商品",
-      "title": "Altında düşüş devam ediyor ! Eylül 2025  ten bu yana en düşük seviye ; işte son durum",
-      "source": "uzmanpara.milliyet.com.tr",
-      "published_at": "20261120T21450",
-      "url": "https://uzmanpara.milliyet.com.tr/uzmanpara/altinda-dusus-devam-ediyor-eylul-2025ten-bu-yana-en-dusuk-seviye-iste-son-durum-7704794",
-      "summary": "用于追踪跨资产价格波动背后的新闻叙事，点击可查看原文来源。",
-      "summary_zh": "该报道聚焦“Altında düşüş devam ediyor ! Eylül 2025 ten bu yana en düşük seviye ; iş”，建议结合原文、行情变化及相关资产基本面判断其配置影响。",
-      "summary_method": "本地资产配置规则"
-    },
-    {
-      "theme": "汇率",
-      "title": "सोना 11 % और चाँदी 31 % टूटी , क्या निवेश का अच्छा मौका ? कोटक महिंद्रा एसेट मैनेजमेंट के MD नीलेश शाह से जानें",
-      "source": "sharemanthan.in",
-      "published_at": "20261121T12300",
-      "url": "https://www.sharemanthan.in/lifestyle/462-advice/80157-is-this-a-good-investment-opportunity-in-gold-and-silver",
-      "summary": "用于追踪跨资产价格波动背后的新闻叙事，点击可查看原文来源。",
-      "summary_zh": "该报道聚焦“सोना 11 % और चाँदी 31 % टूटी , क्या निवेश का अच्छा मौका ? कोटक महिंद्रा ”，建议结合原文、行情变化及相关资产基本面判断其配置影响。",
-      "summary_method": "本地资产配置规则"
-    },
-    {
       "theme": "宏观",
-      "title": "AI sell - off batters Wall Street ; S & P 500 enters correction , Nasdaq turns negative for year",
-      "source": "timesofindia.indiatimes.com",
-      "published_at": "20261121T00300",
-      "url": "https://timesofindia.indiatimes.com/business/international-business/ai-sell-off-batters-wall-street-sp-500-enters-correction-nasdaq-turns-negative-for-year/articleshow/136041935.cms",
+      "title": "瑞银 ： 黄金短期仍面临下行压力 ， 预计2027年底金价升至5000美元",
+      "source": "stock.jrj.com.cn",
+      "published_at": "20261122T10300",
+      "url": "https://stock.jrj.com.cn/2026/11/22153159226205.shtml",
       "summary": "用于追踪跨资产价格波动背后的新闻叙事，点击可查看原文来源。",
-      "summary_zh": "新闻涉及AI或半导体产业景气，需结合订单、资本开支、供需与估值，评估芯片、云计算及主题ETF影响。",
+      "summary_zh": "新闻关注黄金及其驱动因素，后续重点观察美元、实际利率、央行政策预期和避险需求。",
       "summary_method": "本地资产配置规则"
     }
   ],
@@ -106932,7 +106932,7 @@
       "focus": "旗舰推理、Agent与复杂研究",
       "url": "https://platform.openai.com/pricing",
       "price_status": "官方基准",
-      "verified_at": "2026-11-22T07:12:49Z"
+      "verified_at": "2026-11-22T16:29:43Z"
     },
     {
       "provider": "OpenAI",
@@ -106944,7 +106944,7 @@
       "focus": "通用知识工作与投研自动化",
       "url": "https://platform.openai.com/pricing",
       "price_status": "官方基准",
-      "verified_at": "2026-11-22T07:12:49Z"
+      "verified_at": "2026-11-22T16:29:43Z"
     },
     {
       "provider": "OpenAI",
@@ -106956,7 +106956,7 @@
       "focus": "高频摘要、分类与批量处理",
       "url": "https://platform.openai.com/pricing",
       "price_status": "官方基准",
-      "verified_at": "2026-11-22T07:12:49Z"
+      "verified_at": "2026-11-22T16:29:43Z"
     },
     {
       "provider": "Anthropic",
@@ -106968,7 +106968,7 @@
       "focus": "高难度研究与长文档",
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-11-22T07:12:49Z"
+      "verified_at": "2026-11-22T16:29:44Z"
     },
     {
       "provider": "Anthropic",
@@ -106980,7 +106980,7 @@
       "focus": "复杂推理、多Agent与专业研究",
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-11-22T07:12:49Z"
+      "verified_at": "2026-11-22T16:29:44Z"
     },
     {
       "provider": "Anthropic",
@@ -106992,7 +106992,7 @@
       "focus": "代码、知识工作与长上下文",
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-11-22T07:12:49Z"
+      "verified_at": "2026-11-22T16:29:44Z"
     },
     {
       "provider": "Anthropic",
@@ -107004,7 +107004,7 @@
       "focus": "低延迟与高吞吐任务",
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-11-22T07:12:49Z"
+      "verified_at": "2026-11-22T16:29:44Z"
     },
     {
       "provider": "Google",
@@ -107028,7 +107028,7 @@
       "focus": "高质量快速推理与搜索增强",
       "url": "https://ai.google.dev/gemini-api/docs/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-11-22T07:12:50Z"
+      "verified_at": "2026-11-22T16:29:45Z"
     },
     {
       "provider": "Google",
@@ -107040,7 +107040,7 @@
       "focus": "翻译、数据处理与大规模调用",
       "url": "https://ai.google.dev/gemini-api/docs/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-11-22T07:12:50Z"
+      "verified_at": "2026-11-22T16:29:45Z"
     },
     {
       "provider": "xAI",
@@ -107052,7 +107052,7 @@
       "focus": "实时信息、代码与Agent",
       "url": "https://docs.x.ai/developers/grok-4-6",
       "price_status": "官方实时",
-      "verified_at": "2026-11-22T07:12:50Z"
+      "verified_at": "2026-11-22T16:29:45Z"
     },
     {
       "provider": "xAI",
@@ -107100,7 +107100,7 @@
       "focus": "低成本生产任务",
       "url": "https://docs.mistral.ai/inference/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-11-22T07:12:51Z"
+      "verified_at": "2026-11-22T16:29:46Z"
     },
     {
       "provider": "DeepSeek",
@@ -107154,7 +107154,7 @@
       "signal": "GPU、HBM与高速互连决定训练和推理基础设施供给",
       "sample_size": 4,
       "method": "成分股行情自动计算",
-      "as_of": "2026-11-22T07:12:48Z"
+      "as_of": "2026-11-22T16:29:43Z"
     },
     {
       "segment": "上游",
@@ -107170,7 +107170,7 @@
       "signal": "先进制程扩产与设备订单反映算力资本开支兑现",
       "sample_size": 4,
       "method": "成分股行情自动计算",
-      "as_of": "2026-11-22T07:12:48Z"
+      "as_of": "2026-11-22T16:29:43Z"
     },
     {
       "segment": "中游",
@@ -107186,7 +107186,7 @@
       "signal": "云增速、AI订单和资本开支回报率共同决定景气",
       "sample_size": 4,
       "method": "成分股行情自动计算",
-      "as_of": "2026-11-22T07:12:48Z"
+      "as_of": "2026-11-22T16:29:43Z"
     },
     {
       "segment": "中游",
@@ -107202,7 +107202,7 @@
       "signal": "数据中心负荷推动电源、电网与工程投资",
       "sample_size": 3,
       "method": "成分股行情自动计算",
-      "as_of": "2026-11-22T07:12:48Z"
+      "as_of": "2026-11-22T16:29:43Z"
     },
     {
       "segment": "中游",
@@ -107218,7 +107218,7 @@
       "signal": "高功率机柜提升液冷渗透率和单柜价值量",
       "sample_size": 2,
       "method": "成分股行情自动计算",
-      "as_of": "2026-11-22T07:12:48Z"
+      "as_of": "2026-11-22T16:29:43Z"
     },
     {
       "segment": "下游",
@@ -107234,7 +107234,7 @@
       "signal": "关注AI产品付费转化、席位扩张和利润兑现",
       "sample_size": 3,
       "method": "成分股行情自动计算",
-      "as_of": "2026-11-22T07:12:48Z"
+      "as_of": "2026-11-22T16:29:43Z"
     },
     {
       "segment": "下游",
@@ -107250,7 +107250,7 @@
       "signal": "订单、自动化渗透率与量产节奏决定主题持续性",
       "sample_size": 2,
       "method": "成分股行情自动计算",
-      "as_of": "2026-11-22T07:12:48Z"
+      "as_of": "2026-11-22T16:29:43Z"
     },
     {
       "segment": "材料",
@@ -107266,7 +107266,7 @@
       "signal": "电气化需求与资源供给约束共同影响材料价值",
       "sample_size": 3,
       "method": "成分股行情自动计算",
-      "as_of": "2026-11-22T07:12:48Z"
+      "as_of": "2026-11-22T16:29:43Z"
     }
   ],
   "event_calendar": [
@@ -107582,8 +107582,8 @@
     "adjustment_note": "收益率使用数据提供方复权收盘价，以纳入分红与拆分影响；所有历史信号只使用信号日及以前数据。不同提供方复权与时区口径仍可能不同，近60个共同交易日同时核验价格与日收益偏差。",
     "etf_composition_note": "Twelve Data ETF成分、国别和资产配置接口需要Ultra/Enterprise等高阶套餐，当前免费方案不调用。"
   },
-  "pricing_generated_at": "2026-11-22T07:12:53Z",
-  "generated_at": "2026-11-22T07:12:53Z",
+  "pricing_generated_at": "2026-11-22T16:29:48Z",
+  "generated_at": "2026-11-22T16:29:48Z",
   "refresh_policy": {
     "workflow_cron": "23 */4 * * *",
     "description": "GitHub Actions 每4小时尝试更新；低频宏观源即使失败也保留上一版缓存。"
@@ -107592,139 +107592,139 @@
     {
       "key": "fmp_quotes",
       "status": "online",
-      "updated_at": "2026-11-22T07:09:12Z",
-      "latency_ms": 7554
+      "updated_at": "2026-11-22T16:28:44Z",
+      "latency_ms": 10367
     },
     {
       "key": "ai_chain_quotes",
       "status": "online",
-      "updated_at": "2026-11-22T07:09:13Z",
-      "latency_ms": 352
+      "updated_at": "2026-11-22T16:28:45Z",
+      "latency_ms": 698
     },
     {
       "key": "ai_valuations",
       "status": "online",
-      "updated_at": "2026-11-22T07:09:14Z",
-      "latency_ms": 558
+      "updated_at": "2026-11-22T16:28:45Z",
+      "latency_ms": 0
     },
     {
       "key": "fred_macro",
       "status": "online",
-      "updated_at": "2026-11-22T07:09:25Z",
-      "latency_ms": 10856
+      "updated_at": "2026-11-22T16:28:54Z",
+      "latency_ms": 9147
     },
     {
       "key": "eia_energy",
       "status": "online",
-      "updated_at": "2026-11-22T07:09:25Z",
-      "latency_ms": 465
+      "updated_at": "2026-11-22T16:28:55Z",
+      "latency_ms": 405
     },
     {
       "key": "market_history",
       "status": "online",
-      "updated_at": "2026-11-22T07:12:02Z",
-      "latency_ms": 156429,
+      "updated_at": "2026-11-22T16:28:55Z",
+      "latency_ms": 0,
       "message": "主源：Twelve Data复权日线；近60日多源核验 15/15"
     },
     {
       "key": "twelve_fx",
       "status": "online",
-      "updated_at": "2026-11-22T07:12:03Z",
-      "latency_ms": 331
+      "updated_at": "2026-11-22T16:28:56Z",
+      "latency_ms": 463
     },
     {
       "key": "commodity_market",
       "status": "online",
-      "updated_at": "2026-11-22T07:12:17Z",
-      "latency_ms": 13682
+      "updated_at": "2026-11-22T16:29:11Z",
+      "latency_ms": 14754
     },
     {
       "key": "cftc_positions",
       "status": "online",
-      "updated_at": "2026-11-22T07:12:17Z",
-      "latency_ms": 84
+      "updated_at": "2026-11-22T16:29:12Z",
+      "latency_ms": 178
     },
     {
       "key": "etf_fund_flows",
       "status": "online",
-      "updated_at": "2026-11-22T07:12:33Z",
-      "latency_ms": 15492,
+      "updated_at": "2026-11-22T16:29:28Z",
+      "latency_ms": 15871,
       "message": "发行商覆盖 16/16；可计算 16/16；缓存 1"
     },
     {
       "key": "ici_weekly_flows",
       "status": "online",
-      "updated_at": "2026-11-22T07:12:33Z",
-      "latency_ms": 355
+      "updated_at": "2026-11-22T16:29:28Z",
+      "latency_ms": 413
     },
     {
       "key": "tic_cross_border_flows",
       "status": "online",
-      "updated_at": "2026-11-22T07:12:34Z",
-      "latency_ms": 229
+      "updated_at": "2026-11-22T16:29:29Z",
+      "latency_ms": 465
     },
     {
       "key": "event_calendar",
       "status": "online",
-      "updated_at": "2026-11-22T07:12:35Z",
-      "latency_ms": 727
+      "updated_at": "2026-11-22T16:29:30Z",
+      "latency_ms": 856
     },
     {
       "key": "gdelt_news",
       "status": "online",
-      "updated_at": "2026-11-22T07:12:48Z",
-      "latency_ms": 12891
+      "updated_at": "2026-11-22T16:29:42Z",
+      "latency_ms": 11894
     },
     {
       "key": "alpha_news",
       "status": "cached",
-      "updated_at": "2026-11-21T21:45:21Z",
+      "updated_at": "2026-11-22T07:12:53Z",
       "message": "ValueError"
     },
     {
       "key": "news_summary_zh",
       "status": "local",
-      "updated_at": "2026-11-22T07:12:49Z",
+      "updated_at": "2026-11-22T16:29:43Z",
       "message": "本地规则摘要 18 条；无需外部模型API"
     },
     {
       "key": "model_pricing_openai",
       "status": "baseline",
-      "updated_at": "2026-11-22T07:12:49Z",
+      "updated_at": "2026-11-22T16:29:43Z",
       "message": "官方基准价；官方页拒绝自动抓取"
     },
     {
       "key": "model_pricing_anthropic",
       "status": "online",
-      "updated_at": "2026-11-22T07:12:49Z",
-      "latency_ms": 241,
+      "updated_at": "2026-11-22T16:29:44Z",
+      "latency_ms": 411,
       "message": "parsed 4"
     },
     {
       "key": "model_pricing_google",
       "status": "online",
-      "updated_at": "2026-11-22T07:12:50Z",
-      "latency_ms": 377,
+      "updated_at": "2026-11-22T16:29:45Z",
+      "latency_ms": 523,
       "message": "parsed 2"
     },
     {
       "key": "model_pricing_xai",
       "status": "online",
-      "updated_at": "2026-11-22T07:12:50Z",
-      "latency_ms": 203,
+      "updated_at": "2026-11-22T16:29:45Z",
+      "latency_ms": 373,
       "message": "parsed 1"
     },
     {
       "key": "model_pricing_mistral",
       "status": "online",
-      "updated_at": "2026-11-22T07:12:51Z",
-      "latency_ms": 197,
+      "updated_at": "2026-11-22T16:29:46Z",
+      "latency_ms": 394,
       "message": "parsed 1"
     },
     {
       "key": "model_pricing_deepseek",
       "status": "cached",
-      "updated_at": "2026-11-22T07:12:53Z",
+      "updated_at": "2026-11-22T16:29:48Z",
       "message": "ValueError"
     }
   ]
