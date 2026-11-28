@@ -8,8 +8,8 @@
       "volume": 40442229.0,
       "avg_volume": null,
       "pe": null,
-      "price_avg_50": 757.8888,
-      "price_avg_200": 733.1607,
+      "price_avg_50": 757.2032,
+      "price_avg_200": 733.3425,
       "market_cap": 775351072452.0,
       "exchange": "AMEX",
       "source": "FMP",
@@ -23,8 +23,8 @@
       "volume": 22683910.0,
       "avg_volume": null,
       "pe": null,
-      "price_avg_50": 343.0452,
-      "price_avg_200": 304.40216,
+      "price_avg_50": 343.476,
+      "price_avg_200": 304.81735,
       "market_cap": 5210374988000.0,
       "exchange": "NASDAQ",
       "source": "FMP",
@@ -38,8 +38,8 @@
       "volume": 185759641.0,
       "avg_volume": null,
       "pe": null,
-      "price_avg_50": 203.6544,
-      "price_avg_200": 202.8741,
+      "price_avg_50": 202.2774,
+      "price_avg_200": 202.6763,
       "market_cap": 3626809000000.0,
       "exchange": "NASDAQ",
       "source": "FMP",
@@ -53,8 +53,8 @@
       "volume": 12489428.0,
       "avg_volume": null,
       "pe": null,
-      "price_avg_50": 519.5512,
-      "price_avg_200": 444.8852,
+      "price_avg_50": 519.4532,
+      "price_avg_200": 445.3276,
       "market_cap": 3659997741500.0,
       "exchange": "NASDAQ",
       "source": "FMP",
@@ -68,9 +68,9 @@
       "volume": 22623041.0,
       "avg_volume": null,
       "pe": null,
-      "price_avg_50": 318.2408,
-      "price_avg_200": 336.3159,
-      "market_cap": 3347384327128.0,
+      "price_avg_50": 316.7934,
+      "price_avg_200": 336.1359,
+      "market_cap": 3349039139518.0,
       "exchange": "NASDAQ",
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/GOOGL"
@@ -83,8 +83,8 @@
       "volume": 27263135.0,
       "avg_volume": null,
       "pe": null,
-      "price_avg_50": 255.1158,
-      "price_avg_200": 245.7811,
+      "price_avg_50": 255.1744,
+      "price_avg_200": 246.0313,
       "market_cap": 2747824972000.0,
       "exchange": "NASDAQ",
       "source": "FMP",
@@ -98,8 +98,8 @@
       "volume": 11143475.0,
       "avg_volume": null,
       "pe": null,
-      "price_avg_50": 672.4168,
-      "price_avg_200": 627.5315,
+      "price_avg_50": 671.3498,
+      "price_avg_200": 627.3328,
       "market_cap": 1607773498487.0,
       "exchange": "NASDAQ",
       "source": "FMP",
@@ -113,8 +113,8 @@
       "volume": 9487375.0,
       "avg_volume": null,
       "pe": null,
-      "price_avg_50": 418.263,
-      "price_avg_200": 403.509,
+      "price_avg_50": 416.7246,
+      "price_avg_200": 403.40524,
       "market_cap": 1832590843200.0,
       "exchange": "NYSE",
       "source": "FMP",
@@ -128,8 +128,8 @@
       "volume": 22329180.0,
       "avg_volume": null,
       "pe": null,
-      "price_avg_50": 548.3506,
-      "price_avg_200": 432.95984,
+      "price_avg_50": 545.9396,
+      "price_avg_200": 434.01465,
       "market_cap": 696283808600.0,
       "exchange": "NASDAQ",
       "source": "FMP",
@@ -143,8 +143,8 @@
       "volume": 3540173.0,
       "avg_volume": null,
       "pe": null,
-      "price_avg_50": 335.3294,
-      "price_avg_200": 325.1334,
+      "price_avg_50": 334.8024,
+      "price_avg_200": 325.1941,
       "market_cap": 857655805600.0,
       "exchange": "NYSE",
       "source": "FMP",
@@ -173,8 +173,8 @@
       "pe": 91.103,
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/AMD",
-      "price_avg_50": 548.3506,
-      "price_avg_200": 432.95984,
+      "price_avg_50": 545.9396,
+      "price_avg_200": 434.01465,
       "market_cap": 696283808600.0,
       "exchange": "NASDAQ"
     },
@@ -188,8 +188,8 @@
       "pe": 20.265,
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/AMZN",
-      "price_avg_50": 255.1158,
-      "price_avg_200": 245.7811,
+      "price_avg_50": 255.1744,
+      "price_avg_200": 246.0313,
       "market_cap": 2747824972000.0,
       "exchange": "NASDAQ"
     },
@@ -280,9 +280,9 @@
       "pe": 14.181,
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/GOOGL",
-      "price_avg_50": 318.2408,
-      "price_avg_200": 336.3159,
-      "market_cap": 3347384327128.0,
+      "price_avg_50": 316.7934,
+      "price_avg_200": 336.1359,
+      "market_cap": 3349039139518.0,
       "exchange": "NASDAQ"
     },
     {
@@ -339,8 +339,8 @@
       "pe": 25.669,
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/MSFT",
-      "price_avg_50": 519.5512,
-      "price_avg_200": 444.8852,
+      "price_avg_50": 519.4532,
+      "price_avg_200": 445.3276,
       "market_cap": 3659997741500.0,
       "exchange": "NASDAQ"
     },
@@ -376,8 +376,8 @@
       "pe": 16.095,
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/NVDA",
-      "price_avg_50": 203.6544,
-      "price_avg_200": 202.8741,
+      "price_avg_50": 202.2774,
+      "price_avg_200": 202.6763,
       "market_cap": 3626809000000.0,
       "exchange": "NASDAQ"
     },
@@ -435,8 +435,8 @@
       "pe": 22.186,
       "source": "FMP",
       "url": "https://financialmodelingprep.com/financial-summary/TSM",
-      "price_avg_50": 418.263,
-      "price_avg_200": 403.509,
+      "price_avg_50": 416.7246,
+      "price_avg_200": 403.40524,
       "market_cap": 1832590843200.0,
       "exchange": "NYSE"
     },
@@ -496,7 +496,7 @@
       "source": "FMP ratios-ttm"
     }
   ],
-  "valuation_generated_at": "2026-11-28T08:11:13Z",
+  "valuation_generated_at": "2026-11-28T17:02:34Z",
   "fred_macro": [
     {
       "series_id": "DGS10",
@@ -671,8 +671,8 @@
     {
       "symbol": "USD/CNH",
       "name": "US Dollar / Chinese Yuan Offshore",
-      "price": 6.6552,
-      "change_pct": 0.0087157494,
+      "price": 6.65533,
+      "change_pct": 0.010669279,
       "previous_close": 6.65462,
       "source": "Twelve Data",
       "url": "https://twelvedata.com/"
@@ -680,8 +680,8 @@
     {
       "symbol": "EUR/USD",
       "name": "Euro / US Dollar",
-      "price": 1.09349,
-      "change_pct": -0.0045723065,
+      "price": 1.09476,
+      "change_pct": 0.11156428,
       "previous_close": 1.09354,
       "source": "Twelve Data",
       "url": "https://twelvedata.com/"
@@ -689,8 +689,8 @@
     {
       "symbol": "USD/JPY",
       "name": "US Dollar / Japanese Yen",
-      "price": 159.56437,
-      "change_pct": -0.0023814273,
+      "price": 159.57295,
+      "change_pct": 0.0029955849,
       "previous_close": 159.56817,
       "source": "Twelve Data",
       "url": "https://twelvedata.com/"
@@ -106814,102 +106814,102 @@
   "gdelt_news": [
     {
       "theme": "AI",
-      "title": "5 Things Investors Need to Know About Wednesday Markets",
-      "source": "aol.com",
-      "published_at": "20261125T14150",
-      "url": "https://www.aol.com/articles/5-things-investors-know-wednesday-133820000.html",
+      "title": "EMEA Morning Briefing : Stock Futures Rise as AI Sentiment Stabilizes",
+      "source": "morningstar.com",
+      "published_at": "20261127T06300",
+      "url": "https://www.morningstar.com/news/dow-jones/2026112776/emea-morning-briefing-stock-futures-rise-as-ai-sentiment-stabilizes",
       "summary": "用于追踪跨资产价格波动背后的新闻叙事，点击可查看原文来源。",
-      "summary_zh": "报道反映权益市场或个股线索，需结合估值、盈利趋势和宏观环境判断其对整体风险偏好的影响。",
+      "summary_zh": "新闻涉及AI或半导体产业景气，需结合订单、资本开支、供需与估值，评估芯片、云计算及主题ETF影响。",
       "summary_method": "本地资产配置规则"
     },
     {
       "theme": "半导体",
-      "title": "Gold price prediction today : Is there any end to gold price fall ? Check November 25 , 2026 outlook",
-      "source": "timesofindia.indiatimes.com",
-      "published_at": "20261125T06450",
-      "url": "https://timesofindia.indiatimes.com/business/india-business/gold-price-prediction-today-india-where-is-gold-silver-rate-headed-on-november-25-2026-mcx-gold-futures-outlook-us-iran-war-middle-east-tensions-federal-reserve/articleshow/136150452.cms",
+      "title": "Gold , silver ETFs rally up to 5 % as precious metals recover despite rate hike fears . What should investors do ? ",
+      "source": "economictimes.indiatimes.com",
+      "published_at": "20261127T06300",
+      "url": "https://economictimes.indiatimes.com/mf/mf-news/gold-silver-etfs-rally-up-to-5-as-precious-metals-recover-despite-rate-hike-fears-what-should-investors-do/articleshow/136210759.cms",
       "summary": "用于追踪跨资产价格波动背后的新闻叙事，点击可查看原文来源。",
       "summary_zh": "新闻关注黄金及其驱动因素，后续重点观察美元、实际利率、央行政策预期和避险需求。",
       "summary_method": "本地资产配置规则"
     },
     {
       "theme": "能源",
-      "title": "Gold Price Rebounds 3 . 9 % After Steep Weekly Drop as Buyers Return – NaturalNews . com",
-      "source": "naturalnews.com",
-      "published_at": "20261125T02300",
-      "url": "https://www.naturalnews.com/2026-11-24-gold-rebounds-after-steep-weekly-drop.html",
+      "title": " 《 金融股 》 華南金估央行年底升息 明年台灣經濟穩健成長 、 台幣偏升 - 財經",
+      "source": "chinatimes.com",
+      "published_at": "20261127T01450",
+      "url": "https://www.chinatimes.com/realtimenews/20261127001063-260410",
       "summary": "用于追踪跨资产价格波动背后的新闻叙事，点击可查看原文来源。",
-      "summary_zh": "新闻关注黄金及其驱动因素，后续重点观察美元、实际利率、央行政策预期和避险需求。",
+      "summary_zh": "该报道聚焦“《 金融股 》 華南金估央行年底升息 明年台灣經濟穩健成長 、 台幣偏升 - 財經”，建议结合原文、行情变化及相关资产基本面判断其配置影响。",
       "summary_method": "本地资产配置规则"
     },
     {
       "theme": "贵金属",
-      "title": " [ 글로벌 마켓 리포트 11월 25일 ] ",
-      "source": "newspim.com",
-      "published_at": "20261125T01150",
-      "url": "https://www.newspim.com/news/view/20261125000281",
-      "summary": "用于追踪跨资产价格波动背后的新闻叙事，点击可查看原文来源。",
-      "summary_zh": "该报道聚焦“[ 글로벌 마켓 리포트 11월 25일 ]”，建议结合原文、行情变化及相关资产基本面判断其配置影响。",
-      "summary_method": "本地资产配置规则"
-    },
-    {
-      "theme": "央行",
-      "title": "Asian shares rally as Jensen Huang return as Nvidia CEO revives AI",
-      "source": "moneycontrol.com",
-      "published_at": "20261124T01450",
-      "url": "https://www.moneycontrol.com/news/markets/global-markets/asian-shares-rally-as-huang-s-return-revives-ai-markets-wrap-14087524.html",
+      "title": "美 증시 , AI · 반도체주 저가 매수에 반등 … 마이크론 · 마벨 7 % 대 급등",
+      "source": "ddaily.co.kr",
+      "published_at": "20261127T22300",
+      "url": "https://www.ddaily.co.kr:443/page/view/2026112806262514799",
       "summary": "用于追踪跨资产价格波动背后的新闻叙事，点击可查看原文来源。",
       "summary_zh": "新闻涉及AI或半导体产业景气，需结合订单、资本开支、供需与估值，评估芯片、云计算及主题ETF影响。",
       "summary_method": "本地资产配置规则"
     },
     {
-      "theme": "ETF",
-      "title": "华创证券 ： 关注有色金属宏观压制缓和 供给刚性 、 库存低位品种的反弹机遇 _ 股市直播 _ 市场 _ 中金在线",
-      "source": "sc.stock.cnfol.com",
-      "published_at": "20261124T06300",
-      "url": "http://sc.stock.cnfol.com/gushizhibo/20261124/32430800.shtml",
-      "summary": "用于追踪跨资产价格波动背后的新闻叙事，点击可查看原文来源。",
-      "summary_zh": "该报道聚焦“华创证券 ： 关注有色金属宏观压制缓和 供给刚性 、 库存低位品种的反弹机遇 _ 股市直播 _ 市场 _ 中金在线”，建议结合原文、行情变化及相关资产基本面判断其配置影响。",
-      "summary_method": "本地资产配置规则"
-    },
-    {
-      "theme": "通胀",
-      "title": "Gold Slips as Investors Weigh Fed Outlook , US Tariff Plans",
-      "source": "livemint.com",
-      "published_at": "20261125T00300",
-      "url": "https://www.livemint.com/market/gold-slips-as-investors-weigh-fed-outlook-us-tariff-plans-11795564730725.html",
+      "theme": "央行",
+      "title": "黄金市场 ， 出现重大变化 - CFi . CN 中财网",
+      "source": "cfi.net.cn",
+      "published_at": "20261127T01150",
+      "url": "http://www.cfi.net.cn/p20261127000104.html",
       "summary": "用于追踪跨资产价格波动背后的新闻叙事，点击可查看原文来源。",
       "summary_zh": "新闻关注黄金及其驱动因素，后续重点观察美元、实际利率、央行政策预期和避险需求。",
       "summary_method": "本地资产配置规则"
     },
     {
-      "theme": "商品",
-      "title": "华创证券 ： 关注有色金属宏观压制缓和 供给刚性 、 库存低位品种的反弹机遇",
-      "source": "finance.jrj.com.cn",
-      "published_at": "20261124T06300",
-      "url": "https://finance.jrj.com.cn/2026/11/24113659242824.shtml",
+      "theme": "ETF",
+      "title": "黄金市场 ， 出现重大变化",
+      "source": "news.sina.com.cn",
+      "published_at": "20261127T01150",
+      "url": "https://news.sina.com.cn/2026-11-27/doc-inkacqys5623071.shtml",
       "summary": "用于追踪跨资产价格波动背后的新闻叙事，点击可查看原文来源。",
-      "summary_zh": "该报道聚焦“华创证券 ： 关注有色金属宏观压制缓和 供给刚性 、 库存低位品种的反弹机遇”，建议结合原文、行情变化及相关资产基本面判断其配置影响。",
+      "summary_zh": "新闻关注黄金及其驱动因素，后续重点观察美元、实际利率、央行政策预期和避险需求。",
+      "summary_method": "本地资产配置规则"
+    },
+    {
+      "theme": "通胀",
+      "title": "Altında 3 aylık seri düşüş ! 2013 sonrası en sert kayıp",
+      "source": "turkiyegazetesi.com.tr",
+      "published_at": "20261128T07150",
+      "url": "https://www.turkiyegazetesi.com.tr/tasarruf-ortagim/altinda-3-aylik-seri-dusus-2013-sonrasi-en-sert-kayip-1832212",
+      "summary": "用于追踪跨资产价格波动背后的新闻叙事，点击可查看原文来源。",
+      "summary_zh": "该报道聚焦“Altında 3 aylık seri düşüş ! 2013 sonrası en sert kayıp”，建议结合原文、行情变化及相关资产基本面判断其配置影响。",
+      "summary_method": "本地资产配置规则"
+    },
+    {
+      "theme": "商品",
+      "title": "黄金交易提醒 ： 加息阴云压顶 ， 金价依然承压 ， 多头还能撑多久 ？ 机构警告跌破3400风险 _ 金市直播 _ 黄金网 _ 中金在线",
+      "source": "gold.cnfol.com",
+      "published_at": "20261127T01450",
+      "url": "http://gold.cnfol.com/jinshizhibo/20261127/32433685.shtml",
+      "summary": "用于追踪跨资产价格波动背后的新闻叙事，点击可查看原文来源。",
+      "summary_zh": "新闻关注黄金及其驱动因素，后续重点观察美元、实际利率、央行政策预期和避险需求。",
       "summary_method": "本地资产配置规则"
     },
     {
       "theme": "汇率",
-      "title": " [ 금 / 유가 ] 호르무즈 선박 피격에 유가 2 % 상승 … 매파 연준 우려에 금값 하락",
-      "source": "newspim.com",
-      "published_at": "20261124T22150",
-      "url": "https://www.newspim.com/news/view/20261125000038",
+      "title": "Harga Emas Dunia Melemah Tertekan Kenaikan Bunga The Fed",
+      "source": "beritasatu.com",
+      "published_at": "20261127T01150",
+      "url": "https://www.beritasatu.com/ekonomi/3044136/harga-emas-dunia-melemah-tertekan-kenaikan-bunga-the-fed",
       "summary": "用于追踪跨资产价格波动背后的新闻叙事，点击可查看原文来源。",
-      "summary_zh": "该报道聚焦“[ 금 / 유가 ] 호르무즈 선박 피격에 유가 2 % 상승 … 매파 연준 우려에 금값 하락”，建议结合原文、行情变化及相关资产基本面判断其配置影响。",
+      "summary_zh": "报道关注美联储和利率路径，政策预期变化将影响美债收益率、美元、黄金及成长股估值。",
       "summary_method": "本地资产配置规则"
     },
     {
       "theme": "宏观",
-      "title": "Bank of Japan likely to lift rate to 2 % by mid - 2027 , ex - board member says",
-      "source": "businesstimes.com.sg",
-      "published_at": "20261125T01450",
-      "url": "https://www.businesstimes.com.sg/companies-markets/banking-finance/bank-japan-likely-lift-rate-2-mid-2027-ex-board-member-says",
+      "title": "全球七大投行最新黄金预测出炉 ！ 高盛两度下调目标价 金价恐要等到2028年才能再创新高 _ 金市直播 _ 黄金网 _ 中金在线",
+      "source": "gold.cnfol.com",
+      "published_at": "20261128T10150",
+      "url": "http://gold.cnfol.com/jinshizhibo/20261128/32434798.shtml",
       "summary": "用于追踪跨资产价格波动背后的新闻叙事，点击可查看原文来源。",
-      "summary_zh": "该报道聚焦“Bank of Japan likely to lift rate to 2 % by mid - 2027 , ex - board memb”，建议结合原文、行情变化及相关资产基本面判断其配置影响。",
+      "summary_zh": "新闻关注黄金及其驱动因素，后续重点观察美元、实际利率、央行政策预期和避险需求。",
       "summary_method": "本地资产配置规则"
     }
   ],
@@ -107022,7 +107022,7 @@
       "focus": "旗舰推理、Agent与复杂研究",
       "url": "https://platform.openai.com/pricing",
       "price_status": "官方基准",
-      "verified_at": "2026-11-28T08:11:13Z"
+      "verified_at": "2026-11-28T17:02:34Z"
     },
     {
       "provider": "OpenAI",
@@ -107034,7 +107034,7 @@
       "focus": "通用知识工作与投研自动化",
       "url": "https://platform.openai.com/pricing",
       "price_status": "官方基准",
-      "verified_at": "2026-11-28T08:11:13Z"
+      "verified_at": "2026-11-28T17:02:34Z"
     },
     {
       "provider": "OpenAI",
@@ -107046,7 +107046,7 @@
       "focus": "高频摘要、分类与批量处理",
       "url": "https://platform.openai.com/pricing",
       "price_status": "官方基准",
-      "verified_at": "2026-11-28T08:11:13Z"
+      "verified_at": "2026-11-28T17:02:34Z"
     },
     {
       "provider": "Anthropic",
@@ -107058,7 +107058,7 @@
       "focus": "高难度研究与长文档",
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-11-28T08:11:14Z"
+      "verified_at": "2026-11-28T17:02:35Z"
     },
     {
       "provider": "Anthropic",
@@ -107070,7 +107070,7 @@
       "focus": "复杂推理、多Agent与专业研究",
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-11-28T08:11:14Z"
+      "verified_at": "2026-11-28T17:02:35Z"
     },
     {
       "provider": "Anthropic",
@@ -107082,7 +107082,7 @@
       "focus": "代码、知识工作与长上下文",
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-11-28T08:11:14Z"
+      "verified_at": "2026-11-28T17:02:35Z"
     },
     {
       "provider": "Anthropic",
@@ -107094,7 +107094,7 @@
       "focus": "低延迟与高吞吐任务",
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-11-28T08:11:14Z"
+      "verified_at": "2026-11-28T17:02:35Z"
     },
     {
       "provider": "Google",
@@ -107118,7 +107118,7 @@
       "focus": "高质量快速推理与搜索增强",
       "url": "https://ai.google.dev/gemini-api/docs/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-11-28T08:11:17Z"
+      "verified_at": "2026-11-28T17:02:35Z"
     },
     {
       "provider": "Google",
@@ -107130,7 +107130,7 @@
       "focus": "翻译、数据处理与大规模调用",
       "url": "https://ai.google.dev/gemini-api/docs/pricing",
       "price_status": "官方实时",
-      "verified_at": "2026-11-28T08:11:17Z"
+      "verified_at": "2026-11-28T17:02:35Z"
     },
     {
       "provider": "xAI",
@@ -107142,7 +107142,7 @@
       "focus": "实时信息、代码与Agent",
       "url": "https://docs.x.ai/developers/grok-4-6",
       "price_status": "官方实时",
-      "verified_at": "2026-11-28T08:11:17Z"
+      "verified_at": "2026-11-28T17:02:36Z"
     },
     {
       "provider": "xAI",
@@ -107244,7 +107244,7 @@
       "signal": "GPU、HBM与高速互连决定训练和推理基础设施供给",
       "sample_size": 4,
       "method": "成分股行情自动计算",
-      "as_of": "2026-11-28T08:11:13Z"
+      "as_of": "2026-11-28T17:02:34Z"
     },
     {
       "segment": "上游",
@@ -107260,7 +107260,7 @@
       "signal": "先进制程扩产与设备订单反映算力资本开支兑现",
       "sample_size": 4,
       "method": "成分股行情自动计算",
-      "as_of": "2026-11-28T08:11:13Z"
+      "as_of": "2026-11-28T17:02:34Z"
     },
     {
       "segment": "中游",
@@ -107276,7 +107276,7 @@
       "signal": "云增速、AI订单和资本开支回报率共同决定景气",
       "sample_size": 4,
       "method": "成分股行情自动计算",
-      "as_of": "2026-11-28T08:11:13Z"
+      "as_of": "2026-11-28T17:02:34Z"
     },
     {
       "segment": "中游",
@@ -107292,7 +107292,7 @@
       "signal": "数据中心负荷推动电源、电网与工程投资",
       "sample_size": 3,
       "method": "成分股行情自动计算",
-      "as_of": "2026-11-28T08:11:13Z"
+      "as_of": "2026-11-28T17:02:34Z"
     },
     {
       "segment": "中游",
@@ -107308,7 +107308,7 @@
       "signal": "高功率机柜提升液冷渗透率和单柜价值量",
       "sample_size": 2,
       "method": "成分股行情自动计算",
-      "as_of": "2026-11-28T08:11:13Z"
+      "as_of": "2026-11-28T17:02:34Z"
     },
     {
       "segment": "下游",
@@ -107324,7 +107324,7 @@
       "signal": "关注AI产品付费转化、席位扩张和利润兑现",
       "sample_size": 3,
       "method": "成分股行情自动计算",
-      "as_of": "2026-11-28T08:11:13Z"
+      "as_of": "2026-11-28T17:02:34Z"
     },
     {
       "segment": "下游",
@@ -107340,7 +107340,7 @@
       "signal": "订单、自动化渗透率与量产节奏决定主题持续性",
       "sample_size": 2,
       "method": "成分股行情自动计算",
-      "as_of": "2026-11-28T08:11:13Z"
+      "as_of": "2026-11-28T17:02:34Z"
     },
     {
       "segment": "材料",
@@ -107356,7 +107356,7 @@
       "signal": "电气化需求与资源供给约束共同影响材料价值",
       "sample_size": 3,
       "method": "成分股行情自动计算",
-      "as_of": "2026-11-28T08:11:13Z"
+      "as_of": "2026-11-28T17:02:34Z"
     }
   ],
   "event_calendar": [
@@ -107654,8 +107654,8 @@
     "adjustment_note": "收益率使用数据提供方复权收盘价，以纳入分红与拆分影响；所有历史信号只使用信号日及以前数据。不同提供方复权与时区口径仍可能不同，近60个共同交易日同时核验价格与日收益偏差。",
     "etf_composition_note": "Twelve Data ETF成分、国别和资产配置接口需要Ultra/Enterprise等高阶套餐，当前免费方案不调用。"
   },
-  "pricing_generated_at": "2026-11-28T08:11:19Z",
-  "generated_at": "2026-11-28T08:11:19Z",
+  "pricing_generated_at": "2026-11-28T17:02:38Z",
+  "generated_at": "2026-11-28T17:02:38Z",
   "refresh_policy": {
     "workflow_cron": "23 */4 * * *",
     "description": "GitHub Actions 每4小时尝试更新；低频宏观源即使失败也保留上一版缓存。"
@@ -107664,138 +107664,138 @@
     {
       "key": "fmp_quotes",
       "status": "online",
-      "updated_at": "2026-11-28T08:09:34Z",
-      "latency_ms": 11185
+      "updated_at": "2026-11-28T17:01:04Z",
+      "latency_ms": 9086
     },
     {
       "key": "ai_chain_quotes",
       "status": "online",
-      "updated_at": "2026-11-28T08:09:35Z",
-      "latency_ms": 668
+      "updated_at": "2026-11-28T17:01:05Z",
+      "latency_ms": 315
     },
     {
       "key": "ai_valuations",
       "status": "online",
-      "updated_at": "2026-11-28T08:09:35Z",
+      "updated_at": "2026-11-28T17:01:05Z",
       "latency_ms": 0
     },
     {
       "key": "fred_macro",
       "status": "online",
-      "updated_at": "2026-11-28T08:09:44Z",
-      "latency_ms": 8215
+      "updated_at": "2026-11-28T17:01:15Z",
+      "latency_ms": 9569
     },
     {
       "key": "eia_energy",
       "status": "online",
-      "updated_at": "2026-11-28T08:09:44Z",
-      "latency_ms": 264
+      "updated_at": "2026-11-28T17:01:16Z",
+      "latency_ms": 402
     },
     {
       "key": "market_history",
       "status": "online",
-      "updated_at": "2026-11-28T08:09:44Z",
+      "updated_at": "2026-11-28T17:01:16Z",
       "latency_ms": 0,
       "message": "主源：Twelve Data复权日线；近60日多源核验 15/15"
     },
     {
       "key": "twelve_fx",
       "status": "online",
-      "updated_at": "2026-11-28T08:09:45Z",
-      "latency_ms": 446
+      "updated_at": "2026-11-28T17:01:17Z",
+      "latency_ms": 430
     },
     {
       "key": "commodity_market",
       "status": "online",
-      "updated_at": "2026-11-28T08:09:59Z",
-      "latency_ms": 13522
+      "updated_at": "2026-11-28T17:01:30Z",
+      "latency_ms": 13603
     },
     {
       "key": "cftc_positions",
       "status": "online",
-      "updated_at": "2026-11-28T08:09:59Z",
-      "latency_ms": 115
+      "updated_at": "2026-11-28T17:01:31Z",
+      "latency_ms": 48
     },
     {
       "key": "etf_fund_flows",
       "status": "online",
-      "updated_at": "2026-11-28T08:10:16Z",
-      "latency_ms": 16411,
+      "updated_at": "2026-11-28T17:01:46Z",
+      "latency_ms": 14680,
       "message": "发行商覆盖 16/16；可计算 16/16；缓存 1"
     },
     {
       "key": "ici_weekly_flows",
       "status": "cached",
-      "updated_at": "2026-11-28T00:12:25Z",
+      "updated_at": "2026-11-28T08:11:19Z",
       "message": "HTTPError"
     },
     {
       "key": "tic_cross_border_flows",
       "status": "online",
-      "updated_at": "2026-11-28T08:10:17Z",
-      "latency_ms": 495
+      "updated_at": "2026-11-28T17:01:47Z",
+      "latency_ms": 435
     },
     {
       "key": "event_calendar",
       "status": "online",
-      "updated_at": "2026-11-28T08:10:18Z",
-      "latency_ms": 635
+      "updated_at": "2026-11-28T17:01:48Z",
+      "latency_ms": 706
     },
     {
       "key": "gdelt_news",
-      "status": "cached",
-      "updated_at": "2026-11-28T00:12:25Z",
-      "message": "ValueError"
+      "status": "online",
+      "updated_at": "2026-11-28T17:02:33Z",
+      "latency_ms": 45054
     },
     {
       "key": "alpha_news",
       "status": "cached",
-      "updated_at": "2026-11-28T00:12:25Z",
+      "updated_at": "2026-11-28T08:11:19Z",
       "message": "ValueError"
     },
     {
       "key": "news_summary_zh",
       "status": "local",
-      "updated_at": "2026-11-28T08:11:13Z",
+      "updated_at": "2026-11-28T17:02:34Z",
       "message": "本地规则摘要 18 条；无需外部模型API"
     },
     {
       "key": "model_pricing_openai",
       "status": "baseline",
-      "updated_at": "2026-11-28T08:11:13Z",
+      "updated_at": "2026-11-28T17:02:34Z",
       "message": "官方基准价；官方页拒绝自动抓取"
     },
     {
       "key": "model_pricing_anthropic",
       "status": "online",
-      "updated_at": "2026-11-28T08:11:14Z",
-      "latency_ms": 361,
+      "updated_at": "2026-11-28T17:02:35Z",
+      "latency_ms": 332,
       "message": "parsed 4"
     },
     {
       "key": "model_pricing_google",
       "status": "online",
-      "updated_at": "2026-11-28T08:11:17Z",
-      "latency_ms": 2853,
+      "updated_at": "2026-11-28T17:02:35Z",
+      "latency_ms": 462,
       "message": "parsed 2"
     },
     {
       "key": "model_pricing_xai",
       "status": "online",
-      "updated_at": "2026-11-28T08:11:17Z",
-      "latency_ms": 342,
+      "updated_at": "2026-11-28T17:02:36Z",
+      "latency_ms": 200,
       "message": "parsed 1"
     },
     {
       "key": "model_pricing_mistral",
       "status": "cached",
-      "updated_at": "2026-11-28T08:11:18Z",
+      "updated_at": "2026-11-28T17:02:36Z",
       "message": "ValueError"
     },
     {
       "key": "model_pricing_deepseek",
       "status": "cached",
-      "updated_at": "2026-11-28T08:11:19Z",
+      "updated_at": "2026-11-28T17:02:38Z",
       "message": "ValueError"
     }
   ]
